@@ -65,12 +65,6 @@ switch:checked {
 	background: @theme_selected_bg;
 }
 
-*:disabled,
-.link > label:disabled {
-	color: @insensitive_fg;
-	text-shadow: 0.5px 1px @insensitive_text_shadow;
-}
-
 paper {
 	border: 1px solid black;
 	background: white;
@@ -78,6 +72,32 @@ paper {
 
 window.solid-csd {
 
+}
+
+box.dialog-vbox {
+	margin: 2px 2px 0;
+}
+
+/* --- text and images disabled --- */
+
+*:disabled,
+.link > label:disabled {
+	color: @insensitive_fg;
+	text-shadow: 0.5px 1px @insensitive_text_shadow;
+}
+
+image:disabled,
+button:disabled image,
+spinbutton button:disabled image,
+box.toolbar button:disabled image,
+box.primary-toolbar button:disabled image {
+	-gtk-icon-filter: opacity(0.5);
+}
+
+button.flat:disabled image,
+box.toolbar button:checked:disabled image,
+box.primary-toolbar button:checked:disabled image {
+	-gtk-icon-filter: none;
 }
 
 /* --- tooltip --- */
@@ -107,7 +127,7 @@ spinner:checked {
 	opacity: 1;
 }
 
-/* --- dconf grid --- */
+/* --- dconf? grid --- */
 
 grid label.property-name-label,
 grid label.key-name,
@@ -242,9 +262,9 @@ statusbar > label { /* eom 1.24 */
 
 switch {
 	margin: 1px;
-	transition: background 0.3s;
 	min-width: 76px;
 	min-height: 25px;
+	transition: background 0.3s;
 }
 
 switch slider {
@@ -281,8 +301,16 @@ switch slider:focus {
 
 switch slider:active,
 switch slider:focus {
-	outline:1px solid @button_border_focus;
+	outline: 1px solid @outline;
 	outline-offset: -4px;
+}
+
+switch:disabled {
+	opacity: 0.6;
+}
+
+switch slider:disabled {
+	border-color: @button_border_disabled;
 }
 
 /* --- button --- */
@@ -316,34 +344,29 @@ button:disabled, switch:disabled {
 		inset -1px -1px alpha(@button_border_disabled, 0.08);
 }
 
-button:disabled image {
-	-gtk-icon-filter: opacity(0.5);
-}
-
-button.flat,
-button.image-button {
+button.flat {
 	border-color: transparent;
 	background: none;
 	box-shadow: none;
 }
 
-button.flat:disabled,
-button.image-button:disabled {
+button.flat:disabled {
 	border-color: transparent;
 	background: none;
 	opacity: 0.3;
 }
 
-button.toggle:not(.flat) {
+button.toggle {
+	padding: 4px;
+}
+
+button.toggle:checked {
+	padding: 5px 3px 3px 5px;
 	box-shadow:
 		-1px -1px alpha(@button_border_disabled, 0.31),
 		 1px  1px alpha(lighter(@theme_bg), 0.418),
 		inset  1px  1px alpha(@button_border_disabled, 0.08),
 		inset -1px -1px alpha(@button_border_disabled, 0.08);
-}
-
-button.toggle:not(:disabled) {
-	padding: 5px 3px 3px 5px;
 }
 
 /* #MozillaGtkWidget button { * firefox/thunderbird *
@@ -360,6 +383,10 @@ spinbutton button {
 	margin: 0 0 0 -1px;
 	padding: 3px 4px;
 	border-radius: 0;
+}
+
+spinbutton button:dir(rtl) {
+	margin: 0 -1px 0 0;
 }
 
 spinbutton.vertical text {
@@ -382,6 +409,10 @@ spinbutton.horizontal text {
 	margin: 0;
 	padding: 3px 3px 1px;
 	border-radius: 2.4px 0 0 2.3px;
+}
+
+spinbutton.horizontal text:dir(rtl) {
+	border-radius: 0 2.4px 2.3px 0;
 }
 
 /* --- colorswatch --- */
@@ -438,7 +469,7 @@ entry image ~ text {
 
 entry:focus,
 spinbutton text:focus {
-	border-color: @entry_border_focus;
+	border-color: @outline;
 }
 
 entry:disabled,
@@ -456,15 +487,11 @@ entry:disabled text {
 	text-shadow: none;
 }
 
-entry:disabled image {
-	-gtk-icon-filter: opacity(0.5);
-}
-
 entry placeholder {
 	color: gray;
 }
 
-/* --- combobox --- */
+/* --- combo box --- */
 
 combobox entry {
 	padding: 4px 3px 2px;
@@ -478,9 +505,13 @@ combobox entry + button {
 	padding: 4px 4px 4px 5px;
 }
 
+combobox button:dir(rtl):not(:only-child) {
+	padding: 4px 5px 4px 4px;
+}
+
 combobox button arrow {
-	min-height: 16px;
 	min-width: 16px;
+	min-height: 16px;
 	-gtk-icon-transform: scale(0.6);
 }
 
@@ -488,30 +519,41 @@ combobox button cellview {
 	margin: 0 -1px -1px;
 }
 
-/* --- checkbutton and radiobutton --- */
+combobox button cellview + arrow {
+	margin-left: 3px;
+}
 
-checkbutton, radiobutton {
+/* --- check button --- */
+
+checkbutton {
 	margin: 1px;
 }
 
-checkbutton label, radiobutton label {
-	margin-left: -2px;
-	margin-right: -1px;
+checkbutton label {
+	margin: 0 -1px 0 -2px;
 	padding: 1px;
 	border: 1px solid transparent;
 	border-radius: 3px;
 }
 
-checkbutton:hover, radiobutton:hover {
+checkbutton label:dir(rtl) {
+	margin: 0 -2px 0 -1px;
+}
+
+checkbutton check:dir(rtl), checkbutton radio:dir(rtl) {
+	margin: 1px 0 0 5px;
+}
+
+checkbutton:hover {
 	background: @checkbutton_hover_bg;
 }
 
-checkbutton:focus label, radiobutton:focus label {
-	border-color: @checkbutton_focus_border;
+checkbutton:focus label {
+	border-color: @outline;
 	background: @checkbutton_focus_bg;
 }
 
-checkbutton:hover:focus label, radiobutton:hover:focus label {
+checkbutton:hover:focus label {
 	border-color: @checkbutton_focus_hover_border;
 	background: @checkbutton_focus_hover_bg;
 }
@@ -523,16 +565,16 @@ check {
 	-gtk-icon-source: url("img/checkbox-unchecked.svg");
 }
 
-check:disabled {
-	-gtk-icon-source: url("img/checkbox-unchecked-insensitive.svg");
-}
-
 check:checked {
 	-gtk-icon-source: url("img/checkbox-checked.svg");
 }
 
 check:checked:active {
 	-gtk-icon-source: url("img/checkbox-checked-active.svg");
+}
+
+check:disabled {
+	-gtk-icon-source: url("img/checkbox-unchecked-insensitive.svg");
 }
 
 check:disabled:checked,
@@ -559,16 +601,16 @@ radio {
 	-gtk-icon-source: url("img/radio-unchecked.svg");
 }
 
-radio:disabled {
-	-gtk-icon-source: url("img/radio-unchecked-insensitive.svg");
-}
-
 radio:checked {
 	-gtk-icon-source: url("img/radio-checked.svg");
 }
 
 radio:checked:active {
 	-gtk-icon-source: url("img/radio-checked-active.svg");
+}
+
+radio:disabled {
+	-gtk-icon-source: url("img/radio-unchecked-insensitive.svg");
 }
 
 radio:disabled:checked,
@@ -623,7 +665,7 @@ spinbutton button:focus:hover,
 }
 
 button:focus {
-	outline:1px solid @button_border_focus;
+	outline: 1px solid @outline;
 	outline-offset: -4px;
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
@@ -756,10 +798,13 @@ button:checked:focus:hover {
 button:checked,
 button.flat:active,
 button.flat:active:hover,
+button.toggle:checked:disabled,
 box.toolbar button:active,
 box.toolbar button:active:hover,
+box.toolbar button.toggle:checked:disabled,
 box.primary-toolbar button:active,
 box.primary-toolbar button:active:hover,
+box.primary-toolbar button.toggle:checked:disabled,
 #tasklist-button:checked box {
 	border: 1px solid @button_border;
 	background:
@@ -782,6 +827,11 @@ box.primary-toolbar button:active:hover,
 			@button_active_glaze_mida 49%,
 			@button_active_glaze_midb 49%,
 			@button_active_glaze_bot);
+}
+
+box.toolbar button.toggle:checked:disabled,
+box.primary-toolbar button.toggle:checked:disabled {
+	opacity: 0.3;
 }
 
 button.flat:focus:hover,
@@ -831,6 +881,16 @@ box.primary-toolbar button:focus:active:hover {
 			@button_active_glaze_bot);
 }
 
+box.toolbar button:not(.toggle):not(:hover),
+box.toolbar button.toggle:not(:checked):not(:hover),
+box.primary-toolbar button:not(.toggle):not(:hover),
+box.primary-toolbar button.toggle:not(:checked):not(:hover) {
+	/* simulate .flat */
+	border-color: transparent;
+	background: none;
+	box-shadow: none;
+}
+
 box.toolbar image,
 box.primary-toolbar image {
 	-gtk-icon-size: 24px;
@@ -838,14 +898,18 @@ box.primary-toolbar image {
 
 box.toolbar,
 box.primary-toolbar,
-headerbar.titlebar,
-headerbar /* gedit */ {
+headerbar {
 	padding: 1px 2px;
 	border-width: 1px 0 1px 0;
 	border-style: solid;
 	border-top-color: @toolbar_border_top;
 	border-bottom-color: @toolbar_border_bot;
 	background: linear-gradient(to bottom, @toolbar_grad_top, @toolbar_grad_bot);
+}
+
+box.toolbar:dir(rtl),
+box.primary-toolbar:dir(rtl) {
+	padding: 1px 4px 1px 2px;
 }
 
 box.toolbar separator,
@@ -858,11 +922,6 @@ box.primary-toolbar separator {
 box.toolbar button,
 box.primary-toolbar button {
 	padding-bottom: 3px;
-}
-
-box.toolbar button.popup,
-box.primary-toolbar button.popup {
-	margin: 0 1px 0 0;
 }
 
 /* --- menu bar --- */
@@ -937,6 +996,10 @@ popover modelbutton > label {
 	margin: 1px 25px 0 0;
 }
 
+popover modelbutton > label:dir(rtl) {
+	margin: 1px 0 0 25px;
+}
+
 /* --- popover elements --- */
 
 popover modelbutton accelerator {
@@ -944,12 +1007,12 @@ popover modelbutton accelerator {
 	color: alpha(@theme_fg, 0.601); /* #696764 instead of #696664 @todo */
 }
 
-popover modelbutton:disabled accelerator {
-	color: alpha(@insensitive_fg, 0.601);
+popover modelbutton:hover > accelerator {
+	color: @theme_selected_fg;
 }
 
-popover modelbutton:hover accelerator {
-	color: @theme_selected_fg;
+popover modelbutton:disabled > accelerator {
+	color: alpha(@insensitive_fg, 0.601);
 }
 
 popover arrow {
@@ -1089,7 +1152,7 @@ scrollbar.horizontal slider:hover {
 			@scroll_hover_glaze_bot);
 }
 
-/* --- scrollbar position --- */
+/* --- scroll bar position --- */
 
 scrolledwindow {
 	border: 1px solid @dialog_border;
@@ -1149,6 +1212,11 @@ notebook scrolledwindow.frame.view scrollbar.horizontal /* caja 1.24 */ {
 	margin-top: 0;
 }
 
+dialog scrolledwindow.frame viewport.frame {
+	border: 0;
+}
+
+dialog scrolledwindow.frame scrollbar.vertical,
 expander-widget scrollbar.vertical {
 	margin: -1px -1px -1px -3px;
 	padding: 0 0 0 3px;
@@ -1156,11 +1224,26 @@ expander-widget scrollbar.vertical {
 	background: @theme_bg;
 }
 
+dialog scrolledwindow.frame scrollbar.horizontal,
 expander-widget scrollbar.horizontal {
 	margin: -3px -1px -1px;
 	padding: 3px 0 0 0;
 	border-top: 1px solid @menu_border;
 	background: @theme_bg;
+}
+
+/* dialog:dir(rtl) scrolledwindow.frame scrollbar.vertical,
+expander-widget:dir(rtl) scrollbar.vertical {
+	margin: -1px -3px -1px -1px;
+	padding: 0 3px 0 0;
+	border-left: 0;
+	border-right: 1px solid @menu_border;
+	background: @theme_bg;
+} */
+
+dialog notebook scrolledwindow.frame scrollbar.vertical,
+dialog notebook scrolledwindow.frame scrollbar.horizontal {
+	background: @nb_bg;
 }
 
 treeview ~ scrollbar.horizontal {
@@ -1175,6 +1258,14 @@ treeview ~ scrollbar.horizontal ~ scrollbar.vertical {
 	border-left: 1px solid @menu_border;
 	background: @theme_bg;
 }
+
+/* treeview:dir(rtl) ~ scrollbar.horizontal ~ scrollbar.vertical {
+	margin: -26px -3px -19px -1px;
+	padding: 25px 3px 21px 0;
+	border-left: 0;
+	border-right: 1px solid @menu_border;
+	background: @theme_bg;
+} */
 
 notebook treeview ~ scrollbar.horizontal,
 notebook treeview ~ scrollbar.horizontal ~ scrollbar.vertical {
@@ -1202,6 +1293,7 @@ expander-widget expander {
 }
 
 expander-widget expander:dir(rtl) {
+	margin:-2px -1px 0 0;
 	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
 }
 
@@ -1359,7 +1451,7 @@ notebook header.right tab:checked {
 }
 
 notebook:focus header tab:checked label {
-	border-color: @nb_tab_focus_border;
+	border-color: @outline;
 	background: @nb_tab_focus_bg;
 }
 
@@ -1449,6 +1541,14 @@ notebook header.right tabs arrow.down:last-child {
 
 /* --- progress bar --- */
 
+progressbar:disabled {
+	opacity: 0.6;
+}
+
+progressbar:disabled text {
+	text-shadow: none;
+}
+
 progressbar trough {
 	border-radius: 2.75px;
 	background: @slider_trough_bg;
@@ -1493,6 +1593,11 @@ progressbar.vertical trough progress {
 			@slider_pattern 30px);
 }
 
+treeview.view.progressbar {
+	color: @theme_selected_fg;
+	text-shadow: none;
+}
+
 treeview.view.progressbar,
 progressbar.horizontal trough progress {
 	min-height: 20px;
@@ -1518,25 +1623,11 @@ progressbar.horizontal trough.empty progress {
 	background: none;
 }
 
-progressbar:disabled {
-	opacity: 0.6;
-}
-
-/* --- progressbar text --- */
-
-progressbar.vertical text {
-	margin-left: -39px;
-	padding-left: 3px;
-}
+/* --- progress bar text --- */
 
 progressbar.vertical text + trough,
 progressbar.vertical text + trough progress {
 	min-width: 39px;
-}
-
-progressbar.horizontal text {
-	margin-bottom: -24px;
-	padding-top: 3px;
 }
 
 progressbar.horizontal text + trough,
@@ -1546,27 +1637,24 @@ progressbar.horizontal text + trough progress {
 
 /* --- scale --- */
 
-scale {
-	/* border: 1px solid transparent;
-	border-radius: 2px; */
-}
-
-scale:focus {
-	/* border-color: @button_border_focus; */
+scale:disabled {
+	opacity: 0.6;
 }
 
 scale.vertical {
-	margin: 3px 0 2px 0;
-	min-width: 21px;
+	padding: 2px 6px;
+	min-width: 7px;
+	border: 1px solid transparent;
 }
 
 scale.horizontal {
-	margin: 1px 10px 0 11px;
-	padding: 5px 2px;
-	min-height: 10px;
+	padding: 6px 2px;
+	min-height: 7px;
+	border: 1px solid transparent;
 }
 
 scale trough {
+	outline-offset: 5px;
 	border-radius: 2.75px;
 	background: @scale_trough_bg;
 	box-shadow:
@@ -1576,23 +1664,15 @@ scale trough {
 		inset  1px 1px @slider_trough_border;
 }
 
+scale:focus trough {
+	outline: 1px solid @outline;
+}
+
 scale trough highlight {
 	border-radius: 2.75px;
 	box-shadow:
 		inset -1px -1px @slider_border,
 		inset  1px  1px @slider_border;
-}
-
-scale.vertical value.top {
-	margin: -2px 0 3px;
-}
-
-scale.vertical value.top + trough {
-	margin-left: 1px;
-}
-
-scale.horizontal trough {
-	margin: 0 -10px;
 }
 
 scale.vertical trough highlight {
@@ -1634,7 +1714,7 @@ scale.horizontal trough highlight {
 }
 
 scale.vertical trough slider {
-	margin: -1px -6px 0 -6px;
+	margin: 1px -6px;
 	min-width: 11px;
 	min-height: 18px;
 	border: 1px solid @slider_trough_border;
@@ -1651,7 +1731,7 @@ scale.vertical trough slider {
 }
 
 scale.horizontal trough slider {
-	margin: -6px 0 -6px -1px;
+	margin: -6px 1px;
 	min-width: 18px;
 	min-height: 11px;
 	border: 1px solid @slider_trough_border;
@@ -1691,56 +1771,19 @@ scale.horizontal trough slider:hover {
 			@scale_hover_glaze_bot);
 }
 
-scale.horizontal value {
-	margin-bottom: 4px;
+scale.vertical value {
+
 }
 
-scale:disabled {
-	opacity: 0.6;
+scale.horizontal value {
+	margin: 0 0 2px;
 }
 
 /* --- scale mark --- */
 
-scale.vertical.marks-before {
-	min-width: 27px;
-}
-
-scale.vertical.marks-before indicator {
-	margin-right: 7px;
-}
-
-scale.vertical.marks-after {
-	min-width: 27px;
-}
-
-scale.vertical.marks-after indicator {
-	margin-left: 7px;
-}
-
-scale.horizontal.marks-before {
-	margin-bottom: 3px;
-}
-
-scale.horizontal.marks-before value {
-	margin: 0 0 -1px;
-}
-
-scale.horizontal.marks-before indicator {
-	margin-bottom: 7px;
-}
-
-scale.horizontal.marks-after {
-	margin-top: 3px;
-	margin-bottom: -2px;
-}
-
-scale.horizontal.marks-after indicator {
-	margin-top: 7px;
-}
-
 scale.vertical.marks-before indicator,
 scale.vertical.marks-after indicator {
-	min-width: 6px;
+	min-width: 5px;
 	border-top: 1px solid @content_separator_dark;
 	border-bottom: 1px solid @content_separator_lite;
 }
@@ -1752,9 +1795,46 @@ scale.horizontal.marks-after indicator {
 	border-right: 1px solid @content_separator_lite;
 }
 
-/* --- lavel bar --- */
+scale.vertical.marks-before marks.top indicator {
+	margin: 1px 1px 0 2px;
+}
+
+scale.vertical.marks-before marks.top label {
+	margin: 0 1px 0 -1px;
+}
+
+scale.vertical.marks-after marks.bottom indicator {
+	margin: 1px 2px 0 1px;
+}
+
+scale.vertical.marks-after marks.bottom label {
+	margin: 0 -1px 0 1px;
+}
+
+scale.horizontal.marks-before marks.top indicator {
+	margin: 1px 0 1px 1px;
+}
+
+scale.horizontal.marks-before marks.top label {
+	margin: -1px 0 1px 2px;
+}
+
+scale.horizontal.marks-after marks.bottom indicator {
+	margin: 1px 0 1px 1px;
+}
+
+scale.horizontal.marks-after marks.bottom label {
+	margin: 1px 0 -1px 2px;
+}
+
+/* --- level bar --- */
+
+levelbar:disabled {
+	opacity: 0.6;
+}
 
 levelbar trough {
+	min-height: 10px; /* bug? */
 	border-radius: 2.75px;
 	background:
 		linear-gradient(to right,
@@ -1773,6 +1853,7 @@ levelbar trough {
 
 levelbar.vertical trough {
 	min-width: 10px;
+	min-height: 0;
 }
 
 levelbar.horizontal trough {
@@ -1823,10 +1904,6 @@ levelbar.horizontal.discrete block:first-child {
 
 levelbar.horizontal.discrete block:last-child {
 	margin: 0 -3px 0 1px;
-}
-
-levelbar:disabled {
-	opacity: 0.6;
 }
 
 /* --- info bar --- */
@@ -1888,7 +1965,7 @@ treeview {
 	background-color: @theme_base;
 }
 
-/* --- column header --- */
+/* --- treeview headers --- */
 
 treeview header button {
 	margin: 0;
@@ -1919,7 +1996,7 @@ treeview header button:focus {
 	border: 0;
 }
 
-/* --- row elements --- */
+/* --- treeview row elements --- */
 
 /* treeview.view {
 	padding-right: 1px;
@@ -2000,13 +2077,8 @@ filechooser viewport.frame button.sidebar-button {
 	box-shadow: none;
 }
 
-filechooser viewport.frame row box > image,
-filechooser .path-bar button.toggle image {
-	padding: 4px;
-}
-
-filechooser .path-bar button.image-button image {
-	padding-right: 2px;
+filechooser #pathbarbox button.toggle image {
+	padding-right: 4px;
 }
 
 /* --- calendar --- */
@@ -2046,5 +2118,5 @@ calendar .today {
 }
 
 calendar .other-month {
-    color: alpha(@theme_fg, 0.2);
+	color: alpha(@theme_fg, 0.2);
 }

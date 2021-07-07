@@ -19,3 +19,6 @@ else
 	sed -i 's/margin: -7px -10px -5px; \/\* WARNING/margin: -7px -10px -4px; \/\* WARNING/g' /usr/share/themes/human-theme/gtk-3.0/base.css
 	echo "Update theme for Pango < 1.44"
 fi
+
+#DEBHELPER#
+exit 0

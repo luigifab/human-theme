@@ -1,9 +1,9 @@
 #!/bin/bash
-# fedora: sudo dnf install rpmdevtools rpm-sign hunspell-fr
-# fedora: configure: error: C compiler cannot create executables? remove and reinstall glibc-devel gcc
+# Fedora: sudo dnf install rpmdevtools rpm-sign hunspell-fr
+# Fedora: configure: error: C compiler cannot create executables? remove and reinstall glibc-devel gcc
 
 cd "$(dirname "$0")"
-version="1.3.0"
+version="1.4.0"
 
 
 rm -rf builder/ ~/rpmbuild/
@@ -14,19 +14,19 @@ if [ true ]; then
 	chmod 644 human-theme-gtk.spec
 	spectool -g -R human-theme-gtk.spec
 else
-	temp=human-theme-${version}
-	mkdir /tmp/${temp}
-	cp -r ../* /tmp/${temp}/
-	rm -rf /tmp/${temp}/*/builder/
+	temp=human-theme-$version
+	mkdir /tmp/$temp
+	cp -r ../* /tmp/$temp/
+	rm -rf /tmp/$temp/*/builder/
 
-	mv /tmp/${temp} builder/
-	cp /usr/share/licenses/linux-firmware/GPL-3 builder/${temp}/LICENSE
+	mv /tmp/$temp builder/
+	cp /usr/share/licenses/linux-firmware/GPL-3 builder/$temp/LICENSE
 
 	cd builder/
-	tar czf ${temp}.tar.gz ${temp}
+	tar czf $temp.tar.gz $temp
 	cd ..
 
-	cp builder/${temp}.tar.gz ~/rpmbuild/SOURCES/human-theme-gtk-${version}.tar.gz
+	cp builder/$temp.tar.gz ~/rpmbuild/SOURCES/human-theme-gtk-$version.tar.gz
 	chmod 644 human-theme-gtk.spec
 fi
 

@@ -1,6 +1,6 @@
 # Human theme
 
-This theme works with: **GTK 2.24+** *(with murrine)*, **GTK 3.20+** *(including 3.22 and 3.24)*, and **GTK 4.0+** *(experimental)*.
+This theme works with: **GTK 2.24+** *(with murrine)*, **GTK 3.20+** *(including 3.22 and 3.24)*, and **GTK 4.0+**.
 
 ## Screenshots
 
@@ -14,6 +14,16 @@ GTK 2\
 [![Preview with GTK 2 - Blue variation - Menu](images/thumbs/gtk2-blue-menu.png?raw=true)](images/gtk2-blue-menu.png?raw=true)
 [![Preview with GTK 2 - Green variation - Menu](images/thumbs/gtk2-green-menu.png?raw=true)](images/gtk2-green-menu.png?raw=true)
 
+GTK 2 RTL\
+[![Preview with GTK 2 - RTL - Main window](images/thumbs/gtk2-rtl.png?raw=true)](images/gtk2-rtl.png?raw=true)
+[![Preview with GTK 2 - RTL - Orange variation - Main window](images/thumbs/gtk2-rtl-orange.png?raw=true)](images/gtk2-rtl-orange.png?raw=true)
+[![Preview with GTK 2 - RTL - Blue variation - Main window](images/thumbs/gtk2-rtl-blue.png?raw=true)](images/gtk2-rtl-blue.png?raw=true)
+[![Preview with GTK 2 - RTL - Green variation - Main window](images/thumbs/gtk2-rtl-green.png?raw=true)](images/gtk2-rtl-green.png?raw=true)\
+[![Preview with GTK 2 - RTL - Menu](images/thumbs/gtk2-rtl-menu.png?raw=true)](images/gtk2-rtl-menu.png?raw=true)
+[![Preview with GTK 2 - RTL - Orange variation - Menu](images/thumbs/gtk2-rtl-orange-menu.png?raw=true)](images/gtk2-rtl-orange-menu.png?raw=true)
+[![Preview with GTK 2 - RTL - Blue variation - Menu](images/thumbs/gtk2-rtl-blue-menu.png?raw=true)](images/gtk2-rtl-blue-menu.png?raw=true)
+[![Preview with GTK 2 - RTL - Green variation - Menu](images/thumbs/gtk2-rtl-green-menu.png?raw=true)](images/gtk2-rtl-green-menu.png?raw=true)
+
 GTK 3\
 [![Preview with GTK 3 - Main window](images/thumbs/gtk3.png?raw=true)](images/gtk3.png?raw=true)
 [![Preview with GTK 3 - Orange variation - Main window](images/thumbs/gtk3-orange.png?raw=true)](images/gtk3-orange.png?raw=true)
@@ -24,6 +34,16 @@ GTK 3\
 [![Preview with GTK 3 - Blue variation - Menu](images/thumbs/gtk3-blue-menu.png?raw=true)](images/gtk3-blue-menu.png?raw=true)
 [![Preview with GTK 3 - Green variation - Menu](images/thumbs/gtk3-green-menu.png?raw=true)](images/gtk3-green-menu.png?raw=true)
 
+GTK 3 RTL\
+[![Preview with GTK 3 - RTL - Main window](images/thumbs/gtk3-rtl.png?raw=true)](images/gtk3-rtl.png?raw=true)
+[![Preview with GTK 3 - RTL - Orange variation - Main window](images/thumbs/gtk3-rtl-orange.png?raw=true)](images/gtk3-rtl-orange.png?raw=true)
+[![Preview with GTK 3 - RTL - Blue variation - Main window](images/thumbs/gtk3-rtl-blue.png?raw=true)](images/gtk3-rtl-blue.png?raw=true)
+[![Preview with GTK 3 - RTL - Green variation - Main window](images/thumbs/gtk3-rtl-green.png?raw=true)](images/gtk3-rtl-green.png?raw=true)\
+[![Preview with GTK 3 - RTL - Menu](images/thumbs/gtk3-rtl-menu.png?raw=true)](images/gtk3-rtl-menu.png?raw=true)
+[![Preview with GTK 3 - RTL - Orange variation - Menu](images/thumbs/gtk3-rtl-orange-menu.png?raw=true)](images/gtk3-rtl-orange-menu.png?raw=true)
+[![Preview with GTK 3 - RTL - Blue variation - Menu](images/thumbs/gtk3-rtl-blue-menu.png?raw=true)](images/gtk3-rtl-blue-menu.png?raw=true)
+[![Preview with GTK 3 - RTL - Green variation - Menu](images/thumbs/gtk3-rtl-green-menu.png?raw=true)](images/gtk3-rtl-green-menu.png?raw=true)
+
 GTK 4\
 [![Preview with GTK 4 - Main window](images/thumbs/gtk4.png?raw=true)](images/gtk4.png?raw=true)
 [![Preview with GTK 4 - Orange variation - Main window](images/thumbs/gtk4-orange.png?raw=true)](images/gtk4-orange.png?raw=true)
@@ -33,6 +53,16 @@ GTK 4\
 [![Preview with GTK 4 - Orange variation - Menu](images/thumbs/gtk4-orange-menu.png?raw=true)](images/gtk4-orange-menu.png?raw=true)
 [![Preview with GTK 4 - Blue variation - Menu](images/thumbs/gtk4-blue-menu.png?raw=true)](images/gtk4-blue-menu.png?raw=true)
 [![Preview with GTK 4 - Green variation - Menu](images/thumbs/gtk4-green-menu.png?raw=true)](images/gtk4-green-menu.png?raw=true)
+
+GTK 4 RTL\
+[![Preview with GTK 4 - RTL - Main window](images/thumbs/gtk4-rtl.png?raw=true)](images/gtk4-rtl.png?raw=true)
+[![Preview with GTK 4 - RTL - Orange variation - Main window](images/thumbs/gtk4-rtl-orange.png?raw=true)](images/gtk4-rtl-orange.png?raw=true)
+[![Preview with GTK 4 - RTL - Blue variation - Main window](images/thumbs/gtk4-rtl-blue.png?raw=true)](images/gtk4-rtl-blue.png?raw=true)
+[![Preview with GTK 4 - RTL - Green variation - Main window](images/thumbs/gtk4-rtl-green.png?raw=true)](images/gtk4-rtl-green.png?raw=true)\
+[![Preview with GTK 4 - RTL - Menu](images/thumbs/gtk4-rtl-menu.png?raw=true)](images/gtk4-rtl-menu.png?raw=true)
+[![Preview with GTK 4 - RTL - Orange variation - Menu](images/thumbs/gtk4-rtl-orange-menu.png?raw=true)](images/gtk4-rtl-orange-menu.png?raw=true)
+[![Preview with GTK 4 - RTL - Blue variation - Menu](images/thumbs/gtk4-rtl-blue-menu.png?raw=true)](images/gtk4-rtl-blue-menu.png?raw=true)
+[![Preview with GTK 4 - RTL - Green variation - Menu](images/thumbs/gtk4-rtl-green-menu.png?raw=true)](images/gtk4-rtl-green-menu.png?raw=true)
 
 Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended). Pango 1.42 for screenshots with GTK 2 and 3, Pango 1.48 for screenshots with GTK 4.
 
@@ -48,7 +78,7 @@ Program used for the screenshots is available [here](https://github.com/luigifab
 * Run: `sudo dnf install human-theme-gtk`
 * Restart your session
 
-#### Installation for OpenSuse
+#### Installation for openSUSE
 
 * Run: `sudo zypper install human-theme-gtk`
 * Restart your session
@@ -62,12 +92,12 @@ sudo apt update
 sudo apt install human-theme-gtk
 # or
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys FFE5BD439356DF7D
-echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu hirsute main" | sudo tee -a /etc/apt/sources.list
+echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu impish main" | sudo tee -a /etc/apt/sources.list
 sudo apt update
 sudo apt install human-theme-gtk
 # or
 sudo wget -O /etc/apt/trusted.gpg.d/luigifab.gpg https://www.luigifab.fr/apt.gpg
-echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu hirsute main" | sudo tee -a /etc/apt/sources.list
+echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu impish main" | sudo tee -a /etc/apt/sources.list
 sudo apt update
 sudo apt install human-theme-gtk
 ```
@@ -109,7 +139,7 @@ QT_QPA_PLATFORMTHEME=gtk2
 * Install package for GTK 2 apps: `sudo dnf install gtk-murrine-engine`
 * Restart your session
 
-#### Manual installation for OpenSuse
+#### Manual installation for openSUSE
 
 * Download archive and extract *src* subdirectories in `~/.themes/`
 * Configure font rendering and GTK scrollbars and QT theme, add in `/etc/environment`:
@@ -140,7 +170,6 @@ sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-full.conf
 * The [status bar grip](https://developer.gnome.org/gtk2/stable/GtkStatusbar.html) was removed with GTK 3 ([note1](https://developer.gnome.org/gtk3/stable/ch26s02.html#id-1.6.3.4.17), [note2](https://developer.gnome.org/gtk3/stable/GtkWindow.html#gtk-window-set-has-resize-grip)).
 * The [treeview](https://developer.gnome.org/gtk3/stable/GtkTreeView.html) zebra/even-odd row styling was removed with GTK 3.19 ([note](https://gitlab.gnome.org/GNOME/gtk/issues/581#note_746153)).
 * The [notebook tabs](https://developer.gnome.org/gtk3/stable/GtkNotebook.html) mouse scroll was removed with GTK 3.4.
-* Can not change previous and next arrows of pathbar.
 
 ## Dev
 
@@ -153,9 +182,9 @@ awf-gtk4 -n -s ~/4.png
 
 Run [Entr](https://github.com/eradman/entr) to send *sighup* signal when files change to reload theme:
 ```
-ls ~/.themes/human-theme*/gtk*/gtkrc | entr killall -s SIGHUP awf-gtk2
-ls ~/.themes/human-theme*/gtk*/*.css | entr killall -s SIGHUP awf-gtk3
-ls ~/.themes/human-theme*/gtk*/*.css | entr killall -s SIGHUP awf-gtk4
+ls ~/.themes/human-theme*/gtk-2*/gtkrc | entr killall -s SIGHUP awf-gtk2
+ls ~/.themes/human-theme*/gtk-3*/*.css | entr killall -s SIGHUP awf-gtk3
+ls ~/.themes/human-theme*/gtk-4*/*.css | entr killall -s SIGHUP awf-gtk4
 ```
 
 Run [ImageMagick](https://imagemagick.org/) to create the diff image:
@@ -171,15 +200,15 @@ Run *svg.sh* to update SVG images. See also [technical informations](https://git
 
 ## Copyright
 
-- Current version: 1.3.0 (05/05/2021)
+- Current version: 1.4.0 (07/07/2021)
 - Compatibility: GTK 2.24 / 3.20 / 3.22 / 3.24 / 4.0 / 4.2
 - Links: [luigifab.fr](https://www.luigifab.fr/gtk/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/)\
-[debian human-theme-gtk.deb](https://tracker.debian.org/pkg/human-theme-gtk)
+[Debian human-theme-gtk.deb](https://tracker.debian.org/pkg/human-theme-gtk)
   *([ITP](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=973445),
    [RFS](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=974209))*\
-[fedora human-theme-gtk.rpm](https://src.fedoraproject.org/rpms/human-theme-gtk)\
-[opensuse human-theme-gtk.rpm](https://software.opensuse.org/package/human-theme-gtk)\
-[ubuntu PPA](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
+[Fedora human-theme-gtk.rpm](https://src.fedoraproject.org/rpms/human-theme-gtk)\
+[openSUSE human-theme-gtk.rpm](https://software.opensuse.org/package/human-theme-gtk)\
+[Ubuntu PPA](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\
 If you like, take some of your time to improve some translations, go to https://bit.ly/2HyCCEc.

@@ -32,6 +32,7 @@
 @define-color theme_tooltip_bg #EAF5B5;
 @define-color theme_tooltip_fg #000;
 @define-color theme_tooltip_border shade(@theme_tooltip_bg, 0.63);
+@define-color outline @theme_selected_bg;
 
 @define-color link #00E;
 @define-color visited_link #551A8B;

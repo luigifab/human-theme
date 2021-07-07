@@ -1,5 +1,5 @@
 Name:          human-theme-gtk
-Version:       1.3.0
+Version:       1.4.0
 Release:       0
 Summary:       Human theme for GTK
 Summary(fr):   Thème Human pour GTK
@@ -12,29 +12,29 @@ BuildRequires: aspell-fr
 Recommends:    gtk2-engine-murrine
 Recommends:    gnome-icon-theme
 Recommends:    dmz-cursor-themes
-# https://software.opensuse.org/search?baseproject=openSUSE%3AFactory&q=qt+theme+gtk
 Suggests:      libqt5-qtstyleplugins-platformtheme-gtk2
 Suggests:      libqt5-qtbase-platformtheme-gtk3
 Suggests:      qt6-platformtheme-gtk3
+# https://software.openSUSE.org/search?baseproject=openSUSE%3AFactory&q=qt+theme+gtk
 
 %description %{expand:
 This theme works with: GTK 2.24+ (with gtk2-engine-murrine),
-GTK 3.20+ (including 3.22 and 3.24), and GTK 4.0+ (experimental).
-It is mainly intended for MATE Desktop Environment.
+GTK 3.20+ (including 3.22 and 3.24), and GTK 4.0+. It is mainly
+intended for MATE Desktop Environment.
 
 After installation you must restart your session.}
 
 %description -l fr %{expand:
 Ce thème fonctionne avec : GTK 2.24+ (avec gtk2-engine-murrine),
-GTK 3.20+ (y compris 3.22 et 3.24), et GTK 4.0+ (expérimental).
-Il est principalement destiné pour l'environnement de bureau Mate.
+GTK 3.20+ (y compris 3.22 et 3.24), et GTK 4.0+. Il est principalement
+destiné pour l'environnement de bureau Mate.
 
 Après l'installation vous devez redémarrer votre session.}
 
 
 %prep
 %setup -q -n human-theme-%{version}
-# opensuse use pango 1.44+
+# openSUSE use pango 1.44+
 sed -i 's/<border name="title_border" left="2" right="2" top="4" bottom="3"/<border name="title_border" left="2" right="2" top="4" bottom="4"/g' src/human-theme/metacity-1/metacity-theme-1.xml
 sed -i 's/padding: 4px 3px; \/\* WARNING/padding: 4px 3px 2px; \/\* WARNING/g' src/human-theme/gtk-3.0/base.css
 sed -i 's/padding: 3px; \/\* WARNING/padding: 3px 3px 2px; \/\* WARNING/g' src/human-theme/gtk-3.0/base.css
@@ -63,8 +63,11 @@ cp -a src/human-theme-orange/ %{buildroot}%{_datadir}/themes/
 
 
 %changelog
+* Wed Jul 07 2021 Fabrice Creuzot <code@luigifab.fr> - 1.4.0-1
+- New upstream version
+
 * Wed May 05 2021 Fabrice Creuzot <code@luigifab.fr> - 1.3.0-1
 - New upstream version
 
 * Sun Apr 04 2021 Fabrice Creuzot <code@luigifab.fr> - 1.2.0-1
-- Initial opensuse package release
+- Initial openSUSE package release

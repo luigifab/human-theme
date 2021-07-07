@@ -61,7 +61,6 @@
 /* #EAE2DB */ @define-color nb_tab_checked_glaze_midb shade(@theme_bg, 1.022);
 /* #EEE8E2 */ @define-color nb_tab_checked_glaze_bot shade(@theme_bg, 1.047);
               @define-color nb_tab_focus_bg alpha(shade(@theme_selected_bg, 1.27), 0.175);
-              @define-color nb_tab_focus_border alpha(shade(@theme_selected_bg, 1.49), 0.7);
 
 /* #EFE9E3 */ @define-color menu_bg mix(@theme_base, @theme_bg, 0.67);
 /* #B4A291 */ @define-color menu_border shade(@theme_bg, 0.734);
@@ -84,15 +83,12 @@
 /* #FFFFFF */ @define-color entry_bg @theme_base;
 /* #8B7969 */ @define-color entry_border shade(@theme_bg, 0.55);
 /* #BCAB9B */ @define-color entry_border_disabled shade(@entry_border, 1.41);
-/* #CF9177 */ @define-color entry_border_focus shade(@theme_selected_bg, 1.499);
 /* #E6DDD5 */ @define-color entry_bg_disabled @theme_bg;
 /* #EAE2DB */ @define-color checkbutton_hover_bg alpha(shade(@theme_bg, 1.5), 0.15);
 /* #E2CFC4 */ @define-color checkbutton_focus_bg alpha(shade(@theme_selected_bg, 1.27), 0.175); /* #E1CFC4 okay */
-/* #D4A38C */ @define-color checkbutton_focus_border alpha(shade(@theme_selected_bg, 1.49), 0.7); /* #D4A38D okay */
 /* #E5D4C9 */ @define-color checkbutton_focus_hover_bg alpha(shade(@theme_selected_bg, 1.48), 0.175);
 /* #D5A48E */ @define-color checkbutton_focus_hover_border alpha(shade(@theme_selected_bg, 1.485), 0.7);
 /* #AB9E92 */ @define-color button_border shade(@theme_bg, 0.693); /* #AB9888 @todo */
-              @define-color button_border_focus alpha(shade(@theme_selected_bg, 1.499), 0.8);
 /* #CDBFB2 */ @define-color button_border_disabled shade(@theme_bg, 0.864); /* #CDBFB1 */
               @define-color button_glaze_top alpha(shade(@theme_bg, 1.11), 0.17);
               @define-color button_glaze_glow_center alpha(shade(@theme_bg, 1.105), 0.75);

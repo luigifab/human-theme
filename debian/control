@@ -12,11 +12,11 @@ Vcs-Git: https://github.com/luigifab/human-theme.git
 Package: human-theme-gtk
 Architecture: all
 Depends: ${misc:Depends}
-Recommends: gtk3-nocsd, gnome-icon-theme, dmz-cursor-theme
-Suggests: gtk2-engines-murrine, qt5-gtk2-platformtheme, qt5-gtk-platformtheme
+Recommends: gtk3-nocsd, gtk2-engines-murrine, gnome-icon-theme, dmz-cursor-theme
+Suggests: qt5-gtk2-platformtheme, qt5-gtk-platformtheme
 Description: Human theme for GTK
  This theme works with: GTK 2.24+ (with gtk2-engines-murrine),
- GTK 3.20+ (including 3.22 and 3.24), and GTK 4.0+ (experimental).
- It is mainly intended for MATE Desktop Environment.
+ GTK 3.20+ (including 3.22 and 3.24), and GTK 4.0+. It is mainly
+ intended for MATE Desktop Environment.
  .
  After installation you must restart your session.

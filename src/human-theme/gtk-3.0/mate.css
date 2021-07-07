@@ -23,6 +23,13 @@
  * GNU General Public License (GPL) for more details.
  */
 
+/* menuitem label, popover label { background:pink; }
+menuitem image, popover image { background:yellow; }
+menuitem check, popover check { background:yellow; }
+menuitem radio, popover radio { background:yellow; }
+menuitem box { background:orange; }
+menuitem > box > menuitem { background:red; } */
+
 /* --- panel --- */
 
 .mate-panel-menu-bar,
@@ -54,29 +61,21 @@ PanelToplevel.background {
 	border-radius: 0;
 }
 
-.mate-panel-menu-bar menuitem > box > box > image {
-	margin: 0 0 0 1px;
+.mate-panel-menu-bar menubar > menuitem:dir(rtl) {
+	padding: 3px 9px 3px 5px;
 }
 
 .mate-panel-menu-bar menuitem > box > menuitem {
-	margin: 0 -5px 0 -7px;
-	padding: 0;
+	margin: 0 -5px 0 -5px;
+	padding: 0 3px 0 10px;
 	border: 0;
 }
 
 .mate-panel-menu-bar menuitem > box > menuitem check {
-	margin: 1px 0 0 18px;
+	margin-left: -1px;
 }
 
-.mate-panel-menu-bar menuitem > box > menuitem label {
-	margin-left: 11px;
-}
-
-/* .mate-panel-menu-bar menubar > menuitem separator {
-	margin: 4px 6px 3px;
-} */
-
-/* --- system-monitor-applet --- */
+/* --- system monitor applet --- */
 
 .mate-panel-menu-bar .multiload-applet box.horizontal {
 	padding: 1px 0 2px;
@@ -98,7 +97,7 @@ PanelToplevel.background {
 	border: 1px solid @frame_shadow_dark;
 }
 
-/* --- clock-applet --- */
+/* --- clock applet --- */
 
 .mate-panel-menu-bar #clock-applet-button {
 	margin: 0;
@@ -117,13 +116,38 @@ PanelToplevel.background {
 	color: @frame_border;
 }
 
-/* --- virtual desktop selector --- */
+/* --- window selector applet --- */
+
+#window-menu-applet-button:focus {
+
+}
+
+#window-menu-applet-button wnck-selector > menuitem > image {
+	margin: 0 4px;
+}
+
+#window-menu-applet-button wnck-selector separator {
+	margin: 0 6px;
+	border: 0;
+}
+
+#window-menu-applet-button wnck-selector separator label {
+	margin: 4px 0 3px;
+}
+
+/* --- virtual desktop selector applet --- */
 
 .mate-panel-menu-bar .wnck-applet {
 
 }
 
-/* --- window list --- */
+/* --- display properties applet --- */
+
+.mate-panel-menu-bar .xrandr-applet  {
+
+}
+
+/* --- window list applet --- */
 
 .mate-panel-menu-bar #tasklist-button {
 	border: 0;
@@ -142,7 +166,7 @@ PanelToplevel.background {
 	border: 1px solid #988B7F; /* @todo */
 }
 
-/* --- grip for notification area and window list --- */
+/* --- grip for notification area and window list applet --- */
 
 .mate-panel-menu-bar MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
 	background-image: url("img/pane-separator-grip-horz.svg");
@@ -177,10 +201,17 @@ window.mate-terminal box.vertical notebook stack {
 }
 
 window.mate-terminal box.vertical notebook header.top {
-    margin: 0 0 1px;
+	margin: 0 0 1px;
 }
 
 window.mate-terminal:not(.maximized) box.vertical notebook header.top ~ stack {
 	border: 1px solid @nb_border;
 	border-top: 0;
+}
+
+/* --- eom --- */
+
+box.primary-toolbar toolbar {
+	padding: 0;
+	border: 0;
 }
