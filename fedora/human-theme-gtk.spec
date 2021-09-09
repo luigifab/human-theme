@@ -1,5 +1,5 @@
 Name:          human-theme-gtk
-Version:       1.4.0
+Version:       1.5.0
 Release:       1%{?dist}
 Summary:       Human theme for GTK
 Summary(fr):   Thème Human pour GTK
@@ -59,6 +59,9 @@ cp -a src/human-theme-orange/ %{buildroot}%{_datadir}/themes/
 
 
 %changelog
+* Thu Sep 09 2021 Fabrice Creuzot <code@luigifab.fr> - 1.5.0-1
+- New upstream version
+
 * Wed Jul 07 2021 Fabrice Creuzot <code@luigifab.fr> - 1.4.0-1
 - New upstream version
 

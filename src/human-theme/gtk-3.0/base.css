@@ -1875,6 +1875,10 @@ scale.vertical trough highlight.bottom {
 	margin-bottom: -11px;
 }
 
+scale.vertical:dir(rtl) trough highlight.bottom {
+	margin-top: -11px; /* gtk3 only, quick fix, but not really good, there are no .top */
+}
+
 scale.horizontal trough highlight {
 	min-height: 5px;
 	background:
@@ -2245,6 +2249,10 @@ printdialog .dialog-action-area {
 
 printdialog scrolledwindow viewport {
 	border: 0;
+}
+
+printdialog stack grid.vertical {
+	color: @theme_text; /* to fix white color */
 }
 
 filechooser placessidebar,

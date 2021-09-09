@@ -3,7 +3,7 @@
 
 
 cd "$(dirname "$0")"
-version="1.4.0"
+version="1.5.0"
 
 
 rm -rf builder/
@@ -31,7 +31,7 @@ fi
 
 
 # create packages for debian and ubuntu
-for serie in unstable impish hirsute groovy focal bionic xenial trusty precise; do
+for serie in unstable impish hirsute focal bionic xenial trusty; do
 
 	if [ $serie = "unstable" ]; then
 		# for ubuntu
@@ -46,7 +46,7 @@ for serie in unstable impish hirsute groovy focal bionic xenial trusty precise; 
 
 	dh_make -a -s -y -f ../human-theme-$version.tar.gz -p human-theme-gtk
 
-	rm -f debian/*ex debian/*EX debian/README* debian/*doc*
+	rm -f debian/*ex debian/*EX debian/README* debian/*doc* debian/deb.sh
 	mkdir debian/upstream
 	mv debian/metadata debian/upstream/metadata
 
@@ -56,7 +56,7 @@ for serie in unstable impish hirsute groovy focal bionic xenial trusty precise; 
 	if [ $serie = "unstable" ]; then
 		dpkg-buildpackage -us -uc
 	else
-		# debhelper: unstable:13 hirsute:13 groovy:13 focal:12 bionic:9 xenial:9 trusty:9 precise:9
+		# debhelper: unstable:13 hirsute:13 focal:12 bionic:9 xenial:9 trusty:9
 		if [ $serie = "focal" ]; then
 			sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 12)/g' debian/control
 		fi
@@ -69,13 +69,6 @@ for serie in unstable impish hirsute groovy focal bionic xenial trusty precise; 
 			echo 9 > debian/compat
 		fi
 		if [ $serie = "trusty" ]; then
-			sed -i 's/dh $@/dh $@ --with autotools_dev/g' debian/rules
-			sed -i 's/override_dh_update_autotools_config/override_dh_autotools-dev_updateconfig/g' debian/rules
-			sed -i 's/debhelper-compat (= 13)/debhelper (>= 9), autotools-dev/g' debian/control
-			sed -i ':a;N;$!ba;s/Rules-Requires-Root: no\n//g' debian/control
-			echo 9 > debian/compat
-		fi
-		if [ $serie = "precise" ]; then
 			sed -i 's/dh $@/dh $@ --with autotools_dev/g' debian/rules
 			sed -i 's/override_dh_update_autotools_config/override_dh_autotools-dev_updateconfig/g' debian/rules
 			sed -i 's/debhelper-compat (= 13)/debhelper (>= 9), autotools-dev/g' debian/control

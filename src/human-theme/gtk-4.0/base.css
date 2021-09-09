@@ -1781,6 +1781,14 @@ scale.horizontal value {
 
 /* --- scale mark --- */
 
+scale.vertical.marks-before {
+	padding: 2px 7px 2px 10px;
+}
+
+scale.vertical.marks-after {
+	padding: 2px 10px 2px 7px;
+}
+
 scale.vertical.marks-before indicator,
 scale.vertical.marks-after indicator {
 	min-width: 5px;
@@ -1796,7 +1804,7 @@ scale.horizontal.marks-after indicator {
 }
 
 scale.vertical.marks-before marks.top indicator {
-	margin: 1px 1px 0 2px;
+	margin: 1px 8px 0 -8px;
 }
 
 scale.vertical.marks-before marks.top label {
@@ -1804,7 +1812,7 @@ scale.vertical.marks-before marks.top label {
 }
 
 scale.vertical.marks-after marks.bottom indicator {
-	margin: 1px 2px 0 1px;
+	margin: 1px -8px 0 8px;
 }
 
 scale.vertical.marks-after marks.bottom label {
@@ -2058,6 +2066,10 @@ printdialog .dialog-action-area {
 
 printdialog scrolledwindow viewport {
 	border: 0;
+}
+
+printdialog stack grid.vertical {
+	color: @theme_text; /* to fix white color */
 }
 
 filechooser placessidebar,

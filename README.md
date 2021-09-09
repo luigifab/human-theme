@@ -92,12 +92,12 @@ sudo apt update
 sudo apt install human-theme-gtk
 # or
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys FFE5BD439356DF7D
-echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu impish main" | sudo tee -a /etc/apt/sources.list
+echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu hirsute main" | sudo tee -a /etc/apt/sources.list
 sudo apt update
 sudo apt install human-theme-gtk
 # or
 sudo wget -O /etc/apt/trusted.gpg.d/luigifab.gpg https://www.luigifab.fr/apt.gpg
-echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu impish main" | sudo tee -a /etc/apt/sources.list
+echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu hirsute main" | sudo tee -a /etc/apt/sources.list
 sudo apt update
 sudo apt install human-theme-gtk
 ```
@@ -200,7 +200,7 @@ Run *svg.sh* to update SVG images. See also [technical informations](https://git
 
 ## Copyright
 
-- Current version: 1.4.0 (07/07/2021)
+- Current version: 1.5.0 (09/09/2021)
 - Compatibility: GTK 2.24 / 3.20 / 3.22 / 3.24 / 4.0 / 4.2
 - Links: [luigifab.fr](https://www.luigifab.fr/gtk/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/)\
 [Debian human-theme-gtk.deb](https://tracker.debian.org/pkg/human-theme-gtk)
