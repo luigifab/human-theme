@@ -1,11 +1,8 @@
 #!/usr/bin/python
 
-import gi
+import gi, os, sys
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
-
-import os, sys
-
 
 class TestWin(Gtk.ApplicationWindow):
 
@@ -26,7 +23,6 @@ class TestWin(Gtk.ApplicationWindow):
 		if a != 255: color_str += f'{a:02x}'
 		print(color_str)
 
-
 class TestApp(Gtk.Application):
 
 	def __init__(self, color):
@@ -37,7 +33,6 @@ class TestApp(Gtk.Application):
 		win = TestWin(self, self.color)
 		self.quit()
 
-
 def main(args=None):
 	import argparse
 	parser = argparse.ArgumentParser(
@@ -46,7 +41,6 @@ def main(args=None):
 		help='GTK3 color specification. Can include any color expressions or theme color refs.')
 	opts = parser.parse_args(sys.argv[1:] if args is None else args)
 	TestApp(opts.color).run()
-
 
 if __name__ == '__main__':
 	import signal

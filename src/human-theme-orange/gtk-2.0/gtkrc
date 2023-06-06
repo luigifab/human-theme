@@ -75,7 +75,7 @@ style "murrine-default"
 
 	engine "murrine"
 	{
-		animation           = TRUE  # FALSE = disabled, TRUE = enabled
+		animation           = FALSE # FALSE = disabled, TRUE = enabled
 		colorize_scrollbar  = TRUE  # FALSE = disabled, TRUE = enabled
 		contrast            = 0.9   # 0.8 for less contrast, more than 1.0 for more contrast on borders
 		focus_color         = shade (1.5, @selected_bg_color)
@@ -409,7 +409,7 @@ widget_class "EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem*" st
 widget "*PanelWidget*" 					style "murrine-panel"
 widget "*PanelApplet*" 					style "murrine-panel"
 widget "*fast-user-switch*"				style "murrine-panel" # workaround for Fast User Switch applet
-class "PanelApp*" 					style "murrine-panel"
+class "PanelApp*" 						style "murrine-panel"
 class "PanelToplevel*" 					style "murrine-panel"
 widget_class "*Mail*" 					style "murrine-panel"
 widget_class "*notif*" 					style "murrine-panel"

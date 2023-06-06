@@ -1,0 +1,76 @@
+/**
+ * Copyright 2020-2023 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ * https://www.luigifab.fr/gtk/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ */
+
+/* GTK 4.2 + Pango 1.48..49 ? */
+button label {
+	padding-top: 1px;
+	padding-bottom: 0;
+}
+
+spinbutton.horizontal text {
+	padding: 4px 3px 3px;
+}
+
+entry {
+	padding-top: 4px;
+	padding-bottom: 3px;
+}
+
+entry image.left {
+	margin: -1px 0 1px;
+}
+
+entry image.right {
+	margin: -1px 0 1px;
+}
+
+combobox entry {
+	padding: 5px 3px 4px;
+}
+
+combobox button {
+	padding: 4px;
+}
+
+checkbutton label {
+	margin: 0 -1px 0 -2px;
+}
+
+menubar > item {
+	padding: 3px 7px 2px;
+}
+
+statusbar box label {
+	padding-top: 1px;
+	padding-bottom: 0;
+}
+
+levelbar.horizontal.discrete block:last-child {
+	margin: 0 -3px 0 1px;
+}
+
+notebook header tab label {
+	padding: 1px 1px 0;
+}

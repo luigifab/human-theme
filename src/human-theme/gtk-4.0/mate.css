@@ -1,5 +1,5 @@
 /**
- * Copyright 2020-2021 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2023 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  * https://www.luigifab.fr/gtk/human-theme
  *
@@ -100,12 +100,30 @@ PanelToplevel.background {
 /* --- clock applet --- */
 
 .mate-panel-menu-bar #clock-applet-button {
-	margin: 0;
+	margin: 0 -3px;
+	padding: 0 4px; /* data:0 4px */
 	border: 0;
+	outline: 0;
 }
 
-.mate-panel-menu-bar #clock-applet-button:not(:hover) {
-	background: transparent;
+.mate-panel-menu-bar #clock-applet-button > box {
+	margin: 1px 1px 2px;
+	padding: 0 1px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+.mate-panel-menu-bar #clock-applet-button:checked > box {
+	border: 1px solid #988B7F; /* @todo */
+}
+
+.mate-panel-menu-bar #clock-applet-button label {
+	margin-top: 1px;
+}
+
+.mate-panel-menu-bar #clock-applet-button box box {
+	margin-top: 1px;
+	margin-left: 2px;
 }
 
 #MatePanelPopupWindow frame border {
@@ -122,8 +140,15 @@ PanelToplevel.background {
 
 }
 
-#window-menu-applet-button wnck-selector > item > image {
-	margin: 0 4px;
+#window-menu-applet-button wnck-selector > menuitem > image {
+	margin: 1px 4px 2px;
+	padding: 0 2px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+#window-menu-applet-button wnck-selector > menuitem:hover > image {
+	border: 1px solid #988B7F; /* @todo */
 }
 
 #window-menu-applet-button wnck-selector separator {
@@ -207,4 +232,53 @@ window.mate-terminal box.vertical notebook header.top {
 window.mate-terminal:not(.maximized) box.vertical notebook header.top ~ stack {
 	border: 1px solid @nb_border;
 	border-top: 0;
+}
+
+/* --- lock screen --- */
+
+.lock-dialog,
+.lock-dialog frame,
+.lock-dialog border,
+.lock-dialog notebook,
+.lock-dialog stack {
+	border: 0;
+	border-radius: 0;
+	background: @theme_bg;
+}
+
+.lock-dialog frame {
+	border: 1px solid @nb_border;
+}
+
+.lock-dialog entry {
+	padding-left: 0;
+}
+
+/* --- mate-keyboard-layout-view + mate-keyboard-layout-chooser --- */
+
+/* .gswitchit-layout-view > box.dialog-vbox > box.vertical > widget,
+#xkb-layout-chooser > box.dialog-vbox > box.vertical > box.vertical > frame > widget, */
+matekbd-keyboard-drawing {
+	background-color: shade(@theme_bg_color, 1.0);
+}
+
+/* --- osd --- */
+
+.osd {
+	border: 12px solid @nb_border;
+	border-radius: 0;
+	background: @theme_bg;
+}
+
+.osd > box {
+	background: @theme_bg;
+	box-shadow:
+		0 -11px @theme_bg, /* top */
+		11px  0 @theme_bg, /* right */
+		0  11px @theme_bg, /* bottom */
+		-11px 0 @theme_bg, /* left */
+		-11px -11px @theme_bg, /* top left */
+		 11px -11px @theme_bg, /* top right */
+		 11px  11px @theme_bg, /* bottom right */
+		-11px  11px @theme_bg  /* bottom left */;
 }

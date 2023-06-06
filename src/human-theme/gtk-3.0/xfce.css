@@ -1,5 +1,5 @@
 /**
- * Copyright 2020-2021 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2023 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  * https://www.luigifab.fr/gtk/human-theme
  *
@@ -26,4 +26,28 @@
 #xfwm-tabwin {
 	padding: 12px;
 	border: 1px solid @menu_border;
+}
+
+XfdesktopIconView.view {
+	background: transparent;
+}
+
+/* --- terminal --- */
+
+#xfce4-terminal-notebook {
+	margin: 0;
+}
+
+#xfce4-terminal-notebook stack {
+	border: 0;
+	border-radius: 0;
+}
+
+#xfce4-terminal-notebook header.top {
+	margin: 0 0 1px;
+}
+
+#xfce4-terminal-notebook:not(.maximized) header.top ~ stack {
+	border: 1px solid @nb_border;
+	border-top: 0;
 }

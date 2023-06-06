@@ -1,9 +1,9 @@
 #!/bin/bash
-# debian: sudo apt install dpkg-dev devscripts dh-make
+# Debian: sudo apt install dpkg-dev devscripts dh-make
 
 
 cd "$(dirname "$0")"
-version="1.5.0"
+version="2.0.0"
 
 
 rm -rf builder/
@@ -30,33 +30,34 @@ else
 fi
 
 
-# create packages for debian and ubuntu
-for serie in unstable impish hirsute focal bionic xenial trusty; do
+# create packages for Debian and Ubuntu
+for serie in experimental mantic lunar kinetic jammy focal bionic xenial trusty; do
 
-	if [ $serie = "unstable" ]; then
-		# for ubuntu
+	if [ $serie = "experimental" ]; then
+		# for Ubuntu
 		cp -a builder/human-theme-$version/ builder/human-theme-$version+src/
-		# debian only
+		# Debian only
 		cd builder/human-theme-$version/
 	else
-		# ubuntu only
+		# Ubuntu only
 		cp -a builder/human-theme-$version+src/ builder/human-theme-$version+$serie/
 		cd builder/human-theme-$version+$serie/
 	fi
 
 	dh_make -a -s -y -f ../human-theme-$version.tar.gz -p human-theme-gtk
 
-	rm -f debian/*ex debian/*EX debian/README* debian/*doc* debian/deb.sh
+	rm -f debian/*ex debian/*EX debian/README* debian/*doc*
 	mkdir debian/upstream
+	rm debian/deb.sh
 	mv debian/metadata debian/upstream/metadata
 
 
 
 
-	if [ $serie = "unstable" ]; then
+	if [ $serie = "experimental" ]; then
 		dpkg-buildpackage -us -uc
 	else
-		# debhelper: unstable:13 hirsute:13 focal:12 bionic:9 xenial:9 trusty:9
+		# debhelper: experimental:13 focal:12 bionic:9 xenial:9 trusty:9
 		if [ $serie = "focal" ]; then
 			sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 12)/g' debian/control
 		fi
@@ -75,27 +76,27 @@ for serie in unstable impish hirsute focal bionic xenial trusty; do
 			sed -i ':a;N;$!ba;s/Rules-Requires-Root: no\n//g' debian/control
 			echo 9 > debian/compat
 		fi
-		sed -i 's/unstable/'$serie'/g' debian/changelog
+		sed -i 's/experimental/'$serie'/g' debian/changelog
 		sed -i 's/-1) /-1+'$serie') /' debian/changelog
 		dpkg-buildpackage -us -uc -ui -d -S
 	fi
-	echo "==========================="
+	echo "=========================== debsign =="
 	cd ..
 
-	if [ $serie = "unstable" ]; then
-		# debian only
+	if [ $serie = "experimental" ]; then
+		# Debian only
 		debsign human-theme-gtk_$version-*.changes
-		echo "==========================="
+		echo "=========================== lintian =="
 		lintian -EviIL +pedantic human-theme-gtk_$version-*.deb
 	else
-		# ubuntu only
+		# Ubuntu only
 		debsign human-theme-gtk_$version*+$serie*source.changes
 	fi
 	echo "==========================="
 	cd ..
 done
 
-ls -dltrh builder/*.deb builder/*.changes
+ls -dlth "$PWD/"builder/*.deb "$PWD/"builder/*.changes
 echo "==========================="
 
 # cleanup

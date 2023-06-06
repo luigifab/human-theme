@@ -3,10 +3,10 @@
 # Fedora: configure: error: C compiler cannot create executables? remove and reinstall glibc-devel gcc
 
 cd "$(dirname "$0")"
-version="1.5.0"
+version="2.0.0"
 
 
-rm -rf builder/ ~/rpmbuild/
+rm -rf builder/
 mkdir -p builder ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
 
 # copy to a tmp directory
@@ -41,8 +41,8 @@ rpm --checksig builder/*.rpm
 echo "==========================="
 rpmlint human-theme-gtk.spec builder/*.rpm
 echo "==========================="
-ls -dltrh builder/*.rpm
+ls -dlth "$PWD/"builder/*.rpm
 echo "==========================="
 
 # cleanup
-rm -rf builder/*/ ~/rpmbuild/
+rm -rf builder/*/

@@ -75,7 +75,7 @@ style "murrine-default"
 
 	engine "murrine"
 	{
-		animation           = TRUE  # FALSE = disabled, TRUE = enabled
+		animation           = FALSE # FALSE = disabled, TRUE = enabled
 		colorize_scrollbar  = TRUE  # FALSE = disabled, TRUE = enabled
 		contrast            = 0.9   # 0.8 for less contrast, more than 1.0 for more contrast on borders
 		focus_color         = shade (1.5, @selected_bg_color)
@@ -93,15 +93,15 @@ style "murrine-default"
 		menuitemstyle       = 1     # 0 = flat, 1 = glassy, 2 = striped
 		menustyle           = 0     # 0 = no vertical menu stripe, 1 = display vertical menu stripe
 		progressbarstyle    = 1     # 0 = no stripes, 1 = diagonal stripes, 2 = vertical stripes
-		reliefstyle	    = 2     # 0 = flat, 1 = inset, 2 = shadow
-		rgba		    = FALSE # FALSE = disabled, TRUE = enabled
+		reliefstyle	     = 2     # 0 = flat, 1 = inset, 2 = shadow
+		rgba		          = FALSE # FALSE = disabled, TRUE = enabled
 		roundness           = 2     # 0 = squared, 1 = old default, more will increase roundness
 		scrollbarstyle      = 0     # 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
 		#scrollbar_color    = shade (0.9, @bg_color)
 		sliderstyle         = 0     # 0 = nothing added, 1 = handles
 		stepperstyle        = 1     # 0 = standard, 1 = integrated stepper handles, 2 = unknown
 		#profile            = NODOKA # engine profile options: CANDIDO, CLEARLOOKS, MIST, MURRINE, NODOKA
-		toolbarstyle	    = 2     # 0 = flat, 1 = glassy, 2 = gradient
+		toolbarstyle	     = 2     # 0 = flat, 1 = glassy, 2 = gradient
 	}
 }
 
@@ -409,7 +409,7 @@ widget_class "EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem*" st
 widget "*PanelWidget*" 					style "murrine-panel"
 widget "*PanelApplet*" 					style "murrine-panel"
 widget "*fast-user-switch*"				style "murrine-panel" # workaround for Fast User Switch applet
-class "PanelApp*" 					style "murrine-panel"
+class "PanelApp*" 						style "murrine-panel"
 class "PanelToplevel*" 					style "murrine-panel"
 widget_class "*Mail*" 					style "murrine-panel"
 widget_class "*notif*" 					style "murrine-panel"
