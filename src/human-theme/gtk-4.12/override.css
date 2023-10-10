@@ -23,11 +23,65 @@
  * GNU General Public License (GPL) for more details.
  */
 
-/* GTK 4.12 + Pango 1.5? */
+/* GTK 4.12 + Pango 1.51 (Pango 1.51 is similar to Pango 1.42?, so we have same rendering with GTK 2.24 - 3.24 - 4.12?) */
 * {
-	line-height: 16px;
+	line-height: 17px;
 }
 
 textview {
 	line-height: 17px;
+}
+
+menubar item {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+entry {
+	padding-bottom: 3px;
+}
+
+button.text-button {
+	padding-bottom: 3px;
+}
+
+button.text-button.toggle:checked,
+button.text-button.toggle:active {
+	padding-bottom: 2px;
+}
+
+combobox entry {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+combobox button {
+	padding-bottom: 4px;
+}
+
+spinbutton.horizontal text {
+	padding-bottom: 3px;
+}
+
+checkbutton label {
+	margin-bottom: 0;
+}
+
+statusbar box label {
+	padding-bottom: 0;
+}
+
+notebook header.left label,
+notebook header.right label {
+	margin-bottom: -1px;
+}
+
+expander-widget title {
+	padding: 0;
+	margin-bottom: 1px;
+}
+
+expander-widget title expander {
+	margin: 2px 3px 2px 1px;
+	-gtk-icon-size: 16px;
 }

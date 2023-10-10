@@ -3,7 +3,7 @@
 
 
 cd "$(dirname "$0")"
-version="2.0.0"
+version="2.1.0"
 
 
 rm -rf builder/
@@ -31,7 +31,7 @@ fi
 
 
 # create packages for Debian and Ubuntu
-for serie in experimental mantic lunar kinetic jammy focal bionic xenial trusty; do
+for serie in experimental mantic lunar jammy focal bionic xenial trusty; do
 
 	if [ $serie = "experimental" ]; then
 		# for Ubuntu

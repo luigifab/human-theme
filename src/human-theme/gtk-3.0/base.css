@@ -101,7 +101,8 @@ window.background:not(.solid-csd) headerbar button image {
 	/* <draw_ops name="bevel"> titlebar outline */
 	border: 1px solid shade(@theme_selected_bg, 0.55);
 	/* <draw_ops name="bevel"> fancy gradient */
-	background: linear-gradient(to bottom, shade(@theme_selected_bg, 1.08),
+	background: linear-gradient(to bottom,
+		shade(@theme_selected_bg, 1.08),
 		shade(@theme_selected_bg, 1.02) 50%,
 		shade(@theme_selected_bg, 1.0) 50%,
 		shade(@theme_selected_bg, 0.94));
@@ -175,7 +176,8 @@ window.background:not(.solid-csd) headerbar button image {
 	/* <draw_ops name="button_bg"> border outline */
 	border: 1px solid shade(@theme_selected_bg, 0.6);
 	/* <draw_ops name="button_bg"> fill gradient */
-	background: linear-gradient(to bottom, shade(@theme_selected_bg, 1.1),
+	background: linear-gradient(to bottom,
+		shade(@theme_selected_bg, 1.1),
 		shade(@theme_selected_bg, 1.02) 50%,
 		shade(@theme_selected_bg, 1.0) 50%,
 		shade(@theme_selected_bg, 0.92));
@@ -195,7 +197,8 @@ window.background:not(.solid-csd) headerbar button image {
 	/* <draw_ops name="button_bg_pressed"> border outline */
 	border: 1px solid shade(@theme_selected_bg, 0.55);
 	/* <draw_ops name="button_bg_pressed"> fill gradient */
-	background: linear-gradient(to bottom, shade(@theme_selected_bg, 0.95),
+	background: linear-gradient(to bottom,
+		shade(@theme_selected_bg, 0.95),
 		shade(@theme_selected_bg, 0.9));
 }
 
@@ -204,7 +207,8 @@ window.background:not(.solid-csd) headerbar button image {
 	/* <draw_ops name="bevel_unfocused"> rectangle */
 	border: 1px solid shade(@theme_bg, 0.55);
 	/* <draw_ops name="bevel_unfocused"> fancy gradient */
-	background: linear-gradient(to bottom, shade(@theme_bg, 0.99),
+	background: linear-gradient(to bottom,
+		shade(@theme_bg, 0.99),
 		shade(@theme_bg, 0.95) 50%,
 		shade(@theme_bg, 0.93) 50%,
 		shade(@theme_bg, 0.89));
@@ -220,7 +224,8 @@ window.background:not(.solid-csd) headerbar button image {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 	border: 1px solid shade(@theme_bg, 0.6);
 	/* <draw_ops name="button_bg_unfocused"> fill gradient */
-	background: linear-gradient(to bottom, shade(@theme_bg, 1.15),
+	background: linear-gradient(to bottom,
+		shade(@theme_bg, 1.15),
 		shade(@theme_bg, 1.07) 50%,
 		shade(@theme_bg, 1.05) 50%,
 		shade(@theme_bg, 0.97));
@@ -1734,8 +1739,8 @@ expander title:hover {
 
 expander arrow {
 	padding: 0 4px 0 1px;
-	min-width: 17px;
-	min-height: 17px;
+	min-width: 16px;
+	min-height: 16px;
 	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
@@ -1791,7 +1796,8 @@ notebook header.top tab {
 	margin: 0 -1px -2px -1px;
 	border-bottom-color: @nb_border;
 	border-radius: 2.4px 2.4px 0 0;
-	background: linear-gradient(to bottom, @nb_tab_glaze_top,
+	background: linear-gradient(to bottom,
+		@nb_tab_glaze_top,
 		@nb_tab_glaze_mida 51%,
 		@nb_tab_glaze_midb 51%,
 		@nb_tab_glaze_bot);
@@ -1801,7 +1807,8 @@ notebook header.top tab:checked {
 	margin: -1px -1px -2px -1px;
 	border-color: @nb_border;
 	border-bottom: 0;
-	background: linear-gradient(to bottom, @nb_tab_checked_glaze_top,
+	background: linear-gradient(to bottom,
+		@nb_tab_checked_glaze_top,
 		@nb_tab_checked_glaze_mida 51%,
 		@nb_tab_checked_glaze_midb 51%,
 		@nb_tab_checked_glaze_bot);
@@ -1814,7 +1821,8 @@ notebook header.bottom tab {
 	margin: -2px -1px 0 -1px;
 	border-top-color: @nb_border;
 	border-radius: 0 0 2.4px 2.4px;
-	background: linear-gradient(to top, @nb_tab_glaze_top,
+	background: linear-gradient(to top,
+		@nb_tab_glaze_top,
 		@nb_tab_glaze_mida 51%,
 		@nb_tab_glaze_midb 51%,
 		@nb_tab_glaze_bot);
@@ -1824,7 +1832,8 @@ notebook header.bottom tab:checked {
 	margin: -2px -1px -1px -1px;
 	border-color: @nb_border;
 	border-top: 0;
-	background: linear-gradient(to top, @nb_tab_checked_glaze_top,
+	background: linear-gradient(to top,
+		@nb_tab_checked_glaze_top,
 		@nb_tab_checked_glaze_mida 51%,
 		@nb_tab_checked_glaze_midb 51%,
 		@nb_tab_checked_glaze_bot);
@@ -1838,7 +1847,8 @@ notebook header.left tab {
 	padding: 3px 1px;
 	border-right-color: @nb_border;
 	border-radius: 2.4px 0 0 2.4px;
-	background: linear-gradient(to right, @nb_tab_glaze_top,
+	background: linear-gradient(to right,
+		@nb_tab_glaze_top,
 		@nb_tab_glaze_mida 50%,
 		@nb_tab_glaze_midb 50%,
 		@nb_tab_glaze_bot);
@@ -1849,7 +1859,8 @@ notebook header.left tab:checked {
 	padding: 3px 2px;
 	border-color: @nb_border;
 	border-right: 0;
-	background: linear-gradient(to right, @nb_tab_checked_glaze_top,
+	background: linear-gradient(to right,
+		@nb_tab_checked_glaze_top,
 		@nb_tab_checked_glaze_mida 50%,
 		@nb_tab_checked_glaze_midb 50%,
 		@nb_tab_checked_glaze_bot);
@@ -1863,7 +1874,8 @@ notebook header.right tab {
 	padding: 3px 1px;
 	border-left-color: @nb_border;
 	border-radius: 0 2.4px 2.4px 0;
-	background: linear-gradient(to left, @nb_tab_glaze_top,
+	background: linear-gradient(to left,
+		@nb_tab_glaze_top,
 		@nb_tab_glaze_mida 50%,
 		@nb_tab_glaze_midb 50%,
 		@nb_tab_glaze_bot);
@@ -1874,7 +1886,8 @@ notebook header.right tab:checked {
 	padding: 3px 2px;
 	border-color: @nb_border;
 	border-left: 0;
-	background: linear-gradient(to left, @nb_tab_checked_glaze_top,
+	background: linear-gradient(to left,
+		@nb_tab_checked_glaze_top,
 		@nb_tab_checked_glaze_mida 50%,
 		@nb_tab_checked_glaze_midb 50%,
 		@nb_tab_checked_glaze_bot);

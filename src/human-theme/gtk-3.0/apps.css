@@ -38,7 +38,11 @@ window > box > widget > widget {
 
 /* --- geany pluma --- */
 
-#GeanyMainWindow notebook stack > box,
+#GeanyMainWindow #notebook_info {
+	margin-bottom: 5px;
+}
+
+#GeanyMainWindow.maximized notebook stack > box,
 window.pluma-window notebook stack > box {
 	margin: 0 -1px;
 }
@@ -56,6 +60,8 @@ notebook widget scrollbar.horizontal {
 }
 
 /* fix for some maximized windows https://github.com/mate-desktop/mate-desktop/issues/291 */
+
+#GeanyMainWindow.maximized:dir(ltr) #notebook_info stack,
 window.background.maximized.engrampa-window:dir(ltr) > grid.horizontal > paned.horizontal > scrolledwindow.frame,
 window.background.maximized.atril-window:dir(ltr) > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
 window.background.pluma-window:dir(ltr) > box.vertical > paned.horizontal > paned.vertical > notebook box.vertical > scrolledwindow.frame,
@@ -64,6 +70,7 @@ window.background.maximized.caja-navigation-window:dir(ltr) notebook.caja-notebo
 	border-right-width: 0;
 }
 
+#GeanyMainWindow.maximized:dir(rtl) #notebook_info stack,
 window.background.maximized.engrampa-window:dir(rtl) > grid.horizontal > paned.horizontal > scrolledwindow.frame,
 window.background.maximized.atril-window:dir(rtl) > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
 window.background.pluma-window:dir(rtl) > box.vertical > paned.horizontal > paned.vertical > notebook box.vertical > scrolledwindow.frame,

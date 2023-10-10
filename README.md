@@ -66,29 +66,29 @@ GTK 4 RTL\
 [![Preview with GTK 4 - RTL - Blue variation - Menu](images/thumbs/gtk4-rtl-blue-menu.png?raw=true)](images/gtk4-rtl-blue-menu.png?raw=true)
 [![Preview with GTK 4 - RTL - Green variation - Menu](images/thumbs/gtk4-rtl-green-menu.png?raw=true)](images/gtk4-rtl-green-menu.png?raw=true)
 
-Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended). For screenshots: Pango 1.42 with GTK 2.24 and 3.24.23-classic, Pango 1.50 with GTK 4.8.
+Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended). For screenshots: Pango 1.51 with GTK 2.24.33 & 3.24.37-classic & 4.12.2. Yes! Almost same rendering like before!!
 
 ## Installation
 
 #### 🆕 Before start 🆕
 
-To meet the truth (this is not easy and not required):
-- remove [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd) if installed
-- install [gtk3-classic 3.24.23](https://github.com/lah7/gtk3-classic)
-- downgrade to pango 1.42
+To meet the truth (this is not required):
+- remove [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd)
+- install [gtk3-classic](https://github.com/lah7/gtk3-classic)
+- use Pango 1.42- or 1.51+
 
-With Ubuntu and Debian Testing, you can update previous packages (gtk3+pango) from my dedicated [PPA](https://launchpad.net/~luigifab/+archive/ubuntu/packages-gtk3-classic/+packages): add the repository and apply updates.
+For Debian Testing, I provide a [repository](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) for gtk3-classic.
 
-If you can't/won't, you can:
-- install [gtk3-classic](https://github.com/lah7/gtk3-classic) (packages for: [Ubuntu PPA](https://launchpad.net/~lah7/+archive/ubuntu/gtk3-classic))
-- or install [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd) (packages for: [Ubuntu](https://packages.ubuntu.com/search?keywords=gtk3-nocsd), [Debian](https://packages.debian.org/search?keywords=gtk3-nocsd), [Fedora](https://copr.fedorainfracloud.org/coprs/hdfssk/gtk3-nocsd/))
+**With Pango 1.51+, criticals fails of the life of Pango from 1.43 to 1.50 are fixed (for _v35_ of _FREETYPE_PROPERTIES_). There are some differences, but for now it's acceptable.**
 
 If you can't/won't, no worries, but the truth will be far.
 
 #### Installation for Debian and Ubuntu
 
+* Run:
 ```bash
-# https://launchpad.net/~luigifab/+archive/ubuntu/packages
+# PPA: https://launchpad.net/~luigifab/+archive/ubuntu/packages
+# with Debian 12+ you can use mantic+ instead of focal (https://unix.stackexchange.com/a/669008/364800)
 sudo add-apt-repository ppa:luigifab/packages
 sudo apt update
 sudo apt install human-theme-gtk
@@ -253,8 +253,8 @@ Run `svg.sh` to update SVG images. See also [technical informations](https://git
 
 ## Copyright
 
-- Current version: 2.0.0 (06/06/2023)
-- Compatibility: GTK 2.24 / 3.20 / 3.22 / 3.24 / 4.0 / 4.2 / 4.4 / 4.6 / 4.8 / 4.10
+- Current version: 2.1.0 (10/10/2023)
+- Compatibility: GTK 2.24 / 3.20 / 3.22 / 3.24 / 4.0 / 4.2 / 4.4 / 4.6 / 4.8 / 4.10 / 4.12
 - Links: [luigifab.fr](https://www.luigifab.fr/gtk/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/)\
 [Debian human-theme-gtk.deb](https://packages.debian.org/human-theme-gtk)
   *([ITP](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=973445),
