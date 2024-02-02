@@ -2,10 +2,18 @@
 
 cd "$(dirname "$0")"
 for f in */gtk-3.0/gtk.css; do
-	echo $f
+
+	svgs="$(dirname "$f")/img/*.svg"
+	cnts=($svgs)
+	cnts=${#cnts[@]}
+
+	echo "With colors of $f..."
+	echo " there are $cnts images"
 
 	IFS=$'\n'
+	count=0
 	colors=$(grep 'define-color theme_' $f | grep -v \()
+
 	for color in $colors; do
 
 		# the color string (define-color keyword #XXX)
@@ -20,11 +28,20 @@ for f in */gtk-3.0/gtk.css; do
 			replace="\"${BASH_REMATCH[2]}\" class=\"${BASH_REMATCH[1]}\""
 		done
 
-		# action
-		for svg in $(dirname "$f")/img/*.svg; do
-			echo " update $svg"
+		# search and replace in theme images
+		for svg in $svgs; do
+
+			original_md5=$(md5sum "$svg" | awk '{print $1}')
 			sed -r -i 's/"#[a-zA-Z0-9]+" class="'$class'"/'$replace'/g' $svg
+			new_md5=$(md5sum "$svg" | awk '{print $1}')
+
+			if [ "$original_md5" != "$new_md5" ]; then
+				echo " updated $svg"
+				((count++))
+			fi
 		done
 	done
+
+	echo " $count svg updated"
 	unset IFS
 done

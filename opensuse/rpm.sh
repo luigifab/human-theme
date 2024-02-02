@@ -3,11 +3,11 @@
 
 
 cd "$(dirname "$0")"
-version="2.1.0"
+version="2.2.0"
 
 
-rm -rf builder/
 mkdir -p builder ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
+find builder/* ! -name "*$version*.rpm" ! -name "*$version*.gz" -exec rm -rf {} + 2>/dev/null
 
 # copy to a tmp directory
 if [ true ]; then
@@ -20,7 +20,7 @@ else
 	rm -rf /tmp/$temp/*/builder/
 
 	mv /tmp/$temp builder/
-	cp /usr/share/licenses/kernel-firmware/GPL-3 builder/$temp/LICENSE
+	cp /usr/share/licenses/*-firmware/GPL-3 builder/$temp/LICENSE # * = kernel
 
 	cd builder/
 	tar czf $temp.tar.gz $temp
@@ -32,10 +32,10 @@ fi
 
 # create package (rpm sign https://access.redhat.com/articles/3359321)
 rpmbuild -ba human-theme-gtk.spec
-rpm --addsign ~/rpmbuild/RPMS/*/*.rpm
-rpm --addsign ~/rpmbuild/SRPMS/*.rpm
-mv ~/rpmbuild/RPMS/*/*.rpm builder/
-mv ~/rpmbuild/SRPMS/*.rpm builder/
+rpm --addsign ~/rpmbuild/RPMS/*/human-theme-gtk*.rpm
+rpm --addsign ~/rpmbuild/SRPMS/human-theme-gtk*.rpm
+mv ~/rpmbuild/RPMS/*/human-theme-gtk*.rpm builder/
+mv ~/rpmbuild/SRPMS/human-theme-gtk*.rpm builder/
 echo "==========================="
 rpm --checksig builder/*.rpm
 echo "==========================="

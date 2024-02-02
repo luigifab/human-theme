@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Fabrice Creuzot <code@luigifab.fr>
 Build-Depends: debhelper-compat (= 13)
 Rules-Requires-Root: no
-Standards-Version: 4.6.1.0
+Standards-Version: 4.6.2
 Homepage: https://github.com/luigifab/human-theme
 Vcs-Browser: https://github.com/luigifab/human-theme
 Vcs-Git: https://github.com/luigifab/human-theme.git
@@ -15,8 +15,9 @@ Depends: ${misc:Depends}
 Recommends: gtk2-engines-murrine, gnome-icon-theme, dmz-cursor-theme
 Suggests: gtk3-nocsd, qt5-gtk2-platformtheme, qt5-gtk-platformtheme
 Description: human theme for GTK
- This theme works with: GTK 2.24+ (with gtk2-engines-murrine),
- GTK 3.20+ (including 3.22 and 3.24), and GTK 4.0+. It is mainly
- intended for Mate and Xfce Desktop Environments.
+ This theme works with GTK 2.24 (with gtk2-engines-murrine),
+ 3.24, and 4.12. Better rendering with Pango 1.42- or 1.51+.
+ .
+ It is mainly intended for Mate and Xfce Desktop Environments.
  .
  After installation you must restart your session.

@@ -1,12 +1,12 @@
 # Human theme
 
-This theme works with: **GTK 2.24+** *(with murrine)*, **GTK 3.20+** *(including 3.22 and 3.24)*, and **GTK 4.0+**.
+This theme works with: **GTK 2.24** *(with murrine)*, **GTK 3.24**, and **GTK 4.12**.
 
 It is mainly intended for Mate and Xfce desktop environments.
 
 ## Screenshots
 
-GTK 2\
+GTK 2.24 (Pango 1.51)\
 [![Preview with GTK 2 - Main window](images/thumbs/gtk2.png?raw=true)](images/gtk2.png?raw=true)
 [![Preview with GTK 2 - Orange variation - Main window](images/thumbs/gtk2-orange.png?raw=true)](images/gtk2-orange.png?raw=true)
 [![Preview with GTK 2 - Blue variation - Main window](images/thumbs/gtk2-blue.png?raw=true)](images/gtk2-blue.png?raw=true)
@@ -16,7 +16,7 @@ GTK 2\
 [![Preview with GTK 2 - Blue variation - Menu](images/thumbs/gtk2-blue-menu.png?raw=true)](images/gtk2-blue-menu.png?raw=true)
 [![Preview with GTK 2 - Green variation - Menu](images/thumbs/gtk2-green-menu.png?raw=true)](images/gtk2-green-menu.png?raw=true)
 
-GTK 2 RTL\
+GTK 2.24 RTL (Pango 1.51)\
 [![Preview with GTK 2 - RTL - Main window](images/thumbs/gtk2-rtl.png?raw=true)](images/gtk2-rtl.png?raw=true)
 [![Preview with GTK 2 - RTL - Orange variation - Main window](images/thumbs/gtk2-rtl-orange.png?raw=true)](images/gtk2-rtl-orange.png?raw=true)
 [![Preview with GTK 2 - RTL - Blue variation - Main window](images/thumbs/gtk2-rtl-blue.png?raw=true)](images/gtk2-rtl-blue.png?raw=true)
@@ -26,7 +26,7 @@ GTK 2 RTL\
 [![Preview with GTK 2 - RTL - Blue variation - Menu](images/thumbs/gtk2-rtl-blue-menu.png?raw=true)](images/gtk2-rtl-blue-menu.png?raw=true)
 [![Preview with GTK 2 - RTL - Green variation - Menu](images/thumbs/gtk2-rtl-green-menu.png?raw=true)](images/gtk2-rtl-green-menu.png?raw=true)
 
-GTK 3\
+GTK 3.24 (Pango 1.51)\
 [![Preview with GTK 3 - Main window](images/thumbs/gtk3.png?raw=true)](images/gtk3.png?raw=true)
 [![Preview with GTK 3 - Orange variation - Main window](images/thumbs/gtk3-orange.png?raw=true)](images/gtk3-orange.png?raw=true)
 [![Preview with GTK 3 - Blue variation - Main window](images/thumbs/gtk3-blue.png?raw=true)](images/gtk3-blue.png?raw=true)
@@ -36,7 +36,7 @@ GTK 3\
 [![Preview with GTK 3 - Blue variation - Menu](images/thumbs/gtk3-blue-menu.png?raw=true)](images/gtk3-blue-menu.png?raw=true)
 [![Preview with GTK 3 - Green variation - Menu](images/thumbs/gtk3-green-menu.png?raw=true)](images/gtk3-green-menu.png?raw=true)
 
-GTK 3 RTL\
+GTK 3.24 RTL (Pango 1.51)\
 [![Preview with GTK 3 - RTL - Main window](images/thumbs/gtk3-rtl.png?raw=true)](images/gtk3-rtl.png?raw=true)
 [![Preview with GTK 3 - RTL - Orange variation - Main window](images/thumbs/gtk3-rtl-orange.png?raw=true)](images/gtk3-rtl-orange.png?raw=true)
 [![Preview with GTK 3 - RTL - Blue variation - Main window](images/thumbs/gtk3-rtl-blue.png?raw=true)](images/gtk3-rtl-blue.png?raw=true)
@@ -46,7 +46,7 @@ GTK 3 RTL\
 [![Preview with GTK 3 - RTL - Blue variation - Menu](images/thumbs/gtk3-rtl-blue-menu.png?raw=true)](images/gtk3-rtl-blue-menu.png?raw=true)
 [![Preview with GTK 3 - RTL - Green variation - Menu](images/thumbs/gtk3-rtl-green-menu.png?raw=true)](images/gtk3-rtl-green-menu.png?raw=true)
 
-GTK 4\
+GTK 4.12 (Pango 1.51)\
 [![Preview with GTK 4 - Main window](images/thumbs/gtk4.png?raw=true)](images/gtk4.png?raw=true)
 [![Preview with GTK 4 - Orange variation - Main window](images/thumbs/gtk4-orange.png?raw=true)](images/gtk4-orange.png?raw=true)
 [![Preview with GTK 4 - Blue variation - Main window](images/thumbs/gtk4-blue.png?raw=true)](images/gtk4-blue.png?raw=true)
@@ -56,7 +56,7 @@ GTK 4\
 [![Preview with GTK 4 - Blue variation - Menu](images/thumbs/gtk4-blue-menu.png?raw=true)](images/gtk4-blue-menu.png?raw=true)
 [![Preview with GTK 4 - Green variation - Menu](images/thumbs/gtk4-green-menu.png?raw=true)](images/gtk4-green-menu.png?raw=true)
 
-GTK 4 RTL\
+GTK 4.12 RTL (Pango 1.51)\
 [![Preview with GTK 4 - RTL - Main window](images/thumbs/gtk4-rtl.png?raw=true)](images/gtk4-rtl.png?raw=true)
 [![Preview with GTK 4 - RTL - Orange variation - Main window](images/thumbs/gtk4-rtl-orange.png?raw=true)](images/gtk4-rtl-orange.png?raw=true)
 [![Preview with GTK 4 - RTL - Blue variation - Main window](images/thumbs/gtk4-rtl-blue.png?raw=true)](images/gtk4-rtl-blue.png?raw=true)
@@ -66,7 +66,7 @@ GTK 4 RTL\
 [![Preview with GTK 4 - RTL - Blue variation - Menu](images/thumbs/gtk4-rtl-blue-menu.png?raw=true)](images/gtk4-rtl-blue-menu.png?raw=true)
 [![Preview with GTK 4 - RTL - Green variation - Menu](images/thumbs/gtk4-rtl-green-menu.png?raw=true)](images/gtk4-rtl-green-menu.png?raw=true)
 
-Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended). For screenshots: Pango 1.51 with GTK 2.24.33 & 3.24.37-classic & 4.12.2. Yes! Almost same rendering like before!!
+Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended).
 
 ## Installation
 
@@ -78,8 +78,6 @@ To meet the truth (this is not required):
 - use Pango 1.42- or 1.51+
 
 For Debian Testing, I provide a [repository](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) for gtk3-classic.
-
-**With Pango 1.51+, criticals fails of the life of Pango from 1.43 to 1.50 are fixed (for _v35_ of _FREETYPE_PROPERTIES_). There are some differences, but for now it's acceptable.**
 
 If you can't/won't, no worries, but the truth will be far.
 
@@ -198,7 +196,7 @@ Fonts used:
 * *DejaVu Sans Mono Book* or *Monospace Regular*, 10
 
 Icons used:
-* *gnome*
+* *gnome* or *mate*
 
 Cursors used:
 * *DMZ white*
@@ -217,12 +215,7 @@ sudo rm 10-hinting-slight.conf # /usr/share/fontconfig/conf.avail/10-hinting-sli
 sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-full.conf
 ```
 
-## Known issues
-
-* For classic menu bar and menu items of [Firefox 46+](https://www.mozilla.org/firefox) and [Thunderbird 46+](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
-* The [status bar grip](https://developer.gnome.org/gtk2/stable/GtkStatusbar.html) was removed with GTK 3 ([note1](https://developer.gnome.org/gtk3/stable/ch26s02.html#id-1.6.3.4.17), [note2](https://developer.gnome.org/gtk3/stable/GtkWindow.html#gtk-window-set-has-resize-grip)).
-* <del><i>The [treeview](https://developer.gnome.org/gtk3/stable/GtkTreeView.html) zebra/even-odd row styling was removed with GTK 3.19 ([note](https://gitlab.gnome.org/GNOME/gtk/issues/581#note_746153))</i></del> | **fixed** with [gtk3-classic](https://github.com/lah7/gtk3-classic)!
-* <del><i>The [notebook tabs](https://developer.gnome.org/gtk3/stable/GtkNotebook.html) mouse scroll was removed with GTK 3.4</i></del> | **fixed** with [gtk3-classic](https://github.com/lah7/gtk3-classic)!
+For classic menu bar and menu items of [Firefox 46+](https://www.mozilla.org/firefox) and [Thunderbird 46+](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
 
 ## Dev
 
@@ -253,9 +246,10 @@ Run `svg.sh` to update SVG images. See also [technical informations](https://git
 
 ## Copyright
 
-- Current version: 2.1.0 (10/10/2023)
-- Compatibility: GTK 2.24 / 3.20 / 3.22 / 3.24 / 4.0 / 4.2 / 4.4 / 4.6 / 4.8 / 4.10 / 4.12
+- Current version: 2.2.0 (02/02/2024)
+- Compatibility: GTK 2.24 / 3.24 / 4.12
 - Links: [luigifab.fr](https://www.luigifab.fr/gtk/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/)\
+[Arch Linux human-theme-gtk.zst](https://aur.archlinux.org/packages/human-theme-gtk)\
 [Debian human-theme-gtk.deb](https://packages.debian.org/human-theme-gtk)
   *([ITP](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=973445),
    [RFS](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=974209))*\
@@ -265,6 +259,10 @@ Run `svg.sh` to update SVG images. See also [technical informations](https://git
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\
 If you like, take some of your time to improve some translations, go to https://bit.ly/2HyCCEc.
+
+## Packages in official distros repositories
+
+[![Packages status](https://repology.org/badge/vertical-allrepos/human-theme-gtk.svg?header=human-theme-gtk)](https://repology.org/project/human-theme-gtk/versions)
 
 ## Credits
 

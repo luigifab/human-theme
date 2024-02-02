@@ -1,7 +1,6 @@
 /**
- * Copyright 2020-2023 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2024 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
- * https://www.luigifab.fr/gtk/human-theme
  *
  * Forked from
  *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
@@ -380,6 +379,15 @@ statusbar box label {
 	padding-bottom: 1px;
 }
 
+statusbar progressbar.horizontal {
+	margin: 2px -2px -2px;
+	font-size: 85%;
+}
+
+statusbar progressbar.horizontal text {
+	padding-top: 4px;
+}
+
 /* --- switch --- */
 
 switch {
@@ -475,7 +483,11 @@ button.flat {
 button.flat:disabled {
 	border-color: transparent;
 	background: none;
-	opacity: 0.3;
+	opacity: 0.3; /* @todo -> .flat.image */
+}
+
+button.link:disabled {
+	opacity: 1; /* @todo */
 }
 
 button.toggle {
@@ -664,7 +676,7 @@ checkbutton label {
 }
 
 checkbutton label:dir(rtl) {
-	margin: 0 -2px 0 -1px;
+	margin: -1px -2px 0 -1px;
 }
 
 checkbutton check:dir(rtl), checkbutton radio:dir(rtl) {
@@ -1046,7 +1058,7 @@ box.primary-toolbar separator {
 
 box.toolbar button,
 box.primary-toolbar button {
-	padding-bottom: 3px;
+	/* @todo 4.12? padding-bottom: 3px; */
 }
 
 /* --- menu bar --- */
@@ -1063,13 +1075,13 @@ menubar item {
 	text-shadow: none; /* libreoffice 6.4.1 */
 	color: @theme_fg; /* libreoffice 6.4.1 */
 	border: 1px solid transparent;
+	border-radius: 2px 2px 0 0;
 }
 
-menubar item:active:hover {
+menubar item:selected {
 	color: @menuitem_hover;
 	border: 1px solid @menuitem_hover_border;
 	border-bottom: 0;
-	border-radius: 2px 2px 0 0;
 	background:
 		radial-gradient(ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
@@ -1079,11 +1091,6 @@ menubar item:active:hover {
 			@menuitem_hover_glaze_mida 50%,
 			@menuitem_hover_glaze_midb 50%,
 			@menuitem_hover_glaze_bot);
-}
-
-menubar > item {
-	padding-top: 2px;
-	padding-bottom: 3px;
 }
 
 /* --- popover --- */
@@ -1470,8 +1477,8 @@ expander-widget scrollbar.horizontal {
 	background: @theme_bg;
 }
 
-/* dialog:dir(rtl) scrolledwindow.frame scrollbar.vertical,
-expander-widget:dir(rtl) scrollbar.vertical {
+/* dialog scrolledwindow.frame scrollbar.vertical:dir(rtl),
+expander-widget scrollbar.vertical:dir(rtl) {
 	margin: -1px -3px -1px -1px;
 	padding: 0 3px 0 0;
 	border-left: 0;
@@ -1497,7 +1504,7 @@ treeview ~ scrollbar.horizontal ~ scrollbar.vertical {
 	background: @theme_bg;
 }
 
-/* treeview:dir(rtl) ~ scrollbar.horizontal ~ scrollbar.vertical {
+/* treeview ~ scrollbar.horizontal ~ scrollbar.vertical:dir(rtl) {
 	margin: -26px -3px -19px -1px;
 	padding: 25px 3px 21px 0;
 	border-left: 0;
@@ -1531,7 +1538,7 @@ expander-widget expander {
 }
 
 expander-widget expander:dir(rtl) {
-	margin: -2px -1px 0 0;
+	margin: 2px 4px 2px 1px;
 	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
 }
 
@@ -1539,7 +1546,7 @@ expander-widget expander:checked {
 	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
-/* --- notebook --- */
+/* --- notebook - left/right not inverted in rtl mode --- */
 
 notebook {
 	margin: 1px 0;
@@ -1552,6 +1559,10 @@ notebook stack {
 
 notebook stack notebook {
 	margin: -1px;
+}
+
+notebook stack notebook header {
+	background: @nb_bg;
 }
 
 notebook header {
@@ -1577,6 +1588,11 @@ notebook header tab label {
 
 notebook header tab button {
 	padding: 0;
+}
+
+notebook header tabs arrow {
+	min-width: 18px;
+	min-height: 18px;
 }
 
 notebook header.top tab {
@@ -1772,88 +1788,86 @@ notebook:focus header tab:checked label {
 	background: @nb_tab_focus_bg;
 }
 
-/* --- notebook top arrow --- */
+/* --- notebook stack - left/right not inverted in rtl mode - with gtk4-classic (notebook__stack_class.patch) --- */
 
-notebook header.top tabs arrow.up:first-child,
-notebook header.top tabs arrow.down:first-child {
+notebook stack.top {
+	border-radius: 0 0 2.4px 2.4px;
+	box-shadow:
+		inset -1px -1px alpha(@nb_border, 0.125),
+		inset 1px 0 alpha(@entry_bg, 0.42);
+}
+
+notebook stack.bottom {
+	border-radius: 2.4px 2.4px 0 0;
+	box-shadow:
+		inset -1px 0 alpha(@nb_border, 0.125),
+		inset 1px 1px alpha(@entry_bg, 0.42);
+}
+
+notebook stack.left:dir(ltr),
+notebook stack.right:dir(rtl) {
+	border-radius: 0 2.4px 2.4px 0;
+	box-shadow:
+		inset -1px -1px alpha(@nb_border, 0.125),
+		inset 0 1px alpha(@entry_bg, 0.42);
+}
+
+notebook stack.right:dir(ltr),
+notebook stack.left:dir(rtl) {
+	border-radius: 2.4px 0 0 2.4px;
+	box-shadow:
+		inset 0 -1px alpha(@nb_border, 0.125),
+		inset 1px 1px alpha(@entry_bg, 0.42);
+}
+
+/* --- notebook arrow --- */
+
+notebook header.top tabs arrow.down {
 	margin: 1px 2px 0 0;
-	padding: 2px 2px 2px 1px;
-	-gtk-icon-transform: scale(0.8);
 }
 
-notebook header.top tabs arrow.down:last-child,
-notebook header.top tabs arrow.up:last-child {
+notebook header.top tabs arrow.up {
 	margin: 1px 0 0 2px;
-	padding: 2px 1px 2px 2px;
-	-gtk-icon-transform: scale(0.8);
 }
 
-/* --- notebook bottom arrow --- */
-
-notebook header.bottom tabs arrow.up:first-child,
-notebook header.bottom tabs arrow.down:first-child {
+notebook header.bottom tabs arrow.down {
 	margin: 0 2px 1px 0;
-	padding: 2px 2px 2px 1px;
-	-gtk-icon-transform: scale(0.8);
 }
 
-notebook header.bottom tabs arrow.down:last-child,
-notebook header.bottom tabs arrow.up:last-child {
+notebook header.bottom tabs arrow.up {
 	margin: 0 0 1px 2px;
-	padding: 2px 1px 2px 2px;
-	-gtk-icon-transform: scale(0.8);
 }
 
-/* --- notebook left arrow --- */
-
-notebook header.left tabs arrow.up:first-child {
+notebook header.left tabs arrow.down:dir(ltr) {
 	margin: 0 0 2px 1px;
-	padding: 1px 2px 2px;
-	-gtk-icon-transform: scale(0.8);
 }
 
-notebook header.left tabs arrow.down:first-child {
+notebook header.left tabs arrow.down:dir(rtl) {
+	margin: 0 1px 2px 0;
+}
+
+notebook header.left tabs arrow.up:dir(ltr) {
+	margin: 2px 0 0 1px;
+}
+
+notebook header.left tabs arrow.up:dir(rtl) {
+	margin: 2px 1px 0 0;
+}
+
+notebook header.right tabs arrow.down:dir(ltr) {
+	margin: 0 1px 2px 0;
+}
+
+notebook header.right tabs arrow.down:dir(rtl) {
 	margin: 0 0 2px 1px;
-	padding: 1px 2px 2px;
-	-gtk-icon-transform: rotate(180deg) scale(0.8);
 }
 
-notebook header.left tabs arrow.up:last-child {
-	margin: 2px 0 0 1px;
-	padding: 2px 2px 1px;
-	-gtk-icon-transform: rotate(180deg) scale(0.8);
-}
-
-notebook header.left tabs arrow.down:last-child {
-	margin: 2px 0 0 1px;
-	padding: 2px 2px 1px;
-	-gtk-icon-transform: scale(0.8);
-}
-
-/* --- notebook right arrow --- */
-
-notebook header.right tabs arrow.up:first-child {
-	margin: 0 1px 2px 0;
-	padding: 1px 2px 2px;
-	-gtk-icon-transform: scale(0.8);
-}
-
-notebook header.right tabs arrow.down:first-child {
-	margin: 0 1px 2px 0;
-	padding: 1px 2px 2px;
-	-gtk-icon-transform: rotate(180deg) scale(0.8);
-}
-
-notebook header.right tabs arrow.up:last-child {
+notebook header.right tabs arrow.up:dir(ltr) {
 	margin: 2px 1px 0 0;
-	padding: 2px 2px 1px;
-	-gtk-icon-transform: rotate(180deg) scale(0.8);
 }
 
-notebook header.right tabs arrow.down:last-child {
-	margin: 2px 1px 0 0;
-	padding: 2px 2px 1px;
-	-gtk-icon-transform: scale(0.8);
+notebook header.right tabs arrow.up:dir(rtl) {
+	margin: 2px 0 0 1px;
 }
 
 /* --- progress bar --- */
@@ -1876,7 +1890,62 @@ progressbar trough {
 		inset  1px 1px @slider_trough_border;
 }
 
-progressbar trough progress {
+treeview.view.trough,
+treeview.view.trough.odd,
+treeview.view.trough.even,
+treeview.view.trough.sorted,
+treeview.view.trough.sorted.odd,
+treeview.view.trough.sorted.even {
+	padding: 0;
+	color: @theme_text; /* = progressbar.classic text.trough */
+	border-top: 1px solid @theme_base;
+	border-bottom: 1px solid @theme_base;
+	background: @theme_bg;
+	box-shadow:
+		inset -1px -1px @slider_border_treeview,
+		inset  1px  1px @slider_border_treeview;
+}
+
+treeview.view.trough.even {
+	border-top: 1px solid #EEE;
+	border-bottom: 1px solid #EEE;
+}
+
+treeview.view.trough:selected,
+treeview.view.trough.odd:selected,
+treeview.view.trough.even:selected {
+	color: @theme_text; /* = progressbar.classic text.trough */
+	border-top: 1px solid @theme_selected_bg;
+	border-bottom: 1px solid @theme_selected_bg;
+}
+
+treeview.view.trough:disabled,
+treeview.view.trough.odd:disabled,
+treeview.view.trough.even:disabled {
+	color: @insensitive_fg; /* = progressbar.classic:disabled text.trough */
+	background: @theme_bg;
+}
+
+treeview.view.progressbar {
+	color: @theme_selected_fg; /* = progressbar.classic text.progress */
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	text-shadow: none;
+	box-shadow:
+		inset -1px -1px @slider_border,
+		inset  1px  1px @slider_border;
+}
+
+treeview.view.progressbar:selected {
+	border-top-color: @theme_selected_bg;
+	border-bottom-color: @theme_selected_bg;
+}
+
+treeview.view.progressbar:disabled {
+	color: @insensitive_selected; /* = progressbar.classic:disabled text.progress */
+}
+
+progressbar trough:not(.empty) progress {
 	border-radius: 2.75px;
 	box-shadow:
 		inset -1px -1px @slider_border,
@@ -1929,11 +1998,6 @@ progressbar.vertical trough progress.bottom {
 			@slider_pattern 30px);
 }
 
-treeview.view.progressbar {
-	color: @theme_selected_fg;
-	text-shadow: none;
-}
-
 treeview.view.progressbar,
 progressbar.horizontal trough progress {
 	min-height: 20px;
@@ -1977,14 +2041,60 @@ progressbar.horizontal trough.empty progress {
 	background: none;
 }
 
-progressbar.vertical text + trough,
-progressbar.vertical text + trough progress {
-	min-width: 39px;
+statusbar progressbar.horizontal trough,
+statusbar progressbar.horizontal trough progress,
+statusbar progressbar.horizontal.classic trough,
+statusbar progressbar.horizontal.classic trough progress {
+	min-height: 16px;
 }
 
+/* progressbar > text... but for now position of text with GTK_PROGRESS_TEXT_INSIDE=1 does not work, so same recipe */
+
+progressbar.vertical text {
+	/* margin-left: -39px;
+	padding-left: 3px; */
+}
+
+progressbar.horizontal text {
+	/* margin-bottom: -24px;
+	padding-top: 3px; */
+}
+
+progressbar.vertical.classic trough,
+progressbar.vertical.classic trough progress,
+progressbar.vertical text + trough,
+progressbar.vertical text + trough progress {
+	min-width: 40px;
+}
+
+progressbar.vertical.classic trough.full text {
+	/* margin-left: -47px;
+	padding-left: 2px; */
+}
+
+progressbar.horizontal.classic trough,
+progressbar.horizontal.classic trough progress,
 progressbar.horizontal text + trough,
 progressbar.horizontal text + trough progress {
 	min-height: 24px;
+}
+
+/* --- progress bar text colors - with gtk4-classic (appearance__progress_text.patch) when GTK_PROGRESS_TEXT_INSIDE=1 --- */
+
+progressbar.classic text.trough {
+	color: @theme_text;
+}
+
+progressbar.classic text.progress {
+	color: @theme_selected_fg;
+}
+
+progressbar.classic:disabled text.trough {
+	color: @insensitive_fg;
+}
+
+progressbar.classic:disabled text.progress {
+	color: @insensitive_selected;
 }
 
 /* --- scale --- */
@@ -2354,7 +2464,7 @@ infobar.error {
 	background: linear-gradient(to bottom, @errorbar_bg_top, @errorbar_bg_bot);
 }
 
-/* --- treeview alternating colours CSS - with gtk3-classic (treeview__alternating_row_colours.patch) --- */
+/* --- treeview alternating colours - with gtk4-classic (treeview__alternating_row_colours.patch) --- */
 
 treeview.view.odd {
 	background-color: @theme_base;
@@ -2364,33 +2474,35 @@ treeview.view.even {
 	background-color: #EEE;
 }
 
-treeview.view.sorted.odd {
+treeview.view.odd.sorted {
 	background-color: #EEE;
 }
 
-treeview.view.sorted.even {
+treeview.view.even.sorted {
 	background-color: #DDD;
-}
-
-treeview.view.odd:selected,
-treeview.view.odd.sorted:selected,
-treeview.view.even:selected,
-treeview.view.even.sorted:selected {
-	color: @theme_selected_fg;
-	background-color: @theme_selected_bg;
 }
 
 treeview.view.odd:not(.last):not(.trough):not(.progressbar),
 treeview.view.even:not(.last):not(.trough):not(.progressbar) {
-	padding-right: 1px;
 	background-image: url("img/treeview-separator.svg");
 	background-repeat: repeat-y;
 	background-position: right bottom;
 }
 
-treeview.view check,
-treeview.view radio {
-	background: transparent;
+treeview.view.odd:not(.trough):not(.progressbar):selected,
+treeview.view.odd.sorted:not(.trough):not(.progressbar):selected,
+treeview.view.even:not(.trough):not(.progressbar):selected,
+treeview.view.even.sorted:not(.trough):not(.progressbar):selected {
+	color: @theme_selected_fg;
+	background-color: @theme_selected_bg;
+}
+
+treeview.view:disabled,
+treeview.view.odd:not(.trough):not(.progressbar):selected:disabled,
+treeview.view.odd.sorted:not(.trough):not(.progressbar):selected:disabled,
+treeview.view.even:not(.trough):not(.progressbar):selected:disabled,
+treeview.view.even.sorted:not(.trough):not(.progressbar):selected:disabled {
+	color: @insensitive_fg;
 }
 
 /* --- treeview --- */
@@ -2459,24 +2571,8 @@ listview row:nth-child(2n):selected {
 	background-color: @theme_selected_bg;
 }
 
-treeview.view:not(.progressbar):not(.trough) {
+treeview.view:not(.trough):not(.progressbar) {
 	min-height: 21px;
-}
-
-treeview.view:not(.progressbar):disabled:selected {
-	color: @insensitive_fg;
-}
-
-treeview.view.trough,
-treeview.view.trough:selected {
-	padding: 1px;
-	color: @theme_text;
-	border: 1px solid @slider_border_treeview;
-	background: @theme_bg;
-}
-
-treeview.view.trough:disabled {
-	color: @insensitive_fg;
 }
 
 treeview.view.image:disabled {
@@ -2602,4 +2698,78 @@ calendar .today {
 
 calendar .other-month {
 	color: alpha(@theme_fg, 0.2);
+}
+
+/* --- overrride --- */
+/* GTK 4.12 + Pango 1.51 (Pango 1.51 is similar to Pango 1.42, so we have almost same rendering with GTK 2.24 - 3.24 - 4.12) */
+
+* {
+	line-height: 17px;
+}
+
+textview {
+	line-height: 17px;
+}
+
+menubar item {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+entry {
+	padding-bottom: 3px;
+}
+
+button.text-button {
+	padding-bottom: 3px;
+}
+
+button.text-button.toggle:checked,
+button.text-button.toggle:active {
+	padding-bottom: 2px;
+}
+
+combobox entry {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+combobox button {
+	padding-bottom: 4px;
+}
+
+spinbutton.horizontal text {
+	padding-bottom: 3px;
+}
+
+button.font label {
+	margin-bottom: -1px;
+}
+
+checkbutton label {
+	margin-bottom: 0;
+}
+
+statusbar box label {
+	padding-bottom: 0;
+}
+
+notebook header.left label,
+notebook header.right label {
+	margin-bottom: -1px;
+}
+
+expander-widget title {
+	padding: 0;
+	margin-bottom: 1px;
+}
+
+expander-widget title expander {
+	margin: 2px 3px 2px 1px;
+	-gtk-icon-size: 16px;
+}
+
+treeview header button > box,
+columnview header button > box {
+	margin-bottom: 2px;
 }

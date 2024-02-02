@@ -1,7 +1,6 @@
 /**
- * Copyright 2020-2023 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2024 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
- * https://www.luigifab.fr/gtk/human-theme
  *
  * Forked from
  *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
@@ -240,7 +239,8 @@ window.mate-terminal:not(.maximized) box.vertical notebook header.top ~ stack {
 .lock-dialog frame,
 .lock-dialog border,
 .lock-dialog notebook,
-.lock-dialog stack {
+.lock-dialog stack,
+.lock-dialog stack > box {
 	border: 0;
 	border-radius: 0;
 	background: @theme_bg;
@@ -252,6 +252,10 @@ window.mate-terminal:not(.maximized) box.vertical notebook header.top ~ stack {
 
 .lock-dialog entry {
 	padding-left: 0;
+}
+
+.lock-dialog textview {
+	padding: 2px;
 }
 
 /* --- mate-keyboard-layout-view + mate-keyboard-layout-chooser --- */

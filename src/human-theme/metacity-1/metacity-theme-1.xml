@@ -32,7 +32,7 @@
 	<distance name="right_titlebar_edge" value="4" />
 	<aspect_ratio name="button" value="1.0" />
 	<distance name="title_vertical_pad" value="0" />
-	<border name="title_border" left="2" right="2" top="4" bottom="3" /><!-- WARNING! bottom=4 since Pango 1.44 else bottom=3 -->
+	<border name="title_border" left="2" right="2" top="4" bottom="3" /><!-- WARNING! bottom=4 for Pango 1.44..1.49 else bottom=3 -->
 	<border name="button_border" left="1" right="1" top="2" bottom="2" />
 </frame_geometry>
 
@@ -54,7 +54,7 @@
 	<distance name="left_titlebar_edge" value="4" />
 	<distance name="right_titlebar_edge" value="4" />
 	<distance name="title_vertical_pad" value="0" />
-	<border name="title_border" left="2" right="2" top="4" bottom="3" /><!-- WARNING! bottom=4 since Pango 1.44 else bottom=3 -->
+	<border name="title_border" left="2" right="2" top="4" bottom="3" /><!-- WARNING! bottom=4 for Pango 1.44..1.49 else bottom=3 -->
 	<border name="button_border" left="0" right="0" top="2" bottom="2" />
 	<aspect_ratio name="button" value="1" />
 </frame_geometry>

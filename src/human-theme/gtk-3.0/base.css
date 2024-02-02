@@ -1,7 +1,6 @@
 /**
- * Copyright 2020-2023 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2024 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
- * https://www.luigifab.fr/gtk/human-theme
  *
  * Forked from
  *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
@@ -425,7 +424,7 @@ statusbar {
 }
 
 box + statusbar {
-	margin: -7px -10px -4px; /* WARNING! -7px -10px -5px since Pango 1.44 else -7px -10px -4px */
+	margin: -7px -10px -4px; /* WARNING! -7px -10px -5px for Pango 1.44..1.49 else -7px -10px -4px */
 }
 
 statusbar.classic {
@@ -465,6 +464,14 @@ statusbar frame > box {
 
 statusbar.classic frame > box {
 	margin: -4px -2px -3px; /* with gtk3-classic (appearance__smaller-statusbar.patch) */
+}
+
+statusbar progressbar.horizontal {
+	font-size: 85%;
+}
+
+statusbar progressbar.horizontal text {
+	padding-top: 4px;
 }
 
 paned + box > statusbar { /* geany, engrampa */
@@ -673,7 +680,7 @@ button.color colorswatch {
 
 entry {
 	margin: 1px;
-	padding: 3px; /* WARNING! 3px 3px 2px since Pango 1.44 else 3px */
+	padding: 3px; /* WARNING! 3px 3px 2px for Pango 1.44..1.49 else 3px */
 	color: @theme_text;
 	border: 1px solid @entry_border;
 	border-radius: 2.4px;
@@ -709,7 +716,7 @@ entry:disabled {
 /* --- combo box --- */
 
 combobox entry {
-	padding: 4px 3px; /* WARNING! 4px 3px 2px since Pango 1.44 else 4px 3px */
+	padding: 4px 3px; /* WARNING! 4px 3px 2px for Pango 1.44..1.49 else 4px 3px */
 }
 
 combobox button {
@@ -1142,6 +1149,7 @@ menubar menuitem {
 	text-shadow: none; /* libreoffice 6.4.1 */
 	color: @theme_fg; /* libreoffice 6.4.1 */
 	border: 1px solid transparent;
+	border-radius: 2px 2px 0 0;
 }
 
 menubar menuitem:dir(rtl) {
@@ -1152,7 +1160,6 @@ menubar menuitem:hover {
 	color: @menuitem_hover;
 	border: 1px solid @menuitem_hover_border;
 	border-bottom: 0;
-	border-radius: 2px 2px 0 0;
 	background:
 		radial-gradient(ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
@@ -1215,7 +1222,7 @@ menu menuitem label:dir(rtl) {
 /* --- menu item elements --- */
 
 menuitem.tearoff,
-menuitem.tearoff:dir(rtl) { /* awf2 */
+menuitem.tearoff:dir(rtl) { /* awf-extended */
 	padding: 3px 0;
 	color: @menu_tearoff_border;
 }
@@ -1674,8 +1681,8 @@ expander scrollbar.horizontal {
 	background: @theme_bg;
 }
 
-dialog:dir(rtl) scrolledwindow.frame scrollbar.vertical,
-expander:dir(rtl) scrollbar.vertical {
+dialog scrolledwindow.frame scrollbar.vertical:dir(rtl),
+expander scrollbar.vertical:dir(rtl) {
 	margin: -1px -3px -30px -1px;
 	padding: 0 3px 29px 0;
 	border-left: 0;
@@ -1700,7 +1707,7 @@ treeview ~ scrollbar.horizontal ~ scrollbar.vertical {
 	background: @theme_bg;
 }
 
-treeview:dir(rtl) ~ scrollbar.horizontal ~ scrollbar.vertical {
+treeview ~ scrollbar.horizontal ~ scrollbar.vertical:dir(rtl) {
 	margin: -30px -3px -30px -1px;
 	padding: 29px 3px 29px 0;
 	border-left: 0;
@@ -1767,6 +1774,10 @@ notebook stack notebook {
 	margin: -1px;
 }
 
+notebook stack notebook header {
+	background: @nb_bg;
+}
+
 notebook header {
 	padding: 1px;
 	background: @theme_bg;
@@ -1790,6 +1801,11 @@ notebook header tab label {
 
 notebook header tab button {
 	padding: 0;
+}
+
+notebook header tabs arrow {
+	min-width: 18px;
+	min-height: 18px;
 }
 
 notebook header.top tab {
@@ -1931,11 +1947,9 @@ notebook:focus header tab:checked label {
 	background: @nb_tab_focus_bg;
 }
 
-/* --- notebook stack --- */
+/* --- notebook stack - with gtk3-classic (notebook__stack_class.patch) --- */
 
-notebook header.top ~ stack:dir(ltr),
 notebook stack.top {
-	/* with gtk3-classic (notebook__stack_class.patch) */
 	border-radius: 0 0 2.4px 2.4px;
 	box-shadow:
 		inset -1px -1px alpha(@nb_border, 0.125),
@@ -1943,16 +1957,13 @@ notebook stack.top {
 }
 
 notebook stack.bottom {
-	/* with gtk3-classic (notebook__stack_class.patch) */
 	border-radius: 2.4px 2.4px 0 0;
 	box-shadow:
 		inset -1px 0 alpha(@nb_border, 0.125),
 		inset 1px 1px alpha(@entry_bg, 0.42);
 }
 
-notebook header.left ~ stack:dir(ltr),
 notebook stack.left {
-	/* with gtk3-classic (notebook__stack_class.patch) */
 	border-radius: 0 2.4px 2.4px 0;
 	box-shadow:
 		inset -1px -1px alpha(@nb_border, 0.125),
@@ -1960,95 +1971,52 @@ notebook stack.left {
 }
 
 notebook stack.right {
-	/* with gtk3-classic (notebook__stack_class.patch) */
 	border-radius: 2.4px 0 0 2.4px;
 	box-shadow:
 		inset 0 -1px alpha(@nb_border, 0.125),
 		inset 1px 1px alpha(@entry_bg, 0.42);
 }
 
-/* --- notebook top arrow --- */
+/* --- notebook arrow --- */
 
-notebook header.top tabs arrow.up:first-child,
-notebook header.top tabs arrow.down:first-child {
+notebook header.top tabs arrow.down {
 	margin: 1px 2px 0 0;
-	padding: 2px 2px 2px 1px;
 	-gtk-icon-transform: scale(0.8);
 }
 
-notebook header.top tabs arrow.down:last-child,
-notebook header.top tabs arrow.up:last-child {
+notebook header.top tabs arrow.up {
 	margin: 1px 0 0 2px;
-	padding: 2px 1px 2px 2px;
 	-gtk-icon-transform: scale(0.8);
 }
 
-/* --- notebook bottom arrow --- */
-
-notebook header.bottom tabs arrow.up:first-child,
-notebook header.bottom tabs arrow.down:first-child {
+notebook header.bottom tabs arrow.down {
 	margin: 0 2px 1px 0;
-	padding: 2px 2px 2px 1px;
 	-gtk-icon-transform: scale(0.8);
 }
 
-notebook header.bottom tabs arrow.down:last-child,
-notebook header.bottom tabs arrow.up:last-child {
+notebook header.bottom tabs arrow.up {
 	margin: 0 0 1px 2px;
-	padding: 2px 1px 2px 2px;
 	-gtk-icon-transform: scale(0.8);
 }
 
-/* --- notebook left arrow --- */
-
-notebook header.left tabs arrow.up:first-child {
+notebook header.left tabs arrow.down {
 	margin: 0 0 2px 1px;
-	padding: 1px 2px 2px;
-	-gtk-icon-transform: scale(0.8);
-}
-
-notebook header.left tabs arrow.down:first-child {
-	margin: 0 0 2px 1px;
-	padding: 1px 2px 2px;
 	-gtk-icon-transform: rotate(180deg) scale(0.8);
 }
 
-notebook header.left tabs arrow.up:last-child {
+notebook header.left tabs arrow.up {
 	margin: 2px 0 0 1px;
-	padding: 2px 2px 1px;
 	-gtk-icon-transform: rotate(180deg) scale(0.8);
 }
 
-notebook header.left tabs arrow.down:last-child {
-	margin: 2px 0 0 1px;
-	padding: 2px 2px 1px;
-	-gtk-icon-transform: scale(0.8);
-}
-
-/* --- notebook right arrow --- */
-
-notebook header.right tabs arrow.up:first-child {
+notebook header.right tabs arrow.down {
 	margin: 0 1px 2px 0;
-	padding: 1px 2px 2px;
-	-gtk-icon-transform: scale(0.8);
-}
-
-notebook header.right tabs arrow.down:first-child {
-	margin: 0 1px 2px 0;
-	padding: 1px 2px 2px;
 	-gtk-icon-transform: rotate(180deg) scale(0.8);
 }
 
-notebook header.right tabs arrow.up:last-child {
+notebook header.right tabs arrow.up {
 	margin: 2px 1px 0 0;
-	padding: 2px 2px 1px;
 	-gtk-icon-transform: rotate(180deg) scale(0.8);
-}
-
-notebook header.right tabs arrow.down:last-child {
-	margin: 2px 1px 0 0;
-	padding: 2px 2px 1px;
-	-gtk-icon-transform: scale(0.8);
 }
 
 /* --- progress bar --- */
@@ -2069,6 +2037,37 @@ progressbar trough {
 		inset  3px 3px alpha(shade(@theme_bg, 0.82), 0.26),
 		inset  2px 2px alpha(shade(@theme_bg, 0.82), 0.26),
 		inset  1px 1px @slider_trough_border;
+}
+
+treeview.view.trough,
+treeview.view.trough.odd,
+treeview.view.trough.even,
+treeview.view.trough.sorted,
+treeview.view.trough.sorted.odd,
+treeview.view.trough.sorted.even {
+	padding: 0;
+	color: @theme_text; /* = progressbar.classic text.trough */
+	border: 1px solid @slider_border_treeview;
+	background: @theme_bg;
+}
+
+treeview.view.trough:disabled,
+treeview.view.trough.odd:disabled,
+treeview.view.trough.even:disabled {
+	color: @insensitive_fg; /* = progressbar.classic:disabled text.trough */
+	background: @theme_bg;
+}
+
+treeview.view.progressbar {
+	color: @theme_selected_fg; /* = progressbar.classic text.progress */
+	text-shadow: none;
+	box-shadow:
+		inset -1px -1px @slider_border,
+		inset  1px  1px @slider_border;
+}
+
+treeview.view.progressbar:disabled {
+	color: @insensitive_selected; /* = progressbar.classic:disabled text.progress */
 }
 
 progressbar trough progress {
@@ -2123,11 +2122,6 @@ progressbar.vertical trough progress.bottom {
 			@slider_pattern 30px);
 }
 
-treeview.view.progressbar {
-	color: @theme_selected_fg;
-	text-shadow: none;
-}
-
 treeview.view.progressbar,
 progressbar.horizontal trough progress {
 	min-height: 20px;
@@ -2171,14 +2165,18 @@ progressbar.horizontal trough.empty progress {
 	background: none;
 }
 
+statusbar progressbar.horizontal trough,
+statusbar progressbar.horizontal trough progress,
+statusbar progressbar.horizontal.classic trough,
+statusbar progressbar.horizontal.classic trough progress {
+	min-height: 16px;
+}
+
+/* progressbar > text... but for now position of text with GTK_PROGRESS_TEXT_INSIDE=1 does not work, so same recipe */
+
 progressbar.vertical text {
 	margin-left: -39px;
 	padding-left: 3px;
-}
-
-progressbar.vertical text + trough,
-progressbar.vertical text + trough progress {
-	min-width: 39px;
 }
 
 progressbar.horizontal text {
@@ -2186,17 +2184,46 @@ progressbar.horizontal text {
 	padding-top: 3px;
 }
 
+progressbar.vertical.classic trough,
+progressbar.vertical.classic trough progress,
+progressbar.vertical text + trough,
+progressbar.vertical text + trough progress {
+	min-width: 40px;
+}
+
+progressbar.vertical.classic trough.full,
+progressbar.vertical.classic trough.full progress {
+	min-width: 48px;
+}
+
+progressbar.vertical.classic trough.full text {
+	margin-left: -47px;
+	padding-left: 2px;
+}
+
+progressbar.horizontal.classic trough,
+progressbar.horizontal.classic trough progress,
 progressbar.horizontal text + trough,
 progressbar.horizontal text + trough progress {
 	min-height: 24px;
 }
 
-progressbar text.trough {
-	color: @theme_selected_fg; /* with gtk3-classic (appearance__progress_text.patch) */
+/* --- progress bar text colors - with gtk3-classic (appearance__progress_text.patch) when GTK_PROGRESS_TEXT_INSIDE=1 --- */
+
+progressbar.classic text.trough {
+	color: @theme_text;
 }
 
-progressbar text.progressbar {
-	/* with gtk3-classic (appearance__progress_text.patch) */
+progressbar.classic text.progress {
+	color: @theme_selected_fg;
+}
+
+progressbar.classic:disabled text.trough {
+	color: @insensitive_fg;
+}
+
+progressbar.classic:disabled text.progress {
+	color: @insensitive_selected;
 }
 
 /* --- scale --- */
@@ -2285,13 +2312,13 @@ scale.vertical trough highlight.bottom {
 	margin-bottom: -11px;
 }
 
-scale.vertical:dir(rtl) trough highlight.top,
-scale.vertical.top:dir(rtl) trough highlight.bottom /* awf2 */ {
+scale.vertical trough highlight.top:dir(rtl),
+scale.vertical.top trough highlight.bottom:dir(rtl) /* awf-extended */ {
 	margin-top: -11px;
 	margin-bottom: 1px;
 }
 
-scale.vertical:dir(rtl) trough highlight.bottom {
+scale.vertical trough highlight.bottom:dir(rtl) {
 	margin-top: 1px;
 	margin-bottom: -11px;
 }
@@ -2622,7 +2649,7 @@ infobar.error {
 	background: linear-gradient(to bottom, @errorbar_bg_top, @errorbar_bg_bot);
 }
 
-/* --- treeview alternating colours CSS - with gtk3-classic (treeview__alternating_row_colours.patch) --- */
+/* --- treeview alternating colours - with gtk3-classic (treeview__alternating_row_colours.patch) --- */
 
 treeview.view.odd {
 	background-color: @theme_base;
@@ -2632,33 +2659,35 @@ treeview.view.even {
 	background-color: #EEE;
 }
 
-treeview.view.sorted.odd {
+treeview.view.odd.sorted {
 	background-color: #EEE;
 }
 
-treeview.view.sorted.even {
+treeview.view.even.sorted {
 	background-color: #DDD;
-}
-
-treeview.view.odd:selected,
-treeview.view.odd.sorted:selected,
-treeview.view.even:selected,
-treeview.view.even.sorted:selected {
-	color: @theme_selected_fg;
-	background-color: @theme_selected_bg;
 }
 
 treeview.view.odd:not(.last):not(.trough):not(.progressbar),
 treeview.view.even:not(.last):not(.trough):not(.progressbar) {
-	padding-right: 1px;
 	background-image: url("img/treeview-separator.svg");
 	background-repeat: repeat-y;
 	background-position: right bottom;
 }
 
-treeview.view check,
-treeview.view radio {
-	background: transparent;
+treeview.view.odd:not(.trough):not(.progressbar):selected,
+treeview.view.odd.sorted:not(.trough):not(.progressbar):selected,
+treeview.view.even:not(.trough):not(.progressbar):selected,
+treeview.view.even.sorted:not(.trough):not(.progressbar):selected {
+	color: @theme_selected_fg;
+	background-color: @theme_selected_bg;
+}
+
+treeview.view:disabled,
+treeview.view.odd:not(.trough):not(.progressbar):selected:disabled,
+treeview.view.odd.sorted:not(.trough):not(.progressbar):selected:disabled,
+treeview.view.even:not(.trough):not(.progressbar):selected:disabled,
+treeview.view.even.sorted:not(.trough):not(.progressbar):selected:disabled {
+	color: @insensitive_fg;
 }
 
 /* --- treeview --- */
@@ -2712,20 +2741,9 @@ treeview header button:last-child > box {
 
 /* --- treeview row elements --- */
 
-treeview.view:not(.progressbar):disabled:selected {
-	color: @insensitive_fg;
-}
-
-treeview.view.trough,
-treeview.view.trough:selected {
-	padding: 0;
-	color: @theme_text;
-	border: 1px solid @slider_border_treeview;
-	background: @theme_bg;
-}
-
-treeview.view.trough:disabled {
-	color: @insensitive_fg;
+treeview.view check,
+treeview.view radio {
+	background: transparent;
 }
 
 treeview.view.image:disabled {

@@ -1,7 +1,6 @@
 /**
- * Copyright 2020-2023 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2024 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
- * https://www.luigifab.fr/gtk/human-theme
  *
  * Forked from
  *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
@@ -23,20 +22,13 @@
  * GNU General Public License (GPL) for more details.
  */
 
-/* --- ubuntu welcome and software center --- */
-
-@define-color theme_bg_color @theme_bg;
-@define-color theme_fg_color @theme_fg;
-@define-color theme_selected_bg_color @theme_selected_bg;
-@define-color theme_selected_fg_color @theme_selected_fg;
-
 /* --- audacity --- */
 
 window > box > widget > widget {
 	background-color: @theme_bg;
 }
 
-/* --- geany pluma --- */
+/* --- geany and pluma --- */
 
 #GeanyMainWindow #notebook_info {
 	margin-bottom: 5px;
@@ -51,15 +43,40 @@ window.pluma-window notebook stack > box scrolledwindow {
 	border: 0;
 }
 
-notebook widget scrollbar.vertical {
+#GeanyMainWindow notebook widget scrollbar.vertical:dir(ltr) {
 	margin-left: 0;
 }
 
-notebook widget scrollbar.horizontal {
+#GeanyMainWindow notebook widget scrollbar.vertical:dir(rtl) {
+	margin-right: 0;
+}
+
+#GeanyMainWindow notebook widget scrollbar.horizontal {
 	margin-top: 0;
 }
 
-/* fix for some maximized windows https://github.com/mate-desktop/mate-desktop/issues/291 */
+/* --- caja --- */
+
+window.caja-navigation-window notebook.caja-notebook scrolledwindow scrollbar.vertical:dir(ltr) {
+	margin-left: 0;
+	background: @theme_bg;
+}
+
+window.caja-navigation-window notebook.caja-notebook scrolledwindow scrollbar.vertical:dir(rtl) {
+	margin-right: 0;
+	background: @theme_bg;
+}
+
+window.caja-navigation-window notebook.caja-notebook scrolledwindow.frame.view scrollbar.vertical {
+	/* margin-top: 0; */
+}
+
+window.caja-navigation-window notebook.caja-notebook scrolledwindow scrollbar.horizontal {
+	margin-top: 0;
+	background: @theme_bg;
+}
+
+/* --- fix for some maximized windows https://github.com/mate-desktop/mate-desktop/issues/291 --- */
 
 #GeanyMainWindow.maximized:dir(ltr) #notebook_info stack,
 window.background.maximized.engrampa-window:dir(ltr) > grid.horizontal > paned.horizontal > scrolledwindow.frame,
@@ -78,3 +95,8 @@ window.background.maximized.logview-window:dir(rtl) > box.vertical > paned.horiz
 window.background.maximized.caja-navigation-window:dir(rtl) notebook.caja-notebook scrolledwindow.frame {
 	border-left-width: 0;
 }
+
+/* --- awf-extended --- */
+
+#AwfMainWindow .awf-cheatcode-btn7 { min-height: 18px; }
+#AwfMainWindow .awf-cheatcode-btn8 { min-height: 20px; }

@@ -1,7 +1,6 @@
 /**
- * Copyright 2020-2023 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2024 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
- * https://www.luigifab.fr/gtk/human-theme
  *
  * Forked from
  *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
@@ -23,27 +22,35 @@
  * GNU General Public License (GPL) for more details.
  */
 
-@define-color theme_base #FFF;
 @define-color theme_bg #E6DDD5;
 @define-color theme_fg #101010;
+@define-color theme_base #FFF;
 @define-color theme_text #1A1A1A;
 @define-color theme_selected_bg #8F5F4A;
 @define-color theme_selected_fg #FFF;
+@define-color insensitive_fg shade(@theme_bg, 0.65);
+
 @define-color theme_tooltip_bg #F5F5B5;
 @define-color theme_tooltip_fg #000;
 @define-color theme_tooltip_border shade(@theme_tooltip_bg, 0.63); /* #C2C250 instead of #C2C24E */
 @define-color outline shade(@theme_selected_bg, 1.499);
-
 @define-color link #00E;
 @define-color visited_link shade(@link, 0.2);
-@define-color error #C00;
+@define-color insensitive_selected alpha(@theme_selected_fg, 0.8);
 @define-color insensitive_text_shadow alpha(@theme_base, 0.5);
-@define-color insensitive_fg shade(@theme_bg, 0.65);
 @define-color checkradio shade(@theme_bg, 0.839);
+
+/* https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html */
+@define-color theme_bg_color @theme_bg;
+@define-color theme_fg_color @theme_fg;
+@define-color theme_base_color @theme_base;
+@define-color theme_text_color @theme_text;
+@define-color theme_selected_bg_color @theme_selected_bg;
+@define-color theme_selected_fg_color @theme_selected_fg;
+@define-color insensitive_fg_color @insensitive_fg;
 
 @import url("gtk-shade.css");
 @import url("base.css");
 @import url("mate.css");
 @import url("xfce.css");
 @import url("apps.css");
-@import url("override.css");
