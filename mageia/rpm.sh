@@ -1,6 +1,6 @@
 #!/bin/bash
-# Fedora: sudo dnf install rpmdevtools rpmlint rpm-sign aspell-fr enchant2-aspell
-# Fedora: configure: error: C compiler cannot create executables? remove and reinstall glibc-devel gcc
+# Mageia: sudo urpmi --no-recommends rpmdevtools rpmlint rpmlint-mageia-policy rpm-sign aspell-fr enchant2-aspell
+
 
 cd "$(dirname "$0")"
 version="2.2.0"
@@ -20,7 +20,7 @@ else
 	rm -rf /tmp/$temp/*/builder/
 
 	mv /tmp/$temp builder/
-	cp /usr/share/common-licenses/GPL-3 builder/$temp/LICENSE
+	cp /usr/share/common-licenses/GPLv3 builder/$temp/LICENSE
 
 	cd builder/
 	tar czf $temp.tar.gz $temp

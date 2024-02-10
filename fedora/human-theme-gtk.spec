@@ -10,23 +10,21 @@ Source0:       %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildArch:     noarch
 BuildRequires: aspell-fr
 Recommends:    dmz-cursor-themes
-Recommends:    gnome-icon-theme
+Recommends:    mate-icon-theme
 Recommends:    gtk-murrine-engine
 
 %description %{expand:
-This theme works with GTK 2.24 (with gtk-murrine-engine),
-3.24, and 4.12. Better rendering with Pango 1.42- or 1.51+.
+This theme works with GTK 2.24 (with gtk-murrine-engine), 3.24, and 4.12.
+Better rendering with Pango 1.42- or 1.51+.
 
 It is mainly intended for Mate and Xfce Desktop Environments.
-
 After installation you must restart your session.}
 
 %description -l fr %{expand:
-Ce thème fonctionne avec : GTK 2.24 (avec gtk-murrine-engine),
-3.24, et 4.12. Meilleur rendu avec Pango 1.42- ou 1.51+.
+Ce thème fonctionne avec : GTK 2.24 (avec gtk-murrine-engine), 3.24, et 4.12.
+Meilleur rendu avec Pango 1.42- ou 1.51+.
 
 Il est principalement destiné pour les environnements de bureau Mate et Xfce.
-
 Après l'installation vous devez redémarrer votre session.}
 
 
@@ -35,19 +33,18 @@ Après l'installation vous devez redémarrer votre session.}
 sed -i 's/IconTheme=gnome/IconTheme=mate/g' src/*/index.theme
 
 %install
-mkdir -p %{buildroot}/etc/profile.d/
-install -pm 644 debian/profile.sh %{buildroot}/etc/profile.d/%{name}.sh
-mkdir -p %{buildroot}%{_datadir}/themes/
+install -dm 755 %{buildroot}%{_datadir}/themes/
 cp -a src/human-theme/        %{buildroot}%{_datadir}/themes/
 cp -a src/human-theme-blue/   %{buildroot}%{_datadir}/themes/
 cp -a src/human-theme-green/  %{buildroot}%{_datadir}/themes/
 cp -a src/human-theme-orange/ %{buildroot}%{_datadir}/themes/
+install -Dpm 644 debian/profile.sh %{buildroot}/etc/profile.d/%{name}.sh
 
 %files
 %config(noreplace) /etc/profile.d/%{name}.sh
 %license LICENSE
 %doc README.md
-# the entire source code is GPL-3+, except metacity-1/* which is LGPL-2.1+, and gtk-2.0/* which is CC-BY-SA-3.0+
+# the entire source code is GPL-3.0-or-later, except metacity-1/* which is LGPL-2.1-or-later, and gtk-2.0/* which is CC-BY-SA-3.0-or-later
 %{_datadir}/themes/human-theme/
 %{_datadir}/themes/human-theme-blue/
 %{_datadir}/themes/human-theme-green/
