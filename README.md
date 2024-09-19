@@ -2,7 +2,7 @@
 
 This theme works with: **GTK 2.24** *(with murrine)*, **GTK 3.24**, and **GTK 4.12**.
 
-It is mainly intended for Mate and Xfce desktop environments.
+It is mainly intended for MATE and Xfce desktop environments.
 
 ## Screenshots
 
@@ -70,7 +70,7 @@ Program used for the screenshots is available [here](https://github.com/luigifab
 
 ## Installation
 
-#### 🆕 Before start 🆕
+#### 🆕 Before you begin 🆕
 
 To meet the truth (this is not required):
 - remove [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd)
@@ -206,7 +206,7 @@ QT_QPA_PLATFORMTHEME=gtk2
 
 ## Configuration
 
-For **Mate** desktop:
+For **MATE** desktop:
 * Go to: *System / Preferences / Appearance*, or run: `mate-appearance-properties`
 * Then select the *Human* theme
 * Go to: *System / Preferences / Windows*, or run: `mate-window-properties`
@@ -243,7 +243,7 @@ sudo rm 10-hinting-slight.conf # /usr/share/fontconfig/conf.avail/10-hinting-sli
 sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-full.conf
 ```
 
-For classic menu bar and menu items of [Firefox 46+](https://www.mozilla.org/firefox) and [Thunderbird 46+](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
+For classic menu bar and menu items on [Firefox 46+](https://www.mozilla.org/firefox) and [Thunderbird 46+](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
 
 ## Dev
 
