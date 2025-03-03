@@ -1,5 +1,5 @@
 Name:          human-theme-gtk
-Version:       2.2.0
+Version:       2.2.1
 Release:       %mkrel 1
 Summary:       Human theme for GTK
 Summary(fr):   Thème Human pour GTK
@@ -18,14 +18,14 @@ Recommends:    gtk2-murrine-engine
 This theme works with GTK 2.24 (with gtk2-murrine-engine), 3.24, and 4.12.
 Better rendering with Pango 1.42- or 1.51+.
 
-It is mainly intended for Mate and Xfce Desktop Environments.
+It is mainly intended for MATE and Xfce desktop environments.
 After installation you must restart your session.}
 
 %description -l fr %{expand:
 Ce thème fonctionne avec : GTK 2.24 (avec gtk2-murrine-engine), 3.24, et 4.12.
 Meilleur rendu avec Pango 1.42- ou 1.51+.
 
-Il est principalement destiné pour les environnements de bureau Mate et Xfce.
+Il est principalement destiné pour les environnements de bureau MATE et Xfce.
 Après l'installation vous devez redémarrer votre session.}
 
 
@@ -35,11 +35,11 @@ sed -i 's/IconTheme=gnome/IconTheme=mate/g' src/*/index.theme
 
 %install
 install -dm 755 %{buildroot}%{_datadir}/themes/
-cp -a src/human-theme/        %{buildroot}%{_datadir}/themes/
-cp -a src/human-theme-blue/   %{buildroot}%{_datadir}/themes/
-cp -a src/human-theme-green/  %{buildroot}%{_datadir}/themes/
-cp -a src/human-theme-orange/ %{buildroot}%{_datadir}/themes/
-install -Dpm 644 debian/profile.sh %{buildroot}/etc/profile.d/%{name}.sh
+cp -a src/human-theme/           %{buildroot}%{_datadir}/themes/
+cp -a src/human-theme-blue/      %{buildroot}%{_datadir}/themes/
+cp -a src/human-theme-green/     %{buildroot}%{_datadir}/themes/
+cp -a src/human-theme-orange/    %{buildroot}%{_datadir}/themes/
+install -Dpm 644 data/profile.sh %{buildroot}/etc/profile.d/%{name}.sh
 
 %files
 %config(noreplace) /etc/profile.d/%{name}.sh
@@ -53,5 +53,5 @@ install -Dpm 644 debian/profile.sh %{buildroot}/etc/profile.d/%{name}.sh
 
 
 %changelog
-* Fri Feb 02 2024 Fabrice Creuzot <code@luigifab.fr> - 2.2.0-1
+* Mon Mar 03 2025 Fabrice Creuzot <code@luigifab.fr> - 2.2.0-1.mga9
 - Initial Mageia package release (Closes: mbz#32817)

@@ -1,5 +1,5 @@
 /**
- * Copyright 2020-2024 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2025 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  *
  * Forked from
@@ -301,6 +301,11 @@ spinner {
 spinner:checked {
 	animation: spinner 1s infinite steps(12);
 	opacity: 1;
+}
+
+menubar spinner {
+	animation: none;
+	opacity: 0;
 }
 
 /* --- grid --- */
@@ -666,7 +671,7 @@ spinbutton.horizontal entry:dir(rtl) {
 	border-radius: 0 2.4px 2.3px 0;
 }
 
-/* --- colorswatch --- */
+/* --- colorbutton --- */
 
 button.color {
 	padding: 5px;

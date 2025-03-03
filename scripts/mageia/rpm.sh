@@ -1,9 +1,9 @@
 #!/bin/bash
-# Mageia: sudo urpmi --no-recommends rpmdevtools rpmlint rpmlint-mageia-policy rpm-sign aspell-fr enchant2-aspell
+# Mageia: sudo urpmi --no-recommends rpmdevtools rpm-sign aspell-fr enchant2-aspell
 
 
 cd "$(dirname "$0")"
-version="2.2.0"
+version="2.2.1"
 
 
 mkdir -p builder ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
@@ -16,11 +16,11 @@ if [ true ]; then
 else
 	temp=human-theme-$version
 	mkdir /tmp/$temp
-	cp -r ../* /tmp/$temp/
-	rm -rf /tmp/$temp/*/builder/
+	cp -r ../../* /tmp/$temp/
+	rm -rf /tmp/$temp/scripts/*/builder/
 
 	mv /tmp/$temp builder/
-	cp /usr/share/common-licenses/GPLv3 builder/$temp/LICENSE
+	cp /usr/share/common-licenses/GPL*3 builder/$temp/LICENSE
 
 	cd builder/
 	tar czf $temp.tar.gz $temp

@@ -6,4 +6,4 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 	dh $@
 
 override_dh_update_autotools_config:
-	cp debian/profile.sh debian/human-theme-gtk.sh
+	cp data/profile.sh debian/human-theme-gtk.sh

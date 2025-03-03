@@ -1,5 +1,5 @@
 /**
- * Copyright 2020-2024 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2025 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  *
  * Forked from
@@ -29,6 +29,61 @@
 
 XfdesktopIconView.view {
 	background: transparent;
+}
+
+/* --- thunar --- */
+
+window.thunar scrolledwindow.frame.sidebar {
+	margin: 5px 0 1px;
+}
+
+window.thunar paned paned notebook stack {
+	padding-top: 4px;
+	border: 0;
+	background: @theme_bg;
+}
+
+window.thunar paned paned notebook stack scrolledwindow.frame.standard-view scrollbar.vertical:dir(ltr) {
+	margin-right: 0;
+	background: @theme_bg;
+}
+
+window.thunar paned paned notebook stack scrolledwindow.frame.standard-view scrollbar.vertical:dir(rtl) {
+	/* @todo */
+	margin: -1px -3px -30px 0;
+	padding: 0 3px 29px 0;
+	border-left: 0;
+	border-right: 1px solid @menu_border;
+	background: @theme_bg;
+}
+
+window.thunar paned paned notebook stack scrolledwindow.frame.standard-view scrollbar.horizontal:dir(ltr) {
+	margin-left: -1px;
+	background: @theme_bg;
+}
+
+window.thunar paned paned notebook stack scrolledwindow.frame.standard-view scrollbar.horizontal:dir(rtl) {
+	margin-right: -1px;
+	background: @theme_bg;
+}
+
+window.thunar paned paned notebook stack scrolledwindow.frame.standard-view:dir(ltr) {
+	/* @todo not working https://github.com/xfce-mirror/thunar/blob/b6ea10ea717ab3822358670dab3b74a585195e0c/thunar/thunar-application.c#L707 */
+	border-left: 1px solid @menu_border;
+}
+
+window.thunar paned paned notebook stack scrolledwindow.frame.standard-view:dir(rtl) {
+	/* @todo not working https://github.com/xfce-mirror/thunar/blob/b6ea10ea717ab3822358670dab3b74a585195e0c/thunar/thunar-application.c#L707 */
+	border-right: 1px solid @menu_border;
+}
+
+window.thunar statusbar {
+	border-top: 0;
+}
+
+window.thunar statusbar frame {
+	border-top: 0;
+	margin-top: 1px;
 }
 
 /* --- terminal --- */

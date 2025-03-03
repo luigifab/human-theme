@@ -1,5 +1,5 @@
 /**
- * Copyright 2020-2024 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2025 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  *
  * Forked from
@@ -129,7 +129,9 @@ PanelToplevel.background {
 	border-radius: 0;
 }
 
-#MatePanelPopupWindow frame > box > box > box > widget { /* the map border color */
+#MatePanelPopupWindow frame > box > box > box > widget {
+	/* the map border color */
+	/* https://github.com/mate-desktop/mate-panel/blob/e2065669e8e992ebaf23433dfc979caea171ed89/applets/clock/clock-map.c#L205 */
 	color: @frame_border;
 }
 
@@ -200,6 +202,21 @@ PanelToplevel.background {
 }
 
 /* --- caja --- */
+
+window.caja-navigation-window notebook.caja-notebook scrolledwindow scrollbar.vertical:dir(ltr) {
+	margin-left: 0;
+	background: @theme_bg;
+}
+
+window.caja-navigation-window notebook.caja-notebook scrolledwindow scrollbar.vertical:dir(rtl) {
+	margin-right: 0;
+	background: @theme_bg;
+}
+
+window.caja-navigation-window notebook.caja-notebook scrolledwindow scrollbar.horizontal {
+	margin-top: 0;
+	background: @theme_bg;
+}
 
 window.caja-navigation-window stack {
 	border: 0;

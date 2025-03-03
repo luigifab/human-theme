@@ -1,8 +1,7 @@
 # Human theme
 
-This theme works with: **GTK 2.24** *(with murrine)*, **GTK 3.24**, and **GTK 4.12**.
-
-It is mainly intended for Mate and Xfce desktop environments.
+This theme works with: **GTK 2.24** *(with murrine)*, **GTK 3.24**, and **GTK 4.12/4.17**.\
+It is mainly intended for MATE and Xfce desktop environments.
 
 ## Screenshots
 
@@ -70,18 +69,18 @@ Program used for the screenshots is available [here](https://github.com/luigifab
 
 ## Installation
 
-#### 🆕 Before start 🆕
+#### 🆕 Before you begin 🆕
 
 To meet the truth (this is not required):
 - remove [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd)
 - install [gtk3-classic](https://github.com/lah7/gtk3-classic)
 - use Pango 1.42- or 1.51+
 
-For Debian Testing, I provide a [repository](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) for gtk3-classic.
+For Debian Testing, I provide repositories for [gtk3-classic](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) and [gtk4-classic](https://build.opensuse.org/package/show/home:luigifab/gtk4-classic), with some extra patches.
 
 If you can't/won't, no worries, but the truth will be far.
 
-#### Installation for Debian, Ubuntu, Trisquel, Linux Mint, MX Linux
+#### Installation for Debian, Devuan, Ubuntu, Trisquel, Linux Mint, MX Linux
 
 * Run: `sudo apt install human-theme-gtk`
 * Restart your session
@@ -101,12 +100,14 @@ If you can't/won't, no worries, but the truth will be far.
 * Run: `sudo urpmi human-theme-gtk`
 * Restart your session
 
-#### Alternative installation for Debian, Ubuntu, Trisquel, Linux Mint, MX Linux
+#### Alternative installation for Debian, Devuan, Ubuntu, Trisquel, Linux Mint, MX Linux
 
 * Run:
 ```bash
 # PPA: https://launchpad.net/~luigifab/+archive/ubuntu/packages
 # with Debian 12+ you can use mantic+ instead of focal (https://unix.stackexchange.com/a/669008/364800)
+# for Debian you can use bionic for buster, focal for bullseye, noble for bookworm and trixie
+# for Devuan you can use bionic for beowulf, focal for chimaera, noble for daedalus
 # for Trisquel you can use focal for nabia, jammy for aramo
 # for Linux Mint you can use focal for 20.x and 5, jammy for 21.x, noble for 22.x and 6
 # for MX Linux you can use focal for 19.x and 21.x, noble for 23.x
@@ -124,6 +125,11 @@ sudo wget -O /etc/apt/trusted.gpg.d/luigifab.gpg https://www.luigifab.fr/apt.gpg
 echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu focal main" | sudo tee -a /etc/apt/sources.list
 sudo apt update
 sudo apt install human-theme-gtk
+# or
+wget -qO - https://www.luigifab.fr/apt.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/luigifab.gpg
+echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu focal main" | sudo tee -a /etc/apt/sources.list
+sudo apt update
+sudo apt install human-theme-gtk
 
 # sha256sum /etc/apt/trusted.gpg.d/luigifab.gpg
 578c89a677048e38007462d543686b53587efba9f93814601169253c45ff9213
@@ -134,7 +140,7 @@ pub   rsa4096 2020-10-31 [SC]
 ```
 * Restart your session
 
-#### Manual installation for Debian, Ubuntu, Trisquel, Linux Mint, MX Linux
+#### Manual installation for Debian, Devuan, Ubuntu, Trisquel, Linux Mint, MX Linux
 
 * Download archive and extract subdirectories in `~/.themes/`
 * Configure font rendering, GTK and QT, add in `/etc/environment`:
@@ -146,10 +152,12 @@ GTK_FOCUS_VISIBLE=1
 GTK_PROGRESS_TEXT_INSIDE=1
 GTKM_INSERT_EMOJI=1
 QT_QPA_PLATFORMTHEME=gtk2
+GTK_USE_IEC_UNITS=1
 ```
 * Install icons and cursors themes: `sudo apt install gnome-icon-theme dmz-cursor-theme`
 * Install package for GTK 2 apps: `sudo apt install gtk2-engines-murrine`
 * Install package for QT 5 apps: `sudo apt install qt5-gtk2-platformtheme qt5-gtk-platformtheme`
+* Install package for QT 6 apps: `sudo apt install qt6-gtk-platformtheme`
 * Restart your session
 
 #### Manual installation for Fedora
@@ -164,6 +172,7 @@ GTK_FOCUS_VISIBLE=1
 GTK_PROGRESS_TEXT_INSIDE=1
 GTKM_INSERT_EMOJI=1
 QT_QPA_PLATFORMTHEME=gtk2
+GTK_USE_IEC_UNITS=1
 ```
 * Install icons and cursors themes: `sudo dnf install mate-icon-theme dmz-cursor-themes`
 * Install package for GTK 2 apps: `sudo dnf install gtk-murrine-engine`
@@ -181,6 +190,7 @@ GTK_FOCUS_VISIBLE=1
 GTK_PROGRESS_TEXT_INSIDE=1
 GTKM_INSERT_EMOJI=1
 QT_QPA_PLATFORMTHEME=gtk2
+GTK_USE_IEC_UNITS=1
 ```
 * Install icons and cursors themes: `sudo zypper install gnome-icon-theme dmz-cursor-themes`
 * Install package for GTK 2 apps: `sudo zypper install gtk2-engine-murrine`
@@ -200,13 +210,14 @@ GTK_FOCUS_VISIBLE=1
 GTK_PROGRESS_TEXT_INSIDE=1
 GTKM_INSERT_EMOJI=1
 QT_QPA_PLATFORMTHEME=gtk2
+GTK_USE_IEC_UNITS=1
 ```
 * Install icons themes: `sudo urpmi mate-icon-theme`
 * Restart your session
 
 ## Configuration
 
-For **Mate** desktop:
+For **MATE** desktop:
 * Go to: *System / Preferences / Appearance*, or run: `mate-appearance-properties`
 * Then select the *Human* theme
 * Go to: *System / Preferences / Windows*, or run: `mate-window-properties`
@@ -218,16 +229,19 @@ For **Xfce** desktop:
 * Go to: *Applications / Settings / Window Manager*, or run: `xfwm4-settings`
 * Then select the *Human* theme
 
-Fonts used:
-* *DejaVu Sans Book* or *Sans Regular*, 10
-* *DejaVu Sans Bold* or *Sans Bold*, 10
-* *DejaVu Sans Mono Book* or *Monospace Regular*, 10
+Fonts:
+* *DejaVu Sans Book*, 10
+* *DejaVu Sans Bold*, 10
+* *DejaVu Sans Mono Book*, 10
 
-Icons used:
+Icons:
 * *gnome* or *mate*
 
-Cursors used:
+Cursors:
 * *DMZ white*
+
+Notifications:
+* *Coco*
 
 ## Customize
 
@@ -243,7 +257,20 @@ sudo rm 10-hinting-slight.conf # /usr/share/fontconfig/conf.avail/10-hinting-sli
 sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-full.conf
 ```
 
-For classic menu bar and menu items of [Firefox 46+](https://www.mozilla.org/firefox) and [Thunderbird 46+](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
+For classic menu bar and menu items on [Firefox 46+](https://www.mozilla.org/firefox) and [Thunderbird 46+](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
+
+## Blurry text with GTK 4
+
+If font rendering is bad, add in `~/.config/gtk-4.0/settings.ini`:
+
+```
+[Settings]
+gtk-font-rendering=manual
+gtk-hint-font-metrics=1
+gtk-xft-hintstyle=hintfull
+gtk-xft-antialias=0
+gtk-xft-hinting=1
+```
 
 ## Dev
 
@@ -274,8 +301,8 @@ Run `svg.sh` to update SVG images. See also [technical informations](https://git
 
 ## Copyright
 
-- Current version: 2.2.0 (02/02/2024)
-- Compatibility: GTK 2.24 / 3.24 / 4.12
+- Current version: 2.2.1 (03/03/2025)
+- Compatibility: GTK 2.24 / 3.24 / 4.12..4.17
 - Links: [luigifab.fr](https://www.luigifab.fr/gtk/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/)\
 [Arch Linux human-theme-gtk.zst](https://aur.archlinux.org/packages/human-theme-gtk)\
 [Debian human-theme-gtk.deb](https://packages.debian.org/human-theme-gtk)
@@ -291,7 +318,7 @@ If you like, take some of your time to improve some translations, go to https://
 
 ## Packages in official distros repositories
 
-[![Packages status](https://repology.org/badge/vertical-allrepos/human-theme-gtk.svg?header=human-theme-gtk&exclude_unsupported=1)](https://repology.org/project/human-theme-gtk/versions)
+[![Packages status](https://repology.org/badge/vertical-allrepos/human-theme-gtk.svg?header=human-theme-gtk)](https://repology.org/project/human-theme-gtk/versions)
 
 ## Credits
 

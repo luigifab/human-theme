@@ -1,30 +1,34 @@
 Name:          human-theme-gtk
-Version:       2.2.0
-Release:       1%{?dist}
+Version:       2.2.1
+Release:       0
 Summary:       Human theme for GTK
 Summary(fr):   Thème Human pour GTK
-License:       GPLv3+ and LGPLv2+ and CC-BY-SA
+License:       GPL-3.0-or-later and LGPL-2.1-or-later and CC-BY-SA-3.0
 URL:           https://github.com/luigifab/human-theme
 Source0:       %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildArch:     noarch
 BuildRequires: aspell-fr
-Recommends:    dmz-cursor-themes
-Recommends:    mate-icon-theme
-Recommends:    gtk-murrine-engine
+Recommends:    dmz-icon-theme-cursors
+Recommends:    gnome-icon-theme
+Recommends:    gtk2-engine-murrine
+Suggests:      libqt5-qtbase-platformtheme-gtk3
+Suggests:      libqt5-qtstyleplugins-platformtheme-gtk2
+Suggests:      qt6-platformtheme-gtk3
+# https://software.openSUSE.org/search?baseproject=openSUSE%3AFactory&q=qt+theme+gtk
 
 %description %{expand:
-This theme works with GTK 2.24 (with gtk-murrine-engine), 3.24, and 4.12.
+This theme works with GTK 2.24 (with gtk2-engine-murrine), 3.24, and 4.12.
 Better rendering with Pango 1.42- or 1.51+.
 
-It is mainly intended for Mate and Xfce Desktop Environments.
+It is mainly intended for MATE and Xfce desktop environments.
 After installation you must restart your session.}
 
 %description -l fr %{expand:
-Ce thème fonctionne avec : GTK 2.24 (avec gtk-murrine-engine), 3.24, et 4.12.
+Ce thème fonctionne avec : GTK 2.24 (avec gtk2-engine-murrine), 3.24, et 4.12.
 Meilleur rendu avec Pango 1.42- ou 1.51+.
 
-Il est principalement destiné pour les environnements de bureau Mate et Xfce.
+Il est principalement destiné pour les environnements de bureau MATE et Xfce.
 Après l'installation vous devez redémarrer votre session.}
 
 
@@ -34,14 +38,14 @@ sed -i 's/IconTheme=gnome/IconTheme=mate/g' src/*/index.theme
 
 %install
 install -dm 755 %{buildroot}%{_datadir}/themes/
-cp -a src/human-theme/        %{buildroot}%{_datadir}/themes/
-cp -a src/human-theme-blue/   %{buildroot}%{_datadir}/themes/
-cp -a src/human-theme-green/  %{buildroot}%{_datadir}/themes/
-cp -a src/human-theme-orange/ %{buildroot}%{_datadir}/themes/
-install -Dpm 644 debian/profile.sh %{buildroot}/etc/profile.d/%{name}.sh
+cp -a src/human-theme/           %{buildroot}%{_datadir}/themes/
+cp -a src/human-theme-blue/      %{buildroot}%{_datadir}/themes/
+cp -a src/human-theme-green/     %{buildroot}%{_datadir}/themes/
+cp -a src/human-theme-orange/    %{buildroot}%{_datadir}/themes/
+install -Dpm 644 data/profile.sh %{buildroot}%{_sysconfdir}/profile.d/%{name}.sh
 
 %files
-%config(noreplace) /etc/profile.d/%{name}.sh
+%config(noreplace) %{_sysconfdir}/profile.d/%{name}.sh
 %license LICENSE
 %doc README.md
 # the entire source code is GPL-3.0-or-later, except metacity-1/* which is LGPL-2.1-or-later, and gtk-2.0/* which is CC-BY-SA-3.0-or-later
@@ -52,6 +56,9 @@ install -Dpm 644 debian/profile.sh %{buildroot}/etc/profile.d/%{name}.sh
 
 
 %changelog
+* Mon Mar 03 2025 Fabrice Creuzot <code@luigifab.fr> - 2.2.1-1
+- New upstream release
+
 * Fri Feb 02 2024 Fabrice Creuzot <code@luigifab.fr> - 2.2.0-1
 - New upstream release
 
@@ -74,7 +81,4 @@ install -Dpm 644 debian/profile.sh %{buildroot}/etc/profile.d/%{name}.sh
 - New upstream release
 
 * Sun Apr 04 2021 Fabrice Creuzot <code@luigifab.fr> - 1.2.0-1
-- New upstream release
-
-* Wed Nov 11 2020 Fabrice Creuzot <code@luigifab.fr> - 1.1.0-1
-- Initial Fedora package release (Closes: rhbz#1893327)
+- Initial openSUSE package release

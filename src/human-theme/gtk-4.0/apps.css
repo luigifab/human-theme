@@ -1,5 +1,5 @@
 /**
- * Copyright 2020-2024 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2025 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  *
  * Forked from
@@ -53,27 +53,6 @@ window.pluma-window notebook stack > box scrolledwindow {
 
 #GeanyMainWindow notebook widget scrollbar.horizontal {
 	margin-top: 0;
-}
-
-/* --- caja --- */
-
-window.caja-navigation-window notebook.caja-notebook scrolledwindow scrollbar.vertical:dir(ltr) {
-	margin-left: 0;
-	background: @theme_bg;
-}
-
-window.caja-navigation-window notebook.caja-notebook scrolledwindow scrollbar.vertical:dir(rtl) {
-	margin-right: 0;
-	background: @theme_bg;
-}
-
-window.caja-navigation-window notebook.caja-notebook scrolledwindow.frame.view scrollbar.vertical {
-	/* margin-top: 0; */
-}
-
-window.caja-navigation-window notebook.caja-notebook scrolledwindow scrollbar.horizontal {
-	margin-top: 0;
-	background: @theme_bg;
 }
 
 /* --- fix for some maximized windows https://github.com/mate-desktop/mate-desktop/issues/291 --- */

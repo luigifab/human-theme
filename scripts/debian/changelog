@@ -1,0 +1,5 @@
+human-theme-gtk (2.2.1-1) experimental; urgency=low
+
+  * Initial Debian package release (Closes: #973445)
+
+ -- Fabrice Creuzot <code@luigifab.fr>  Mon, 03 Mar 2025 20:00:00 +0000
