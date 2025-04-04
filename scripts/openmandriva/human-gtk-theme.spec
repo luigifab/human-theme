@@ -1,6 +1,6 @@
-Name:          human-theme-gtk
+Name:          human-gtk-theme
 Version:       2.3.0
-Release:       %mkrel 1
+Release:       1
 Summary:       Human theme for GTK
 Summary(fr):   Thème Human pour GTK
 License:       GPLv3+ and LGPLv2+ and CC-BY-SA
@@ -12,17 +12,17 @@ BuildArch:     noarch
 BuildRequires: aspell-fr
 #Recommends:   dmz-cursor-themes
 Recommends:    mate-icon-theme
-Recommends:    gtk2-murrine-engine
+Recommends:    murrine
 
 %description %{expand:
-This theme works with GTK 2.24 (with gtk2-murrine-engine), 3.24, and 4.12.
+This theme works with GTK 2.24 (with murrine), 3.24, and 4.12.
 Better rendering with Pango 1.42- or 1.51+.
 
 It is mainly intended for MATE and Xfce desktop environments.
 After installation you must restart your session.}
 
 %description -l fr %{expand:
-Ce thème fonctionne avec : GTK 2.24 (avec gtk2-murrine-engine), 3.24, et 4.12.
+Ce thème fonctionne avec : GTK 2.24 (avec murrine), 3.24, et 4.12.
 Meilleur rendu avec Pango 1.42- ou 1.51+.
 
 Il est principalement destiné pour les environnements de bureau MATE et Xfce.
@@ -54,11 +54,8 @@ install -Dpm 644 data/profile.sh %{buildroot}/etc/profile.d/%{name}.sh
 
 
 %changelog
-* Fri Apr 04 2025 Fabrice Creuzot <code@luigifab.fr> - 2.3.0-1.mga9
+* Fri Apr 04 2025 Fabrice Creuzot <code@luigifab.fr> - 2.3.0-1
 - New upstream release
 
-* Mon Mar 03 2025 Fabrice Creuzot <code@luigifab.fr> - 2.2.1-1.mga9
-- New upstream release
-
-* Fri Feb 02 2024 Fabrice Creuzot <code@luigifab.fr> - 2.2.0-1.mga9
-- Initial Mageia package release (Closes: mbz#32817)
+* Mon Mar 03 2025 Fabrice Creuzot <code@luigifab.fr> - 2.2.1-1
+- Initial OpenMandriva package release

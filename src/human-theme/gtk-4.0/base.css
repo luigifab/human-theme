@@ -37,9 +37,10 @@ textview text {
 	background: @theme_base;
 }
 
-XfdesktopIconView.view .rubberband,
 rubberband,
-.rubberband {
+.rubberband,
+.rubberband.background,
+XfdesktopIconView.view .rubberband {
 	border-color: alpha(@theme_selected_bg, 0.8);
 	background: alpha(@theme_selected_bg, 0.4);
 }
@@ -57,12 +58,14 @@ label > link {
 	color: @link;
 }
 
-*:selected,
-*:selected:focus,
 selection,
 switch:checked {
 	color: @theme_selected_fg;
-	background: @theme_selected_bg;
+	background-color: @theme_selected_bg;
+}
+
+button:hover image {
+	-gtk-icon-filter: brightness(1.2);
 }
 
 paper {
@@ -122,13 +125,29 @@ box.dialog-vbox {
 	outline: 0;
 }
 
-.background.solid-csd headerbar button:hover {
-	background: none;
-	box-shadow: none;
+.background.solid-csd headerbar button:checked,
+.background.solid-csd headerbar button.toggle:active,
+.background.solid-csd headerbar button.toggle:checked {
+	padding: 0;
+	font-weight: bold;
 }
 
-.background.solid-csd headerbar button:checked {
-	font-weight: bold;
+.background.solid-csd headerbar button:focus,
+.background.solid-csd headerbar button:focus:hover,
+.background.solid-csd headerbar button:active,
+.background.solid-csd headerbar button:active:hover,
+.background.solid-csd headerbar button:active:focus:hover,
+.background.solid-csd headerbar button:hover,
+.background.solid-csd headerbar button:disabled,
+.background.solid-csd headerbar button:checked,
+.background.solid-csd headerbar button:checked:hover,
+.background.solid-csd headerbar button:checked:focus,
+.background.solid-csd headerbar button:checked:hover:focus,
+.background.solid-csd headerbar button:checked:hover:active:focus {
+	padding: 0;
+	border: 0;
+	background: none;
+	box-shadow: none;
 }
 
 .background.solid-csd headerbar windowcontrols {
@@ -147,6 +166,15 @@ box.dialog-vbox {
 		shade(@theme_selected_bg, 1.02) 50%,
 		shade(@theme_selected_bg, 1.0) 50%,
 		shade(@theme_selected_bg, 0.92));
+	/* <draw_ops name="button_bg" inside highlight, inside shadow, bottom border smooth effect */
+	box-shadow:
+		inset 0 1px shade(@theme_selected_bg, 1.18),  /* top */
+		inset 1px 0 shade(@theme_selected_bg, 1.1),   /* left */
+		inset -1px 0 shade(@theme_selected_bg, 1),    /* right */
+		inset 0 -1px shade(@theme_selected_bg, 0.92), /* bottom (0.84+0.92) */
+		1px 0 shade(@theme_selected_bg, 1.005),       /* right gradient (0.96>1.05) */
+		-1px 0 shade(@theme_selected_bg, 1.005),      /* left gradient (0.96>1.05) */
+		0 1px shade(@theme_selected_bg, 1.06);        /* bottom */
 }
 
 .background.solid-csd headerbar windowcontrols button:hover {
@@ -189,6 +217,15 @@ box.dialog-vbox {
 		shade(@theme_bg, 1.07) 50%,
 		shade(@theme_bg, 1.05) 50%,
 		shade(@theme_bg, 0.97));
+	/* <draw_ops name="button_bg" inside highlight, inside shadow, bottom border smooth effect */
+	box-shadow:
+		inset 0 1px shade(@theme_bg, 1.2),   /* top */
+		inset 1px 0 shade(@theme_bg, 1.1),   /* left */
+		inset -1px 0 shade(@theme_bg, 1.05), /* right */
+		inset 0 -1px shade(@theme_bg, 0.89), /* bottom (0.89+0.97) */
+		1px 0 shade(@theme_bg, 0.94),        /* right gradient (0.92>0.96) */
+		-1px 0 shade(@theme_bg, 0.94),       /* left gradient (0.92>0.96) */
+		0 1px shade(@theme_bg, 0.96);        /* bottom */
 }
 
 .background.solid-csd headerbar:backdrop windowcontrols button:hover {
@@ -384,15 +421,6 @@ statusbar box label {
 	padding-bottom: 1px;
 }
 
-statusbar progressbar.horizontal {
-	margin: 2px -2px -2px;
-	font-size: 85%;
-}
-
-statusbar progressbar.horizontal text {
-	padding-top: 4px;
-}
-
 /* --- switch --- */
 
 switch {
@@ -508,10 +536,6 @@ button.toggle:checked {
 		inset  1px  1px alpha(@button_border_disabled, 0.08),
 		inset -1px -1px alpha(@button_border_disabled, 0.08);
 }
-
-/* #MozillaGtkWidget button { * firefox/thunderbird *
-	padding: 1px 2px;
-} */
 
 /* --- spinbutton --- */
 
@@ -775,8 +799,7 @@ radio:indeterminate:disabled {
 /* --- button background --- */
 
 button,
-spinbutton button:focus,
-#tasklist-button box {
+spinbutton button:focus {
 	background:
 		@theme_bg
 		radial-gradient(
@@ -791,8 +814,7 @@ spinbutton button:focus,
 }
 
 button:hover,
-spinbutton button:focus:hover,
-#tasklist-button box:hover {
+spinbutton button:focus:hover {
 	border: 1px solid @button_border;
 	background:
 		radial-gradient(
@@ -945,10 +967,7 @@ box.toolbar button:active:hover,
 box.toolbar button.toggle:checked:disabled,
 box.primary-toolbar button:active,
 box.primary-toolbar button:active:hover,
-box.primary-toolbar button.toggle:checked:disabled,
-#tasklist-button:checked box,
-.mate-panel-menu-bar #clock-applet-button:checked > box,
-#window-menu-applet-button wnck-selector > menuitem:hover > image {
+box.primary-toolbar button.toggle:checked:disabled {
 	border: 1px solid @button_border;
 	background:
 		radial-gradient(
@@ -1083,10 +1102,13 @@ menubar item {
 	border-radius: 2px 2px 0 0;
 }
 
-menubar item:selected {
+menubar:focus-within item:selected {
+	/* it's a feature: the :hover state also apply :focus and :selected states */
+	/* the :focus-within to apply item design only after click on it */
+	padding: 2px 7px 3px;
 	color: @menuitem_hover;
-	border: 1px solid @menuitem_hover_border;
-	border-bottom: 0;
+	border-color: @menuitem_hover_border;
+	border-bottom: 0; /* it's a problem */
 	background:
 		radial-gradient(ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
@@ -1096,6 +1118,14 @@ menubar item:selected {
 			@menuitem_hover_glaze_mida 50%,
 			@menuitem_hover_glaze_midb 50%,
 			@menuitem_hover_glaze_bot);
+}
+
+menubar:focus-within item:selected:focus,
+menubar:focus-within item:selected:focus:hover {
+	/* here we are reverting previous design when user :hover the menu item without focusing on another element */
+	color: @theme_fg;
+	border-color: transparent;
+	background: transparent;
 }
 
 /* --- popover --- */
@@ -1166,15 +1196,14 @@ popover arrow {
 	margin: 0 4px;
 }
 
-popover stack separator,
-#MozillaGtkWidget menu separator /* firefox/thunderbird */ {
+popover stack separator {
 	/* margin: 4px 4px 6px; */
 	margin: 4px 4px 3px;
 	border-top: 1px solid @menu_separator_dark;
 	border-bottom: 1px solid @menu_separator_lite;
 }
 
-/* --- popover check and radio elements --- */
+/* --- popover check & radio elements --- */
 
 popover check,
 popover radio {
@@ -1875,6 +1904,29 @@ notebook header.right tabs arrow.up:dir(rtl) {
 	margin: 2px 0 0 1px;
 }
 
+/* --- progress bar - minimal size --- */
+/* @see https://github.com/GNOME/gtk/blob/013b629a2e5420cc01647f859226eb1a37ebe661/gtk/gtkprogressbar.c#L92 */
+
+progressbar.vertical,
+progressbar.vertical trough {
+	min-width: 7px;
+	min-height: 80px;
+}
+
+progressbar.vertical progress {
+	min-width: 7px;
+}
+
+progressbar.horizontal,
+progressbar.horizontal trough {
+	min-width: 150px;
+	min-height: 6px;
+}
+
+progressbar.horizontal progress {
+	min-height: 6px;
+}
+
 /* --- progress bar --- */
 
 progressbar:disabled {
@@ -1895,78 +1947,33 @@ progressbar trough {
 		inset  1px 1px @slider_trough_border;
 }
 
-treeview.view.trough,
-treeview.view.trough.odd,
-treeview.view.trough.even,
-treeview.view.trough.sorted,
-treeview.view.trough.sorted.odd,
-treeview.view.trough.sorted.even {
-	padding: 0;
-	color: @theme_text; /* = progressbar.classic text.trough */
-	border-top: 1px solid @theme_base;
-	border-bottom: 1px solid @theme_base;
-	background: @theme_bg;
-	box-shadow:
-		inset -1px -1px @slider_border_treeview,
-		inset  1px  1px @slider_border_treeview;
-}
-
-treeview.view.trough.even {
-	border-top: 1px solid #EEE;
-	border-bottom: 1px solid #EEE;
-}
-
-treeview.view.trough:selected,
-treeview.view.trough.odd:selected,
-treeview.view.trough.even:selected {
-	color: @theme_text; /* = progressbar.classic text.trough */
-	border-top: 1px solid @theme_selected_bg;
-	border-bottom: 1px solid @theme_selected_bg;
-}
-
-treeview.view.trough:disabled,
-treeview.view.trough.odd:disabled,
-treeview.view.trough.even:disabled {
-	color: @insensitive_fg; /* = progressbar.classic:disabled text.trough */
-	background: @theme_bg;
-}
-
-treeview.view.progressbar {
-	color: @theme_selected_fg; /* = progressbar.classic text.progress */
-	border-top: 1px solid transparent;
-	border-bottom: 1px solid transparent;
-	text-shadow: none;
-	box-shadow:
-		inset -1px -1px @slider_border,
-		inset  1px  1px @slider_border;
-}
-
-treeview.view.progressbar:selected {
-	border-top-color: @theme_selected_bg;
-	border-bottom-color: @theme_selected_bg;
-}
-
-treeview.view.progressbar:disabled {
-	color: @insensitive_selected; /* = progressbar.classic:disabled text.progress */
-}
-
-progressbar trough:not(.empty) progress {
+progressbar trough progress {
 	border-radius: 2.75px;
 	box-shadow:
 		inset -1px -1px @slider_border,
 		inset  1px  1px @slider_border;
 }
 
-progressbar.vertical trough {
-	min-width: 22px;
+progressbar trough.empty progress {
+	box-shadow: none; /* lol */
 }
 
-progressbar.horizontal trough {
-	min-height: 20px;
+progressbar.vertical trough,
+progressbar.vertical trough progress {
+	min-width: 23px;
+}
+
+progressbar.vertical text + trough,
+progressbar.vertical text + trough progress {
+	min-width: 40px;
+}
+
+progressbar.horizontal trough,
+progressbar.horizontal trough progress {
+	min-height: 23px;
 }
 
 progressbar.vertical trough progress {
-	min-width: 22px;
 	background:
 		radial-gradient(
 			ellipse 50% 90%,
@@ -1978,14 +1985,13 @@ progressbar.vertical trough progress {
 			@slider_glaze_midb 49%,
 			@slider_glaze_bot),
 		repeating-linear-gradient(135deg,
-			alpha(@slider_pattern, 0),
-			alpha(@slider_pattern, 0) 15px,
+			@slider_pattern_shade,
+			@slider_pattern_shade 15px,
 			@slider_pattern 15px,
 			@slider_pattern 30px);
 }
 
 progressbar.vertical trough progress.bottom {
-	min-width: 22px;
 	background:
 		radial-gradient(
 			ellipse 50% 90%,
@@ -1997,15 +2003,14 @@ progressbar.vertical trough progress.bottom {
 			@slider_glaze_midb 49%,
 			@slider_glaze_bot),
 		repeating-linear-gradient(45deg,
-			alpha(@slider_pattern, 0),
-			alpha(@slider_pattern, 0) 15px,
+			@slider_pattern_shade,
+			@slider_pattern_shade 15px,
 			@slider_pattern 15px,
 			@slider_pattern 30px);
 }
 
 treeview.view.progressbar,
 progressbar.horizontal trough progress {
-	min-height: 20px;
 	background:
 		radial-gradient(
 			ellipse 90% 50%,
@@ -2017,8 +2022,8 @@ progressbar.horizontal trough progress {
 			@slider_glaze_midb 49%,
 			@slider_glaze_bot),
 		repeating-linear-gradient(135deg,
-			alpha(@slider_pattern, 0),
-			alpha(@slider_pattern, 0) 15px,
+			@slider_pattern_shade,
+			@slider_pattern_shade 15px,
 			@slider_pattern 15px,
 			@slider_pattern 30px);
 }
@@ -2035,71 +2040,75 @@ progressbar.horizontal trough progress.right {
 			@slider_glaze_midb 49%,
 			@slider_glaze_bot),
 		repeating-linear-gradient(225deg,
-			alpha(@slider_pattern, 0),
-			alpha(@slider_pattern, 0) 15px,
+			@slider_pattern_shade,
+			@slider_pattern_shade 15px,
 			@slider_pattern 15px,
 			@slider_pattern 30px);
 }
 
-progressbar.vertical trough.empty progress,
-progressbar.horizontal trough.empty progress {
-	background: none;
-}
-
-statusbar progressbar.horizontal trough,
-statusbar progressbar.horizontal trough progress,
-statusbar progressbar.horizontal.classic trough,
-statusbar progressbar.horizontal.classic trough progress {
-	min-height: 16px;
-}
-
-/* progressbar > text... but for now position of text with GTK_PROGRESS_TEXT_INSIDE=1 does not work, so same recipe */
-
 progressbar.vertical text {
-	/* margin-left: -39px;
-	padding-left: 3px; */
+	/* to avoid extra width at 100% */
+	margin: 0 -1px;
 }
 
 progressbar.horizontal text {
-	/* margin-bottom: -24px;
-	padding-top: 3px; */
+	margin: 0 0 -23px;
 }
 
-progressbar.vertical.classic trough,
-progressbar.vertical.classic trough progress,
-progressbar.vertical text + trough,
-progressbar.vertical text + trough progress {
+/* --- progress bar - in status bar --- */
+
+statusbar progressbar.horizontal {
+	margin: 2px 0 -2px;
+	font-size: 85%;
+}
+
+statusbar progressbar.horizontal text {
+	margin: 0 0 -18px;
+}
+
+statusbar progressbar.horizontal trough,
+statusbar progressbar.horizontal trough progress {
+	min-height: 14px;
+}
+
+/* --- progress bar - with gtk4-classic (appearance__progress_text.patch) when GTK_PROGRESS_TEXT_INSIDE=1 --- */
+
+progressbar.classic.vertical trough,
+progressbar.classic.vertical trough progress {
 	min-width: 40px;
 }
 
-progressbar.vertical.classic trough.full text {
-	/* margin-left: -47px;
-	padding-left: 2px; */
+progressbar.classic.vertical text,
+progressbar.classic.horizontal text {
+	margin: 0;
+	opacity: 0;
 }
 
-progressbar.horizontal.classic trough,
-progressbar.horizontal.classic trough progress,
-progressbar.horizontal text + trough,
-progressbar.horizontal text + trough progress {
-	min-height: 24px;
+progressbar.classic.vertical.full text {
+	/* to avoid extra width at 100% */
+	margin: 0 -1px;
 }
 
-/* --- progress bar text colors - with gtk4-classic (appearance__progress_text.patch) when GTK_PROGRESS_TEXT_INSIDE=1 --- */
+statusbar progressbar.classic.horizontal text {
+	margin: 0 0 -2px;
+}
 
-progressbar.classic text.trough {
+progressbar.classic .text.trough {
 	color: @theme_text;
 }
 
-progressbar.classic text.progress {
+progressbar.classic .text.progress {
 	color: @theme_selected_fg;
 }
 
-progressbar.classic:disabled text.trough {
+progressbar.classic:disabled .text.trough {
 	color: @insensitive_fg;
+	text-shadow: none;
 }
 
-progressbar.classic:disabled text.progress {
+progressbar.classic:disabled .text.progress {
 	color: @insensitive_selected;
+	text-shadow: none;
 }
 
 /* --- scale --- */
@@ -2155,8 +2164,8 @@ scale.vertical trough highlight {
 			@slider_glaze_midb 49%,
 			@slider_glaze_bot),
 		repeating-linear-gradient(135deg,
-			alpha(@slider_pattern, 0.0),
-			alpha(@slider_pattern, 0.0) 12px,
+			@slider_pattern_shade,
+			@slider_pattern_shade 12px,
 			@slider_pattern 12px,
 			@slider_pattern 24px);
 }
@@ -2174,8 +2183,8 @@ scale.horizontal trough highlight {
 			@slider_glaze_midb 49%,
 			@slider_glaze_bot),
 		repeating-linear-gradient(135deg,
-			alpha(@slider_pattern, 0.0),
-			alpha(@slider_pattern, 0.0) 12px,
+			@slider_pattern_shade,
+			@slider_pattern_shade 12px,
 			@slider_pattern 12px,
 			@slider_pattern 24px);
 }
@@ -2275,7 +2284,7 @@ scale.vertical.marks-before marks.top indicator {
 }
 
 scale.vertical.marks-before marks.top label {
-	margin: 0 10px 0 -11px;
+	margin: 0 10px 0 -10px;
 }
 
 scale.vertical.marks-after marks.bottom indicator {
@@ -2283,7 +2292,7 @@ scale.vertical.marks-after marks.bottom indicator {
 }
 
 scale.vertical.marks-after marks.bottom label {
-	margin: 0 -11px 0 10px;
+	margin: 0 -10px 0 10px;
 }
 
 scale.horizontal.marks-before marks.top indicator {
@@ -2354,8 +2363,8 @@ levelbar.vertical block.filled {
 			@slider_glaze_midb 49%,
 			@slider_glaze_bot),
 		repeating-linear-gradient(135deg,
-			alpha(@slider_pattern, 0.0),
-			alpha(@slider_pattern, 0.0) 12px,
+			@slider_pattern_shade,
+			@slider_pattern_shade 12px,
 			@slider_pattern 12px,
 			@slider_pattern 24px);
 }
@@ -2372,8 +2381,8 @@ levelbar.horizontal block.filled {
 			@slider_glaze_midb 49%,
 			@slider_glaze_bot),
 		repeating-linear-gradient(135deg,
-			alpha(@slider_pattern, 0.0),
-			alpha(@slider_pattern, 0.0) 12px,
+			@slider_pattern_shade,
+			@slider_pattern_shade 12px,
 			@slider_pattern 12px,
 			@slider_pattern 24px);
 }
@@ -2390,8 +2399,8 @@ levelbar.vertical.continuous block.filled:last-child {
 			@slider_glaze_midb 49%,
 			@slider_glaze_bot),
 		repeating-linear-gradient(45deg,
-			alpha(@slider_pattern, 0.0),
-			alpha(@slider_pattern, 0.0) 12px,
+			@slider_pattern_shade,
+			@slider_pattern_shade 12px,
 			@slider_pattern 12px,
 			@slider_pattern 24px);
 }
@@ -2408,8 +2417,8 @@ levelbar.horizontal.continuous block.filled:last-child {
 			@slider_glaze_midb 49%,
 			@slider_glaze_bot),
 		repeating-linear-gradient(225deg,
-			alpha(@slider_pattern, 0.0),
-			alpha(@slider_pattern, 0.0) 12px,
+			@slider_pattern_shade,
+			@slider_pattern_shade 12px,
 			@slider_pattern 12px,
 			@slider_pattern 24px);
 }
@@ -2469,40 +2478,103 @@ infobar.error {
 	background: linear-gradient(to bottom, @errorbar_bg_top, @errorbar_bg_bot);
 }
 
-/* --- treeview alternating colours - with gtk4-classic (treeview__alternating_row_colours.patch) --- */
+/* --- treeview --- */
 
-treeview.view.odd {
+list {
+	padding: 3px 0;
+}
+
+treeview, listview, list {
+	color: @theme_text;
 	background-color: @theme_base;
 }
 
-treeview.view.even {
-	background-color: #EEE;
+treeview.view:disabled {
+	color: @insensitive_fg;
 }
 
-treeview.view.odd.sorted {
-	background-color: #EEE;
+/* --- treeview alternating colours - with gtk4-classic (treeview__alternating_row_colours.patch) --- */
+/* @see https://github.com/lah7/gtk3-classic/issues/120 - anyway it's not only gtk-classic */
+
+treeview.view.odd:not(.trough):not(.progressbar) {
+	background-color: @theme_base;
+	/* lol */
+	background: linear-gradient(to bottom, @theme_base, @theme_base);
+	border-right: 1px solid transparent;
+	border-image-source: repeating-linear-gradient(to bottom, @theme_base 0px, @theme_base 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-slice: 1;
+	border-image-repeat: repeat;
 }
 
-treeview.view.even.sorted {
-	background-color: #DDD;
+treeview.view.even:not(.trough):not(.progressbar) {
+	background-color: #EEE; /* @todo */
+	/* lol */
+	background: linear-gradient(to bottom, #EEE, #EEE);
+	border-right: 1px solid transparent;
+	border-image-source: repeating-linear-gradient(to bottom, #EEE 0px, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-slice: 1;
+	border-image-repeat: repeat;
 }
 
-treeview.view.odd:not(.last):not(.trough):not(.progressbar),
+treeview.view.odd.sorted:not(.trough):not(.progressbar) {
+	background-color: #EEE; /* @todo */
+	/* lol */
+	background: linear-gradient(to bottom, #EEE, #EEE);
+	border-image-source: repeating-linear-gradient(to bottom, #EEE 0px, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
+}
+
+treeview.view.even.sorted:not(.trough):not(.progressbar) {
+	background-color: #DDD; /* @todo */
+	/* lol */
+	background: linear-gradient(to bottom, #DDD, #DDD);
+	border-image-source: repeating-linear-gradient(to bottom, #DDD 0px, #DDD 3px, #9f9f9f 3px, #9f9f9f 4px);
+}
+
+treeview.view.odd.last:not(.trough):not(.progressbar),
+treeview.view.odd.sorted.last:not(.trough):not(.progressbar),
+treeview.view.even.last:not(.trough):not(.progressbar),
+treeview.view.even.sorted.last:not(.trough):not(.progressbar) {
+	border-right: 0;
+}
+
+/* treeview.view.odd:not(.last):not(.trough):not(.progressbar),
 treeview.view.even:not(.last):not(.trough):not(.progressbar) {
+	* multiple background doesn't work -> border-image *
 	background-image: url("img/treeview-separator.svg");
 	background-repeat: repeat-y;
 	background-position: right bottom;
-}
+} */
 
+treeview.view:not(.trough):not(.progressbar):selected, /* without gtk4-classic */
 treeview.view.odd:not(.trough):not(.progressbar):selected,
 treeview.view.odd.sorted:not(.trough):not(.progressbar):selected,
 treeview.view.even:not(.trough):not(.progressbar):selected,
 treeview.view.even.sorted:not(.trough):not(.progressbar):selected {
 	color: @theme_selected_fg;
-	background-color: @theme_selected_bg;
+	background:
+		radial-gradient(ellipse 110% 50%,
+			@menuitem_hover_glaze_glow_center,
+			@menuitem_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@menuitem_hover_glaze_top,
+			@menuitem_hover_glaze_mida 50%,
+			@menuitem_hover_glaze_midb 50%,
+			@menuitem_hover_glaze_bot);
+	border-image-source: repeating-linear-gradient(to bottom,
+		@theme_selected_bg 0px,
+		@theme_selected_bg 3px,
+		#9f9f9f 3px,
+		#9f9f9f 4px);
 }
 
-treeview.view:disabled,
+/* treeview.view:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.odd:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.odd.sorted:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.even:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.even.sorted:not(.trough):not(.progressbar):selected:not(:focus) {
+	see gtk.css
+} */
+
 treeview.view.odd:not(.trough):not(.progressbar):selected:disabled,
 treeview.view.odd.sorted:not(.trough):not(.progressbar):selected:disabled,
 treeview.view.even:not(.trough):not(.progressbar):selected:disabled,
@@ -2510,16 +2582,61 @@ treeview.view.even.sorted:not(.trough):not(.progressbar):selected:disabled {
 	color: @insensitive_fg;
 }
 
-/* --- treeview --- */
+/* --- treeview progressbars --- */
 
-treeview, listview, list {
-	color: @theme_text;
-	background-color: @theme_base;
+treeview.view.trough,
+treeview.view.trough.odd,
+treeview.view.trough.even,
+treeview.view.trough.sorted,
+treeview.view.trough.sorted.odd,
+treeview.view.trough.sorted.even {
+	padding: 0;
+	color: @theme_text; /* = progressbar.classic text.trough */
+	border-top: 1px solid @theme_base;
+	border-bottom: 1px solid @theme_base;
+	background: @theme_bg;
+	box-shadow:
+		inset -1px -1px @slider_border_treeview,
+		inset  1px  1px @slider_border_treeview;
 }
 
-treeview {
-	color: @theme_text;
-	background-color: @theme_base;
+treeview.view.trough.even {
+	border-top: 1px solid #EEE; /* @todo */
+	border-bottom: 1px solid #EEE; /* @todo */
+}
+
+treeview.view.trough:selected,
+treeview.view.trough.odd:selected,
+treeview.view.trough.even:selected {
+	color: @theme_text; /* = progressbar.classic text.trough */
+	border-top: 1px solid @theme_selected_bg;
+	border-bottom: 1px solid @theme_selected_bg;
+}
+
+treeview.view.trough:disabled,
+treeview.view.trough.odd:disabled,
+treeview.view.trough.even:disabled {
+	color: @insensitive_fg; /* = progressbar.classic:disabled text.trough */
+	background: @theme_bg;
+}
+
+treeview.view.progressbar {
+	color: @theme_selected_fg; /* = progressbar.classic text.progress */
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	text-shadow: none;
+	box-shadow:
+		inset -1px -1px @slider_border,
+		inset  1px  1px @slider_border;
+}
+
+treeview.view.progressbar:selected {
+	border-top-color: @theme_selected_bg;
+	border-bottom-color: @theme_selected_bg;
+}
+
+treeview.view.progressbar:disabled {
+	color: @insensitive_selected; /* = progressbar.classic:disabled text.progress */
 }
 
 /* --- treeview headers --- */
@@ -2556,10 +2673,14 @@ columnview header button:last-child > box {
 	border-right: 0;
 }
 
-/* --- treeview row elements --- */
+/* --- treeview elements --- */
 
-listview row {
-	padding: 3px 0;
+check:not(:selected),
+radio:not(:selected),
+check:selected,
+radio:selected {
+	/* lol */
+	background-color: transparent;
 }
 
 listview row:nth-child(2n+1) {
@@ -2567,13 +2688,73 @@ listview row:nth-child(2n+1) {
 }
 
 listview row:nth-child(2n) {
-	background-color: #EEE;
+	background-color: #EEE; /* @todo */
 }
 
+list row:selected,
 listview row:nth-child(2n+1):selected,
 listview row:nth-child(2n):selected {
 	color: @theme_selected_fg;
-	background-color: @theme_selected_bg;
+	background:
+		radial-gradient(ellipse 110% 50%,
+			@menuitem_hover_glaze_glow_center,
+			@menuitem_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@menuitem_hover_glaze_top,
+			@menuitem_hover_glaze_mida 50%,
+			@menuitem_hover_glaze_midb 50%,
+			@menuitem_hover_glaze_bot);
+}
+
+/* listview row:nth-child(2n+1):selected:not(:focus),
+listview row:nth-child(2n):selected:not(:focus) {
+	see gtk.css
+} */
+
+list row {
+	margin: 1px 0;
+	padding: 3px 5px;
+}
+
+listview row cell {
+	padding: 3px 2px;
+}
+
+list row label,
+listview row cell label {
+	padding: 0 4px;
+}
+
+list row image + label {
+	padding: 0 4px 0 8px;
+}
+
+listview row cell:not(:last-child) {
+	/* background doesn't work -> border-image
+	background-image: url("img/treeview-separator.svg");
+	background-repeat: repeat-y;
+	background-position: right bottom; */
+	/* lol */
+	border-right: 1px solid transparent;
+	border-image-source: repeating-linear-gradient(to bottom, #EEE 0px, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-slice: 1;
+	border-image-repeat: repeat;
+}
+
+listview row:selected cell:not(:last-child) {
+	border-image-source: repeating-linear-gradient(to bottom,
+		@theme_selected_bg 0px,
+		@theme_selected_bg 3px,
+		#9f9f9f 3px,
+		#9f9f9f 4px);
+}
+
+listview row:selected:not(:focus):not(:last-child) cell {
+	border-image-source: repeating-linear-gradient(to bottom,
+		shade(@theme_selected_bg, 1.2) 0px,
+		shade(@theme_selected_bg, 1.2) 3px,
+		#9f9f9f 3px,
+		#9f9f9f 4px);
 }
 
 treeview.view:not(.trough):not(.progressbar) {
@@ -2587,7 +2768,7 @@ treeview.view.image:disabled {
 /* --- open/save/print dialog --- */
 
 filechooser {
-	padding: 12px 12px 3px;
+	padding: 10px 10px 3px;
 }
 
 filechooser placessidebar + separator {
@@ -2624,29 +2805,17 @@ printdialog stack grid.vertical {
 	color: @theme_text; /* to fix white color */
 }
 
-filechooser placessidebar,
-filechooser scrolledwindow {
-	border: 1px solid @dialog_border;
-}
-
 filechooser scrolledwindow viewport,
+filechooser pathbar scrolledwindow,
 printdialog scrolledwindow viewport {
 	border: 0; /* avoid dual border */
 }
 
-filechooser viewport.frame row {
-	padding: 3px 2px;
+filechooser pathbar button.toggle image + label:dir(ltr) {
+	padding-left: 4px;
 }
 
-filechooser viewport.frame button.sidebar-button {
-	padding: 0;
-	border: 0;
-	border-radius: 0;
-	background: none;
-	box-shadow: none;
-}
-
-filechooser #pathbarbox button.toggle image {
+filechooser pathbar button.toggle image + label:dir(rtl) {
 	padding-right: 4px;
 }
 
@@ -2705,8 +2874,8 @@ calendar .other-month {
 	color: alpha(@theme_fg, 0.2);
 }
 
-/* --- overrride --- */
-/* GTK 4.12 + Pango 1.51 (Pango 1.51 is similar to Pango 1.42, so we have almost same rendering with GTK 2.24 - 3.24 - 4.12) */
+/* --- overrrides --- */
+/* GTK 4.12..4.18 + Pango 1.51 (Pango 1.51 is similar to Pango 1.42, so we have almost same rendering with GTK 2.24 - 3.24 - 4.12..4.18) */
 
 * {
 	line-height: 17px;

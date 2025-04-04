@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Fabrice Creuzot <code@luigifab.fr>
 Build-Depends: debhelper-compat (= 13)
 Rules-Requires-Root: no
-Standards-Version: 4.6.2
+Standards-Version: 4.7.2
 Homepage: https://github.com/luigifab/human-theme
 Vcs-Browser: https://github.com/luigifab/human-theme
 Vcs-Git: https://github.com/luigifab/human-theme.git

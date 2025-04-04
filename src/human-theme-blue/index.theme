@@ -1,13 +1,16 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
+Encoding=UTF-8
 Name=Human Blue
 Name[fr]=Human Bleu
-Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=human-theme-blue
-MetacityTheme=human-theme-blue
-IconTheme=gnome
-CursorTheme=DMZ-White
-CursorSize=16
 ButtonLayout=:minimize,maximize,close
+CursorSize=16
+CursorTheme=DMZ-White
+GtkTheme=human-theme-blue
+IconTheme=gnome
+MetacityTheme=human-theme-blue
+Encoding=UTF-8
+Name=Human Blue
+Name[fr]=Human Bleu

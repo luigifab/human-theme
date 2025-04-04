@@ -33,6 +33,7 @@
 @define-color theme_tooltip_bg #F5F5B5;
 @define-color theme_tooltip_fg #000;
 @define-color theme_tooltip_border shade(@theme_tooltip_bg, 0.63);
+@define-color theme_notification_countdown @theme_selected_bg;
 @define-color outline @theme_selected_bg;
 @define-color link #00E;
 @define-color visited_link #551A8B;
@@ -54,3 +55,41 @@
 @import url("mate.css");
 @import url("xfce.css");
 @import url("apps.css");
+
+/* special */
+@define-color slider_pattern_shade shade(@slider_pattern, 0.6);
+
+treeview.view:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.odd:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.odd.sorted:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.even:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.even.sorted:not(.trough):not(.progressbar):selected:not(:focus) {
+	background:
+		radial-gradient(ellipse 110% 50%,
+			shade(@menuitem_hover_glaze_glow_center, 1.1),
+			shade(@menuitem_hover_glaze_glow_edge, 1.1)),
+		linear-gradient(to bottom,
+			shade(@menuitem_hover_glaze_top, 1.1),
+			shade(@menuitem_hover_glaze_mida, 1.1) 50%,
+			shade(@menuitem_hover_glaze_midb, 1.1) 50%,
+			shade(@menuitem_hover_glaze_bot, 1.1));
+	/* url("img/treeview-separator.svg") */
+	border-image-source: repeating-linear-gradient(to bottom,
+		shade(@theme_selected_bg, 1.1) 0px,
+		shade(@theme_selected_bg, 1.1) 3px,
+		#9f9f9f 3px,
+		#9f9f9f 4px);
+}
+
+listview row:nth-child(2n+1):selected:not(:focus),
+listview row:nth-child(2n):selected:not(:focus) {
+	background:
+		radial-gradient(ellipse 110% 50%,
+			shade(@menuitem_hover_glaze_glow_center, 1.1),
+			shade(@menuitem_hover_glaze_glow_edge, 1.1)),
+		linear-gradient(to bottom,
+			shade(@menuitem_hover_glaze_top, 1.1),
+			shade(@menuitem_hover_glaze_mida, 1.1) 50%,
+			shade(@menuitem_hover_glaze_midb, 1.1) 50%,
+			shade(@menuitem_hover_glaze_bot, 1.1));
+}

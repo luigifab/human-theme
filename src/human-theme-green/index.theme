@@ -1,13 +1,16 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
+Encoding=UTF-8
 Name=Human Green
 Name[fr]=Human Vert
-Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=human-theme-green
-MetacityTheme=human-theme-green
-IconTheme=gnome
-CursorTheme=DMZ-White
-CursorSize=16
 ButtonLayout=:minimize,maximize,close
+CursorSize=16
+CursorTheme=DMZ-White
+GtkTheme=human-theme-green
+IconTheme=gnome
+MetacityTheme=human-theme-green
+Encoding=UTF-8
+Name=Human Green
+Name[fr]=Human Vert

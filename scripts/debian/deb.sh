@@ -3,7 +3,7 @@
 
 
 cd "$(dirname "$0")"
-version="2.2.1"
+version="2.3.0"
 
 
 mkdir builder
@@ -49,7 +49,7 @@ for serie in experimental plucky oracular noble jammy focal bionic xenial trusty
 
 	dh_make -s -y -f ../human-theme-$version.tar.gz -p human-theme-gtk
 
-	rm -f debian/*/*ex debian/*ex debian/*EX debian/README* debian/*doc*
+	rm -rf debian/*/*ex debian/*ex debian/*EX debian/README* debian/*doc*
 	cp scripts/debian/* debian/
 	rm -f debian/deb.sh
 	mv debian/metadata debian/upstream/metadata
@@ -65,6 +65,7 @@ for serie in experimental plucky oracular noble jammy focal bionic xenial trusty
 		# debhelper: experimental:13 focal/mx19/mx21:12 bionic:9 xenial:9 trusty:9
 		if [ $serie = "unstable" ]; then
 			mv debian/control.debian debian/control
+
 		elif [ $serie = "mx19" ] || [ $serie = "mx21" ]; then
 			mv debian/control.mx debian/control
 			sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 12)/g' debian/control
@@ -122,4 +123,5 @@ done
 
 printf "\n\n"
 ls -dlth "$PWD/"builder/*.deb "$PWD/"builder/*.changes
+printf "\n"
 rm -rf builder/*/

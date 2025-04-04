@@ -22,13 +22,17 @@
  * GNU General Public License (GPL) for more details.
  */
 
+/* --- awf-gtk3 --- */
+
+#AwfMainWindow .awf-cheatcode-prbr2 { margin: 1px 0; }
+
 /* --- audacity --- */
 
 window > box > widget > widget {
 	background-color: @theme_bg;
 }
 
-/* --- geany and pluma --- */
+/* --- geany & pluma --- */
 
 #GeanyMainWindow #notebook_info {
 	margin-bottom: 5px;
@@ -43,11 +47,11 @@ window.pluma-window notebook stack > box scrolledwindow {
 	border: 0;
 }
 
-#GeanyMainWindow notebook widget scrollbar.vertical:dir(ltr) {
+#GeanyMainWindow notebook widget:dir(ltr) scrollbar.vertical {
 	margin-left: 0;
 }
 
-#GeanyMainWindow notebook widget scrollbar.vertical:dir(rtl) {
+#GeanyMainWindow notebook widget:dir(rtl) scrollbar.vertical {
 	margin-right: 0;
 }
 
@@ -72,7 +76,55 @@ window.libreoffice-window > grid.horizontal > grid.horizontal {
 	background: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
 }
 
-/* --- fix for some maximized windows https://github.com/mate-desktop/mate-desktop/issues/291 --- */
+/* --- bleachbit --- */
+/* @see https://github.com/bleachbit/bleachbit/pull/1195 */
+
+#BleachbitMainWindow > box > box > scrolledwindow:dir(ltr) scrollbar.vertical {
+	padding-top: 33px;
+	padding-right: 3px;
+	padding-bottom: 33px;
+	border-right: 2px solid @menu_border;
+}
+
+#BleachbitMainWindow > box > box > scrolledwindow:dir(ltr) + box scrolledwindow {
+	padding: 5px 1px 5px 5px;
+	background: @theme_base;
+}
+
+#BleachbitMainWindow > box > box > scrolledwindow:dir(ltr) + box scrolledwindow scrollbar.vertical {
+	margin-top: -5px;
+	margin-bottom: -5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-left: 1px solid @menu_border;
+	background: @theme_bg;
+}
+
+#BleachbitMainWindow > box > box > scrolledwindow:dir(rtl) scrollbar.vertical {
+	margin-right: -3px;
+	padding-top: 33px;
+	padding-left: 3px;
+	padding-bottom: 33px;
+	border-left: 2px solid @menu_border;
+}
+
+#BleachbitMainWindow > box > box > box > scrolledwindow:dir(rtl) {
+	padding: 5px 5px 5px 1px;
+	background: @theme_base;
+}
+
+#BleachbitMainWindow > box > box > box > scrolledwindow:dir(rtl) scrollbar.vertical {
+	margin-top: -5px;
+	margin-bottom: -5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-right: 3px;
+	border-right: 1px solid @menu_border;
+	background: @theme_bg;
+}
+
+/* --- fix for some maximized windows --- */
+/* @see https://github.com/mate-desktop/mate-desktop/issues/291 */
 
 #GeanyMainWindow.maximized:dir(ltr) #notebook_info stack,
 window.background.maximized.engrampa-window:dir(ltr) > grid.horizontal > paned.horizontal > scrolledwindow.frame,

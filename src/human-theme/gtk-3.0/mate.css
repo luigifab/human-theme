@@ -29,6 +29,51 @@ menuitem radio, popover radio { background:yellow; }
 menuitem box { background:orange; }
 menuitem > box > menuitem { background:red; } */
 
+/* --- multimedia osd --- */
+/* @see https://github.com/mate-desktop/mate-settings-daemon/blob/e57d532ac69fc3f6f5a34d9ce648bbdfb6a81185/plugins/common/msd-osd-window.c#L215 */
+
+.osd {
+	/* with compositor: all applies to multimedia and alttab osd (for window and progressbar) */
+	/* without compositor: only border-radius and border-color for multimedia osd */
+	border: 1px solid @nb_border;
+	border-radius: 10px;
+	background: @theme_bg;
+}
+
+.osd .progressbar {
+	/* with compositor: multimedia osd progressbar */
+	border: 0;
+	background: @theme_selected_bg;
+}
+
+.osd.msd-osd-window-solid {
+	/* without compositor: multimedia osd window */
+	border-radius: 0;
+}
+
+.osd.msd-osd-window-solid > box {
+	/* without compositor: multimedia osd window background and background-border */
+	background: @theme_bg;
+	box-shadow:
+		0 -11px @theme_bg, /* top */
+		11px  0 @theme_bg, /* right */
+		0  11px @theme_bg, /* bottom */
+		-11px 0 @theme_bg, /* left */
+		-11px -11px @theme_bg, /* top left */
+		 11px -11px @theme_bg, /* top right */
+		 11px  11px @theme_bg, /* bottom right */
+		-11px  11px @theme_bg;  /* bottom left */
+}
+
+/* --- tabwin alttab alt-tab osd (marco) v1.28.2+ --- */
+/* @see https://github.com/mate-desktop/marco/pull/789 */
+
+frame.mate-tabwin > border {
+	/* with or without compositor */
+	/* without compositor avoid white background when popup is displayed over geany or terminal windows */
+	border-radius: 0;
+}
+
 /* --- panel --- */
 
 .mate-panel-menu-bar,
@@ -41,6 +86,7 @@ menuitem > box > menuitem { background:red; } */
 PanelApplet,
 PanelApplet button,
 PanelToplevel.background {
+	color: @theme_fg; /* mainly for mate keyboard layout indicator applet, but apply almost everywhere */
 	border: 0;
 	background: @theme_bg;
 }
@@ -130,41 +176,44 @@ PanelToplevel.background {
 }
 
 #MatePanelPopupWindow frame > box > box > box > widget {
+	/* @see https://github.com/mate-desktop/mate-panel/blob/e2065669e8e992ebaf23433dfc979caea171ed89/applets/clock/clock-map.c#L213 */
 	/* the map border color */
-	/* https://github.com/mate-desktop/mate-panel/blob/e2065669e8e992ebaf23433dfc979caea171ed89/applets/clock/clock-map.c#L205 */
 	color: @frame_border;
 }
 
 /* --- window selector applet --- */
 
-#window-menu-applet-button:focus {
-
-}
-
-#window-menu-applet-button wnck-selector > menuitem > image {
+.mate-panel-menu-bar #window-menu-applet-button wnck-selector > menuitem > image {
 	margin: 1px 4px 2px;
 	padding: 0 2px;
 	border: 1px solid transparent;
 	border-radius: 3px;
 }
 
-#window-menu-applet-button wnck-selector > menuitem:hover > image {
+.mate-panel-menu-bar #window-menu-applet-button wnck-selector > menuitem:hover > image {
 	border: 1px solid #988B7F; /* @todo */
 }
 
-#window-menu-applet-button wnck-selector separator {
+.mate-panel-menu-bar #window-menu-applet-button wnck-selector separator {
 	margin: 0 6px;
 	border: 0;
 }
 
-#window-menu-applet-button wnck-selector separator label {
+.mate-panel-menu-bar #window-menu-applet-button wnck-selector separator label {
 	margin: 4px 0 3px;
 }
 
 /* --- virtual desktop selector applet --- */
 
+.mate-panel-menu-bar .wnck-pager,
 .mate-panel-menu-bar .wnck-applet {
+	color: @theme_fg; /* the border color of windows */
+	background-color: @theme_bg; /* the left/right border color and background color : #E6DDD5 but #E6DDD4 » #AD9A89 but #A19B95 */
+}
 
+.mate-panel-menu-bar .wnck-pager:selected,
+.mate-panel-menu-bar .wnck-applet .wnck-pager:selected {
+	background-color: shade(@theme_selected_bg, 0.7); /* #5D453B */
 }
 
 /* --- display properties applet --- */
@@ -192,7 +241,7 @@ PanelToplevel.background {
 	border: 1px solid #988B7F; /* @todo */
 }
 
-/* --- grip for notification area and window list applet --- */
+/* --- grip for notification area & window list applet --- */
 
 .mate-panel-menu-bar MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
 	background-image: url("img/pane-separator-grip-horz.svg");
@@ -201,14 +250,39 @@ PanelToplevel.background {
 	background-size: 6px 10px;
 }
 
+/* --- lock screen --- */
+
+.lock-dialog,
+.lock-dialog frame,
+.lock-dialog border,
+.lock-dialog notebook,
+.lock-dialog stack,
+.lock-dialog stack > box {
+	border: 0;
+	border-radius: 0;
+	background: @theme_bg;
+}
+
+.lock-dialog frame {
+	border: 1px solid @nb_border;
+}
+
+.lock-dialog entry {
+	padding-left: 0;
+}
+
+.lock-dialog textview {
+	padding: 2px;
+}
+
 /* --- caja --- */
 
-window.caja-navigation-window notebook.caja-notebook scrolledwindow.frame scrollbar.vertical:dir(ltr) {
+window.caja-navigation-window notebook.caja-notebook scrolledwindow.frame:dir(ltr) scrollbar.vertical {
 	margin-left: 0;
 	background: @theme_bg;
 }
 
-window.caja-navigation-window notebook.caja-notebook scrolledwindow.frame scrollbar.vertical:dir(rtl) {
+window.caja-navigation-window notebook.caja-notebook scrolledwindow.frame:dir(rtl) scrollbar.vertical {
 	margin-right: 0;
 	background: @theme_bg;
 }
@@ -216,6 +290,10 @@ window.caja-navigation-window notebook.caja-notebook scrolledwindow.frame scroll
 window.caja-navigation-window notebook.caja-notebook scrolledwindow.frame scrollbar.horizontal {
 	margin-top: 0;
 	background: @theme_bg;
+}
+
+window.caja-navigation-window notebook.caja-notebook scrolledwindow.frame treeview.view:disabled {
+	background-color: lighter(darker(@theme_base));
 }
 
 window.caja-navigation-window stack {
@@ -252,37 +330,74 @@ window.mate-terminal:not(.maximized) box.vertical notebook header.top ~ stack {
 
 /* --- eom --- */
 
-box.primary-toolbar toolbar {
+window.eom-window box.primary-toolbar toolbar {
 	padding: 0;
 	border: 0;
 }
 
-/* --- lock screen --- */
+window.eom-window statusbar {
+	margin-top: 0;
+}
 
-.lock-dialog,
-.lock-dialog frame,
-.lock-dialog border,
-.lock-dialog notebook,
-.lock-dialog stack,
-.lock-dialog stack > box {
+window.eom-window statusbar statusbar {
 	border: 0;
-	border-radius: 0;
+}
+
+window.eom-window statusbar frame {
+	padding-bottom: 6px;
+}
+
+window.eom-window statusbar.classic frame {
+	padding-bottom: 1px; /* with gtk3-classic (appearance__smaller-statusbar.patch) */
+}
+
+window.eom-window statusbar > label {
+	margin-bottom: 5px;
+	border-top: 1px solid @toolbar_border_top;
+}
+
+window.eom-window statusbar.classic > label {
+	margin: 0; /* with gtk3-classic (appearance__smaller-statusbar.patch) */
+}
+
+window.eom-window statusbar > box {
+	margin: 0 -4px;
+	border-top: 1px solid @toolbar_border_top;
+}
+
+window.eom-window statusbar box progressbar.horizontal {
+	margin: 0 4px 4px;
+}
+
+window.eom-window statusbar.classic box progressbar.horizontal {
+	margin: 1px 4px 0;
+}
+
+/* --- mate-control-center --- */
+
+#MyControlCenter > frame > box:dir(ltr) > box.vertical + box.vertical,
+#MyControlCenter > frame > box:dir(rtl) > box.vertical:first-child {
+	margin: 5px;
+}
+
+#MyControlCenter scrolledwindow:dir(ltr) scrollbar.vertical {
+	border-left: 1px solid @menu_border;
 	background: @theme_bg;
 }
 
-.lock-dialog frame {
-	border: 1px solid @nb_border;
+#MyControlCenter scrolledwindow:dir(rtl) scrollbar.vertical {
+	padding-left: 2px;
+	padding-right: 3px;
+	border-right: 1px solid @menu_border;
+	background: @theme_bg;
 }
 
-.lock-dialog entry {
-	padding-left: 0;
+#MyControlCenter scrolledwindow scrollbar.horizontal {
+	border-top: 1px solid @menu_border;
+	background: @theme_bg;
 }
 
-.lock-dialog textview {
-	padding: 2px;
-}
-
-/* --- mate-keyboard-layout-view + mate-keyboard-layout-chooser --- */
+/* --- mate-keyboard-layout-view & mate-keyboard-layout-chooser --- */
 
 /* .gswitchit-layout-view > box.dialog-vbox > box.vertical > widget,
 #xkb-layout-chooser > box.dialog-vbox > box.vertical > box.vertical > frame > widget, */
@@ -290,23 +405,93 @@ matekbd-keyboard-drawing {
 	background-color: shade(@theme_bg_color, 1.0);
 }
 
-/* --- osd --- */
+/* --- nm-applet network manager applet --- */
 
-.osd {
-	border: 12px solid @nb_border;
-	border-radius: 0;
-	background: @theme_bg;
+/*
+gsettings reset org.gnome.nm-applet disable-connected-notifications
+gsettings reset org.gnome.nm-applet disable-disconnected-notifications
+gsettings reset org.gnome.nm-applet disable-vpn-notifications
+gsettings reset org.gnome.nm-applet disable-wifi-create
+gsettings reset org.gnome.nm-applet suppress-wireless-networks-available
+gsettings reset org.gnome.nm-applet show-applet
+*/
+
+/* --- mate-notification-daemon v1.28.4+ --- */
+/* @see https://github.com/mate-desktop/mate-notification-daemon/pull/232 */
+/* coco-theme nodoka-theme slider-theme default-theme */
+
+.notification-box.coco-theme {
+	border: 1px solid @theme_selected_bg;
+	border-radius: 6px; /* @see nodoka_rounded_rectangle (... 6) */
+	background: alpha(@theme_selected_bg, 0.4);
 }
 
-.osd > box {
-	background: @theme_bg;
-	box-shadow:
-		0 -11px @theme_bg, /* top */
-		11px  0 @theme_bg, /* right */
-		0  11px @theme_bg, /* bottom */
-		-11px 0 @theme_bg, /* left */
-		-11px -11px @theme_bg, /* top left */
-		 11px -11px @theme_bg, /* top right */
-		 11px  11px @theme_bg, /* bottom right */
-		-11px  11px @theme_bg  /* bottom left */;
+.notification-box.default-theme {
+	padding: 0 0 2px;
+	border: 1px solid @theme_selected_bg;
+}
+
+.notification-box.coco-theme button,
+.notification-box.nodoka-theme button,
+.notification-box.default-theme button {
+	padding: 2px;
+}
+
+.notification-box.coco-theme button image + label,
+.notification-box.nodoka-theme button image + label,
+.notification-box.default-theme button image + label {
+	margin-left: -4px;
+}
+
+.notification-box.coco-theme .actions-box button,
+.notification-box.nodoka-theme .actions-box button,
+.notification-box.default-theme .actions-box button {
+	margin: 0 -1px;
+	padding: 3px 4px;
+}
+
+.notification-box.coco-theme .actions-box button:nth-last-child(2),
+.notification-box.nodoka-theme .actions-box button:nth-last-child(2),
+.notification-box.default-theme .actions-box button:nth-last-child(2) {
+	/* [button] [button] button{applyHere} countdown */
+	margin-right: 7px;
+}
+
+.notification-box.nodoka-theme .actions-box button:not(:hover),
+.notification-box.default-theme .actions-box button:not(:hover) {
+	border-color: transparent;
+	background: transparent;
+	box-shadow: none;
+}
+
+.notification-box.coco-theme .actions-box {
+	margin-top: 6px;
+}
+
+.notification-box.coco-theme .actions-box button, .notification-box.coco-theme .actions-box button:hover,
+.notification-box.coco-theme .actions-box button:active, .notification-box.coco-theme .actions-box button:focus {
+	color: #DDD; /* dark background */
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+	transition: color 0.3s;
+}
+
+.notification-box.coco-theme .actions-box button:hover {
+	color: gray;
+}
+
+.notification-box.coco-theme .actions-box button image {
+	transition: opacity 0.3s;
+}
+
+.notification-box.coco-theme .actions-box button:hover image {
+	opacity: 0.6;
+}
+
+.notification-box.coco-theme .countdown:active {
+	/* @see https://github.com/mate-desktop/mate-notification-daemon/pull/233 */
+	/* the countdown color */
+	color: @theme_notification_countdown;
 }

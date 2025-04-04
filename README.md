@@ -1,6 +1,6 @@
 # Human theme
 
-This theme works with: **GTK 2.24** *(with murrine)*, **GTK 3.24**, and **GTK 4.12/4.17**.\
+This theme works with: **GTK 2.24** *(with murrine)*, **GTK 3.24**, and **GTK 4.12..4.18**.\
 It is mainly intended for MATE and Xfce desktop environments.
 
 ## Screenshots
@@ -65,6 +65,9 @@ GTK 4.12 RTL (Pango 1.51)\
 [<img alt="Preview with GTK 4 - RTL - Blue variation - Menu" src="images/thumbs/gtk4-rtl-blue-menu.png?raw=true" width="200" />](images/gtk4-rtl-blue-menu.png?raw=true)
 [<img alt="Preview with GTK 4 - RTL - Green variation - Menu" src="images/thumbs/gtk4-rtl-green-menu.png?raw=true" width="200" />](images/gtk4-rtl-green-menu.png?raw=true)
 
+GTK 5.0 (Pango 1.56)\
+_GtkWindow will be probably deprecated... lol_
+
 Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended).
 
 ## Installation
@@ -76,9 +79,9 @@ To meet the truth (this is not required):
 - install [gtk3-classic](https://github.com/lah7/gtk3-classic)
 - use Pango 1.42- or 1.51+
 
-For Debian Testing, I provide repositories for [gtk3-classic](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) and [gtk4-classic](https://build.opensuse.org/package/show/home:luigifab/gtk4-classic), with some extra patches.
+For Debian Testing, I provide a repository for [gtk3-classic](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) and [gtk4-classic](https://build.opensuse.org/package/show/home:luigifab/gtk4-classic), **with extra patches**, it also includes [mate-settings-daemon 1.26](https://build.opensuse.org/package/show/home:luigifab/mate-notification) with a patch to customize notifications from theme.
 
-If you can't/won't, no worries, but the truth will be far.
+If you can't/won't, no worries, but the truth will be far...
 
 #### Installation for Debian, Devuan, Ubuntu, Trisquel, Linux Mint, MX Linux
 
@@ -100,17 +103,23 @@ If you can't/won't, no worries, but the truth will be far.
 * Run: `sudo urpmi human-theme-gtk`
 * Restart your session
 
+#### Installation for OpenMandriva
+
+* Run: `sudo dnf install human-gtk-theme`
+* Restart your session
+
 #### Alternative installation for Debian, Devuan, Ubuntu, Trisquel, Linux Mint, MX Linux
 
 * Run:
 ```bash
 # PPA: https://launchpad.net/~luigifab/+archive/ubuntu/packages
 # with Debian 12+ you can use mantic+ instead of focal (https://unix.stackexchange.com/a/669008/364800)
-# for Debian you can use bionic for buster, focal for bullseye, noble for bookworm and trixie
+# for Debian you can use bionic for buster, focal for bullseye, oracular or plucky for bookworm and trixie
 # for Devuan you can use bionic for beowulf, focal for chimaera, noble for daedalus
 # for Trisquel you can use focal for nabia, jammy for aramo
 # for Linux Mint you can use focal for 20.x and 5, jammy for 21.x, noble for 22.x and 6
 # for MX Linux you can use focal for 19.x and 21.x, noble for 23.x
+# for Kali Linux you can use oracular or plucky
 
 sudo add-apt-repository ppa:luigifab/packages
 sudo apt update
@@ -140,7 +149,7 @@ pub   rsa4096 2020-10-31 [SC]
 ```
 * Restart your session
 
-#### Manual installation for Debian, Devuan, Ubuntu, Trisquel, Linux Mint, MX Linux
+#### Manual installation
 
 * Download archive and extract subdirectories in `~/.themes/`
 * Configure font rendering, GTK and QT, add in `/etc/environment`:
@@ -154,65 +163,10 @@ GTKM_INSERT_EMOJI=1
 QT_QPA_PLATFORMTHEME=gtk2
 GTK_USE_IEC_UNITS=1
 ```
-* Install icons and cursors themes: `sudo apt install gnome-icon-theme dmz-cursor-theme`
-* Install package for GTK 2 apps: `sudo apt install gtk2-engines-murrine`
-* Install package for QT 5 apps: `sudo apt install qt5-gtk2-platformtheme qt5-gtk-platformtheme`
-* Install package for QT 6 apps: `sudo apt install qt6-gtk-platformtheme`
-* Restart your session
-
-#### Manual installation for Fedora
-
-* Download archive and extract subdirectories in `~/.themes/`
-* Configure font rendering, GTK and QT, add in `/etc/environment`:
-```
-FREETYPE_PROPERTIES="truetype:interpreter-version=35"
-GTK_OVERLAY_SCROLLING=0
-GTK_BACKDROP=1
-GTK_FOCUS_VISIBLE=1
-GTK_PROGRESS_TEXT_INSIDE=1
-GTKM_INSERT_EMOJI=1
-QT_QPA_PLATFORMTHEME=gtk2
-GTK_USE_IEC_UNITS=1
-```
-* Install icons and cursors themes: `sudo dnf install mate-icon-theme dmz-cursor-themes`
-* Install package for GTK 2 apps: `sudo dnf install gtk-murrine-engine`
-* Restart your session
-
-#### Manual installation for openSUSE
-
-* Download archive and extract subdirectories in `~/.themes/`
-* Configure font rendering, GTK and QT, add in `/etc/environment`:
-```
-FREETYPE_PROPERTIES="truetype:interpreter-version=35"
-GTK_OVERLAY_SCROLLING=0
-GTK_BACKDROP=1
-GTK_FOCUS_VISIBLE=1
-GTK_PROGRESS_TEXT_INSIDE=1
-GTKM_INSERT_EMOJI=1
-QT_QPA_PLATFORMTHEME=gtk2
-GTK_USE_IEC_UNITS=1
-```
-* Install icons and cursors themes: `sudo zypper install gnome-icon-theme dmz-cursor-themes`
-* Install package for GTK 2 apps: `sudo zypper install gtk2-engine-murrine`
-* Install package for QT 5 apps: `sudo zypper install libqt5-qtstyleplugins-platformtheme-gtk2 libqt5-qtbase-platformtheme-gtk3`
-* Install package for QT 6 apps: `sudo zypper install qt6-platformtheme-gtk3`
-* Restart your session
-
-#### Manual installation for Mageia
-
-* Download archive and extract subdirectories in `~/.themes/`
-* Configure font rendering, GTK and QT, add in `/etc/environment`:
-```
-FREETYPE_PROPERTIES="truetype:interpreter-version=35"
-GTK_OVERLAY_SCROLLING=0
-GTK_BACKDROP=1
-GTK_FOCUS_VISIBLE=1
-GTK_PROGRESS_TEXT_INSIDE=1
-GTKM_INSERT_EMOJI=1
-QT_QPA_PLATFORMTHEME=gtk2
-GTK_USE_IEC_UNITS=1
-```
-* Install icons themes: `sudo urpmi mate-icon-theme`
+* Install icons and cursors themes: `gnome-icon-theme` or `mate-icon-theme` + `dmz-cursor-theme`
+* Install package for GTK 2 apps: `gtk2-engines-murrine` or `gtk2-engine-murrine` or `gtk2-murrine-engine` or `gtk-engine-murrine` or `gtk-murrine-engine` or `murrine` or similar
+* Install package for QT 5 apps: `qt5-gtk2-platformtheme` + `qt5-gtk-platformtheme` or similar
+* Install package for QT 6 apps: `qt6-gtk-platformtheme` or similar
 * Restart your session
 
 ## Configuration
@@ -222,6 +176,8 @@ For **MATE** desktop:
 * Then select the *Human* theme
 * Go to: *System / Preferences / Windows*, or run: `mate-window-properties`
 * Then disable software compositing from last tab
+* Go to: *System / Preferences / Notifications*, or run: `mate-notification-properties`
+* Then select the *Coco* or *Default* theme
 
 For **Xfce** desktop:
 * Go to: *Applications / Settings / Appearance*, or run: `xfce4-appearance-settings`
@@ -240,12 +196,9 @@ Icons:
 Cursors:
 * *DMZ white*
 
-Notifications:
-* *Coco*
-
 ## Customize
 
-Use the file *~/.config/gtk-3.0/gtk.css*.
+Use `~/.config/gtk-3.0/gtk.css` and `~/.config/gtk-4.0/gtk.css` files.
 
 ## Firefox/Thunderbird/Chromium
 
@@ -259,9 +212,9 @@ sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-full.conf
 
 For classic menu bar and menu items on [Firefox 46+](https://www.mozilla.org/firefox) and [Thunderbird 46+](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
 
-## Blurry text with GTK 4
+## GTK 4
 
-If font rendering is bad, add in `~/.config/gtk-4.0/settings.ini`:
+For GTK 4, if font rendering is bad, try to add in `~/.config/gtk-4.0/settings.ini`:
 
 ```
 [Settings]
@@ -288,30 +241,22 @@ ls ~/.themes/human-theme*/gtk-3*/*.css | entr killall -s SIGHUP awf-gtk3
 ls ~/.themes/human-theme*/gtk-4*/*.css | entr killall -s SIGHUP awf-gtk4
 ```
 
-Run [ImageMagick](https://imagemagick.org/) to create the diff image:
+Run [ImageTragick](https://imagemagick.org/) to create the diff image:
 ```bash
 killall -q eom
-rm -f ~/diff3.png
-compare -fuzz 1% -compose src -highlight-color blue -lowlight-color none ~/2.png ~/3.png ~/diff3.png
-composite ~/diff3.png ~/2.png ~/diff3.png
-eom ~/diff3.png &
+rm -f dif.png
+compare -fuzz 1% -compose src -highlight-color blue -lowlight-color none 2.png 3.png dif.png
+composite dif.png 2.png dif.png
+eom dif.png &
 ```
 
 Run `svg.sh` to update SVG images. See also [technical informations](https://github.com/mk-fg/clearlooks-phenix-humanity).
 
 ## Copyright
 
-- Current version: 2.2.1 (03/03/2025)
-- Compatibility: GTK 2.24 / 3.24 / 4.12..4.17
-- Links: [luigifab.fr](https://www.luigifab.fr/gtk/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/)\
-[Arch Linux human-theme-gtk.zst](https://aur.archlinux.org/packages/human-theme-gtk)\
-[Debian human-theme-gtk.deb](https://packages.debian.org/human-theme-gtk)
-  *([ITP](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=973445),
-   [RFS](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=974209))*\
-[Fedora human-theme-gtk.rpm](https://src.fedoraproject.org/rpms/human-theme-gtk)\
-[openSUSE human-theme-gtk.rpm](https://software.opensuse.org/package/human-theme-gtk)\
-[Mageia human-theme-gtk.rpm](https://madb.mageia.org/package/show/name/human-theme-gtk/arch/x86_64)\
-[Ubuntu PPA](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
+- Current version: 2.3.0 (04/04/2025)
+- Compatibility: GTK 2.24 / 3.24 / 4.12..4.18
+- Links: [luigifab.fr](https://www.luigifab.fr/gtk/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\
 If you like, take some of your time to improve some translations, go to https://bit.ly/2HyCCEc.
