@@ -55,10 +55,12 @@ link,
 .link > label,
 label > link {
 	text-decoration: underline;
-	color: @link;
+	color: @theme_link;
 }
 
 selection,
+image:selected,
+iconview:selected,
 switch:checked {
 	color: @theme_selected_fg;
 	background-color: @theme_selected_bg;
@@ -77,27 +79,45 @@ box.dialog-vbox {
 	margin: 2px 2px 0;
 }
 
-/* --- csd --- */
+/* --- csd (solid-csd without compositor, csd with compositor) --- */
+/* window or dialog / with or without compositor / .titlebutton.icon .titlebutton.appmenu */
 
+.background.csd,
+.background.csd headerbar {
+	border-radius: 7px 7px 0 0;
+}
+
+.background.csd,
 .background.solid-csd {
 	padding: 3px;
 	border: 1px solid #6F6358; /* @todo metacity */
 	border-top: 0;
 	/* border-radius: 8px 8px 0 0; */
-	background: @theme_bg;
+	background-color: @theme_bg;
+	/* BEVEL FOCUSED / 3d beveled frame */
+	box-shadow:
+		inset 1px 0 shade(@theme_bg, 1.2),   /* left */
+		inset -1px 0 shade(@theme_bg, 0.88), /* right */
+		inset 0 -1px shade(@theme_bg, 0.88); /* bottom */
 }
 
-.background.solid-csd:backdrop {
-	border-color: #8B7969; /* @todo metacity */
+.background.csd.popup {
+	/* menu */
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background-color: transparent;
+	box-shadow: none;
 }
 
+.background.csd headerbar,
 .background.solid-csd headerbar {
 	margin: -3px -4px 0;
 	padding: 0;
 	/* border-radius: 8px 8px 0 0; */
 	color: @theme_selected_fg;
 	/* <draw_ops name="bevel"> titlebar outline */
-	border: 1px solid shade(@theme_selected_bg, 0.55);
+	border: 1px solid shade(@theme_selected_bg, 0.7);
 	/* <draw_ops name="bevel"> fancy gradient */
 	background: linear-gradient(to bottom,
 		shade(@theme_selected_bg, 1.08),
@@ -106,58 +126,96 @@ box.dialog-vbox {
 		shade(@theme_selected_bg, 0.94));
 }
 
+.background.csd headerbar image,
 .background.solid-csd headerbar image {
 	/* -gtk-icon-transform: scale(0.75); */
 	-gtk-icon-style: symbolic;
 }
 
+.background.csd headerbar label.title,
 .background.solid-csd headerbar label.title {
+	padding-top: 2px;
 	font-weight: bold;
 }
 
-.background.solid-csd headerbar button {
-	margin: 1px 5px;
-	padding: 0;
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close),
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):hover,
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):active,
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):focus,
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active,
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:focus,
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):active:focus,
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active:focus,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close),
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):hover,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):active,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):focus,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:focus,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):active:focus,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active:focus {
+	/* ChatGPT made the list */
 	color: @theme_selected_fg;
-	border: 0;
+	border: 1px solid transparent;
 	background: none;
 	box-shadow: none;
 	outline: 0;
 }
 
-.background.solid-csd headerbar button:checked,
-.background.solid-csd headerbar button.toggle:active,
-.background.solid-csd headerbar button.toggle:checked {
-	padding: 0;
-	font-weight: bold;
-}
-
-.background.solid-csd headerbar button:focus,
-.background.solid-csd headerbar button:focus:hover,
-.background.solid-csd headerbar button:active,
-.background.solid-csd headerbar button:active:hover,
-.background.solid-csd headerbar button:active:focus:hover,
-.background.solid-csd headerbar button:hover,
-.background.solid-csd headerbar button:disabled,
-.background.solid-csd headerbar button:checked,
-.background.solid-csd headerbar button:checked:hover,
-.background.solid-csd headerbar button:checked:focus,
-.background.solid-csd headerbar button:checked:hover:focus,
-.background.solid-csd headerbar button:checked:hover:active:focus {
-	padding: 0;
-	border: 0;
-	background: none;
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):checked,
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:checked,
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):active:checked,
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):focus:checked,
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active:checked,
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:focus:checked,
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):active:focus:checked,
+.background.csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active:focus:checked,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):checked,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:checked,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):active:checked,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):focus:checked,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active:checked,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:focus:checked,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):active:focus:checked,
+.background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active:focus:checked {
+	/* ChatGPT made the list */
+	color: @theme_selected_fg;
+	border-color: @slider_border;
+	background: darker(@theme_selected_bg);
 	box-shadow: none;
+	outline: 0;
 }
 
+.background.csd headerbar button,
+.background.csd headerbar button.toggle,
+.background.solid-csd headerbar button,
+.background.solid-csd headerbar button.toggle {
+	margin: 1px 3px;
+	padding: 0 3px;
+	border-radius: 3px;
+}
+
+.background.csd headerbar button label,
+.background.solid-csd headerbar button label {
+	margin: 1px 0 -1px;
+	padding: 0;
+}
+
+.background.csd headerbar image.app-icon,
+.background.solid-csd headerbar image.app-icon {
+	margin: 0 6px; /* with gtk4-classic (appearance__appicon_headerbar.patch) */
+}
+
+.background.csd headerbar windowcontrols,
 .background.solid-csd headerbar windowcontrols {
 	margin: 2px 3px;
 }
 
+.background.csd headerbar windowcontrols button,
 .background.solid-csd headerbar windowcontrols button {
 	margin: 0 2px;
 	padding: 0;
-	color: #E3D7D2; /* @todo metacity */
+	color: shade(@theme_base, 0.95);
 	/* <draw_ops name="button_bg"> border outline */
 	border: 1px solid shade(@theme_selected_bg, 0.6);
 	/* <draw_ops name="button_bg"> fill gradient */
@@ -177,22 +235,37 @@ box.dialog-vbox {
 		0 1px shade(@theme_selected_bg, 1.06);        /* bottom */
 }
 
+.background.csd headerbar windowcontrols button:hover,
 .background.solid-csd headerbar windowcontrols button:hover {
 	/* <draw_ops name="button_bg_prelight"> */
 	border: 1px solid shade(@theme_selected_bg, 0.6);
 	background: shade(@theme_selected_bg, 1.15);
 }
 
+.background.csd headerbar windowcontrols button:active,
 .background.solid-csd headerbar windowcontrols button:active {
 	/* <draw_ops name="button_bg_pressed"> border outline */
-	border: 1px solid shade(@theme_selected_bg, 0.55);
+	border: 1px solid shade(@theme_selected_bg, 0.7);
 	/* <draw_ops name="button_bg_pressed"> fill gradient */
 	background: linear-gradient(to bottom,
 		shade(@theme_selected_bg, 0.95),
 		shade(@theme_selected_bg, 0.9));
 }
 
-.background.solid-csd headerbar:backdrop {
+/* --- csd backdrop --- */
+
+.background.csd:backdrop,
+.background.solid-csd:backdrop {
+	border-color: shade(@theme_bg, 0.55);
+	/* BEVEL UNFOCUSED / 3d beveled frame */
+	box-shadow:
+		inset 1px 0 shade(@theme_bg, 1.03),  /* left */
+		inset -1px 0 shade(@theme_bg, 0.88), /* right */
+		inset 0 -1px shade(@theme_bg, 0.88); /* bottom */
+}
+
+.background.csd:backdrop headerbar,
+.background.solid-csd:backdrop headerbar {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 	/* <draw_ops name="bevel_unfocused"> rectangle */
 	border: 1px solid shade(@theme_bg, 0.55);
@@ -204,11 +277,25 @@ box.dialog-vbox {
 		shade(@theme_bg, 0.89));
 }
 
-.background.solid-csd headerbar:backdrop button {
+.background.csd:backdrop headerbar button:not(.minimize):not(.maximize):not(.close),
+.background.solid-csd:backdrop headerbar button:not(.minimize):not(.maximize):not(.close) {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 }
 
-.background.solid-csd headerbar:backdrop windowcontrols button {
+.background.csd:backdrop headerbar button:not(.minimize):not(.maximize):not(.close):checked,
+.background.solid-csd:backdrop headerbar button:not(.minimize):not(.maximize):not(.close):checked {
+	/* same as close button */
+	color: mix(@theme_fg, @theme_bg, 0.45);
+	border-color: shade(@theme_bg, 0.6);
+	background: linear-gradient(to bottom,
+		shade(@theme_bg, 1.15),
+		shade(@theme_bg, 1.07) 50%,
+		shade(@theme_bg, 1.05) 50%,
+		shade(@theme_bg, 0.97));
+}
+
+.background.csd:backdrop headerbar windowcontrols button,
+.background.solid-csd:backdrop headerbar windowcontrols button {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 	border: 1px solid shade(@theme_bg, 0.6);
 	/* <draw_ops name="button_bg_unfocused"> fill gradient */
@@ -228,8 +315,40 @@ box.dialog-vbox {
 		0 1px shade(@theme_bg, 0.96);        /* bottom */
 }
 
-.background.solid-csd headerbar:backdrop windowcontrols button:hover {
+.background.csd:backdrop headerbar windowcontrols button:hover,
+.background.solid-csd:backdrop headerbar windowcontrols button:hover {
+	/* @todo */
+}
 
+/* --- csd maximized --- */
+
+.background.csd.maximized,
+.background.solid-csd.maximized {
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.background.csd.maximized,
+.background.csd.maximized headerbar {
+	border-radius: 0;
+}
+
+.background.csd.maximized headerbar,
+.background.solid-csd.maximized headerbar {
+	margin: 0 -3px 0;
+	border-radius: 0;
+}
+
+.background.csd.maximized statusbar,
+.background.solid-csd.maximized statusbar {
+	border-bottom: 1px solid #463731; /* @todo metacity */
+}
+
+.background.csd.maximized:backdrop statusbar,
+.background.solid-csd.maximized:backdrop statusbar {
+	border-bottom-color: shade(@theme_bg, 0.55);
 }
 
 /* --- text/images disabled --- */
@@ -260,6 +379,7 @@ tooltip,
 tooltip.background,
 .tooltip,
 .tooltip.background {
+	padding: 4px 5px;
 	color: @theme_tooltip_fg;
 	border: 1px solid @theme_tooltip_border;
 	background: @theme_tooltip_bg;
@@ -284,20 +404,6 @@ spinner:checked {
 menubar spinner {
 	animation: none;
 	opacity: 0;
-}
-
-/* --- grid --- */
-
-grid label.property-name-label,
-grid label.key-name,
-grid label.key-summary {
-	color: @theme_text;
-}
-
-grid row:selected label.property-name-label,
-grid row:selected label.key-name,
-grid row:selected label.key-summary {
-	color: @theme_selected_fg;
 }
 
 /* --- arrow --- */
@@ -427,7 +533,7 @@ switch {
 	margin: 1px;
 	min-width: 76px;
 	min-height: 25px;
-	transition: background 0.3s;
+	transition: background 0.5s;
 }
 
 switch slider {
@@ -464,7 +570,7 @@ switch slider:focus {
 
 switch slider:active,
 switch slider:focus {
-	outline: 1px solid @outline;
+	outline: 1px solid @theme_outline;
 	outline-offset: -4px;
 }
 
@@ -637,7 +743,7 @@ entry image ~ text {
 
 entry:focus,
 spinbutton text:focus {
-	border-color: @outline;
+	border-color: @theme_outline;
 }
 
 entry:disabled,
@@ -717,12 +823,12 @@ checkbutton:hover {
 }
 
 checkbutton:focus label {
-	border-color: @outline;
+	border-color: @theme_outline;
 	background: @checkbutton_focus_bg;
 }
 
 checkbutton:hover:focus label {
-	border-color: @checkbutton_focus_hover_border;
+	/* border-color: @checkbutton_focus_hover_border; @todo */
 	background: @checkbutton_focus_hover_bg;
 }
 
@@ -829,14 +935,6 @@ spinbutton button:focus:hover {
 }
 
 button:focus {
-	outline: 1px solid @outline;
-	outline-offset: -4px;
-	background:
-		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
-			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill);
-}
-
-button:not(.flat):focus {
 	border-color: @button_border;
 	background:
 		@theme_bg
@@ -851,6 +949,15 @@ button:not(.flat):focus {
 			@button_glaze_mida 49%,
 			@button_glaze_midb 49%,
 			@button_glaze_bot);
+	outline: 1px solid @theme_outline;
+	outline-offset: -4px;
+}
+
+button.flat:focus {
+	border-color: transparent;
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill);
 }
 
 button:focus:hover {
@@ -882,10 +989,10 @@ button:disabled {
 			@button_disabled_glaze_bot);
 }
 
-button:checked:focus,
-button:checked:active:focus:hover,
 button:active,
-button:active:hover {
+button:active:hover,
+button:checked:focus,
+button:checked:active:focus:hover {
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
 			linear-gradient(to bottom, @button_focus_fill_active, @button_focus_fill_active),
@@ -933,7 +1040,7 @@ button:checked:hover {
 			@button_hover_glaze_bot);
 }
 
-button:checked:focus:hover {
+button:checked:hover:focus {
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
 			linear-gradient(to bottom, @button_focus_fill_active, @button_focus_fill_active),
@@ -967,6 +1074,7 @@ box.toolbar button:active:hover,
 box.toolbar button.toggle:checked:disabled,
 box.primary-toolbar button:active,
 box.primary-toolbar button:active:hover,
+box.primary-toolbar button.toggle:checked:focus,
 box.primary-toolbar button.toggle:checked:disabled {
 	border: 1px solid @button_border;
 	background:
@@ -998,7 +1106,8 @@ box.primary-toolbar button.toggle:checked:disabled {
 
 button.flat:focus:hover,
 box.toolbar button:focus:hover,
-box.primary-toolbar button:focus:hover {
+box.primary-toolbar button:focus:hover,
+box.primary-toolbar button.toggle:focus:hover {
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
 			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
@@ -1818,7 +1927,7 @@ notebook header.right tab button:dir(rtl) {
 }
 
 notebook:focus header tab:checked label {
-	border-color: @outline;
+	border-color: @theme_outline;
 	background: @nb_tab_focus_bg;
 }
 
@@ -1927,7 +2036,7 @@ progressbar.horizontal progress {
 	min-height: 6px;
 }
 
-/* --- progress bar --- */
+/* --- progress bar - @todo .pulse --- */
 
 progressbar:disabled {
 	opacity: 0.6;
@@ -2064,6 +2173,7 @@ statusbar progressbar.horizontal {
 
 statusbar progressbar.horizontal text {
 	margin: 0 0 -18px;
+	line-height: 10px;
 }
 
 statusbar progressbar.horizontal trough,
@@ -2073,15 +2183,22 @@ statusbar progressbar.horizontal trough progress {
 
 /* --- progress bar - with gtk4-classic (appearance__progress_text.patch) when GTK_PROGRESS_TEXT_INSIDE=1 --- */
 
+progressbar.classic.vertical text,
 progressbar.classic.vertical trough,
 progressbar.classic.vertical trough progress {
-	min-width: 40px;
+	margin: 0;
+	padding: 0;
+	min-width: 40px; /* to avoid small width at <10% */
+	min-height: 0;
 }
 
-progressbar.classic.vertical text,
-progressbar.classic.horizontal text {
+progressbar.classic.horizontal text,
+progressbar.classic.horizontal trough,
+progressbar.classic.horizontal trough progress {
 	margin: 0;
-	opacity: 0;
+	padding: 0;
+	min-width: 0;
+	min-height: 0;
 }
 
 progressbar.classic.vertical.full text {
@@ -2089,26 +2206,24 @@ progressbar.classic.vertical.full text {
 	margin: 0 -1px;
 }
 
+progressbar.classic.horizontal text {
+	padding: 3px 0;
+}
+
 statusbar progressbar.classic.horizontal text {
 	margin: 0 0 -2px;
 }
 
-progressbar.classic .text.trough {
+progressbar.classic text {
+	opacity: 0;
+}
+
+progressbar.classic text.trough {
 	color: @theme_text;
 }
 
-progressbar.classic .text.progress {
+progressbar.classic text.progress {
 	color: @theme_selected_fg;
-}
-
-progressbar.classic:disabled .text.trough {
-	color: @insensitive_fg;
-	text-shadow: none;
-}
-
-progressbar.classic:disabled .text.progress {
-	color: @insensitive_selected;
-	text-shadow: none;
 }
 
 /* --- scale --- */
@@ -2141,7 +2256,7 @@ scale trough {
 }
 
 scale:focus trough {
-	outline: 1px solid @outline;
+	outline: 1px solid @theme_outline;
 }
 
 scale trough highlight {
@@ -2478,6 +2593,20 @@ infobar.error {
 	background: linear-gradient(to bottom, @errorbar_bg_top, @errorbar_bg_bot);
 }
 
+/* --- grid --- */
+
+grid label.property-name-label,
+grid label.key-name,
+grid label.key-summary {
+	color: @theme_text;
+}
+
+grid row:selected label.property-name-label,
+grid row:selected label.key-name,
+grid row:selected label.key-summary {
+	color: @theme_selected_fg;
+}
+
 /* --- treeview --- */
 
 list {
@@ -2717,6 +2846,10 @@ list row {
 }
 
 listview row cell {
+	/* background doesn't work -> border-image
+	background-image: url("img/treeview-separator.svg");
+	background-repeat: repeat-y;
+	background-position: right bottom; */
 	padding: 3px 2px;
 }
 
@@ -2729,12 +2862,16 @@ list row image + label {
 	padding: 0 4px 0 8px;
 }
 
-listview row cell:not(:last-child) {
-	/* background doesn't work -> border-image
-	background-image: url("img/treeview-separator.svg");
-	background-repeat: repeat-y;
-	background-position: right bottom; */
-	/* lol */
+listview row:nth-child(2n+1) cell:not(:last-child) {
+	/* lol - odd */
+	border-right: 1px solid transparent;
+	border-image-source: repeating-linear-gradient(to bottom, @theme_base 0px, @theme_base 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-slice: 1;
+	border-image-repeat: repeat;
+}
+
+listview row:nth-child(2n) cell:not(:last-child) {
+	/* lol - even */
 	border-right: 1px solid transparent;
 	border-image-source: repeating-linear-gradient(to bottom, #EEE 0px, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
 	border-image-slice: 1;
@@ -2742,6 +2879,7 @@ listview row cell:not(:last-child) {
 }
 
 listview row:selected cell:not(:last-child) {
+	/* lol */
 	border-image-source: repeating-linear-gradient(to bottom,
 		@theme_selected_bg 0px,
 		@theme_selected_bg 3px,
@@ -2750,6 +2888,7 @@ listview row:selected cell:not(:last-child) {
 }
 
 listview row:selected:not(:focus):not(:last-child) cell {
+	/* lol */
 	border-image-source: repeating-linear-gradient(to bottom,
 		shade(@theme_selected_bg, 1.2) 0px,
 		shade(@theme_selected_bg, 1.2) 3px,
@@ -2875,7 +3014,7 @@ calendar .other-month {
 }
 
 /* --- overrrides --- */
-/* GTK 4.12..4.18 + Pango 1.51 (Pango 1.51 is similar to Pango 1.42, so we have almost same rendering with GTK 2.24 - 3.24 - 4.12..4.18) */
+/* GTK 4.12..4.19 + Pango 1.51+ (Pango 1.51 is similar to Pango 1.42, so we have almost same rendering with GTK 2.24 - 3.24 - 4.12..4.19) */
 
 * {
 	line-height: 17px;
@@ -2910,6 +3049,10 @@ combobox entry {
 
 combobox button {
 	padding-bottom: 4px;
+}
+
+combobox button arrow {
+	padding-top: 1px;
 }
 
 spinbutton.horizontal text {

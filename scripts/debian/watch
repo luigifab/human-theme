@@ -1,5 +1,5 @@
 version=4
 opts="searchmode=plain,\
-filenamemangle=s%v?@ANY_VERSION@%@PACKAGE@-$1.tar.xz%" \
-https://api.github.com/repos/luigifab/human-theme/releases?per_page=50 \
+filenamemangle=s%v?@ANY_VERSION@%@PACKAGE@-$1.tar.gz%" \
+https://api.github.com/repos/luigifab/human-theme/releases?per_page=10 \
 https://api.github.com/repos/[^/]+/[^/]+/tarball/v?@ANY_VERSION@

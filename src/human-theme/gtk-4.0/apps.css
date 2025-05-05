@@ -24,6 +24,6 @@
 
 /* --- awf-gtk4 --- */
 
-#AwfMainWindow .awf-cheatcode-btn7 { min-height: 18px; }
-#AwfMainWindow .awf-cheatcode-btn8 { min-height: 20px; }
-#AwfMainWindow .awf-cheatcode-prbr2 { margin: 1px 0; }
+#AwfMainWindow button.awf-cheatcode-btn7 { min-height: 18px; }
+#AwfMainWindow button.awf-cheatcode-btn8 { min-height: 20px; }
+#AwfMainWindow progressbar.awf-cheatcode-prbr2 { margin: 1px 0; }

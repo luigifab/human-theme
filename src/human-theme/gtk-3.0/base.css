@@ -55,12 +55,13 @@ link,
 .link > label,
 label > link {
 	text-decoration: underline;
-	color: @link;
+	color: @theme_link;
 }
 
-*:selected,
-*:selected:focus,
+:selected, /* required for marco/metacity theme */
 selection,
+/* iconview:selected,
+image:selected, */
 switch:checked {
 	color: @theme_selected_fg;
 	background-color: @theme_selected_bg;
@@ -76,35 +77,47 @@ paper {
 	background: white;
 }
 
-/* --- csd --- */
+/* --- csd (solid-csd without compositor, csd with compositor) --- */
+/* window or dialog / with or without compositor / .titlebutton.icon .titlebutton.appmenu */
+/* with gtk3-classic, without GTK_CSD with GtkInspector = marco + .background headerbar */
+/* with gtk3-classic, with GTK_CSD=0/1 with GtkInspector = csd + .background.solid-csd/.csd headerbar */
 
-window.background:not(.solid-csd) headerbar > box {
-	padding-top: 1px;
+.background.csd decoration,
+.background.csd headerbar {
+	border-radius: 7px 7px 0 0;
 }
 
-window.background:not(.solid-csd) headerbar button image {
-	min-height: 24px;
-}
-
+.background.csd decoration,
 .background.solid-csd decoration {
-	margin: 3px;
+	padding: 3px;
 	border: 1px solid #6F6358; /* @todo metacity */
 	border-top: 0;
 	/* border-radius: 8px 8px 0 0; */
-	background: @theme_bg;
+	background-color: @theme_bg;
+	/* BEVEL FOCUSED / 3d beveled frame */
+	box-shadow:
+		inset 1px 0 shade(@theme_bg, 1.2),   /* left */
+		inset -1px 0 shade(@theme_bg, 0.88), /* right */
+		inset 0 -1px shade(@theme_bg, 0.88); /* bottom */
 }
 
-.background.solid-csd:backdrop decoration {
-	border-color: #8B7969; /* @todo metacity */
+.background.csd.popup decoration {
+	/* menu */
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background-color: transparent;
+	box-shadow: none;
 }
 
+.background.csd headerbar,
 .background.solid-csd headerbar {
 	margin: -3px -4px 0;
-	padding: 0;
+	padding: 0 3px;
 	/* border-radius: 8px 8px 0 0; */
 	color: @theme_selected_fg;
 	/* <draw_ops name="bevel"> titlebar outline */
-	border: 1px solid shade(@theme_selected_bg, 0.55);
+	border: 1px solid shade(@theme_selected_bg, 0.7);
 	/* <draw_ops name="bevel"> fancy gradient */
 	background: linear-gradient(to bottom,
 		shade(@theme_selected_bg, 1.08),
@@ -113,79 +126,115 @@ window.background:not(.solid-csd) headerbar button image {
 		shade(@theme_selected_bg, 0.94));
 }
 
-.background.solid-csd paned headerbar { /* gedit 40 */
-	margin: 0;
-}
-
+.background.csd headerbar menu,
 .background.solid-csd headerbar menu {
 	font-weight: normal;
 }
 
+.background.csd headerbar image,
 .background.solid-csd headerbar image {
 	/* -gtk-icon-transform: scale(0.75); */
 	-gtk-icon-style: symbolic;
 }
 
+.background.csd headerbar label.title,
 .background.solid-csd headerbar label.title {
+	padding-top: 2px;
 	font-weight: bold;
 }
 
-.background.solid-csd headerbar button {
-	margin: 0 5px;
-	padding: 0;
-	border: 0;
+.background.csd headerbar button:not(.titlebutton),
+.background.csd headerbar button:not(.titlebutton):hover,
+.background.csd headerbar button:not(.titlebutton):active,
+.background.csd headerbar button:not(.titlebutton):focus,
+.background.csd headerbar button:not(.titlebutton):hover:active,
+.background.csd headerbar button:not(.titlebutton):hover:focus,
+.background.csd headerbar button:not(.titlebutton):active:focus,
+.background.csd headerbar button:not(.titlebutton):hover:active:focus,
+.background.solid-csd headerbar button:not(.titlebutton),
+.background.solid-csd headerbar button:not(.titlebutton):hover,
+.background.solid-csd headerbar button:not(.titlebutton):active,
+.background.solid-csd headerbar button:not(.titlebutton):focus,
+.background.solid-csd headerbar button:not(.titlebutton):hover:active,
+.background.solid-csd headerbar button:not(.titlebutton):hover:focus,
+.background.solid-csd headerbar button:not(.titlebutton):active:focus,
+.background.solid-csd headerbar button:not(.titlebutton):hover:active:focus {
+	/* ChatGPT made the list */
 	color: @theme_selected_fg;
+	border: 1px solid transparent;
 	background: none;
 	box-shadow: none;
+	outline: 0;
 }
 
-.background.solid-csd headerbar button:checked,
-.background.solid-csd headerbar button.toggle:active,
-.background.solid-csd headerbar button.toggle:checked {
-	padding: 0;
-	font-weight: bold;
-}
-
-.background.solid-csd headerbar button:focus,
-.background.solid-csd headerbar button:focus:hover,
-.background.solid-csd headerbar button:active,
-.background.solid-csd headerbar button:active:hover,
-.background.solid-csd headerbar button:active:focus:hover,
-.background.solid-csd headerbar button:hover,
-.background.solid-csd headerbar button:disabled,
-.background.solid-csd headerbar button:checked,
-.background.solid-csd headerbar button:checked:hover,
-.background.solid-csd headerbar button:checked:focus,
-.background.solid-csd headerbar button:checked:hover:focus,
-.background.solid-csd headerbar button:checked:hover:active:focus {
-	padding: 0;
-	border: 0;
-	background: none;
+.background.csd headerbar button:not(.titlebutton):checked,
+.background.csd headerbar button:not(.titlebutton):hover:checked,
+.background.csd headerbar button:not(.titlebutton):active:checked,
+.background.csd headerbar button:not(.titlebutton):focus:checked,
+.background.csd headerbar button:not(.titlebutton):hover:active:checked,
+.background.csd headerbar button:not(.titlebutton):hover:focus:checked,
+.background.csd headerbar button:not(.titlebutton):active:focus:checked,
+.background.csd headerbar button:not(.titlebutton):hover:active:focus:checked,
+.background.solid-csd headerbar button:not(.titlebutton):checked,
+.background.solid-csd headerbar button:not(.titlebutton):hover:checked,
+.background.solid-csd headerbar button:not(.titlebutton):active:checked,
+.background.solid-csd headerbar button:not(.titlebutton):focus:checked,
+.background.solid-csd headerbar button:not(.titlebutton):hover:active:checked,
+.background.solid-csd headerbar button:not(.titlebutton):hover:focus:checked,
+.background.solid-csd headerbar button:not(.titlebutton):active:focus:checked,
+.background.solid-csd headerbar button:not(.titlebutton):hover:active:focus:checked {
+	/* ChatGPT made the list */
+	color: @theme_selected_fg;
+	border-color: @slider_border;
+	background: darker(@theme_selected_bg);
 	box-shadow: none;
+	outline: 0;
 }
 
-.background.solid-csd headerbar > box.horizontal.right,
-.background.solid-csd headerbar > box.horizontal.left {
-	margin: 0 6px;
+.background.csd headerbar button,
+.background.csd headerbar button.toggle,
+.background.solid-csd headerbar button,
+.background.solid-csd headerbar button.toggle {
+	margin: 1px 0;
+	padding: 0 3px;
+	border-radius: 3px;
 }
 
+.background.csd headerbar button label,
+.background.solid-csd headerbar button label {
+	margin: 1px 0 -1px;
+	padding: 0;
+}
+
+.background.csd headerbar box.left,
+.background.solid-csd headerbar box.left {
+	/* headerbar windowcontrols with gtk4 */
+	margin: 0 -3px 0 3px;
+}
+
+.background.csd headerbar box.right,
+.background.solid-csd headerbar box.right {
+	/* headerbar windowcontrols with gtk4 */
+	margin: 0 3px 0 -3px;
+}
+
+.background.csd headerbar image.app-icon,
+.background.solid-csd headerbar image.app-icon {
+	margin: 0 3px; /* with gtk3-classic (appearance__appicon_headerbar.patch) */
+}
+
+.background.csd headerbar separator.titlebutton,
 .background.solid-csd headerbar separator.titlebutton {
 	margin: 0;
 	padding: 0;
 	border: 0;
 }
 
-.background.solid-csd headerbar button.appmenu,
-.background.solid-csd headerbar button.appmenu:checked {
-	border: 0;
-	background: none;
-}
-
-.background.solid-csd headerbar button.minimize,
-.background.solid-csd headerbar button.maximize,
-.background.solid-csd headerbar button.close {
+.background.csd headerbar button.titlebutton,
+.background.solid-csd headerbar button.titlebutton {
 	margin: 2px -1px;
-	color: #E3D7D2; /* @todo metacity */
+	padding: 0;
+	color: shade(@theme_base, 0.95);
 	/* <draw_ops name="button_bg"> border outline */
 	border: 1px solid shade(@theme_selected_bg, 0.6);
 	/* <draw_ops name="button_bg"> fill gradient */
@@ -205,26 +254,37 @@ window.background:not(.solid-csd) headerbar button image {
 		0 1px shade(@theme_selected_bg, 1.06);        /* bottom */
 }
 
-.background.solid-csd headerbar button.minimize:hover,
-.background.solid-csd headerbar button.maximize:hover,
-.background.solid-csd headerbar button.close:hover {
+.background.csd headerbar button.titlebutton:hover,
+.background.solid-csd headerbar button.titlebutton:hover {
 	/* <draw_ops name="button_bg_prelight"> */
 	border: 1px solid shade(@theme_selected_bg, 0.6);
 	background: shade(@theme_selected_bg, 1.15);
 }
 
-.background.solid-csd headerbar button.minimize:active,
-.background.solid-csd headerbar button.maximize:active,
-.background.solid-csd headerbar button.close:active {
+.background.csd headerbar button.titlebutton:active,
+.background.solid-csd headerbar button.titlebutton:active {
 	/* <draw_ops name="button_bg_pressed"> border outline */
-	border: 1px solid shade(@theme_selected_bg, 0.55);
+	border: 1px solid shade(@theme_selected_bg, 0.7);
 	/* <draw_ops name="button_bg_pressed"> fill gradient */
 	background: linear-gradient(to bottom,
 		shade(@theme_selected_bg, 0.95),
 		shade(@theme_selected_bg, 0.9));
 }
 
-.background.solid-csd headerbar:backdrop {
+/* --- csd backdrop --- */
+
+.background.csd:backdrop decoration,
+.background.solid-csd:backdrop decoration {
+	border-color: shade(@theme_bg, 0.55);
+	/* BEVEL UNFOCUSED / 3d beveled frame */
+	box-shadow:
+		inset 1px 0 shade(@theme_bg, 1.03),  /* left */
+		inset -1px 0 shade(@theme_bg, 0.88), /* right */
+		inset 0 -1px shade(@theme_bg, 0.88); /* bottom */
+}
+
+.background.csd:backdrop headerbar,
+.background.solid-csd:backdrop headerbar {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 	/* <draw_ops name="bevel_unfocused"> rectangle */
 	border: 1px solid shade(@theme_bg, 0.55);
@@ -236,13 +296,27 @@ window.background:not(.solid-csd) headerbar button image {
 		shade(@theme_bg, 0.89));
 }
 
-.background.solid-csd headerbar:backdrop button {
+.background.csd:backdrop headerbar button,
+.background.csd:backdrop headerbar button:hover,
+.background.solid-csd:backdrop headerbar button,
+.background.solid-csd:backdrop headerbar button:hover {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 }
 
-.background.solid-csd headerbar:backdrop button.minimize,
-.background.solid-csd headerbar:backdrop button.maximize,
-.background.solid-csd headerbar:backdrop button.close {
+.background.csd:backdrop headerbar button:not(.titlebutton):checked,
+.background.solid-csd:backdrop headerbar button:not(.titlebutton):checked {
+	/* same as close button */
+	color: mix(@theme_fg, @theme_bg, 0.45);
+	border-color: shade(@theme_bg, 0.6);
+	background: linear-gradient(to bottom,
+		shade(@theme_bg, 1.15),
+		shade(@theme_bg, 1.07) 50%,
+		shade(@theme_bg, 1.05) 50%,
+		shade(@theme_bg, 0.97));
+}
+
+.background.csd:backdrop headerbar button.titlebutton,
+.background.solid-csd:backdrop headerbar button.titlebutton {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 	border: 1px solid shade(@theme_bg, 0.6);
 	/* <draw_ops name="button_bg_unfocused"> fill gradient */
@@ -262,31 +336,36 @@ window.background:not(.solid-csd) headerbar button image {
 		0 1px shade(@theme_bg, 0.96);        /* bottom */
 }
 
-.background.solid-csd headerbar:backdrop button.minimize:hover,
-.background.solid-csd headerbar:backdrop button.maximize:hover,
-.background.solid-csd headerbar:backdrop button.close:hover {
-
+.background.csd:backdrop headerbar button.titlebutton:hover,
+.background.solid-csd:backdrop headerbar button.titlebutton:hover {
+	/* @todo */
 }
 
+/* --- csd maximized --- */
+
+.background.csd.maximized,
 .background.solid-csd.maximized {
 	border-bottom: 1px solid #463731; /* @todo metacity */
 }
 
+.background.csd.maximized decoration,
+.background.csd.maximized headerbar {
+	border-radius: 0;
+}
+
+.background.csd.maximized:backdrop,
+.background.solid-csd.maximized:backdrop {
+	border-bottom-color: shade(@theme_bg, 0.55);
+}
+
+.background.csd.maximized headerbar,
 .background.solid-csd.maximized headerbar {
-	margin-top: 0;
+	margin: 0 -3px;
 }
 
-.background.solid-csd.maximized headerbar > box.horizontal.right,
-.background.solid-csd.maximized headerbar > box.horizontal.left {
-	margin: 0 7px;
-}
-
+.background.csd.maximized statusbar,
 .background.solid-csd.maximized statusbar {
 	border-bottom: 1px solid @theme_bg;
-}
-
-.background.solid-csd.maximized:backdrop {
-	border-bottom: 1px solid #8B7969; /* @todo metacity */
 }
 
 /* --- text/images disabled --- */
@@ -305,7 +384,7 @@ spinbutton button:disabled {
 }
 
 button.flat:disabled image,
-window.background headerbar button:disabled image {
+headerbar button:disabled image {
 	-gtk-icon-effect: none;
 }
 
@@ -318,6 +397,34 @@ tooltip.background,
 	color: @theme_tooltip_fg;
 	border: 1px solid @theme_tooltip_border;
 	background: @theme_tooltip_bg;
+}
+
+tooltip.csd,
+tooltip.csd.background,
+.tooltip.csd,
+.tooltip.csd.background {
+	background: alpha(@theme_tooltip_bg, 0.92);
+}
+
+tooltip decoration,
+.tooltip decoration,
+tooltip.csd decoration,
+.tooltip.csd decoration,
+tooltip.ssd decoration,
+.tooltip.ssd decoration,
+tooltip.solid-csd decoration,
+.tooltip.solid-csd decoration,
+tooltip.background.csd decoration,
+.tooltip.background.csd decoration,
+tooltip.background.ssd decoration,
+.tooltip.background.ssd decoration,
+tooltip.background.solid-csd decoration,
+.tooltip.background.solid-csd decoration {
+	/* mate-themes made the list */
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+	box-shadow: none;
 }
 
 /* --- spinner --- */
@@ -338,20 +445,6 @@ spinner:checked {
 menubar spinner {
 	animation: none;
 	opacity: 0;
-}
-
-/* --- grid --- */
-
-grid label.property-name-label,
-grid label.key-name,
-grid label.key-summary {
-	color: @theme_text;
-}
-
-grid row:selected label.property-name-label,
-grid row:selected label.key-name,
-grid row:selected label.key-summary {
-	color: @theme_selected_fg;
 }
 
 /* --- arrow --- */
@@ -517,7 +610,7 @@ switch {
 	margin: 1px;
 	min-width: 76px;
 	min-height: 25px;
-	transition: background 0.3s;
+	transition: background 0.5s;
 }
 
 switch slider {
@@ -554,7 +647,7 @@ switch slider:focus {
 
 switch slider:active,
 switch slider:focus {
-	outline: 1px solid @outline;
+	outline: 1px solid @theme_outline;
 	outline-offset: -4px;
 }
 
@@ -594,14 +687,14 @@ button:disabled, switch:disabled {
 }
 
 button.flat,
-window.background headerbar button {
+headerbar button {
 	border-color: transparent;
 	background: none;
 	box-shadow: none;
 }
 
 button.flat:disabled,
-window.background headerbar button:disabled {
+headerbar button:disabled {
 	border-color: transparent;
 	background: none;
 	opacity: 0.3;
@@ -702,7 +795,7 @@ entry image.right {
 }
 
 entry:focus {
-	border-color: @outline;
+	border-color: @theme_outline;
 }
 
 entry:disabled {
@@ -777,12 +870,12 @@ checkbutton:hover, radiobutton:hover {
 }
 
 checkbutton:focus label, radiobutton:focus label {
-	border-color: @outline;
+	border-color: @theme_outline;
 	background: @checkbutton_focus_bg;
 }
 
 checkbutton:hover:focus label, radiobutton:hover:focus label {
-	border-color: @checkbutton_focus_hover_border;
+	/* border-color: @checkbutton_focus_hover_border; @todo */
 	background: @checkbutton_focus_hover_bg;
 }
 
@@ -876,7 +969,6 @@ spinbutton button:focus,
 
 button:hover,
 spinbutton button:focus:hover,
-window.background headerbar button:hover,
 #tasklist-button box:hover {
 	border: 1px solid @button_border;
 	background:
@@ -891,20 +983,7 @@ window.background headerbar button:hover,
 			@button_hover_glaze_bot);
 }
 
-button:focus,
-window.background headerbar button:focus {
-	outline: 1px solid @outline;
-	outline-offset: -4px;
-	background:
-		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
-			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill);
-}
-
-window.background headerbar button:focus {
-	border-color: transparent;
-}
-
-button:not(.flat):focus {
+button:focus {
 	border-color: @button_border;
 	background:
 		@theme_bg
@@ -919,10 +998,19 @@ button:not(.flat):focus {
 			@button_glaze_mida 49%,
 			@button_glaze_midb 49%,
 			@button_glaze_bot);
+	outline: 1px solid @theme_outline;
+	outline-offset: -4px;
 }
 
-button:focus:hover,
-window.background headerbar button:focus:hover {
+button.flat:focus,
+headerbar button:focus {
+	border-color: transparent;
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill);
+}
+
+button:focus:hover {
 	border-color: @button_border;
 	background:
 		@theme_bg
@@ -952,14 +1040,10 @@ button:disabled {
 			@button_disabled_glaze_bot);
 }
 
-button:checked:focus,
-button:checked:active:focus:hover,
 button:active,
 button:active:hover,
-window.background headerbar button:checked:focus,
-window.background headerbar button:checked:active:focus:hover,
-window.background headerbar button:active,
-window.background headerbar button:active:hover {
+button:checked:focus,
+button:checked:active:focus:hover {
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
 			linear-gradient(to bottom, @button_focus_fill_active, @button_focus_fill_active),
@@ -1007,7 +1091,7 @@ button:checked:hover {
 			@button_hover_glaze_bot);
 }
 
-button:checked:focus:hover {
+button:checked:hover:focus {
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
 			linear-gradient(to bottom, @button_focus_fill_active, @button_focus_fill_active),
@@ -1035,8 +1119,11 @@ button:checked:focus:hover {
 button:checked,
 button.flat:active,
 button.flat:active:hover,
+button.toggle:checked:focus,
 button.toggle:checked:disabled,
-window.background headerbar button:checked,
+headerbar button:active,
+headerbar button:active:hover,
+headerbar button:checked:focus,
 #tasklist-button:checked box,
 .mate-panel-menu-bar #clock-applet-button:checked > box,
 #window-menu-applet-button wnck-selector > menuitem:hover > image {
@@ -1063,7 +1150,8 @@ window.background headerbar button:checked,
 			@button_active_glaze_bot);
 }
 
-button.flat:focus:hover {
+button.flat:focus:hover,
+headerbar button:focus:hover {
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
 			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
@@ -1079,7 +1167,9 @@ button.flat:focus:hover {
 }
 
 button.flat:focus:active,
-button.flat:focus:active:hover {
+button.flat:focus:active:hover,
+headerbar button:focus:active,
+headerbar button:focus:active:hover {
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
 			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
@@ -1105,9 +1195,18 @@ button.flat:focus:active:hover {
 }
 
 toolbar,
-box.primary-toolbar,
-window.background headerbar {
+box.primary-toolbar {
 	padding: 1px 2px;
+	border-width: 1px 0 1px 0;
+	border-style: solid;
+	border-top-color: @toolbar_border_top;
+	border-bottom-color: @toolbar_border_bot;
+	background: linear-gradient(to bottom, @toolbar_grad_top, @toolbar_grad_bot);
+}
+
+headerbar {
+	/* headerbar without CSD window, so displayed like a toolbar */
+	padding: 5px 2px 4px;
 	border-width: 1px 0 1px 0;
 	border-style: solid;
 	border-top-color: @toolbar_border_top;
@@ -1121,15 +1220,10 @@ box.primary-toolbar:dir(rtl) {
 }
 
 toolbar separator,
-box.primary-toolbar separator,
-window.background:not(.solid-csd) headerbar separator {
+box.primary-toolbar separator {
 	margin: 7px 5px 8px;
 	border-left: 1px solid @toolbar_separator_dark;
 	border-right: 1px solid @toolbar_separator_lite;
-}
-
-window.background:not(.solid-csd) headerbar separator {
-	margin: 7px 0 8px;
 }
 
 toolbar button.popup,
@@ -1163,7 +1257,7 @@ menubar menuitem:hover,
 	/* :hover is like :selected */
 	color: @menuitem_hover;
 	border-color: @menuitem_hover_border;
-	border-bottom: 0; /* it's not a problem */
+	border-bottom: 0; /* it's not a problem - @todo this is with only one menuitem in menubar */
 	background:
 		radial-gradient(ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
@@ -1231,23 +1325,23 @@ menuitem.tearoff:dir(rtl) { /* awf-extended */
 	color: @menu_tearoff_border;
 }
 
-menuitem image {
+menuitem:dir(ltr) image {
 	margin: 0 -2px 0 4px;
 }
 
-menuitem image:dir(rtl) {
+menuitem:dir(rtl) image {
 	margin: 0 0 0 -2px;
 }
 
-menuitem box image {
+menuitem box:dir(ltr) image {
 	margin: 0 0 0 1px;
 }
 
-menuitem box image:dir(rtl) {
+menuitem box:dir(rtl) image {
 	margin: 0 1px 0 0;
 }
 
-menuitem label {
+menuitem label:dir(ltr) {
 	margin: 0 0 0 -1px;
 }
 
@@ -1346,7 +1440,7 @@ menuitem radio {
 
 menuitem:dir(rtl) check,
 menuitem:dir(rtl) radio {
-	margin: 1px -11px 0 -1px;
+	margin: 1px -5px 0 5px;
 }
 
 popover check,
@@ -1946,7 +2040,7 @@ notebook header.right tab button:dir(rtl) {
 }
 
 notebook:focus header tab:checked label {
-	border-color: @outline;
+	border-color: @theme_outline;
 	background: @nb_tab_focus_bg;
 }
 
@@ -2022,7 +2116,7 @@ notebook header.right tabs arrow.up {
 	-gtk-icon-transform: rotate(180deg) scale(0.8);
 }
 
-/* --- progress bar --- */
+/* --- progress bar - @todo .pulse --- */
 
 progressbar:disabled {
 	opacity: 0.6;
@@ -2150,7 +2244,7 @@ progressbar.horizontal text {
 /* --- progress bar - in status bar --- */
 
 statusbar progressbar.horizontal {
-	margin: 4px 2px 0;
+	margin: 4px 2px 0 0;
 	font-size: 85%;
 }
 
@@ -2159,7 +2253,7 @@ statusbar progressbar.horizontal text {
 }
 
 statusbar.classic progressbar.horizontal {
-	margin: 3px 2px 0;
+	margin: 3px 2px 0 0;
 	font-size: 80%;
 }
 
@@ -2201,24 +2295,12 @@ progressbar.classic.horizontal text {
 	padding: 3px 0;
 }
 
-statusbar progressbar.classic.horizontal text {
-	margin: 0 0 0 -4px;
-}
-
 progressbar.classic text.trough {
 	color: @theme_text;
 }
 
 progressbar.classic text.progress {
 	color: @theme_selected_fg;
-}
-
-progressbar.classic:disabled text.trough {
-	color: @insensitive_fg;
-}
-
-progressbar.classic:disabled text.progress {
-	color: @insensitive_selected;
 }
 
 /* --- scale --- */
@@ -2241,7 +2323,7 @@ scale contents {
 }
 
 scale:focus contents {
-	border-color: @outline;
+	border-color: @theme_outline;
 	background: @checkbutton_focus_bg;
 }
 
@@ -2642,6 +2724,20 @@ infobar.error {
 	color: @errorbar_fg;
 	border: 1px solid @errorbar_border;
 	background: linear-gradient(to bottom, @errorbar_bg_top, @errorbar_bg_bot);
+}
+
+/* --- grid --- */
+
+grid label.property-name-label,
+grid label.key-name,
+grid label.key-summary {
+	color: @theme_text;
+}
+
+grid row:selected label.property-name-label,
+grid row:selected label.key-name,
+grid row:selected label.key-summary {
+	color: @theme_selected_fg;
 }
 
 /* --- treeview --- */

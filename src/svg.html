@@ -5,15 +5,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 * { margin:0; padding:0; background-clip:padding-box; text-align:center; }
-body { display:flex; overflow-y:scroll; }
-div { padding:2em 1em; }
-p { text-align:left; font-size:10px; }
+body { display:flex; height:80vh; align-items:center; justify-content:center; overflow-y:scroll; }
+table { margin:2em 1em; padding:2em; }
+th { font-size:12px; }
+label { display:inline-block; width:16px; height:16px; overflow:hidden; }
+.help th { padding:2em 0; font-size:9px; font-weight:400; text-align:left; writing-mode:sideways-lr; }
 </style>
 </head>
 <body>
-<div>
-	<p>human-theme</p>
-	<table>
+	<table style="background-color:#E6DDD5;">
+		<tr>
+			<th colspan="8">human</th>
+		</tr>
+		<tr class="help">
+			<th>unchecked</th>
+			<th>checked</th>
+			<th>checked active/hover</th>
+			<th>mixed active/hover</th>
+			<th>mixed</th>
+			<th>mixed insensitive</th>
+			<th>checked insensitive</th>
+			<th>unchecked insensitive</th>
+		</tr>
 		<tr>
 			<td><label><input type="radio" /></label></td>
 			<td><label><input type="radio" checked="checked" /></label></td>
@@ -57,8 +70,8 @@ p { text-align:left; font-size:10px; }
 		<tr>
 			<td></td>
 			<td><img src="human-theme/gtk-3.0/img/menu-radio-checked.svg" width="16" height="16" alt="" /></td>
-			<td></td>
-			<td></td>
+			<td><img src="human-theme/gtk-3.0/img/menu-radio-checked-hover.svg" width="16" height="16" alt="" /></td>
+			<td><img src="human-theme/gtk-3.0/img/menu-radio-mixed-hover.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme/gtk-3.0/img/menu-radio-mixed.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme/gtk-3.0/img/menu-radio-mixed-insensitive.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme/gtk-3.0/img/menu-radio-checked-insensitive.svg" width="16" height="16" alt="" /></td>
@@ -67,18 +80,29 @@ p { text-align:left; font-size:10px; }
 		<tr>
 			<td></td>
 			<td><img src="human-theme/gtk-3.0/img/menu-checkbox-checked.svg" width="16" height="16" alt="" /></td>
-			<td></td>
-			<td></td>
+			<td><img src="human-theme/gtk-3.0/img/menu-checkbox-checked-hover.svg" width="16" height="16" alt="" /></td>
+			<td><img src="human-theme/gtk-3.0/img/menu-checkbox-mixed-hover.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme/gtk-3.0/img/menu-checkbox-mixed.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme/gtk-3.0/img/menu-checkbox-mixed-insensitive.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme/gtk-3.0/img/menu-checkbox-checked-insensitive.svg" width="16" height="16" alt="" /></td>
 			<td></td>
 		</tr>
 	</table>
-</div>
-<div>
-	<p>human-theme-blue</p>
-	<table>
+
+	<table style="background-color:#EDECEB;">
+		<tr>
+			<th colspan="8">human blue</th>
+		</tr>
+		<tr class="help">
+			<th>unchecked</th>
+			<th>checked</th>
+			<th>checked active/hover</th>
+			<th>mixed active/hover</th>
+			<th>mixed</th>
+			<th>mixed insensitive</th>
+			<th>checked insensitive</th>
+			<th>unchecked insensitive</th>
+		</tr>
 		<tr>
 			<td><label><input type="radio" /></label></td>
 			<td><label><input type="radio" checked="checked" /></label></td>
@@ -122,8 +146,8 @@ p { text-align:left; font-size:10px; }
 		<tr>
 			<td></td>
 			<td><img src="human-theme-blue/gtk-3.0/img/menu-radio-checked.svg" width="16" height="16" alt="" /></td>
-			<td></td>
-			<td></td>
+			<td><img src="human-theme-blue/gtk-3.0/img/menu-radio-checked-hover.svg" width="16" height="16" alt="" /></td>
+			<td><img src="human-theme-blue/gtk-3.0/img/menu-radio-mixed-hover.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-blue/gtk-3.0/img/menu-radio-mixed.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-blue/gtk-3.0/img/menu-radio-mixed-insensitive.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-blue/gtk-3.0/img/menu-radio-checked-insensitive.svg" width="16" height="16" alt="" /></td>
@@ -132,18 +156,29 @@ p { text-align:left; font-size:10px; }
 		<tr>
 			<td></td>
 			<td><img src="human-theme-blue/gtk-3.0/img/menu-checkbox-checked.svg" width="16" height="16" alt="" /></td>
-			<td></td>
-			<td></td>
+			<td><img src="human-theme-blue/gtk-3.0/img/menu-checkbox-checked-hover.svg" width="16" height="16" alt="" /></td>
+			<td><img src="human-theme-blue/gtk-3.0/img/menu-checkbox-mixed-hover.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-blue/gtk-3.0/img/menu-checkbox-mixed.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-blue/gtk-3.0/img/menu-checkbox-mixed-insensitive.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-blue/gtk-3.0/img/menu-checkbox-checked-insensitive.svg" width="16" height="16" alt="" /></td>
 			<td></td>
 		</tr>
 	</table>
-</div>
-<div>
-	<p>human-theme-green</p>
-	<table>
+
+	<table style="background-color:#EDECEB;">
+		<tr>
+			<th colspan="8">human green</th>
+		</tr>
+		<tr class="help">
+			<th>unchecked</th>
+			<th>checked</th>
+			<th>checked active/hover</th>
+			<th>mixed active/hover</th>
+			<th>mixed</th>
+			<th>mixed insensitive</th>
+			<th>checked insensitive</th>
+			<th>unchecked insensitive</th>
+		</tr>
 		<tr>
 			<td><label><input type="radio" /></label></td>
 			<td><label><input type="radio" checked="checked" /></label></td>
@@ -187,8 +222,8 @@ p { text-align:left; font-size:10px; }
 		<tr>
 			<td></td>
 			<td><img src="human-theme-green/gtk-3.0/img/menu-radio-checked.svg" width="16" height="16" alt="" /></td>
-			<td></td>
-			<td></td>
+			<td><img src="human-theme-green/gtk-3.0/img/menu-radio-checked-hover.svg" width="16" height="16" alt="" /></td>
+			<td><img src="human-theme-green/gtk-3.0/img/menu-radio-mixed-hover.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-green/gtk-3.0/img/menu-radio-mixed.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-green/gtk-3.0/img/menu-radio-mixed-insensitive.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-green/gtk-3.0/img/menu-radio-checked-insensitive.svg" width="16" height="16" alt="" /></td>
@@ -197,18 +232,29 @@ p { text-align:left; font-size:10px; }
 		<tr>
 			<td></td>
 			<td><img src="human-theme-green/gtk-3.0/img/menu-checkbox-checked.svg" width="16" height="16" alt="" /></td>
-			<td></td>
-			<td></td>
+			<td><img src="human-theme-green/gtk-3.0/img/menu-checkbox-checked-hover.svg" width="16" height="16" alt="" /></td>
+			<td><img src="human-theme-green/gtk-3.0/img/menu-checkbox-mixed-hover.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-green/gtk-3.0/img/menu-checkbox-mixed.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-green/gtk-3.0/img/menu-checkbox-mixed-insensitive.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-green/gtk-3.0/img/menu-checkbox-checked-insensitive.svg" width="16" height="16" alt="" /></td>
 			<td></td>
 		</tr>
 	</table>
-</div>
-<div>
-	<p>human-theme-orange</p>
-	<table>
+
+	<table style="background-color:#EFEBE7;">
+		<tr>
+			<th colspan="8">human orange</th>
+		</tr>
+		<tr class="help">
+			<th>unchecked</th>
+			<th>checked</th>
+			<th>checked active/hover</th>
+			<th>mixed active/hover</th>
+			<th>mixed</th>
+			<th>mixed insensitive</th>
+			<th>checked insensitive</th>
+			<th>unchecked insensitive</th>
+		</tr>
 		<tr>
 			<td><label><input type="radio" /></label></td>
 			<td><label><input type="radio" checked="checked" /></label></td>
@@ -252,8 +298,8 @@ p { text-align:left; font-size:10px; }
 		<tr>
 			<td></td>
 			<td><img src="human-theme-orange/gtk-3.0/img/menu-radio-checked.svg" width="16" height="16" alt="" /></td>
-			<td></td>
-			<td></td>
+			<td><img src="human-theme-orange/gtk-3.0/img/menu-radio-checked-hover.svg" width="16" height="16" alt="" /></td>
+			<td><img src="human-theme-orange/gtk-3.0/img/menu-radio-mixed-hover.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-orange/gtk-3.0/img/menu-radio-mixed.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-orange/gtk-3.0/img/menu-radio-mixed-insensitive.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-orange/gtk-3.0/img/menu-radio-checked-insensitive.svg" width="16" height="16" alt="" /></td>
@@ -262,14 +308,13 @@ p { text-align:left; font-size:10px; }
 		<tr>
 			<td></td>
 			<td><img src="human-theme-orange/gtk-3.0/img/menu-checkbox-checked.svg" width="16" height="16" alt="" /></td>
-			<td></td>
-			<td></td>
+			<td><img src="human-theme-orange/gtk-3.0/img/menu-checkbox-checked-hover.svg" width="16" height="16" alt="" /></td>
+			<td><img src="human-theme-orange/gtk-3.0/img/menu-checkbox-mixed-hover.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-orange/gtk-3.0/img/menu-checkbox-mixed.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-orange/gtk-3.0/img/menu-checkbox-mixed-insensitive.svg" width="16" height="16" alt="" /></td>
 			<td><img src="human-theme-orange/gtk-3.0/img/menu-checkbox-checked-insensitive.svg" width="16" height="16" alt="" /></td>
 			<td></td>
 		</tr>
 	</table>
-</div>
 </body>
 </html>

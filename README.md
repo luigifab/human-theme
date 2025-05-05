@@ -1,69 +1,77 @@
 # Human theme
 
-This theme works with: **GTK 2.24** *(with murrine)*, **GTK 3.24**, and **GTK 4.12..4.18**.\
+This theme works with: **GTK 2.24** *(with murrine)*, **GTK 3.24**, and **GTK 4.12..4.19**.\
 It is mainly intended for MATE and Xfce desktop environments.
 
 ## Screenshots
 
-GTK 2.24 (Pango 1.51)\
+GTK 2.24 (Pango 1.56)\
 [<img alt="Preview with GTK 2 - Main window" src="images/thumbs/gtk2.png?raw=true" width="200" />](images/gtk2.png?raw=true)
 [<img alt="Preview with GTK 2 - Orange variation - Main window" src="images/thumbs/gtk2-orange.png?raw=true" width="200" />](images/gtk2-orange.png?raw=true)
 [<img alt="Preview with GTK 2 - Blue variation - Main window" src="images/thumbs/gtk2-blue.png?raw=true" width="200" />](images/gtk2-blue.png?raw=true)
 [<img alt="Preview with GTK 2 - Green variation - Main window" src="images/thumbs/gtk2-green.png?raw=true" width="200" />](images/gtk2-green.png?raw=true)\
-[<img alt="Preview with GTK 2 - Menu" src="images/thumbs/gtk2-menu.png?raw=true" width="200" />](images/gtk2-menu.png?raw=true)
-[<img alt="Preview with GTK 2 - Orange variation - Menu" src="images/thumbs/gtk2-orange-menu.png?raw=true" width="200" />](images/gtk2-orange-menu.png?raw=true)
-[<img alt="Preview with GTK 2 - Blue variation - Menu" src="images/thumbs/gtk2-blue-menu.png?raw=true" width="200" />](images/gtk2-blue-menu.png?raw=true)
-[<img alt="Preview with GTK 2 - Green variation - Menu" src="images/thumbs/gtk2-green-menu.png?raw=true" width="200" />](images/gtk2-green-menu.png?raw=true)
+[<img alt="Preview with GTK 2 - Main window with menu" src="images/thumbs/gtk2-menu.png?raw=true" width="200" />](images/gtk2-menu.png?raw=true)
+[<img alt="Preview with GTK 2 - Orange variation - Main window with menu" src="images/thumbs/gtk2-orange-menu.png?raw=true" width="200" />](images/gtk2-orange-menu.png?raw=true)
+[<img alt="Preview with GTK 2 - Blue variation - Main window with menu" src="images/thumbs/gtk2-blue-menu.png?raw=true" width="200" />](images/gtk2-blue-menu.png?raw=true)
+[<img alt="Preview with GTK 2 - Green variation - Main window with menu" src="images/thumbs/gtk2-green-menu.png?raw=true" width="200" />](images/gtk2-green-menu.png?raw=true)
 
-GTK 2.24 RTL (Pango 1.51)\
+GTK 2.24 RTL (Pango 1.56)\
 [<img alt="Preview with GTK 2 - RTL - Main window" src="images/thumbs/gtk2-rtl.png?raw=true" width="200" />](images/gtk2-rtl.png?raw=true)
 [<img alt="Preview with GTK 2 - RTL - Orange variation - Main window" src="images/thumbs/gtk2-rtl-orange.png?raw=true" width="200" />](images/gtk2-rtl-orange.png?raw=true)
 [<img alt="Preview with GTK 2 - RTL - Blue variation - Main window" src="images/thumbs/gtk2-rtl-blue.png?raw=true" width="200" />](images/gtk2-rtl-blue.png?raw=true)
 [<img alt="Preview with GTK 2 - RTL - Green variation - Main window" src="images/thumbs/gtk2-rtl-green.png?raw=true" width="200" />](images/gtk2-rtl-green.png?raw=true)\
-[<img alt="Preview with GTK 2 - RTL - Menu" src="images/thumbs/gtk2-rtl-menu.png?raw=true" width="200" />](images/gtk2-rtl-menu.png?raw=true)
-[<img alt="Preview with GTK 2 - RTL - Orange variation - Menu" src="images/thumbs/gtk2-rtl-orange-menu.png?raw=true" width="200" />](images/gtk2-rtl-orange-menu.png?raw=true)
-[<img alt="Preview with GTK 2 - RTL - Blue variation - Menu" src="images/thumbs/gtk2-rtl-blue-menu.png?raw=true" width="200" />](images/gtk2-rtl-blue-menu.png?raw=true)
-[<img alt="Preview with GTK 2 - RTL - Green variation - Menu" src="images/thumbs/gtk2-rtl-green-menu.png?raw=true" width="200" />](images/gtk2-rtl-green-menu.png?raw=true)
+[<img alt="Preview with GTK 2 - RTL - Main window with menu" src="images/thumbs/gtk2-rtl-menu.png?raw=true" width="200" />](images/gtk2-rtl-menu.png?raw=true)
+[<img alt="Preview with GTK 2 - RTL - Orange variation - Main window with menu" src="images/thumbs/gtk2-rtl-orange-menu.png?raw=true" width="200" />](images/gtk2-rtl-orange-menu.png?raw=true)
+[<img alt="Preview with GTK 2 - RTL - Blue variation - Main window with menu" src="images/thumbs/gtk2-rtl-blue-menu.png?raw=true" width="200" />](images/gtk2-rtl-blue-menu.png?raw=true)
+[<img alt="Preview with GTK 2 - RTL - Green variation - Main window with menu" src="images/thumbs/gtk2-rtl-green-menu.png?raw=true" width="200" />](images/gtk2-rtl-green-menu.png?raw=true)
 
-GTK 3.24 (Pango 1.51)\
+GTK 3.24-classic (Pango 1.56)\
 [<img alt="Preview with GTK 3 - Main window" src="images/thumbs/gtk3.png?raw=true" width="200" />](images/gtk3.png?raw=true)
 [<img alt="Preview with GTK 3 - Orange variation - Main window" src="images/thumbs/gtk3-orange.png?raw=true" width="200" />](images/gtk3-orange.png?raw=true)
 [<img alt="Preview with GTK 3 - Blue variation - Main window" src="images/thumbs/gtk3-blue.png?raw=true" width="200" />](images/gtk3-blue.png?raw=true)
 [<img alt="Preview with GTK 3 - Green variation - Main window" src="images/thumbs/gtk3-green.png?raw=true" width="200" />](images/gtk3-green.png?raw=true)\
-[<img alt="Preview with GTK 3 - Menu" src="images/thumbs/gtk3-menu.png?raw=true" width="200" />](images/gtk3-menu.png?raw=true)
-[<img alt="Preview with GTK 3 - Orange variation - Menu" src="images/thumbs/gtk3-orange-menu.png?raw=true" width="200" />](images/gtk3-orange-menu.png?raw=true)
-[<img alt="Preview with GTK 3 - Blue variation - Menu" src="images/thumbs/gtk3-blue-menu.png?raw=true" width="200" />](images/gtk3-blue-menu.png?raw=true)
-[<img alt="Preview with GTK 3 - Green variation - Menu" src="images/thumbs/gtk3-green-menu.png?raw=true" width="200" />](images/gtk3-green-menu.png?raw=true)
+[<img alt="Preview with GTK 3 - Main window with menu" src="images/thumbs/gtk3-menu.png?raw=true" width="200" />](images/gtk3-menu.png?raw=true)
+[<img alt="Preview with GTK 3 - Orange variation - Main window with menu" src="images/thumbs/gtk3-orange-menu.png?raw=true" width="200" />](images/gtk3-orange-menu.png?raw=true)
+[<img alt="Preview with GTK 3 - Blue variation - Main window with menu" src="images/thumbs/gtk3-blue-menu.png?raw=true" width="200" />](images/gtk3-blue-menu.png?raw=true)
+[<img alt="Preview with GTK 3 - Green variation - Main window with menu" src="images/thumbs/gtk3-green-menu.png?raw=true" width="200" />](images/gtk3-green-menu.png?raw=true)\
+[<img alt="Preview with GTK 3 - Main window with plus button" src="images/thumbs/gtk3-plus.png?raw=true" width="200" />](images/gtk3-plus.png?raw=true)
+[<img alt="Preview with GTK 3 - Orange variation - Main window with plus button" src="images/thumbs/gtk3-orange-plus.png?raw=true" width="200" />](images/gtk3-orange-plus.png?raw=true)
+[<img alt="Preview with GTK 3 - Blue variation - Main window with plus button" src="images/thumbs/gtk3-blue-plus.png?raw=true" width="200" />](images/gtk3-blue-plus.png?raw=true)
+[<img alt="Preview with GTK 3 - Green variation - Main window with plus button" src="images/thumbs/gtk3-green-plus.png?raw=true" width="200" />](images/gtk3-green-plus.png?raw=true)\
+[<img alt="Preview with GTK 3 - CSD main window" src="images/thumbs/gtk3-csd.png?raw=true" width="200" />](images/gtk3-csd.png?raw=true)
+[<img alt="Preview with GTK 3 - Orange variation - CSD main window" src="images/thumbs/gtk3-orange-csd.png?raw=true" width="200" />](images/gtk3-orange-plus.png?raw=true)
+[<img alt="Preview with GTK 3 - Blue variation - CSD main window" src="images/thumbs/gtk3-blue-csd.png?raw=true" width="200" />](images/gtk3-blue-csd.png?raw=true)
+[<img alt="Preview with GTK 3 - Green variation - CSD main window" src="images/thumbs/gtk3-green-csd.png?raw=true" width="200" />](images/gtk3-green-csd.png?raw=true)
 
-GTK 3.24 RTL (Pango 1.51)\
+GTK 3.24-classic RTL (Pango 1.56)\
 [<img alt="Preview with GTK 3 - RTL - Main window" src="images/thumbs/gtk3-rtl.png?raw=true" width="200" />](images/gtk3-rtl.png?raw=true)
 [<img alt="Preview with GTK 3 - RTL - Orange variation - Main window" src="images/thumbs/gtk3-rtl-orange.png?raw=true" width="200" />](images/gtk3-rtl-orange.png?raw=true)
 [<img alt="Preview with GTK 3 - RTL - Blue variation - Main window" src="images/thumbs/gtk3-rtl-blue.png?raw=true" width="200" />](images/gtk3-rtl-blue.png?raw=true)
 [<img alt="Preview with GTK 3 - RTL - Green variation - Main window" src="images/thumbs/gtk3-rtl-green.png?raw=true" width="200" />](images/gtk3-rtl-green.png?raw=true)\
-[<img alt="Preview with GTK 3 - RTL - Menu" src="images/thumbs/gtk3-rtl-menu.png?raw=true" width="200" />](images/gtk3-rtl-menu.png?raw=true)
-[<img alt="Preview with GTK 3 - RTL - Orange variation - Menu" src="images/thumbs/gtk3-rtl-orange-menu.png?raw=true" width="200" />](images/gtk3-rtl-orange-menu.png?raw=true)
-[<img alt="Preview with GTK 3 - RTL - Blue variation - Menu" src="images/thumbs/gtk3-rtl-blue-menu.png?raw=true" width="200" />](images/gtk3-rtl-blue-menu.png?raw=true)
-[<img alt="Preview with GTK 3 - RTL - Green variation - Menu" src="images/thumbs/gtk3-rtl-green-menu.png?raw=true" width="200" />](images/gtk3-rtl-green-menu.png?raw=true)
+[<img alt="Preview with GTK 3 - RTL - Main window with menu" src="images/thumbs/gtk3-rtl-menu.png?raw=true" width="200" />](images/gtk3-rtl-menu.png?raw=true)
+[<img alt="Preview with GTK 3 - RTL - Orange variation - Main window with menu" src="images/thumbs/gtk3-rtl-orange-menu.png?raw=true" width="200" />](images/gtk3-rtl-orange-menu.png?raw=true)
+[<img alt="Preview with GTK 3 - RTL - Blue variation - Main window with menu" src="images/thumbs/gtk3-rtl-blue-menu.png?raw=true" width="200" />](images/gtk3-rtl-blue-menu.png?raw=true)
+[<img alt="Preview with GTK 3 - RTL - Green variation - Main window with menu" src="images/thumbs/gtk3-rtl-green-menu.png?raw=true" width="200" />](images/gtk3-rtl-green-menu.png?raw=true)
 
-GTK 4.12 (Pango 1.51)\
+GTK 4.12..4.18-classic (Pango 1.56)\
 [<img alt="Preview with GTK 4 - Main window" src="images/thumbs/gtk4.png?raw=true" width="200" />](images/gtk4.png?raw=true)
 [<img alt="Preview with GTK 4 - Orange variation - Main window" src="images/thumbs/gtk4-orange.png?raw=true" width="200" />](images/gtk4-orange.png?raw=true)
 [<img alt="Preview with GTK 4 - Blue variation - Main window" src="images/thumbs/gtk4-blue.png?raw=true" width="200" />](images/gtk4-blue.png?raw=true)
 [<img alt="Preview with GTK 4 - Green variation - Main window" src="images/thumbs/gtk4-green.png?raw=true" width="200" />](images/gtk4-green.png?raw=true)\
-[<img alt="Preview with GTK 4 - Menu" src="images/thumbs/gtk4-menu.png?raw=true" width="200" />](images/gtk4-menu.png?raw=true)
-[<img alt="Preview with GTK 4 - Orange variation - Menu" src="images/thumbs/gtk4-orange-menu.png?raw=true" width="200" />](images/gtk4-orange-menu.png?raw=true)
-[<img alt="Preview with GTK 4 - Blue variation - Menu" src="images/thumbs/gtk4-blue-menu.png?raw=true" width="200" />](images/gtk4-blue-menu.png?raw=true)
-[<img alt="Preview with GTK 4 - Green variation - Menu" src="images/thumbs/gtk4-green-menu.png?raw=true" width="200" />](images/gtk4-green-menu.png?raw=true)
+[<img alt="Preview with GTK 4 - Main window with menu" src="images/thumbs/gtk4-menu.png?raw=true" width="200" />](images/gtk4-menu.png?raw=true)
+[<img alt="Preview with GTK 4 - Orange variation - Main window with menu" src="images/thumbs/gtk4-orange-menu.png?raw=true" width="200" />](images/gtk4-orange-menu.png?raw=true)
+[<img alt="Preview with GTK 4 - Blue variation - Main window with menu" src="images/thumbs/gtk4-blue-menu.png?raw=true" width="200" />](images/gtk4-blue-menu.png?raw=true)
+[<img alt="Preview with GTK 4 - Green variation - Main window with menu" src="images/thumbs/gtk4-green-menu.png?raw=true" width="200" />](images/gtk4-green-menu.png?raw=true)
 
-GTK 4.12 RTL (Pango 1.51)\
+GTK 4.12..4.18-classic RTL (Pango 1.56)\
 [<img alt="Preview with GTK 4 - RTL - Main window" src="images/thumbs/gtk4-rtl.png?raw=true" width="200" />](images/gtk4-rtl.png?raw=true)
 [<img alt="Preview with GTK 4 - RTL - Orange variation - Main window" src="images/thumbs/gtk4-rtl-orange.png?raw=true" width="200" />](images/gtk4-rtl-orange.png?raw=true)
 [<img alt="Preview with GTK 4 - RTL - Blue variation - Main window" src="images/thumbs/gtk4-rtl-blue.png?raw=true" width="200" />](images/gtk4-rtl-blue.png?raw=true)
 [<img alt="Preview with GTK 4 - RTL - Green variation - Main window" src="images/thumbs/gtk4-rtl-green.png?raw=true" width="200" />](images/gtk4-rtl-green.png?raw=true)\
-[<img alt="Preview with GTK 4 - RTL - Menu" src="images/thumbs/gtk4-rtl-menu.png?raw=true" width="200" />](images/gtk4-rtl-menu.png?raw=true)
-[<img alt="Preview with GTK 4 - RTL - Orange variation - Menu" src="images/thumbs/gtk4-rtl-orange-menu.png?raw=true" width="200" />](images/gtk4-rtl-orange-menu.png?raw=true)
-[<img alt="Preview with GTK 4 - RTL - Blue variation - Menu" src="images/thumbs/gtk4-rtl-blue-menu.png?raw=true" width="200" />](images/gtk4-rtl-blue-menu.png?raw=true)
-[<img alt="Preview with GTK 4 - RTL - Green variation - Menu" src="images/thumbs/gtk4-rtl-green-menu.png?raw=true" width="200" />](images/gtk4-rtl-green-menu.png?raw=true)
+[<img alt="Preview with GTK 4 - RTL - Main window with menu" src="images/thumbs/gtk4-rtl-menu.png?raw=true" width="200" />](images/gtk4-rtl-menu.png?raw=true)
+[<img alt="Preview with GTK 4 - RTL - Orange variation - Main window with menu" src="images/thumbs/gtk4-rtl-orange-menu.png?raw=true" width="200" />](images/gtk4-rtl-orange-menu.png?raw=true)
+[<img alt="Preview with GTK 4 - RTL - Blue variation - Main window with menu" src="images/thumbs/gtk4-rtl-blue-menu.png?raw=true" width="200" />](images/gtk4-rtl-blue-menu.png?raw=true)
+[<img alt="Preview with GTK 4 - RTL - Green variation - Main window with menu" src="images/thumbs/gtk4-rtl-green-menu.png?raw=true" width="200" />](images/gtk4-rtl-green-menu.png?raw=true)
 
 GTK 5.0 (Pango 1.56)\
 _GtkWindow will be probably deprecated... lol_
@@ -76,19 +84,21 @@ Program used for the screenshots is available [here](https://github.com/luigifab
 
 To meet the truth (this is not required):
 - remove [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd)
-- install [gtk3-classic](https://github.com/lah7/gtk3-classic)
+- install gtk3-classic & gtk4-classic
 - use Pango 1.42- or 1.51+
 
-For Debian Testing, I provide a repository for [gtk3-classic](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) and [gtk4-classic](https://build.opensuse.org/package/show/home:luigifab/gtk4-classic), **with extra patches**, it also includes [mate-settings-daemon 1.26](https://build.opensuse.org/package/show/home:luigifab/mate-notification) with a patch to customize notifications from theme.
+For Debian Testing, I provide a repository for [gtk3-classic](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) **with extra patches** and for [gtk4-classic](https://build.opensuse.org/package/show/home:luigifab/gtk4-classic), it also includes [mate-settings-daemon 1.26](https://build.opensuse.org/package/show/home:luigifab/mate-notification) with a patch to customize notifications from theme.
 
 If you can't/won't, no worries, but the truth will be far...
+
+Note that following packages doesn't install _metacity/marco_ theme anymore, because it is provided by _marco_ package (ClearlooksRe).
 
 #### Installation for Debian, Devuan, Ubuntu, Trisquel, Linux Mint, MX Linux
 
 * Run: `sudo apt install human-theme-gtk`
 * Restart your session
 
-#### Installation for Fedora
+#### Installation for Fedora, OpenMandriva
 
 * Run: `sudo dnf install human-theme-gtk`
 * Restart your session
@@ -103,11 +113,6 @@ If you can't/won't, no worries, but the truth will be far...
 * Run: `sudo urpmi human-theme-gtk`
 * Restart your session
 
-#### Installation for OpenMandriva
-
-* Run: `sudo dnf install human-gtk-theme`
-* Restart your session
-
 #### Alternative installation for Debian, Devuan, Ubuntu, Trisquel, Linux Mint, MX Linux
 
 * Run:
@@ -115,9 +120,9 @@ If you can't/won't, no worries, but the truth will be far...
 # PPA: https://launchpad.net/~luigifab/+archive/ubuntu/packages
 # with Debian 12+ you can use mantic+ instead of focal (https://unix.stackexchange.com/a/669008/364800)
 # for Debian you can use bionic for buster, focal for bullseye, oracular or plucky for bookworm and trixie
-# for Devuan you can use bionic for beowulf, focal for chimaera, noble for daedalus
+# for Devuan you can use bionic for beowulf, focal for chimaera, noble for daedalus, oracular or plucky for excalibur and ceres
 # for Trisquel you can use focal for nabia, jammy for aramo
-# for Linux Mint you can use focal for 20.x and 5, jammy for 21.x, noble for 22.x and 6
+# for Linux Mint you can use focal for 20.x and 5, jammy for 21.x, noble for 22.x and 6, oracular or plucky for 7
 # for MX Linux you can use focal for 19.x and 21.x, noble for 23.x
 # for Kali Linux you can use oracular or plucky
 
@@ -152,16 +157,17 @@ pub   rsa4096 2020-10-31 [SC]
 #### Manual installation
 
 * Download archive and extract subdirectories in `~/.themes/`
-* Configure font rendering, GTK and QT, add in `/etc/environment`:
+* Configure font rendering, GTK and QT, add in `/etc/environment` ([details](data/profile.sh)):
 ```
 FREETYPE_PROPERTIES="truetype:interpreter-version=35"
+QT_QPA_PLATFORMTHEME=gtk2
 GTK_OVERLAY_SCROLLING=0
 GTK_BACKDROP=1
+GTKM_INSERT_EMOJI=1
+GTK_USE_IEC_UNITS=1
 GTK_FOCUS_VISIBLE=1
 GTK_PROGRESS_TEXT_INSIDE=1
-GTKM_INSERT_EMOJI=1
-QT_QPA_PLATFORMTHEME=gtk2
-GTK_USE_IEC_UNITS=1
+GTK_TREEVIEW_LINES=0
 ```
 * Install icons and cursors themes: `gnome-icon-theme` or `mate-icon-theme` + `dmz-cursor-theme`
 * Install package for GTK 2 apps: `gtk2-engines-murrine` or `gtk2-engine-murrine` or `gtk2-murrine-engine` or `gtk-engine-murrine` or `gtk-murrine-engine` or `murrine` or similar
@@ -175,7 +181,7 @@ For **MATE** desktop:
 * Go to: *System / Preferences / Appearance*, or run: `mate-appearance-properties`
 * Then select the *Human* theme
 * Go to: *System / Preferences / Windows*, or run: `mate-window-properties`
-* Then disable software compositing from last tab
+* Then disable software compositing from last tab (or enable it, as you want)
 * Go to: *System / Preferences / Notifications*, or run: `mate-notification-properties`
 * Then select the *Coco* or *Default* theme
 
@@ -229,9 +235,9 @@ gtk-xft-hinting=1
 
 Run [AWF](https://github.com/luigifab/awf-extended) with screenshot on theme reload:
 ```bash
-awf-gtk2 -n -s ~/2.png
-awf-gtk3 -n -s ~/3.png
-awf-gtk4 -n -s ~/4.png
+awf-gtk2 -s ~/2.png
+awf-gtk3 -s ~/3.png
+awf-gtk4 -s ~/4.png
 ```
 
 Run [Entr](https://github.com/eradman/entr) to send `SIGHUP` signal when files change to reload theme:
@@ -254,8 +260,8 @@ Run `svg.sh` to update SVG images. See also [technical informations](https://git
 
 ## Copyright
 
-- Current version: 2.3.0 (04/04/2025)
-- Compatibility: GTK 2.24 / 3.24 / 4.12..4.18
+- Current version: 2.4.0 (05/05/2025)
+- Compatibility: GTK 2.24 / 3.24 / 4.12..4.19
 - Links: [luigifab.fr](https://www.luigifab.fr/gtk/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\
@@ -274,5 +280,5 @@ GTK 3 theme *(GNU GPLv3+)*
 - Forked from [Clearlooks-Phénix](https://github.com/mk-fg/clearlooks-phenix) by Mike Kazantsev (mk-fg)
 - Forked from [Clearlooks-Phénix](https://github.com/jpfleury/clearlooks-phenix) by Jean-Philippe Fleury (jpfleury) and Andrew Shadura
 
-Metacity theme *(clearlooks, GNU LGPLv2.1+)*
+Metacity theme *(Clearlooks, GNU LGPLv2.1+)*
 - Created by Daniel Borgmann and Andrea Cimitan

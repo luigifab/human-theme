@@ -3,7 +3,7 @@
 
 
 cd "$(dirname "$0")"
-version="2.3.0"
+version="2.4.0"
 
 
 mkdir builder
@@ -31,7 +31,7 @@ fi
 
 
 # create packages for Debian and Ubuntu and MX Linux
-for serie in experimental plucky oracular noble jammy focal bionic xenial trusty mx23; do
+for serie in experimental questing plucky oracular noble jammy focal bionic xenial trusty mx23; do
 
 	printf "\n\n#################################################################### $serie ##\n\n"
 	if [ $serie = "experimental" ]; then
@@ -52,7 +52,7 @@ for serie in experimental plucky oracular noble jammy focal bionic xenial trusty
 	rm -rf debian/*/*ex debian/*ex debian/*EX debian/README* debian/*doc*
 	cp scripts/debian/* debian/
 	rm -f debian/deb.sh
-	mv debian/metadata debian/upstream/metadata
+	mkdir debian/upstream ; mv debian/metadata debian/upstream/metadata
 
 
 
@@ -102,7 +102,7 @@ for serie in experimental plucky oracular noble jammy focal bionic xenial trusty
 			sed -i 's/experimental/'$serie'/g' debian/changelog
 			sed -i 's/-1) /-1+'$serie') /' debian/changelog
 		fi
-		rm -f debian/*.mx debian/*.debian
+		rm -f debian/*.mx debian/*.debian debian/*.ubuntu
 		echo "=========================== buildpackage ($serie) =="
 		dpkg-buildpackage -us -uc -ui -d -S
 	fi
@@ -112,7 +112,7 @@ for serie in experimental plucky oracular noble jammy focal bionic xenial trusty
 	if [ $serie = "experimental" ]; then
 		debsign human-theme-gtk_$version*.changes
 		echo "=========================== lintian ($serie) =="
-		lintian -EviIL +pedantic human-theme-gtk*$version*.deb
+		lintian -EviIL +pedantic human-theme-gtk_$version*.changes
 	elif [ $serie = "unstable" ]; then
 		debsign human-theme-gtk*$version-*_source.changes
 	else

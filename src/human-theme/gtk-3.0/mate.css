@@ -27,7 +27,13 @@ menuitem image, popover image { background:yellow; }
 menuitem check, popover check { background:yellow; }
 menuitem radio, popover radio { background:yellow; }
 menuitem box { background:orange; }
-menuitem > box > menuitem { background:red; } */
+menuitem > box > menuitem { background:red; }
+
+menuitem { border:1px solid orange; }
+menuitem label { border:1px solid lime; }
+menuitem image { border:1px solid red; background:orange; }
+menuitem radio { border:1px solid red; background:orange; }
+menuitem check { border:1px solid red; background:orange; } */
 
 /* --- multimedia osd --- */
 /* @see https://github.com/mate-desktop/mate-settings-daemon/blob/e57d532ac69fc3f6f5a34d9ce648bbdfb6a81185/plugins/common/msd-osd-window.c#L215 */
@@ -277,12 +283,20 @@ PanelToplevel.background {
 
 /* --- caja --- */
 
-window.caja-navigation-window notebook.caja-notebook scrolledwindow.frame:dir(ltr) scrollbar.vertical {
+window.caja-navigation-window:dir(ltr) notebook.caja-notebook tabs {
+	padding-right: 21px; /* scrollbar width */
+}
+
+window.caja-navigation-window:dir(rtl) notebook.caja-notebook tabs {
+	padding-left: 21px; /* scrollbar width */
+}
+
+window.caja-navigation-window:dir(ltr) notebook.caja-notebook scrolledwindow.frame scrollbar.vertical {
 	margin-left: 0;
 	background: @theme_bg;
 }
 
-window.caja-navigation-window notebook.caja-notebook scrolledwindow.frame:dir(rtl) scrollbar.vertical {
+window.caja-navigation-window:dir(rtl) notebook.caja-notebook scrolledwindow.frame scrollbar.vertical {
 	margin-right: 0;
 	background: @theme_bg;
 }
@@ -375,17 +389,17 @@ window.eom-window statusbar.classic box progressbar.horizontal {
 
 /* --- mate-control-center --- */
 
-#MyControlCenter > frame > box:dir(ltr) > box.vertical + box.vertical,
-#MyControlCenter > frame > box:dir(rtl) > box.vertical:first-child {
+#MyControlCenter:dir(ltr) > frame > box > box.vertical + box.vertical,
+#MyControlCenter:dir(rtl) > frame > box > box.vertical:first-child {
 	margin: 5px;
 }
 
-#MyControlCenter scrolledwindow:dir(ltr) scrollbar.vertical {
+#MyControlCenter:dir(ltr) scrolledwindow scrollbar.vertical {
 	border-left: 1px solid @menu_border;
 	background: @theme_bg;
 }
 
-#MyControlCenter scrolledwindow:dir(rtl) scrollbar.vertical {
+#MyControlCenter:dir(rtl) scrolledwindow scrollbar.vertical {
 	padding-left: 2px;
 	padding-right: 3px;
 	border-right: 1px solid @menu_border;
@@ -426,9 +440,8 @@ gsettings reset org.gnome.nm-applet show-applet
 	background: alpha(@theme_selected_bg, 0.4);
 }
 
-.notification-box.default-theme {
-	padding: 0 0 2px;
-	border: 1px solid @theme_selected_bg;
+.notification-box.coco-theme .body {
+	margin-top: 5px;
 }
 
 .notification-box.coco-theme button,
@@ -479,7 +492,7 @@ gsettings reset org.gnome.nm-applet show-applet
 }
 
 .notification-box.coco-theme .actions-box button:hover {
-	color: gray;
+	color: gray; /* @todo */
 }
 
 .notification-box.coco-theme .actions-box button image {
@@ -490,8 +503,8 @@ gsettings reset org.gnome.nm-applet show-applet
 	opacity: 0.6;
 }
 
-.notification-box.coco-theme .countdown:active {
+.notification-box.coco-theme .countdown:selected {
 	/* @see https://github.com/mate-desktop/mate-notification-daemon/pull/233 */
 	/* the countdown color */
-	color: @theme_notification_countdown;
+	background-color: @theme_notification_countdown;
 }

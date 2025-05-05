@@ -29,17 +29,19 @@
 @define-color theme_selected_bg #86ABD9;
 @define-color theme_selected_fg #FFF;
 @define-color insensitive_fg shade(@theme_bg, 0.65);
+@define-color insensitive_selected alpha(@theme_selected_fg, 0.8);
+@define-color insensitive_text_shadow alpha(@theme_base, 0.5);
 
 @define-color theme_tooltip_bg #F5F5B5;
 @define-color theme_tooltip_fg #000;
 @define-color theme_tooltip_border shade(@theme_tooltip_bg, 0.63);
 @define-color theme_notification_countdown @theme_selected_bg;
-@define-color outline @theme_selected_bg;
-@define-color link #00E;
-@define-color visited_link #551A8B;
-@define-color insensitive_selected alpha(@theme_selected_fg, 0.8);
-@define-color insensitive_text_shadow alpha(@theme_base, 0.5);
-@define-color checkradio shade(@theme_bg, 0.839);
+@define-color theme_outline @theme_selected_bg;
+@define-color theme_link #00E;
+@define-color theme_visited_link #551A8B;
+@define-color theme_checkradio1 shade(@theme_selected_bg, 0.839);
+@define-color theme_checkradio2 @slider_border;
+@define-color theme_checkradio3 @theme_selected_bg;
 
 /* https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html */
 @define-color theme_bg_color @theme_bg;

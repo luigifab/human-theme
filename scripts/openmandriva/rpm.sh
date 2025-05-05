@@ -3,16 +3,19 @@
 
 
 cd "$(dirname "$0")"
-version="2.3.0"
+version="2.4.0"
 
 
 mkdir -p builder builder/{BUILD,RPMS,SRPMS}
 find builder/* ! -name "*$version*.rpm" ! -name "*$version*.gz" -exec rm -rf {} + 2>/dev/null
 
+
 # copy to a tmp directory
 if [ true ]; then
-	chmod 644 human-gtk-theme.spec
-	spectool -g -R human-gtk-theme.spec
+	rm human-theme-gtk.spec
+	wget https://raw.githubusercontent.com/luigifab/human-theme/refs/tags/v$version/scripts/openmandriva/human-theme-gtk.spec
+	chmod 644 human-theme-gtk.spec
+	spectool -g -R human-theme-gtk.spec
 else
 	temp=human-theme-$version
 	mkdir /tmp/$temp
@@ -26,26 +29,26 @@ else
 	tar czf $temp.tar.gz $temp
 	cd ..
 
-	mv builder/$temp.tar.gz human-gtk-theme-$version.tar.gz
-	chmod 644 human-gtk-theme.spec
+	mv builder/$temp.tar.gz human-theme-gtk-$version.tar.gz
+	chmod 644 human-theme-gtk.spec
 fi
 
 # create package (rpm sign https://access.redhat.com/articles/3359321)
-cp -a human-gtk-theme-$version.tar.gz human-gtk-theme.spec builder/
+cp -a human-theme-gtk-$version.tar.gz human-theme-gtk.spec builder/
 cd builder/
 abb builda
-rpm --addsign RPMS/*/human-gtk-theme*.rpm
-rpm --addsign SRPMS/human-gtk-theme*.rpm
-mv RPMS/*/human-gtk-theme*.rpm .
-mv SRPMS/human-gtk-theme*.rpm .
+rpm --addsign RPMS/*/human-theme-gtk*.rpm
+rpm --addsign SRPMS/human-theme-gtk*.rpm
+mv RPMS/*/human-theme-gtk*.rpm .
+mv SRPMS/human-theme-gtk*.rpm .
 echo "==========================="
 rpm --checksig *.rpm
 echo "==========================="
-rpmlint human-gtk-theme.spec *.rpm
+rpmlint human-theme-gtk.spec *.rpm
 echo "==========================="
 ls -dlth "$PWD/"*.rpm
 echo "==========================="
 cd ..
 
 # cleanup
-rm -rf builder/*/ builder/*buildlog builder/*spec
+rm -rf builder/*/ builder/*buildlog builder/*spec human-theme-gtk-$version.tar.gz

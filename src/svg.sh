@@ -14,15 +14,26 @@ for f in */gtk-3.0/gtk.css; do
 	count=0
 	colors=$(grep 'define-color theme_' $f | grep -v \()
 
+	theme=$(basename "$(dirname "$(dirname "$f")")")
+
 	for color in $colors; do
 
 		# the color string (define-color keyword #XXX)
 		color=${color/;/}              # | tr -d ";"
 		color=${color/@define-color /} # | cut -c15-
 
+		# $color = keyword #FFF  or  keyword @xyz
+		# translate the color
+		if [[ "$color" == *"@"* ]]; then
+			theAT="${color#* }"
+			tmp=$(python3 color.py "$theAT" --theme $theme)
+			prefix="${color%% *}"
+			color="$prefix $tmp"
+		fi
+
 		# the replace string ("#XXX" class="keyword")
 		replace=$color
-		regex='(theme_[a-z_]+) (#[a-zA-Z0-9]+)'
+		regex='(theme_[a-z0-9_]+) (#[a-zA-Z0-9]+)'
 		while [[ $replace =~ $regex ]]; do
 			class=${BASH_REMATCH[1]}
 			replace="\"${BASH_REMATCH[2]}\" class=\"${BASH_REMATCH[1]}\""

@@ -25,9 +25,13 @@
 /* menubar label, popover label { background:pink; }
 menubar image, popover image { background:yellow; }
 menubar check, popover check { background:yellow; }
-menubar radio, popover radio { background:yellow; } */
+menubar radio, popover radio { background:yellow; }
 
-
+menuitem { border:1px solid orange; }
+menuitem label { border:1px solid lime; }
+menuitem image { border:1px solid red; background:orange; }
+menuitem radio { border:1px solid red; background:orange; }
+menuitem check { border:1px solid red; background:orange; } */
 
 /* --- panel --- */
 

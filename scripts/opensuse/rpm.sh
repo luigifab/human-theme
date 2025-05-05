@@ -3,14 +3,17 @@
 
 
 cd "$(dirname "$0")"
-version="2.3.0"
+version="2.4.0"
 
 
 mkdir -p builder ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
 find builder/* ! -name "*$version*.rpm" ! -name "*$version*.gz" -exec rm -rf {} + 2>/dev/null
+rm -f ~/rpmbuild/SOURCES/human-theme-gtk-$version.tar.gz
 
 # copy to a tmp directory
 if [ true ]; then
+	rm human-theme-gtk.spec
+	wget https://raw.githubusercontent.com/luigifab/human-theme/refs/tags/v$version/scripts/opensuse/human-theme-gtk.spec
 	chmod 644 human-theme-gtk.spec
 	spectool -g -R human-theme-gtk.spec
 else

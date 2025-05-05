@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
 <!--circle cx="8" cy="8" r="7" fill="todo"/-->
-<circle cx="8" cy="8" r="6" fill="#C9B9AB" class="checkradio"/>
+<circle cx="8" cy="8" r="6" fill="#C9B9AB" class="theme_checkradio1"/>
 <circle cx="8" cy="8" r="5" fill="#EDECEB" class="theme_bg"/>
 <circle cx="8" cy="8" r="3" fill="#ece6e0"/>
-<circle cx="8" cy="8" r="2" fill="#C9B9AB" class="checkradio"/>
+<circle cx="8" cy="8" r="2" fill="#C9B9AB" class="theme_checkradio1"/>
 </svg>

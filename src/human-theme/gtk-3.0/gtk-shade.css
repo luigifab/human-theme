@@ -86,7 +86,7 @@
 /* #EAE2DB */ @define-color checkbutton_hover_bg alpha(shade(@theme_bg, 1.5), 0.15);
 /* #E2CFC4 */ @define-color checkbutton_focus_bg alpha(shade(@theme_selected_bg, 1.27), 0.175); /* #E1CFC4 okay */
 /* #E5D4C9 */ @define-color checkbutton_focus_hover_bg alpha(shade(@theme_selected_bg, 1.48), 0.175);
-/* #D5A48E */ @define-color checkbutton_focus_hover_border alpha(shade(@theme_selected_bg, 1.485), 0.7);
+/* #D5A48E */ @define-color checkbutton_focus_hover_border alpha(shade(@theme_selected_bg, 1.485), 0.7); /* wrong for orange/green/blue */
 /* #AB9E92 */ @define-color button_border shade(@theme_bg, 0.693); /* #AB9888 @todo */
 /* #CDBFB2 */ @define-color button_border_disabled shade(@theme_bg, 0.864); /* #CDBFB1 */
               @define-color button_glaze_top alpha(shade(@theme_bg, 1.11), 0.17);

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Encoding=UTF-8
+Name=clearloksre
+
+[X-GNOME-Metatheme]
+ButtonLayout=:minimize,maximize,close
+MetacityTheme=clearloksre
+Encoding=UTF-8
+Name=clearloksre
