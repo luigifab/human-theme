@@ -36,6 +36,7 @@ window > box > widget > widget {
 
 #GeanyMainWindow #notebook_info {
 	margin-bottom: 5px;
+	padding-left: 5px;
 }
 
 #GeanyMainWindow.maximized notebook stack > box,
@@ -59,6 +60,18 @@ window.pluma-window notebook stack > box scrolledwindow {
 	margin-top: 0;
 }
 
+#GeanyMainWindow statusbar {
+	margin-top: -8px;
+}
+
+#GeanyMainWindow statusbar.classic {
+	margin-top: -3px;
+}
+
+#GeanyMainWindow statusbar progressbar.horizontal {
+	margin: 0 -1px 2px 0;
+}
+
 /* --- libre office --- */
 
 window.libreoffice-window > grid.horizontal > grid.horizontal > scrolledwindow > viewport.frame {
@@ -66,17 +79,17 @@ window.libreoffice-window > grid.horizontal > grid.horizontal > scrolledwindow >
 }
 
 window.libreoffice-window > grid.horizontal > grid.horizontal > scrolledwindow + button.flat.small-button {
-    min-width: 24px;
-    min-height: 24px;
-    border-bottom: 1px solid @menubar_border_bot;
-    border-radius: 0;
+	min-width: 24px;
+	min-height: 24px;
+	border-bottom: 1px solid @menubar_border_bot;
+	border-radius: 0;
 }
 
 window.libreoffice-window > grid.horizontal > grid.horizontal {
 	background: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
 }
 
-/* --- bleachbit --- */
+/* --- bleachbit v5.2 --- */
 /* @see https://github.com/bleachbit/bleachbit/pull/1195 */
 
 #BleachbitMainWindow > box > box > scrolledwindow:dir(ltr) scrollbar.vertical {
@@ -86,12 +99,12 @@ window.libreoffice-window > grid.horizontal > grid.horizontal {
 	border-right: 2px solid @menu_border;
 }
 
-#BleachbitMainWindow > box > box > scrolledwindow:dir(ltr) + box scrolledwindow {
+#BleachbitMainWindow > box > box > scrolledwindow + box scrolledwindow:dir(ltr) {
 	padding: 5px 1px 5px 5px;
 	background: @theme_base;
 }
 
-#BleachbitMainWindow > box > box > scrolledwindow:dir(ltr) + box scrolledwindow scrollbar.vertical {
+#BleachbitMainWindow > box > box > scrolledwindow + box scrolledwindow:dir(ltr) scrollbar.vertical {
 	margin-top: -5px;
 	margin-bottom: -5px;
 	padding-top: 3px;
@@ -123,23 +136,51 @@ window.libreoffice-window > grid.horizontal > grid.horizontal {
 	background: @theme_bg;
 }
 
-/* --- fix for some maximized windows --- */
-/* @see https://github.com/mate-desktop/mate-desktop/issues/291 */
+/* --- css fix/hack for some maximized windows --- */
+/* @see https://github.com/mate-desktop/mate-desktop/issues/291 = without gtk3-classic (scrollbar__extra_zone.patch) */
 
-#GeanyMainWindow.maximized:dir(ltr) #notebook_info stack,
-window.background.maximized.engrampa-window:dir(ltr) > grid.horizontal > paned.horizontal > scrolledwindow.frame,
-window.background.maximized.atril-window:dir(ltr) > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
-window.background.pluma-window:dir(ltr) > box.vertical > paned.horizontal > paned.vertical > notebook box.vertical > scrolledwindow.frame,
-window.background.maximized.logview-window:dir(ltr) > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
-window.background.maximized.caja-navigation-window:dir(ltr) notebook.caja-notebook scrolledwindow.frame {
+#GeanyMainWindow.maximized:not(.scrollfix):dir(ltr)
+	#notebook_info stack,
+window.background.maximized.engrampa-window:not(.scrollfix):dir(ltr) >
+	grid.horizontal > paned.horizontal > scrolledwindow.frame,
+window.background.maximized.atril-window:not(.scrollfix):dir(ltr) >
+	box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
+window.background.maximized.pluma-window:not(.scrollfix):dir(ltr) >
+	box.vertical > paned.horizontal > paned.vertical > notebook box.vertical > scrolledwindow.frame,
+window.background.maximized.xed-window:not(.scrollfix):dir(ltr) >
+	box.vertical > paned.horizontal > paned.vertical > notebook box.vertical > scrolledwindow.frame,
+window.background.maximized.logview-window:not(.scrollfix):dir(ltr) >
+	box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
+window.background.maximized.caja-navigation-window:not(.scrollfix):dir(ltr)
+	notebook.caja-notebook scrolledwindow.frame,
+window.background.nemo-window.maximized:not(.scrollfix):dir(ltr)
+	paned paned notebook stack
+{
 	border-right-width: 0;
 }
 
-#GeanyMainWindow.maximized:dir(rtl) #notebook_info stack,
-window.background.maximized.engrampa-window:dir(rtl) > grid.horizontal > paned.horizontal > scrolledwindow.frame,
-window.background.maximized.atril-window:dir(rtl) > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
-window.background.pluma-window:dir(rtl) > box.vertical > paned.horizontal > paned.vertical > notebook box.vertical > scrolledwindow.frame,
-window.background.maximized.logview-window:dir(rtl) > box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
-window.background.maximized.caja-navigation-window:dir(rtl) notebook.caja-notebook scrolledwindow.frame {
+window.background.maximized.thunar:not(.scrollfix):dir(ltr)
+	paned paned notebook stack scrolledwindow.frame.standard-view
+{
+	margin-right: -1px;
+}
+
+#GeanyMainWindow.maximized:not(.scrollfix):dir(rtl)
+	#notebook_info stack,
+window.background.maximized.engrampa-window:not(.scrollfix):dir(rtl) >
+	grid.horizontal > paned.horizontal > scrolledwindow.frame,
+window.background.maximized.atril-window:not(.scrollfix):dir(rtl) >
+	box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
+window.background.maximized.pluma-window:not(.scrollfix):dir(rtl) >
+	box.vertical > paned.horizontal > paned.vertical > notebook box.vertical > scrolledwindow.frame,
+window.background.maximized.xed-window:not(.scrollfix):dir(rtl) >
+	box.vertical > paned.horizontal > paned.vertical > notebook box.vertical > scrolledwindow.frame,
+window.background.maximized.logview-window:not(.scrollfix):dir(rtl) >
+	box.vertical > paned.horizontal > box.vertical > scrolledwindow.frame,
+window.background.maximized.caja-navigation-window:not(.scrollfix):dir(rtl)
+	notebook.caja-notebook scrolledwindow.frame,
+window.background.nemo-window.maximized:not(.scrollfix):dir(rtl)
+	paned paned notebook stack
+{
 	border-left-width: 0;
 }

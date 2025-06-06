@@ -1,0 +1,213 @@
+/**
+ * Copyright 2020-2025 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ *
+ * run cinnamon.sh to update colors
+ */
+
+/* --- panel --- */
+
+#panel {
+	color: #000000; /* @theme_fg */
+	border: 0;
+	background: #EDECEB; /* @theme_bg */
+}
+
+
+#Tooltip {
+	padding: 4px 5px;
+	color: #000000; /* @theme_tooltip_fg */
+	border: 1px solid #C0C04C; /* @theme_tooltip_border */
+	background: #F5F5B5; /* @theme_tooltip_bg */
+}
+
+.applet-box {
+	padding: 0 6px;
+	border: 1px solid transparent;
+}
+
+.applet-label {
+	padding: 0 4px;
+}
+
+.applet-box:checked {
+	padding: 0 6px;
+	color: #FFFFFF; /* @menuitem_hover */
+	border: 1px solid #5681B7; /* @menuitem_hover_border */
+	background:
+		/* @theme_selected_bg */ #86ABD9
+		/* radial-gradient(ellipse 110% 50%,  transparency lost
+			* @menuitem_hover_glaze_glow_center * #B27053,
+			*   @menuitem_hover_glaze_glow_edge * #B27053), */
+		linear-gradient(to bottom,
+			/*  @menuitem_hover_glaze_top */ #90B3DE,
+			/* @menuitem_hover_glaze_mida */ #7DA4D4 50%,
+			/* @menuitem_hover_glaze_midb */ #7DA4D4 50%,
+			/*  @menuitem_hover_glaze_bot */ #7EA4D4);
+	background-gradient-direction: vertical;
+	background-gradient-start: #90B3DE; /* @menuitem_hover_glaze_top */
+	background-gradient-end: #7EA4D4; /* @menuitem_hover_glaze_bot */
+}
+
+/* --- main menu applet --- */
+/* @see https://www.faqforge.com/linux/distributions/how-to-customize-basic-cinnamon-elements/ */
+
+.menu {
+	margin: 0;
+}
+
+.menu .menu-favorites-box:ltr {
+	margin-right: 10px;
+	padding: 4px;
+	border: 1px solid #B0ADAA; /* @menu_border */
+	border-radius: 4px;
+}
+
+.menu .menu-favorites-box:rtl {
+	margin-left: 10px;
+	padding: 4px;
+	border: 1px solid #B0ADAA; /* @menu_border */
+	border-radius: 4px;
+}
+
+.menu .menu-search-box {
+	margin: 0 8px 5px 0;
+	padding: 0;
+}
+
+.menu .menu-categories-box {
+	padding: 2px 4px;
+}
+
+.menu .menu-applications-inner-box {
+	padding: 2px 4px;
+}
+
+.menu .menu-selected-app-box {
+	margin: 5px 8px 0 0;
+	padding: 5px 2px 2px;
+	text-align: right;
+	border-top: 1px solid #AFACA9; /* @content_separator_dark */
+}
+
+.menu .menu-favorites-button,
+.menu .menu-category-button,
+.menu .menu-application-button {
+	padding: 4px 6px;
+	border: 1px solid transparent;
+}
+
+.menu .menu-category-button-label:ltr,
+.menu .menu-application-button-label:ltr {
+	margin-top: -1px;
+	padding-left: 6px;
+}
+
+.menu .menu-category-button-label:rtl,
+.menu .menu-application-button-label:rtl {
+	margin-top: -1px;
+	padding-right: 6px;
+}
+
+.menu .menu-favorites-button:hover,
+.menu .menu-category-button-selected,
+.menu .menu-application-button-selected {
+	padding: 4px 6px;
+	color: #FFFFFF; /* @menuitem_hover */
+	border: 1px solid #5681B7; /* @menuitem_hover_border */
+	border-radius: 4px;
+	background:
+		/* @theme_selected_bg */ #86ABD9
+		/* radial-gradient(ellipse 110% 50%,  transparency lost
+			* @menuitem_hover_glaze_glow_center * #B27053,
+			*   @menuitem_hover_glaze_glow_edge * #B27053), */
+		linear-gradient(to bottom,
+			/*  @menuitem_hover_glaze_top */ #90B3DE,
+			/* @menuitem_hover_glaze_mida */ #7DA4D4 50%,
+			/* @menuitem_hover_glaze_midb */ #7DA4D4 50%,
+			/*  @menuitem_hover_glaze_bot */ #7EA4D4);
+	background-gradient-direction: vertical;
+	background-gradient-start: #90B3DE; /* @menuitem_hover_glaze_top */
+	background-gradient-end: #7EA4D4; /* @menuitem_hover_glaze_bot */
+}
+
+.menu .menu-category-button-greyed {
+	padding: 4px 6px;
+	font-style: italic;
+	border: 1px solid transparent;
+	color: #BBB; /* @todo */
+}
+
+.menu .menu-favorites-button:hover {
+	border-radius: 6px;
+}
+
+.menu #menu-search-entry {
+	margin: 6px 4px;
+	padding: 3px;
+	border: 1px solid #85827E; /* @entry_border */
+	border-radius: 2.4px;
+	background-color: #FFFFFF; /* @entry_bg */
+}
+
+/* --- window menu & panel context menu --- */
+
+.popup-menu-content {
+	padding: 2px;
+	border: 1px solid #B0ADAA; /* @menu_border */
+	background: #F3F2F2; /* @menu_bg */
+}
+
+.popup-menu-item {
+	padding: 2px 7px 2px 8px;
+	color: #000000; /* @theme_fg */
+	border: 1px solid transparent;
+	border-radius: 2px;
+}
+
+.popup-menu-item:hover {
+	color: #FFFFFF; /* @menuitem_hover */
+	border-color: #5681B7; /* @menuitem_hover_border */
+	background:
+		/* @theme_selected_bg */ #86ABD9
+		/* radial-gradient(ellipse 110% 50%,  transparency lost
+			* @menuitem_hover_glaze_glow_center * #B27053,
+			*   @menuitem_hover_glaze_glow_edge * #B27053), */
+		linear-gradient(to bottom,
+			/*  @menuitem_hover_glaze_top */ #90B3DE,
+			/* @menuitem_hover_glaze_mida */ #7DA4D4 50%,
+			/* @menuitem_hover_glaze_midb */ #7DA4D4 50%,
+			/*  @menuitem_hover_glaze_bot */ #7EA4D4);
+	background-gradient-direction: vertical;
+	background-gradient-start: #90B3DE; /* @menuitem_hover_glaze_top */
+	background-gradient-end: #7EA4D4; /* @menuitem_hover_glaze_bot */
+}
+
+.popup-separator-menu-item {
+	height: 1px;
+	background-color: #B9B6B3; /* @menu_separator_dark */
+}
+
+.popup-menu-icon {
+	margin-right: 5px;
+	icon-size: 16px;
+}

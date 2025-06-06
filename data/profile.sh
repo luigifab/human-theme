@@ -50,6 +50,9 @@ export GTK_PROGRESS_TEXT_INSIDE=1
 # export GTK_USE_IEC_UNITS=1
 
 # with gtk3-classic -> https://gist.github.com/luigifab/0fce786cdb93b5687069a82f490ea95e#file-appearance__hide_treeview_lines-gtk3-patch
-# with gtk4-classic -> https://gist.github.com/luigifab/0fce786cdb93b5687069a82f490ea95e#file-appearance__hide_treeview_lines-gtk4-patch
 # disable treeview lines (for example vertical treeview lines in GtkInspector)
 export GTK_TREEVIEW_LINES=0
+
+# with gtk3-classic -> https://gist.github.com/luigifab/0fce786cdb93b5687069a82f490ea95e#file-scrollbar__extra_zone.gtk3.patch
+# enlarges the active area for scroll bars (ultimate fix for https://github.com/mate-desktop/mate-desktop/issues/291)
+export GTK_ENLARGE_SCROLLBAR=1

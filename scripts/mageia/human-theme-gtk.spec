@@ -1,5 +1,5 @@
 Name:          human-theme-gtk
-Version:       2.4.0
+Version:       2.5.0
 Release:       %mkrel 1
 Summary:       Human theme for GTK
 Summary(fr):   Thème Human pour GTK
@@ -10,7 +10,7 @@ Source0:       %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildArch:     noarch
 BuildRequires: aspell-fr
-#Recommends:   dmz-cursor-themes
+Recommends:    dmz-cursor-themes
 Recommends:    mate-icon-theme
 Recommends:    gtk2-murrine-engine
 
@@ -57,6 +57,9 @@ install -Dpm 644 data/profile.sh %{buildroot}/etc/profile.d/%{name}.sh
 
 
 %changelog
+* Fri Jun 06 2025 Fabrice Creuzot <code@luigifab.fr> - 2.5.0-1.mga
+- New upstream release
+
 * Mon May 05 2025 Fabrice Creuzot <code@luigifab.fr> - 2.4.0-1.mga
 - New upstream release
 

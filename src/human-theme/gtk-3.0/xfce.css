@@ -22,11 +22,34 @@
  * GNU General Public License (GPL) for more details.
  */
 
-XfdesktopIconView.view {
-	background: transparent;
+box:dir(ltr) label + switch {
+	margin-left: 7px;
 }
 
-/* --- tabwin alttab alt-tab osd --- */
+box:dir(rtl) switch + label {
+	margin-left: 7px;
+}
+
+/* --- desktop icon --- */
+/* @see https://forum.xfce.org/viewtopic.php?pid=73595#p73595 */
+
+XfdesktopIconView.view {
+	color: @theme_selected;
+	border-radius: 4px;
+	background: transparent;
+	text-shadow: 0.5px 1px @theme_text;
+}
+
+XfdesktopIconView.view:active {
+	color: @theme_selected_bg;
+	background: @theme_selected_bg;
+}
+
+XfdesktopIconView.label:active {
+	color: @theme_selected;
+}
+
+/* --- xfwm4 tabwin alttab alt-tab osd --- */
 /* @see https://github.com/RolKau/old-ubuntu-human-theme/commit/6cda3c995c3bad169898a41b8c83ac881547a6ad */
 
 #xfwm-tabwin {
@@ -81,7 +104,7 @@ XfdesktopIconView.view {
 
 .xfce4-panel #applicationmenu-button:hover:not(:checked) {
 	border-color: transparent;
-	background: none;
+	background: transparent;
 }
 
 /* --- virtual desktop selector applet --- */
@@ -101,20 +124,68 @@ XfdesktopIconView.view {
 
 window.thunar scrolledwindow.frame.sidebar {
 	margin: 5px 0 1px;
+	border-right: 1px solid @menu_border; /* @todo not working */
+}
+
+window.thunar paned paned notebook {
+	margin-top: 5px;
 }
 
 window.thunar paned paned notebook stack {
-	padding-top: 4px;
+	padding: 0;
 	border: 0;
 	background: @theme_bg;
 }
 
-window.thunar paned paned notebook stack scrolledwindow.frame.standard-view scrollbar.vertical:dir(ltr) {
+window.thunar paned paned notebook:dir(ltr) stack {
+	border-left: 1px solid @menu_border;
+}
+
+window.thunar paned paned notebook:dir(rtl) stack {
+	border-right: 1px solid @menu_border;
+}
+
+window.thunar paned paned notebook:dir(ltr) tabs {
+	padding-right: 21px; /* scrollbar width */
+}
+
+window.thunar paned paned notebook:dir(rtl) tabs {
+	padding-left: 21px; /* scrollbar width */
+}
+
+window.thunar.maximized:not(.scrollfix) paned paned notebook:dir(ltr) tabs {
+	/* without gtk3-classic (scrollbar__extra_zone.patch) */
+	padding-right: 20px; /* scrollbar width - maximized css scroll fix */
+}
+
+window.thunar.maximized:not(.scrollfix) paned paned notebook:dir(rtl) tabs {
+	/* without gtk3-classic (scrollbar__extra_zone.patch) */
+	padding-left: 20px; /* scrollbar width - maximized css scroll fix */
+}
+
+window.thunar paned paned notebook:dir(ltr) tab {
+	padding: 0 2px 0 0;
+}
+
+window.thunar paned paned notebook:dir(rtl) tab {
+	padding: 0 0 0 2px;
+}
+
+window.thunar paned paned notebook tab {
+	margin-top: -1px;
+	padding: 0;
+}
+
+window.thunar paned paned notebook tab image {
+	padding-top: 1px;
+}
+
+window.thunar paned paned notebook stack scrolledwindow.frame.standard-view:dir(ltr) scrollbar.vertical {
 	margin-right: 0;
 	background: @theme_bg;
 }
 
-window.thunar paned paned notebook stack scrolledwindow.frame.standard-view scrollbar.vertical:dir(rtl) {
+window.thunar paned paned notebook stack scrolledwindow.frame.standard-view:dir(rtl) scrollbar.vertical {
 	/* @todo */
 	margin: -1px -3px -30px 0;
 	padding: 0 3px 29px 0;
@@ -123,26 +194,14 @@ window.thunar paned paned notebook stack scrolledwindow.frame.standard-view scro
 	background: @theme_bg;
 }
 
-window.thunar paned paned notebook stack scrolledwindow.frame.standard-view scrollbar.horizontal:dir(ltr) {
+window.thunar paned paned notebook stack scrolledwindow.frame.standard-view:dir(ltr) scrollbar.horizontal {
 	margin-left: -1px;
 	background: @theme_bg;
 }
 
-window.thunar paned paned notebook stack scrolledwindow.frame.standard-view scrollbar.horizontal:dir(rtl) {
+window.thunar paned paned notebook stack scrolledwindow.frame.standard-view:dir(rtl) scrollbar.horizontal {
 	margin-right: -1px;
 	background: @theme_bg;
-}
-
-window.thunar paned paned notebook stack scrolledwindow.frame.standard-view:dir(ltr) {
-	/* @todo not working */
-	/* @see https://github.com/xfce-mirror/thunar/blob/b6ea10ea717ab3822358670dab3b74a585195e0c/thunar/thunar-application.c#L707 */
-	border-left: 1px solid @menu_border;
-}
-
-window.thunar paned paned notebook stack scrolledwindow.frame.standard-view:dir(rtl) {
-	/* @todo not working */
-	/* @see https://github.com/xfce-mirror/thunar/blob/b6ea10ea717ab3822358670dab3b74a585195e0c/thunar/thunar-application.c#L707 */
-	border-right: 1px solid @menu_border;
 }
 
 /* window.thunar ... disabled paned view @todo {
@@ -159,7 +218,7 @@ window.thunar statusbar frame {
 	border-top: 0;
 }
 
-/* --- terminal --- */
+/* --- xfce4-terminal --- */
 
 #xfce4-terminal-notebook {
 	margin: 0;
@@ -186,4 +245,16 @@ window.thunar statusbar frame {
 window:not(.maximized) #xfce4-terminal-notebook header.top ~ stack {
 	border: 1px solid @nb_border;
 	border-top: 0;
+}
+
+/* --- ristretto --- */
+
+window box #main-toolbar + grid + statusbar frame,
+window box #main-toolbar + infobar + grid + statusbar frame {
+	padding: 4px 12px 5px;
+}
+
+window.maximized box #main-toolbar + grid + statusbar frame,
+window.maximized box #main-toolbar + infobar + grid + statusbar frame {
+	padding: 4px 13px 5px;
 }

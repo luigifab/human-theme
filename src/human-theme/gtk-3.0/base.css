@@ -40,7 +40,7 @@ textview text {
 rubberband,
 .rubberband,
 .rubberband.background,
-XfdesktopIconView.view .rubberband {
+XfdesktopIconView.rubberband {
 	border-color: alpha(@theme_selected_bg, 0.8);
 	background: alpha(@theme_selected_bg, 0.4);
 }
@@ -77,23 +77,29 @@ paper {
 	background: white;
 }
 
-/* --- csd (solid-csd without compositor, csd with compositor) --- */
+/* --- window (title & border) --- (solid-csd without compositor, csd with compositor, ssd with muffin/mutter) --- */
 /* window or dialog / with or without compositor / .titlebutton.icon .titlebutton.appmenu */
 /* with gtk3-classic, without GTK_CSD with GtkInspector = marco + .background headerbar */
 /* with gtk3-classic, with GTK_CSD=0/1 with GtkInspector = csd + .background.solid-csd/.csd headerbar */
+/* with stupid muffin/mutter, :backdrop for the last element only */
+/* solid-csd + ssd + csd because headerbar can also be used with window decorator */
 
 .background.csd decoration,
-.background.csd headerbar {
+.background.csd headerbar,
+.background.ssd decoration,
+.background.ssd headerbar {
 	border-radius: 7px 7px 0 0;
 }
 
 .background.csd decoration,
+.background.ssd decoration,
 .background.solid-csd decoration {
 	padding: 3px;
 	border: 1px solid #6F6358; /* @todo metacity */
 	border-top: 0;
 	/* border-radius: 8px 8px 0 0; */
 	background-color: @theme_bg;
+	background: @theme_bg; /* for muffin/mutter */
 	/* BEVEL FOCUSED / 3d beveled frame */
 	box-shadow:
 		inset 1px 0 shade(@theme_bg, 1.2),   /* left */
@@ -101,16 +107,18 @@ paper {
 		inset 0 -1px shade(@theme_bg, 0.88); /* bottom */
 }
 
-.background.csd.popup decoration {
+.background.csd.popup decoration,
+.background.ssd.popup decoration {
 	/* menu */
 	padding: 0;
 	border: 0;
 	border-radius: 0;
-	background-color: transparent;
+	background: transparent;
 	box-shadow: none;
 }
 
 .background.csd headerbar,
+.background.ssd headerbar,
 .background.solid-csd headerbar {
 	margin: -3px -4px 0;
 	padding: 0 3px;
@@ -126,18 +134,26 @@ paper {
 		shade(@theme_selected_bg, 0.94));
 }
 
+.background.ssd headerbar {
+	margin: -3px 0 0;
+	padding: 0 2px;
+}
+
 .background.csd headerbar menu,
+.background.ssd headerbar menu,
 .background.solid-csd headerbar menu {
 	font-weight: normal;
 }
 
 .background.csd headerbar image,
+.background.ssd headerbar image,
 .background.solid-csd headerbar image {
 	/* -gtk-icon-transform: scale(0.75); */
 	-gtk-icon-style: symbolic;
 }
 
 .background.csd headerbar label.title,
+.background.ssd headerbar label.title,
 .background.solid-csd headerbar label.title {
 	padding-top: 2px;
 	font-weight: bold;
@@ -151,6 +167,14 @@ paper {
 .background.csd headerbar button:not(.titlebutton):hover:focus,
 .background.csd headerbar button:not(.titlebutton):active:focus,
 .background.csd headerbar button:not(.titlebutton):hover:active:focus,
+.background.ssd headerbar button:not(.titlebutton),
+.background.ssd headerbar button:not(.titlebutton):hover,
+.background.ssd headerbar button:not(.titlebutton):active,
+.background.ssd headerbar button:not(.titlebutton):focus,
+.background.ssd headerbar button:not(.titlebutton):hover:active,
+.background.ssd headerbar button:not(.titlebutton):hover:focus,
+.background.ssd headerbar button:not(.titlebutton):active:focus,
+.background.ssd headerbar button:not(.titlebutton):hover:active:focus,
 .background.solid-csd headerbar button:not(.titlebutton),
 .background.solid-csd headerbar button:not(.titlebutton):hover,
 .background.solid-csd headerbar button:not(.titlebutton):active,
@@ -162,7 +186,7 @@ paper {
 	/* ChatGPT made the list */
 	color: @theme_selected_fg;
 	border: 1px solid transparent;
-	background: none;
+	background: transparent;
 	box-shadow: none;
 	outline: 0;
 }
@@ -175,6 +199,14 @@ paper {
 .background.csd headerbar button:not(.titlebutton):hover:focus:checked,
 .background.csd headerbar button:not(.titlebutton):active:focus:checked,
 .background.csd headerbar button:not(.titlebutton):hover:active:focus:checked,
+.background.ssd headerbar button:not(.titlebutton):checked,
+.background.ssd headerbar button:not(.titlebutton):hover:checked,
+.background.ssd headerbar button:not(.titlebutton):active:checked,
+.background.ssd headerbar button:not(.titlebutton):focus:checked,
+.background.ssd headerbar button:not(.titlebutton):hover:active:checked,
+.background.ssd headerbar button:not(.titlebutton):hover:focus:checked,
+.background.ssd headerbar button:not(.titlebutton):active:focus:checked,
+.background.ssd headerbar button:not(.titlebutton):hover:active:focus:checked,
 .background.solid-csd headerbar button:not(.titlebutton):checked,
 .background.solid-csd headerbar button:not(.titlebutton):hover:checked,
 .background.solid-csd headerbar button:not(.titlebutton):active:checked,
@@ -193,6 +225,8 @@ paper {
 
 .background.csd headerbar button,
 .background.csd headerbar button.toggle,
+.background.ssd headerbar button,
+.background.ssd headerbar button.toggle,
 .background.solid-csd headerbar button,
 .background.solid-csd headerbar button.toggle {
 	margin: 1px 0;
@@ -201,29 +235,34 @@ paper {
 }
 
 .background.csd headerbar button label,
+.background.ssd headerbar button label,
 .background.solid-csd headerbar button label {
 	margin: 1px 0 -1px;
 	padding: 0;
 }
 
 .background.csd headerbar box.left,
+.background.ssd headerbar box.left,
 .background.solid-csd headerbar box.left {
 	/* headerbar windowcontrols with gtk4 */
 	margin: 0 -3px 0 3px;
 }
 
 .background.csd headerbar box.right,
+.background.ssd headerbar box.right,
 .background.solid-csd headerbar box.right {
 	/* headerbar windowcontrols with gtk4 */
 	margin: 0 3px 0 -3px;
 }
 
 .background.csd headerbar image.app-icon,
+.background.ssd headerbar image.app-icon,
 .background.solid-csd headerbar image.app-icon {
 	margin: 0 3px; /* with gtk3-classic (appearance__appicon_headerbar.patch) */
 }
 
 .background.csd headerbar separator.titlebutton,
+.background.ssd headerbar separator.titlebutton,
 .background.solid-csd headerbar separator.titlebutton {
 	margin: 0;
 	padding: 0;
@@ -231,6 +270,7 @@ paper {
 }
 
 .background.csd headerbar button.titlebutton,
+.background.ssd headerbar button.titlebutton,
 .background.solid-csd headerbar button.titlebutton {
 	margin: 2px -1px;
 	padding: 0;
@@ -254,7 +294,12 @@ paper {
 		0 1px shade(@theme_selected_bg, 1.06);        /* bottom */
 }
 
+.background.ssd headerbar button.titlebutton {
+	margin: 1px -1px 0;
+}
+
 .background.csd headerbar button.titlebutton:hover,
+.background.ssd headerbar button.titlebutton:hover,
 .background.solid-csd headerbar button.titlebutton:hover {
 	/* <draw_ops name="button_bg_prelight"> */
 	border: 1px solid shade(@theme_selected_bg, 0.6);
@@ -262,6 +307,7 @@ paper {
 }
 
 .background.csd headerbar button.titlebutton:active,
+.background.ssd headerbar button.titlebutton:active,
 .background.solid-csd headerbar button.titlebutton:active {
 	/* <draw_ops name="button_bg_pressed"> border outline */
 	border: 1px solid shade(@theme_selected_bg, 0.7);
@@ -271,9 +317,11 @@ paper {
 		shade(@theme_selected_bg, 0.9));
 }
 
-/* --- csd backdrop --- */
+/* --- window (title & border) backdrop --- */
 
 .background.csd:backdrop decoration,
+.background.ssd:backdrop decoration,
+.background.ssd decoration:backdrop,
 .background.solid-csd:backdrop decoration {
 	border-color: shade(@theme_bg, 0.55);
 	/* BEVEL UNFOCUSED / 3d beveled frame */
@@ -284,6 +332,8 @@ paper {
 }
 
 .background.csd:backdrop headerbar,
+.background.ssd:backdrop headerbar,
+.background.ssd headerbar:backdrop,
 .background.solid-csd:backdrop headerbar {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 	/* <draw_ops name="bevel_unfocused"> rectangle */
@@ -298,12 +348,18 @@ paper {
 
 .background.csd:backdrop headerbar button,
 .background.csd:backdrop headerbar button:hover,
+.background.ssd:backdrop headerbar button,
+.background.ssd:backdrop headerbar button:hover,
+.background.ssd headerbar button:backdrop,
+.background.ssd headerbar button:backdrop:hover,
 .background.solid-csd:backdrop headerbar button,
 .background.solid-csd:backdrop headerbar button:hover {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 }
 
 .background.csd:backdrop headerbar button:not(.titlebutton):checked,
+.background.ssd:backdrop headerbar button:not(.titlebutton):checked,
+.background.ssd headerbar button:backdrop:not(.titlebutton):checked,
 .background.solid-csd:backdrop headerbar button:not(.titlebutton):checked {
 	/* same as close button */
 	color: mix(@theme_fg, @theme_bg, 0.45);
@@ -316,6 +372,8 @@ paper {
 }
 
 .background.csd:backdrop headerbar button.titlebutton,
+.background.ssd:backdrop headerbar button.titlebutton,
+.background.ssd headerbar button.titlebutton:backdrop,
 .background.solid-csd:backdrop headerbar button.titlebutton {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 	border: 1px solid shade(@theme_bg, 0.6);
@@ -337,38 +395,55 @@ paper {
 }
 
 .background.csd:backdrop headerbar button.titlebutton:hover,
+.background.ssd:backdrop headerbar button.titlebutton:hover,
+.background.ssd headerbar button.titlebutton:backdrop:hover,
 .background.solid-csd:backdrop headerbar button.titlebutton:hover {
 	/* @todo */
 }
 
-/* --- csd maximized --- */
+/* --- window (title & border) maximized --- */
 
 .background.csd.maximized,
 .background.solid-csd.maximized {
 	border-bottom: 1px solid #463731; /* @todo metacity */
 }
 
-.background.csd.maximized decoration,
-.background.csd.maximized headerbar {
-	border-radius: 0;
-}
-
 .background.csd.maximized:backdrop,
+.background.ssd.maximized:backdrop,
 .background.solid-csd.maximized:backdrop {
 	border-bottom-color: shade(@theme_bg, 0.55);
 }
 
+.background.csd.maximized decoration,
+.background.ssd.maximized decoration,
+.background.solid-csd.maximized decoration {
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.background.ssd.maximized decoration {
+	border-bottom: 1px solid #463731; /* @todo metacity */
+}
+
 .background.csd.maximized headerbar,
+.background.ssd.maximized headerbar,
 .background.solid-csd.maximized headerbar {
 	margin: 0 -3px;
+	border-radius: 0;
+}
+
+.background.ssd.maximized headerbar {
+	padding: 2px 3px 1px;
 }
 
 .background.csd.maximized statusbar,
 .background.solid-csd.maximized statusbar {
-	border-bottom: 1px solid @theme_bg;
+	border-bottom: 1px solid transparent;
 }
 
-/* --- text/images disabled --- */
+/* --- text/image disabled --- */
 
 *:disabled,
 .link > label:disabled {
@@ -596,14 +671,6 @@ statusbar.classic frame > box {
 	margin: -4px -2px -3px; /* with gtk3-classic (appearance__smaller-statusbar.patch) */
 }
 
-paned + box > statusbar { /* geany, engrampa */
-	margin: -8px -10px -4px;
-}
-
-paned + box > statusbar.classic { /* geany, engrampa */
-	margin: -8px -10px 0; /* with gtk3-classic (appearance__smaller-statusbar.patch) */
-}
-
 /* --- switch --- */
 
 switch {
@@ -689,14 +756,14 @@ button:disabled, switch:disabled {
 button.flat,
 headerbar button {
 	border-color: transparent;
-	background: none;
+	background: transparent;
 	box-shadow: none;
 }
 
 button.flat:disabled,
 headerbar button:disabled {
 	border-color: transparent;
-	background: none;
+	background: transparent;
 	opacity: 0.3;
 }
 
@@ -806,6 +873,11 @@ entry:disabled {
 		-1px -1px alpha(@entry_border, 0.09),
 		 1px  1px alpha(lighter(@theme_bg), 0.418),
 		inset 1px 1px alpha(@entry_border_disabled, 0.07);
+}
+
+entry menuitem {
+	font-size: initial;
+	font-family: initial;
 }
 
 /* --- combo box --- */
@@ -1195,7 +1267,8 @@ headerbar button:focus:active:hover {
 }
 
 toolbar,
-box.primary-toolbar {
+box.primary-toolbar,
+toolbar.prefs-list-widget-toolbar /* @todo meld */ {
 	padding: 1px 2px;
 	border-width: 1px 0 1px 0;
 	border-style: solid;
@@ -1694,7 +1767,7 @@ scrollbar button:disabled {
 	min-width: 6px;
 	min-height: 6px;
 	border-color: transparent;
-	background: none;
+	background: transparent;
 	box-shadow: none;
 }
 
@@ -2266,6 +2339,14 @@ statusbar progressbar.horizontal trough progress {
 	min-height: 14px;
 }
 
+.maximized statusbar progressbar.horizontal {
+	margin-top: 2px;
+}
+
+.maximized statusbar.classic progressbar.horizontal {
+	margin-top: 2px;
+}
+
 /* --- progress bar - with gtk3-classic (appearance__progress_text.patch) when GTK_PROGRESS_TEXT_INSIDE=1 --- */
 
 progressbar.classic.vertical text,
@@ -2293,6 +2374,10 @@ progressbar.classic.vertical.full text {
 
 progressbar.classic.horizontal text {
 	padding: 3px 0;
+}
+
+progressbar.classic text {
+	color: transparent;
 }
 
 progressbar.classic text.trough {
@@ -2980,7 +3065,7 @@ filechooser viewport.frame button.sidebar-button {
 	padding: 0;
 	border: 0;
 	border-radius: 0;
-	background: none;
+	background: transparent;
 	box-shadow: none;
 }
 

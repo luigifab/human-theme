@@ -3,7 +3,7 @@
 
 
 cd "$(dirname "$0")"
-version="2.4.0"
+version="2.5.0"
 
 
 mkdir builder
@@ -31,7 +31,7 @@ fi
 
 
 # create packages for Debian and Ubuntu and MX Linux
-for serie in experimental questing plucky oracular noble jammy focal bionic xenial trusty mx23; do
+for serie in experimental questing plucky oracular noble jammy focal bionic xenial trusty mx23 mx21; do
 
 	printf "\n\n#################################################################### $serie ##\n\n"
 	if [ $serie = "experimental" ]; then
@@ -59,6 +59,7 @@ for serie in experimental questing plucky oracular noble jammy focal bionic xeni
 	if [ $serie = "experimental" ]; then
 		mv debian/control.debian debian/control
 		mv debian/changelog.debian debian/changelog
+		rm -f debian/*.mx debian/*.debian debian/*.ubuntu
 		echo "=========================== buildpackage ($serie) =="
 		dpkg-buildpackage -us -uc
 	else
@@ -85,7 +86,6 @@ for serie in experimental questing plucky oracular noble jammy focal bionic xeni
 		elif [ $serie = "trusty" ]; then
 			mv debian/control.ubuntu debian/control
 			sed -i 's/dh $@/dh $@ --with autotools_dev/g' debian/rules
-			sed -i 's/override_dh_update_autotools_config/override_dh_autotools-dev_updateconfig/g' debian/rules
 			sed -i 's/debhelper-compat (= 13)/debhelper (>= 9), autotools-dev/g' debian/control
 			sed -i ':a;N;$!ba;s/Rules-Requires-Root: no\n//g' debian/control
 			echo 9 > debian/compat
@@ -106,20 +106,22 @@ for serie in experimental questing plucky oracular noble jammy focal bionic xeni
 		echo "=========================== buildpackage ($serie) =="
 		dpkg-buildpackage -us -uc -ui -d -S
 	fi
-	echo "=========================== debsign ($serie) =="
 	cd ..
 
 	if [ $serie = "experimental" ]; then
-		debsign human-theme-gtk_$version*.changes
 		echo "=========================== lintian ($serie) =="
 		lintian -EviIL +pedantic human-theme-gtk_$version*.changes
+		rm *amd64.changes
 	elif [ $serie = "unstable" ]; then
+		echo "=========================== debsign ($serie) =="
 		debsign human-theme-gtk*$version-*_source.changes
 	else
+		echo "=========================== debsign ($serie) =="
 		debsign human-theme-gtk*$version*$serie*source.changes
 	fi
 	cd ..
 done
+
 
 printf "\n\n"
 ls -dlth "$PWD/"builder/*.deb "$PWD/"builder/*.changes

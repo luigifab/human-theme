@@ -40,7 +40,7 @@ textview text {
 rubberband,
 .rubberband,
 .rubberband.background,
-XfdesktopIconView.view .rubberband {
+XfdesktopIconView.rubberband {
 	border-color: alpha(@theme_selected_bg, 0.8);
 	background: alpha(@theme_selected_bg, 0.4);
 }
@@ -70,6 +70,7 @@ button:hover image {
 	-gtk-icon-filter: brightness(1.2);
 }
 
+page-thumbnail,
 paper {
 	border: 1px solid black;
 	background: white;
@@ -79,15 +80,19 @@ box.dialog-vbox {
 	margin: 2px 2px 0;
 }
 
-/* --- csd (solid-csd without compositor, csd with compositor) --- */
+/* --- window (title & border) -- (solid-csd without compositor, csd with compositor, ssd with muffin/mutter) --- */
 /* window or dialog / with or without compositor / .titlebutton.icon .titlebutton.appmenu */
+/* solid-csd + ssd + csd because headerbar can also be used with window decorator */
 
 .background.csd,
-.background.csd headerbar {
+.background.csd headerbar,
+.background.ssd,
+.background.ssd headerbar {
 	border-radius: 7px 7px 0 0;
 }
 
 .background.csd,
+.background.ssd,
 .background.solid-csd {
 	padding: 3px;
 	border: 1px solid #6F6358; /* @todo metacity */
@@ -101,7 +106,8 @@ box.dialog-vbox {
 		inset 0 -1px shade(@theme_bg, 0.88); /* bottom */
 }
 
-.background.csd.popup {
+.background.csd.popup,
+.background.ssd.popup {
 	/* menu */
 	padding: 0;
 	border: 0;
@@ -111,6 +117,7 @@ box.dialog-vbox {
 }
 
 .background.csd headerbar,
+.background.ssd headerbar,
 .background.solid-csd headerbar {
 	margin: -3px -4px 0;
 	padding: 0;
@@ -127,12 +134,14 @@ box.dialog-vbox {
 }
 
 .background.csd headerbar image,
+.background.ssd headerbar image,
 .background.solid-csd headerbar image {
 	/* -gtk-icon-transform: scale(0.75); */
 	-gtk-icon-style: symbolic;
 }
 
 .background.csd headerbar label.title,
+.background.ssd headerbar label.title,
 .background.solid-csd headerbar label.title {
 	padding-top: 2px;
 	font-weight: bold;
@@ -146,6 +155,14 @@ box.dialog-vbox {
 .background.csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:focus,
 .background.csd headerbar button:not(.minimize):not(.maximize):not(.close):active:focus,
 .background.csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active:focus,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close),
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):hover,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):active,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):focus,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):hover:focus,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):active:focus,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active:focus,
 .background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close),
 .background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):hover,
 .background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):active,
@@ -157,7 +174,7 @@ box.dialog-vbox {
 	/* ChatGPT made the list */
 	color: @theme_selected_fg;
 	border: 1px solid transparent;
-	background: none;
+	background: transparent;
 	box-shadow: none;
 	outline: 0;
 }
@@ -170,6 +187,14 @@ box.dialog-vbox {
 .background.csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:focus:checked,
 .background.csd headerbar button:not(.minimize):not(.maximize):not(.close):active:focus:checked,
 .background.csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active:focus:checked,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):checked,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):hover:checked,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):active:checked,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):focus:checked,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active:checked,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):hover:focus:checked,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):active:focus:checked,
+.background.ssd headerbar button:not(.minimize):not(.maximize):not(.close):hover:active:focus:checked,
 .background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):checked,
 .background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):hover:checked,
 .background.solid-csd headerbar button:not(.minimize):not(.maximize):not(.close):active:checked,
@@ -188,6 +213,8 @@ box.dialog-vbox {
 
 .background.csd headerbar button,
 .background.csd headerbar button.toggle,
+.background.ssd headerbar button,
+.background.ssd headerbar button.toggle,
 .background.solid-csd headerbar button,
 .background.solid-csd headerbar button.toggle {
 	margin: 1px 3px;
@@ -196,22 +223,26 @@ box.dialog-vbox {
 }
 
 .background.csd headerbar button label,
+.background.ssd headerbar button label,
 .background.solid-csd headerbar button label {
 	margin: 1px 0 -1px;
 	padding: 0;
 }
 
 .background.csd headerbar image.app-icon,
+.background.ssd headerbar image.app-icon,
 .background.solid-csd headerbar image.app-icon {
 	margin: 0 6px; /* with gtk4-classic (appearance__appicon_headerbar.patch) */
 }
 
 .background.csd headerbar windowcontrols,
+.background.ssd headerbar windowcontrols,
 .background.solid-csd headerbar windowcontrols {
 	margin: 2px 3px;
 }
 
 .background.csd headerbar windowcontrols button,
+.background.ssd headerbar windowcontrols button,
 .background.solid-csd headerbar windowcontrols button {
 	margin: 0 2px;
 	padding: 0;
@@ -236,6 +267,7 @@ box.dialog-vbox {
 }
 
 .background.csd headerbar windowcontrols button:hover,
+.background.ssd headerbar windowcontrols button:hover,
 .background.solid-csd headerbar windowcontrols button:hover {
 	/* <draw_ops name="button_bg_prelight"> */
 	border: 1px solid shade(@theme_selected_bg, 0.6);
@@ -243,6 +275,7 @@ box.dialog-vbox {
 }
 
 .background.csd headerbar windowcontrols button:active,
+.background.ssd headerbar windowcontrols button:active,
 .background.solid-csd headerbar windowcontrols button:active {
 	/* <draw_ops name="button_bg_pressed"> border outline */
 	border: 1px solid shade(@theme_selected_bg, 0.7);
@@ -252,9 +285,10 @@ box.dialog-vbox {
 		shade(@theme_selected_bg, 0.9));
 }
 
-/* --- csd backdrop --- */
+/* --- window (title & border) backdrop --- */
 
 .background.csd:backdrop,
+.background.ssd:backdrop,
 .background.solid-csd:backdrop {
 	border-color: shade(@theme_bg, 0.55);
 	/* BEVEL UNFOCUSED / 3d beveled frame */
@@ -265,6 +299,7 @@ box.dialog-vbox {
 }
 
 .background.csd:backdrop headerbar,
+.background.ssd:backdrop headerbar,
 .background.solid-csd:backdrop headerbar {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 	/* <draw_ops name="bevel_unfocused"> rectangle */
@@ -278,11 +313,13 @@ box.dialog-vbox {
 }
 
 .background.csd:backdrop headerbar button:not(.minimize):not(.maximize):not(.close),
+.background.ssd:backdrop headerbar button:not(.minimize):not(.maximize):not(.close),
 .background.solid-csd:backdrop headerbar button:not(.minimize):not(.maximize):not(.close) {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 }
 
 .background.csd:backdrop headerbar button:not(.minimize):not(.maximize):not(.close):checked,
+.background.ssd:backdrop headerbar button:not(.minimize):not(.maximize):not(.close):checked,
 .background.solid-csd:backdrop headerbar button:not(.minimize):not(.maximize):not(.close):checked {
 	/* same as close button */
 	color: mix(@theme_fg, @theme_bg, 0.45);
@@ -295,6 +332,7 @@ box.dialog-vbox {
 }
 
 .background.csd:backdrop headerbar windowcontrols button,
+.background.ssd:backdrop headerbar windowcontrols button,
 .background.solid-csd:backdrop headerbar windowcontrols button {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 	border: 1px solid shade(@theme_bg, 0.6);
@@ -316,42 +354,37 @@ box.dialog-vbox {
 }
 
 .background.csd:backdrop headerbar windowcontrols button:hover,
+.background.ssd:backdrop headerbar windowcontrols button:hover,
 .background.solid-csd:backdrop headerbar windowcontrols button:hover {
 	/* @todo */
 }
 
-/* --- csd maximized --- */
+/* --- window (title & border) maximized --- */
 
 .background.csd.maximized,
+.background.ssd.maximized,
 .background.solid-csd.maximized {
 	padding: 0;
 	border: 0;
+	border-bottom: 1px solid #463731; /* @todo metacity */
 	border-radius: 0;
 	box-shadow: none;
 }
 
-.background.csd.maximized,
-.background.csd.maximized headerbar {
-	border-radius: 0;
+.background.csd.maximized:backdrop,
+.background.ssd.maximized:backdrop,
+.background.solid-csd.maximized:backdrop {
+	border-bottom-color: shade(@theme_bg, 0.55);
 }
 
 .background.csd.maximized headerbar,
+.background.ssd.maximized headerbar,
 .background.solid-csd.maximized headerbar {
 	margin: 0 -3px 0;
 	border-radius: 0;
 }
 
-.background.csd.maximized statusbar,
-.background.solid-csd.maximized statusbar {
-	border-bottom: 1px solid #463731; /* @todo metacity */
-}
-
-.background.csd.maximized:backdrop statusbar,
-.background.solid-csd.maximized:backdrop statusbar {
-	border-bottom-color: shade(@theme_bg, 0.55);
-}
-
-/* --- text/images disabled --- */
+/* --- text/image disabled --- */
 
 *:disabled,
 .link > label:disabled {
@@ -416,6 +449,7 @@ arrow.right {
 	-gtk-icon-source: -gtk-recolor(url("img/go-right-symbolic.svg"));
 }
 
+dropdown button arrow,
 combobox button arrow,
 arrow.bottom {
 	-gtk-icon-source: -gtk-recolor(url("img/go-down-symbolic.svg"));
@@ -458,6 +492,7 @@ frame {
 		inset 1px 1px alpha(@frame_border, 0.17);
 }
 
+box.tr-pad-large frame, /* transmission preferences */
 frame.flat {
 	border: 0;
 	border-radius: 0;
@@ -615,13 +650,13 @@ button:disabled, switch:disabled {
 
 button.flat {
 	border-color: transparent;
-	background: none;
+	background: transparent;
 	box-shadow: none;
 }
 
 button.flat:disabled {
 	border-color: transparent;
-	background: none;
+	background: transparent;
 	opacity: 0.3; /* @todo -> .flat.image */
 }
 
@@ -783,6 +818,7 @@ combobox button:dir(rtl):not(:only-child) {
 	padding: 4px 5px 4px 4px;
 }
 
+dropdown button arrow,
 combobox button arrow {
 	min-width: 16px;
 	min-height: 16px;
@@ -795,6 +831,10 @@ combobox button cellview {
 
 combobox button cellview + arrow {
 	margin-left: 3px;
+}
+
+dropdown button stack {
+	border: 0;
 }
 
 /* --- check button --- */
@@ -1158,7 +1198,7 @@ box.primary-toolbar button:not(.toggle):not(:hover),
 box.primary-toolbar button.toggle:not(:checked):not(:hover) {
 	/* simulate .flat */
 	border-color: transparent;
-	background: none;
+	background: transparent;
 	box-shadow: none;
 }
 
@@ -2181,6 +2221,10 @@ statusbar progressbar.horizontal trough progress {
 	min-height: 14px;
 }
 
+.maximized statusbar progressbar.horizontal {
+	margin-top: 0;
+}
+
 /* --- progress bar - with gtk4-classic (appearance__progress_text.patch) when GTK_PROGRESS_TEXT_INSIDE=1 --- */
 
 progressbar.classic.vertical text,
@@ -2215,7 +2259,7 @@ statusbar progressbar.classic.horizontal text {
 }
 
 progressbar.classic text {
-	opacity: 0;
+	color: transparent;
 }
 
 progressbar.classic text.trough {
@@ -2906,6 +2950,7 @@ treeview.view.image:disabled {
 
 /* --- open/save/print dialog --- */
 
+.background.dialog.print,
 filechooser {
 	padding: 10px 10px 3px;
 }
@@ -2914,16 +2959,7 @@ filechooser placessidebar + separator {
 	padding: 0 1px;
 }
 
-printdialog actionbar {
-	padding-top: 5px;
-}
-
-printdialog box.view {
-	padding: 11px 12px;
-}
-
-filechooser box.view,
-printdialog box.view {
+filechooser box.view {
 	background: @theme_bg;
 }
 
@@ -2932,21 +2968,16 @@ filechooser ~ .dialog-action-box {
 	padding: 0 6px 5px;
 }
 
-printdialog .dialog-action-box {
-	margin-top: 10px;
+.background.dialog.print tab label {
+	margin-bottom: -1px; /* @todo */
 }
 
-printdialog .dialog-action-area {
-	margin: -5px;
-}
-
-printdialog stack grid.vertical {
-	color: @theme_text; /* to fix white color */
-}
-
+.background.dialog.print grid + scrolledwindow,
+.background.dialog.print grid + scrolledwindow viewport,
+.background.dialog.print grid + scrolledwindow + scrolledwindow,
+.background.dialog.print grid + scrolledwindow + scrolledwindow viewport,
 filechooser scrolledwindow viewport,
-filechooser pathbar scrolledwindow,
-printdialog scrolledwindow viewport {
+filechooser pathbar scrolledwindow {
 	border: 0; /* avoid dual border */
 }
 
@@ -2988,7 +3019,7 @@ calendar header button.image-button:hover,
 calendar header button.image-button:active {
 	padding: 0;
 	border: 0;
-	background: none;
+	background: transparent;
 	box-shadow: none;
 }
 
@@ -3051,7 +3082,7 @@ combobox button {
 	padding-bottom: 4px;
 }
 
-combobox button arrow {
+combobox button cellview + arrow {
 	padding-top: 1px;
 }
 

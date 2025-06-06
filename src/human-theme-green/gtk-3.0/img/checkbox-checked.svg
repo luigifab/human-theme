@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
 <!--rect x="1" y="1" width="14" height="14" rx="2" fill="todo"/-->
-<rect x="2" y="2" width="12" height="12" rx="2" fill="#919a7e" class="theme_checkradio2"/>
-<rect x="3" y="3" width="10" height="10" rx="2" fill="#b9c0a9" class="theme_checkradio3"/>
+<rect x="2" y="2" width="12" height="12" rx="2" fill="#919A7E" class="theme_checkradio2"/>
+<rect x="3" y="3" width="10" height="10" rx="2" fill="#B9C0A9" class="theme_checkradio3"/>
 <path d="M2.65 8 L6.75 13 L9.25 13 L16 2.95 L15 1.9 L8 8.29 L4.97 5.25Z" fill="#e0b5a3"/>
 <path d="M3.95 8 L7.235 12 L8.745 12 L15.35 3.05 L15 2.7 L8 9.7 L5.03 6.73Z" fill="#1A1A1A" class="theme_text"/>
 </svg>

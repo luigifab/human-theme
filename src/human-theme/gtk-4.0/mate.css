@@ -33,48 +33,4 @@ menuitem image { border:1px solid red; background:orange; }
 menuitem radio { border:1px solid red; background:orange; }
 menuitem check { border:1px solid red; background:orange; } */
 
-/* --- panel --- */
-
-.mate-panel-menu-bar,
-.mate-panel-menu-bar menubar,
-.mate-panel-menu-bar button,
-#PanelPlug,
-#PanelPlug button,
-#PanelApplet,
-#PanelApplet button,
-PanelApplet,
-PanelApplet button,
-PanelToplevel.background {
-	color: @theme_fg; /* mainly for mate keyboard layout indicator applet, but apply almost everywhere */
-	border: 0;
-	background: @theme_bg;
-}
-
-.mate-panel-menu-bar menubar {
-	margin: 0 8px 0 0;
-	padding: 0;
-}
-
-.mate-panel-menu-bar menubar > menuitem > image {
-	margin: 0 1px;
-}
-
-.mate-panel-menu-bar menubar > item {
-	margin: 0;
-	padding: 3px 5px 3px 9px;
-	border-radius: 0;
-}
-
-.mate-panel-menu-bar menubar > item:dir(rtl) {
-	padding: 3px 9px 3px 5px;
-}
-
-.mate-panel-menu-bar item > box > item {
-	margin: 0 -5px 0 -5px;
-	padding: 0 3px 0 10px;
-	border: 0;
-}
-
-.mate-panel-menu-bar item > box > item check {
-	margin-left: -1px;
-}
+/* --- no gtk4 apps --- */

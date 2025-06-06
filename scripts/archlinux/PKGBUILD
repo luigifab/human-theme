@@ -1,5 +1,5 @@
 pkgname=human-theme-gtk
-pkgver=2.4.0
+pkgver=2.5.0
 pkgrel=1
 pkgdesc="Human theme for GTK"
 arch=('any')

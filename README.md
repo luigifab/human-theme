@@ -1,7 +1,8 @@
 # Human theme
 
-This theme works with: **GTK 2.24** *(with murrine)*, **GTK 3.24**, and **GTK 4.12..4.19**.\
-It is mainly intended for MATE and Xfce desktop environments.
+This theme works with **GTK 2.24** *(with murrine)* & **GTK 3.24** & **GTK 4.12..4.19**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic.
+
+It is mainly intended for **MATE** desktop environment, it's not too bad with **Xfce**, it's experimental with **Cinnamon**.
 
 ## Screenshots
 
@@ -74,24 +75,24 @@ GTK 4.12..4.18-classic RTL (Pango 1.56)\
 [<img alt="Preview with GTK 4 - RTL - Green variation - Main window with menu" src="images/thumbs/gtk4-rtl-green-menu.png?raw=true" width="200" />](images/gtk4-rtl-green-menu.png?raw=true)
 
 GTK 5.0 (Pango 1.56)\
-_GtkWindow will be probably deprecated... lol_
+_GtkWindow will likely be deprecated... lol_
 
 Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended).
 
 ## Installation
 
-#### 🆕 Before you begin 🆕
+For MATE, the following packages no longer install the *metacity/marco* theme (ClearlooksRe), because it is provided by *marco* package.
 
-To meet the truth (this is not required):
+#### Before you begin
+
+To meet the truth (not required, if you can't/won't, no worries, but the truth will be far):
 - remove [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd)
 - install gtk3-classic & gtk4-classic
 - use Pango 1.42- or 1.51+
 
-For Debian Testing, I provide a repository for [gtk3-classic](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) **with extra patches** and for [gtk4-classic](https://build.opensuse.org/package/show/home:luigifab/gtk4-classic), it also includes [mate-settings-daemon 1.26](https://build.opensuse.org/package/show/home:luigifab/mate-notification) with a patch to customize notifications from theme.
+For **Debian Testing**, I provide a repository for [gtk3-classic](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) and for [gtk4-classic](https://build.opensuse.org/package/show/home:luigifab/gtk4-classic), it also includes [mate-settings-daemon 1.26](https://build.opensuse.org/package/show/home:luigifab/mate-notification) with a patch to customize notifications from theme.
 
-If you can't/won't, no worries, but the truth will be far...
-
-Note that following packages doesn't install _metacity/marco_ theme anymore, because it is provided by _marco_ package (ClearlooksRe).
+For **Ubuntu**, I also provide a repository for [gtk3-classic & gtk4-classic](https://launchpad.net/~luigifab/+archive/ubuntu/gtk-classic).
 
 #### Installation for Debian, Devuan, Ubuntu, Trisquel, Linux Mint, MX Linux
 
@@ -118,13 +119,13 @@ Note that following packages doesn't install _metacity/marco_ theme anymore, bec
 * Run:
 ```bash
 # PPA: https://launchpad.net/~luigifab/+archive/ubuntu/packages
-# with Debian 12+ you can use mantic+ instead of focal (https://unix.stackexchange.com/a/669008/364800)
-# for Debian you can use bionic for buster, focal for bullseye, oracular or plucky for bookworm and trixie
-# for Devuan you can use bionic for beowulf, focal for chimaera, noble for daedalus, oracular or plucky for excalibur and ceres
+# with Debian 12+/Bookworm+ you can use mantic+ instead of focal (https://unix.stackexchange.com/a/669008/364800)
+# for Debian you can use focal for buster, jammy for bullseye, oracular or noble for bookworm, questing or plucky for trixie
+# for Devuan you can use focal for beowulf, jammy for chimaera, oracular or noble for daedalus, questing or plucky for excalibur and ceres
 # for Trisquel you can use focal for nabia, jammy for aramo
-# for Linux Mint you can use focal for 20.x and 5, jammy for 21.x, noble for 22.x and 6, oracular or plucky for 7
-# for MX Linux you can use focal for 19.x and 21.x, noble for 23.x
-# for Kali Linux you can use oracular or plucky
+# for Linux Mint you can use focal for 20.x and 4/debbie, jammy for 21.x and 5/elsie, noble for 22.x and 6/faye, questing or plucky for 7/gigi
+# for MX Linux you can use focal for 19.x, jammy for 21.x, oracular or noble for 23.x
+# for Kali Linux you can use questing or plucky
 
 sudo add-apt-repository ppa:luigifab/packages
 sudo apt update
@@ -156,8 +157,8 @@ pub   rsa4096 2020-10-31 [SC]
 
 #### Manual installation
 
-* Download archive and extract subdirectories in `~/.themes/`
-* Configure font rendering, GTK and QT, add in `/etc/environment` ([details](data/profile.sh)):
+* Download the archive and extract its subdirectories into `~/.themes/`
+* Configure font rendering, GTK and Qt settings, by adding the following to `/etc/environment` ([details](data/profile.sh)):
 ```
 FREETYPE_PROPERTIES="truetype:interpreter-version=35"
 QT_QPA_PLATFORMTHEME=gtk2
@@ -168,48 +169,71 @@ GTK_USE_IEC_UNITS=1
 GTK_FOCUS_VISIBLE=1
 GTK_PROGRESS_TEXT_INSIDE=1
 GTK_TREEVIEW_LINES=0
+GTK_ENLARGE_SCROLLBAR=1
 ```
-* Install icons and cursors themes: `gnome-icon-theme` or `mate-icon-theme` + `dmz-cursor-theme`
+* Install the icons and cursors themes: `gnome-icon-theme` or `mate-icon-theme` + `dmz-cursor-theme`
 * Install package for GTK 2 apps: `gtk2-engines-murrine` or `gtk2-engine-murrine` or `gtk2-murrine-engine` or `gtk-engine-murrine` or `gtk-murrine-engine` or `murrine` or similar
-* Install package for QT 5 apps: `qt5-gtk2-platformtheme` + `qt5-gtk-platformtheme` or similar
-* Install package for QT 6 apps: `qt6-gtk-platformtheme` or similar
+* Install package for Qt 5 apps: `qt5-gtk2-platformtheme` + `qt5-gtk-platformtheme` or similar
+* Install package for Qt 6 apps: `qt6-gtk-platformtheme` or similar
 * Restart your session
 
 ## Configuration
 
 For **MATE** desktop:
-* Go to: *System / Preferences / Appearance*, or run: `mate-appearance-properties`
-* Then select the *Human* theme
-* Go to: *System / Preferences / Windows*, or run: `mate-window-properties`
-* Then disable software compositing from last tab (or enable it, as you want)
-* Go to: *System / Preferences / Notifications*, or run: `mate-notification-properties`
-* Then select the *Coco* or *Default* theme
+* Go to: *System / Preferences / Appearance*, or run: `mate-appearance-properties`\
+  Then select the *Human* theme and update fonts.
+* Go to: *System / Preferences / Windows*, or run: `mate-window-properties`\
+  Then disable software compositing from last tab (or enable it, as you want).
+* Go to: *System / Preferences / Notifications*, or run: `mate-notification-properties`\
+  Then select the *Coco* or *Default* theme.
+* Go to: *panel preferences*\
+  Then set panel height to 23px.
 
 For **Xfce** desktop:
-* Go to: *Applications / Settings / Appearance*, or run: `xfce4-appearance-settings`
-* Then select the *Human* theme
-* Go to: *Applications / Settings / Window Manager*, or run: `xfwm4-settings`
-* Then select the *Human* theme
+* Go to: *Applications / Settings / Appearance*, or run: `xfce4-appearance-settings`\
+  Then select the *Human* theme and update fonts.
+* Go to: *Applications / Settings / Window Manager*, or run: `xfwm4-settings`\
+  Then select the *Human* theme and update fonts.
+* Go to: *Applications / Settings / Window Manager Tweaks*, or run: `xfwm4-tweaks-settings`\
+  Then disable software compositing from last tab (or enable it, as you want).
+* Go to: *Applications / Settings / Mouse and Touchpad*, or run: `xfce4-mouse-settings`\
+  Then select the *DMZ White* theme from last tab.
+* Go to: *panel preferences*\
+  Then set panel height to 22px, panel icons sizes to 16px or automatic.
+
+For **Cinnamon** desktop:
+* Go to: *Menu / Preferences / Themes*, or run: `cinnamon-settings themes`\
+  Click on *Advanced settings*\
+  Then select the *Human* theme for applications and desktop.\
+  And select the *DMZ White* theme for mouse.
+* Go to: *Menu / Preferences / Fonts*, or run: `cinnamon-settings fonts`\
+  Then update fonts.
+* Go to: *main menu preferences* and *panel preferences*\
+  Then set panel height to 25px/23px, panel icons sizes to 16px, menu icons sizes to 22px 22px 32px.
 
 Fonts:
 * *DejaVu Sans Book*, 10
 * *DejaVu Sans Bold*, 10
 * *DejaVu Sans Mono Book*, 10
+* *Best shapes* or *Medium hinting* for fonts rendering (anti-aliasing)
 
 Icons:
 * *gnome* or *mate*
 
 Cursors:
-* *DMZ white*
+* *DMZ white*, 24
 
-## Customize
+Desktop panels:
+* 23px for panel height, 16px or automatic for icons size
 
-Use `~/.config/gtk-3.0/gtk.css` and `~/.config/gtk-4.0/gtk.css` files.
+Extra configuration for cursors:
+* Run `sudo update-alternatives --config x-cursor-theme` and select again *DMZ white*
 
-## Firefox/Thunderbird/Chromium
+## Known issues
 
-For Firefox and Thunderbird and Chromium, if font rendering is bad, try this:
+#### Firefox/Thunderbird/Chromium
 
+If font rendering is bad, try this:
 ```bash
 cd /etc/fonts/conf.d/
 sudo rm 10-hinting-slight.conf # /usr/share/fontconfig/conf.avail/10-hinting-slight.conf
@@ -218,10 +242,9 @@ sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-full.conf
 
 For classic menu bar and menu items on [Firefox 46+](https://www.mozilla.org/firefox) and [Thunderbird 46+](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
 
-## GTK 4
+#### GTK 4
 
-For GTK 4, if font rendering is bad, try to add in `~/.config/gtk-4.0/settings.ini`:
-
+If font rendering is bad, try to add in `~/.config/gtk-4.0/settings.ini`:
 ```
 [Settings]
 gtk-font-rendering=manual
@@ -231,7 +254,37 @@ gtk-xft-antialias=0
 gtk-xft-hinting=1
 ```
 
+#### Xfce panels
+
+Unfortunately, the border cannot be removed, see [forum](https://forum.xfce.org/viewtopic.php?id=15112).
+
+When a window is maximized, window bottom border color is wrong and there is an offset of 1px.
+
+#### Windows shadow
+
+With window compositor, the window/dialog/menu shadow can't be removed or configured.
+
+## Customize
+
+Use `~/.config/gtk-3.0/gtk.css` and `~/.config/gtk-4.0/gtk.css` files.
+
 ## Dev
+
+To restore notifications from `nm-applet`, run:
+```bash
+gsettings reset org.gnome.nm-applet disable-connected-notifications
+gsettings reset org.gnome.nm-applet disable-disconnected-notifications
+gsettings reset org.gnome.nm-applet disable-vpn-notifications
+gsettings reset org.gnome.nm-applet disable-wifi-create
+gsettings reset org.gnome.nm-applet suppress-wireless-networks-available
+gsettings reset org.gnome.nm-applet show-applet
+```
+
+To enable [GtkInspector](https://developer.gnome.org/documentation/tools/inspector.html) via `Ctrl+Shift+I` / `Ctrl+Shift+D`, run:
+```bash
+gsettings set org.gtk.Settings.Debug enable-inspector-keybinding true
+gsettings set org.gtk.gtk4.Settings.Debug enable-inspector-keybinding true
+```
 
 Run [AWF](https://github.com/luigifab/awf-extended) with screenshot on theme reload:
 ```bash
@@ -256,11 +309,11 @@ composite dif.png 2.png dif.png
 eom dif.png &
 ```
 
-Run `svg.sh` to update SVG images. See also [technical informations](https://github.com/mk-fg/clearlooks-phenix-humanity).
+Run `svg.sh` and `cinnamon.sh` to update colors. See also [technical informations](https://github.com/mk-fg/clearlooks-phenix-humanity). For any issue and pull request, please add before/after screenshots.
 
 ## Copyright
 
-- Current version: 2.4.0 (05/05/2025)
+- Current version: 2.5.0 (06/06/2025)
 - Compatibility: GTK 2.24 / 3.24 / 4.12..4.19
 - Links: [luigifab.fr](https://www.luigifab.fr/gtk/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
