@@ -47,7 +47,7 @@ XfdesktopIconView.rubberband {
 
 .background {
 	color: @theme_fg;
-	background: @theme_bg;
+	background-color: @theme_bg;
 }
 
 link,
@@ -83,6 +83,18 @@ paper {
 /* with gtk3-classic, with GTK_CSD=0/1 with GtkInspector = csd + .background.solid-csd/.csd headerbar */
 /* with stupid muffin/mutter, :backdrop for the last element only */
 /* solid-csd + ssd + csd because headerbar can also be used with window decorator */
+
+dialog.background.csd .dialog-vbox.vertical,
+dialog.background.ssd .dialog-vbox.vertical,
+dialog.background.solid-csd .dialog-vbox.vertical {
+	margin-bottom: 9px;
+}
+
+dialog.background.csd .dialog-vbox.vertical .dialog-action-area,
+dialog.background.ssd .dialog-vbox.vertical .dialog-action-area,
+dialog.background.solid-csd .dialog-vbox.vertical .dialog-action-area {
+	margin-bottom: -9px;
+}
 
 .background.csd decoration,
 .background.csd headerbar,
@@ -122,6 +134,7 @@ paper {
 .background.solid-csd headerbar {
 	margin: -3px -4px 0;
 	padding: 0 3px;
+	min-height: 22px;
 	/* border-radius: 8px 8px 0 0; */
 	color: @theme_selected_fg;
 	/* <draw_ops name="bevel"> titlebar outline */
@@ -152,11 +165,23 @@ paper {
 	-gtk-icon-style: symbolic;
 }
 
+.background.csd headerbar entry,
+.background.ssd headerbar entry,
+.background.solid-csd headerbar entry {
+	box-shadow:none; border:0; margin:4px 0; font-size:85%; /* @todo */
+}
+
 .background.csd headerbar label.title,
 .background.ssd headerbar label.title,
 .background.solid-csd headerbar label.title {
 	padding-top: 2px;
 	font-weight: bold;
+}
+
+.background.csd headerbar label.subtitle,
+.background.ssd headerbar label.subtitle,
+.background.solid-csd headerbar label.subtitle {
+	font-size: 85%;
 }
 
 .background.csd headerbar button:not(.titlebutton),
@@ -741,7 +766,7 @@ button, switch {
 	box-shadow:
 		-1px -1px alpha(@button_border, 0.13),
 		 1px  1px alpha(@button_border, 0.13),
-		inset 1px 1px alpha(@button_border, 0.148); /* E8E0DA @todo */
+		inset 1px 1px alpha(@button_border, 0.148); /* @todo E8E0DA */
 }
 
 button:disabled, switch:disabled {
@@ -861,6 +886,11 @@ entry image.right {
 	margin-left: 4px;
 }
 
+entry scrolledwindow {
+	/* suggestions/autocomplete list */
+	border: 0;
+}
+
 entry:focus {
 	border-color: @theme_outline;
 }
@@ -873,11 +903,6 @@ entry:disabled {
 		-1px -1px alpha(@entry_border, 0.09),
 		 1px  1px alpha(lighter(@theme_bg), 0.418),
 		inset 1px 1px alpha(@entry_border_disabled, 0.07);
-}
-
-entry menuitem {
-	font-size: initial;
-	font-family: initial;
 }
 
 /* --- combo box --- */
@@ -947,7 +972,7 @@ checkbutton:focus label, radiobutton:focus label {
 }
 
 checkbutton:hover:focus label, radiobutton:hover:focus label {
-	/* border-color: @checkbutton_focus_hover_border; @todo */
+	/* @todo border-color: @checkbutton_focus_hover_border; */
 	background: @checkbutton_focus_hover_bg;
 }
 
@@ -1196,9 +1221,7 @@ button.toggle:checked:disabled,
 headerbar button:active,
 headerbar button:active:hover,
 headerbar button:checked:focus,
-#tasklist-button:checked box,
-.mate-panel-menu-bar #clock-applet-button:checked > box,
-#window-menu-applet-button wnck-selector > menuitem:hover > image {
+#tasklist-button:checked box {
 	border: 1px solid @button_border;
 	background:
 		radial-gradient(
@@ -1292,8 +1315,8 @@ box.primary-toolbar:dir(rtl) {
 	padding: 1px 4px 1px 2px;
 }
 
-toolbar separator,
-box.primary-toolbar separator {
+toolbar > separator,
+box.primary-toolbar > separator {
 	margin: 7px 5px 8px;
 	border-left: 1px solid @toolbar_separator_dark;
 	border-right: 1px solid @toolbar_separator_lite;
@@ -1325,12 +1348,12 @@ menubar menuitem:dir(rtl) {
 	padding: 2px 8px 2px 7px;
 }
 
-menubar menuitem:hover,
-.xfce4-panel #applicationmenu-button:checked {
+menubar menuitem:hover {
+	/* this is the menuitem hover */
 	/* :hover is like :selected */
 	color: @menuitem_hover;
 	border-color: @menuitem_hover_border;
-	border-bottom: 0; /* it's not a problem - @todo this is with only one menuitem in menubar */
+	border-bottom-color: @menuitem_hover_border_bottom;
 	background:
 		radial-gradient(ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
@@ -1350,6 +1373,7 @@ popover > box {
 }
 
 popover,
+popover.background.menu,
 menu {
 	border: 1px solid @menu_border;
 	background: @menu_bg;
@@ -1371,6 +1395,7 @@ menu menuitem {
 
 popover modelbutton:hover,
 menu menuitem:hover {
+	/* this is the menuitem hover */
 	color: @menuitem_hover;
 	border: 1px solid @menuitem_hover_border;
 	border-radius: 2px;
@@ -1391,6 +1416,11 @@ menu menuitem label:dir(rtl) {
 }
 
 /* --- menu item elements --- */
+
+menu.context-menu {
+	font-size: initial;
+	font-family: initial;
+}
 
 menuitem.tearoff,
 menuitem.tearoff:dir(rtl) { /* awf-extended */
@@ -1422,19 +1452,19 @@ menuitem label:dir(rtl) {
 	margin: 0 -1px 0 0;
 }
 
+menuitem accelerator {
+	color: alpha(@theme_fg, 0.601); /* @todo #696764 instead of #696664 */
+}
+
 popover separator {
 	margin: 0 -6px;
 }
 
-menuitem accelerator {
-	color: alpha(@theme_fg, 0.601); /* #696764 instead of #696664 @todo */
-}
-
+box.horizontal menu > separator, /* when menu tearoffed */
 popover stack separator,
 textview menu separator,
-box.horizontal menu > separator, /* when menu tearoffed */
+menu separator,
 menuitem separator {
-	/* margin: 4px 6px 6px; */
 	margin: 4px 6px 3px;
 	border-top: 1px solid @menu_separator_dark;
 	border-bottom: 1px solid @menu_separator_lite;
@@ -1442,11 +1472,6 @@ menuitem separator {
 
 menuitem:disabled accelerator {
 	color: alpha(@insensitive_fg, 0.601);
-}
-
-textview menuitem {
-	font-size: initial;
-	font-family: initial;
 }
 
 menuitem:hover > box > label > accelerator, /* mate-calc 1.24 */
@@ -1481,7 +1506,7 @@ menuitem arrow.bottom {
 	min-height: 14px;
 	border: 1px solid @menu_border_arrow;
 	background: @menu_bg_arrow;
-	-gtk-icon-source: none; /* ratio is lost @todo */
+	-gtk-icon-source: none; /* @todo ratio is lost */
 }
 
 menuitem arrow.bottom {
@@ -2368,8 +2393,7 @@ progressbar.classic.horizontal trough progress {
 }
 
 progressbar.classic.vertical.full text {
-	/* to avoid extra width at 100% */
-	margin: 0 -1px;
+	margin: 0 -1px; /* to avoid extra width at 100% */
 }
 
 progressbar.classic.horizontal text {
@@ -2853,7 +2877,7 @@ treeview.view.odd:not(.trough):not(.progressbar) {
 	/* lol */
 	background: linear-gradient(to bottom, @theme_base, @theme_base);
 	border-right: 1px solid transparent;
-	border-image-source: repeating-linear-gradient(to bottom, @theme_base 0px, @theme_base 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-source: repeating-linear-gradient(to bottom, @theme_base 0, @theme_base 3px, #9f9f9f 3px, #9f9f9f 4px);
 	border-image-slice: 1;
 	border-image-repeat: repeat;
 }
@@ -2863,7 +2887,7 @@ treeview.view.even:not(.trough):not(.progressbar) {
 	/* lol */
 	background: linear-gradient(to bottom, #EEE, #EEE);
 	border-right: 1px solid transparent;
-	border-image-source: repeating-linear-gradient(to bottom, #EEE 0px, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-source: repeating-linear-gradient(to bottom, #EEE 0, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
 	border-image-slice: 1;
 	border-image-repeat: repeat;
 }
@@ -2872,14 +2896,14 @@ treeview.view.odd.sorted:not(.trough):not(.progressbar) {
 	background-color: #EEE; /* @todo */
 	/* lol */
 	background: linear-gradient(to bottom, #EEE, #EEE);
-	border-image-source: repeating-linear-gradient(to bottom, #EEE 0px, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-source: repeating-linear-gradient(to bottom, #EEE 0, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
 }
 
 treeview.view.even.sorted:not(.trough):not(.progressbar) {
 	background-color: #DDD; /* @todo */
 	/* lol */
 	background: linear-gradient(to bottom, #DDD, #DDD);
-	border-image-source: repeating-linear-gradient(to bottom, #DDD 0px, #DDD 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-source: repeating-linear-gradient(to bottom, #DDD 0, #DDD 3px, #9f9f9f 3px, #9f9f9f 4px);
 }
 
 treeview.view.odd.last:not(.trough):not(.progressbar),
@@ -2904,6 +2928,11 @@ treeview.view.odd.sorted:not(.trough):not(.progressbar):selected,
 treeview.view.even:not(.trough):not(.progressbar):selected,
 treeview.view.even.sorted:not(.trough):not(.progressbar):selected {
 	color: @theme_selected_fg;
+	border-image-source: repeating-linear-gradient(to bottom,
+		@theme_selected_bg 0,
+		@theme_selected_bg 3px,
+		#9f9f9f 3px,
+		#9f9f9f 4px);
 	background:
 		radial-gradient(ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
@@ -2913,11 +2942,6 @@ treeview.view.even.sorted:not(.trough):not(.progressbar):selected {
 			@menuitem_hover_glaze_mida 50%,
 			@menuitem_hover_glaze_midb 50%,
 			@menuitem_hover_glaze_bot);
-	border-image-source: repeating-linear-gradient(to bottom,
-		@theme_selected_bg 0px,
-		@theme_selected_bg 3px,
-		#9f9f9f 3px,
-		#9f9f9f 4px);
 }
 
 /* treeview.view:not(.trough):not(.progressbar):selected:not(:focus),
@@ -3010,7 +3034,11 @@ treeview.view.image:disabled {
 /* --- open/save/print dialog --- */
 
 filechooser {
-	padding: 12px 12px 3px;
+	padding: 12px 12px 4px;
+}
+
+filechooser placessidebar .sidebar-button {
+	margin-bottom: 0;
 }
 
 filechooser placessidebar + separator {
@@ -3031,16 +3059,8 @@ printdialog box.view {
 }
 
 filechooser ~ .dialog-action-box {
-	margin-top: 4px;
-	padding: 0 6px 5px;
-}
-
-printdialog .dialog-action-box {
-	margin-top: 10px;
-}
-
-printdialog .dialog-action-area {
-	margin: -5px;
+	margin-top: 3px;
+	padding: 0 6px 6px;
 }
 
 printdialog stack grid.vertical {
@@ -3050,6 +3070,11 @@ printdialog stack grid.vertical {
 filechooser placessidebar,
 filechooser scrolledwindow {
 	border: 1px solid @dialog_border;
+}
+
+filechooser entry scrolledwindow {
+	/* suggestions/autocomplete list */
+	border: 0;
 }
 
 filechooser scrolledwindow viewport,
@@ -3084,6 +3109,7 @@ filechooser .path-bar button.toggle label:dir(rtl) + image {
 /* --- calendar --- */
 
 calendar {
+	/* margin: 1px 0; not working */
 	padding: 1px;
 	border: 1px solid @frame_border;
 }

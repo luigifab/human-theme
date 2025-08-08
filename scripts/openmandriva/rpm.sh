@@ -3,7 +3,7 @@
 
 
 cd "$(dirname "$0")"
-version="2.5.0"
+version="2.6.0"
 
 
 mkdir -p builder builder/{BUILD,RPMS,SRPMS}

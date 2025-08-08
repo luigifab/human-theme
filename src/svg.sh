@@ -33,10 +33,10 @@ for f in */gtk-3.0/gtk.css; do
 
 	IFS=$'\n'
 	sedcmds=()
-	count=0
 	theme=$(basename "$(dirname "$(dirname "$f")")")
+	count=0
 
-	# find colors
+	# find colors from gtk.css
 	echo " computing colors..."
 	colors=$(grep 'define-color theme_' $f | grep -v \()
 	for color in $colors; do
@@ -47,9 +47,9 @@ for f in */gtk-3.0/gtk.css; do
 
 		# $color = keyword #FFF  or  keyword @xyz
 		# translate the color
-		if [[ "$keyword" == *"@see"* ]]; then
+		if [[ "$color" == *"@see"* ]]; then
 			continue
-		elif [[ "$keyword" == *"@todo"* ]]; then
+		elif [[ "$color" == *"@todo"* ]]; then
 			continue
 		elif [[ "$color" == *"@"* ]]; then
 			theAT="${color#* }"
@@ -70,7 +70,7 @@ for f in */gtk-3.0/gtk.css; do
 		sedcmds+=( -e "s/\"#[a-zA-Z0-9]+\" class=\""$class"\"/"$replace"/g")
 	done
 
-	# search and replace
+	# search and replace in svg files
 	echo " updating files..."
 	for svg in $svgs; do
 

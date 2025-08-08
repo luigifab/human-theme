@@ -59,6 +59,12 @@
 @import url("cinnamon.css");
 @import url("apps.css");
 
+/* terminal colors */
+vte-terminal {
+	color: white;
+	background-color: black;
+}
+
 /* special */
 @define-color slider_pattern_shade shade(@slider_pattern, 1.8);
 
@@ -78,7 +84,7 @@ treeview.view.even.sorted:not(.trough):not(.progressbar):selected:not(:focus) {
 			shade(@menuitem_hover_glaze_bot, 1.2));
 	/* url("img/treeview-separator.svg") */
 	border-image-source: repeating-linear-gradient(to bottom,
-		shade(@theme_selected_bg, 1.2) 0px,
+		shade(@theme_selected_bg, 1.2) 0,
 		shade(@theme_selected_bg, 1.2) 3px,
 		#9f9f9f 3px,
 		#9f9f9f 4px);

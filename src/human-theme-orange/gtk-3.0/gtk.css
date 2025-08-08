@@ -59,6 +59,12 @@
 @import url("cinnamon.css");
 @import url("apps.css");
 
+/* terminal colors */
+vte-terminal {
+	color: white;
+	background-color: black;
+}
+
 /* special */
 @define-color slider_pattern_shade shade(@slider_pattern, 0.6);
 

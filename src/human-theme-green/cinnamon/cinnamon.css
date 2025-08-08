@@ -27,30 +27,26 @@
 /* --- panel --- */
 
 #panel {
-	color: #000000; /* @theme_fg */
+	color: #000; /* @theme_fg */
 	border: 0;
-	background: #EDECEB; /* @theme_bg */
+	background-color: #EDECEB; /* @theme_bg */
 }
 
 
 #Tooltip {
 	padding: 4px 5px;
-	color: #000000; /* @theme_tooltip_fg */
+	color: #000; /* @theme_tooltip_fg */
 	border: 1px solid #ACC04C; /* @theme_tooltip_border */
-	background: #EAF5B5; /* @theme_tooltip_bg */
+	background-color: #EAF5B5; /* @theme_tooltip_bg */
 }
 
 .applet-box {
-	padding: 0 6px;
+	padding: 0 2px;
 	border: 1px solid transparent;
 }
 
-.applet-label {
-	padding: 0 4px;
-}
-
 .applet-box:checked {
-	padding: 0 6px;
+	padding: 0 2px;
 	color: #42453E; /* @menuitem_hover */
 	border: 1px solid #90987D; /* @menuitem_hover_border */
 	background:
@@ -68,25 +64,35 @@
 	background-gradient-end: #B2BAA2; /* @menuitem_hover_glaze_bot */
 }
 
+.applet-box .applet-label {
+	padding: 0 3px;
+}
+
+.applet-box .system-status-icon,
+.applet-box .applet-icon {
+	padding: 0 3px;
+}
+
 /* --- main menu applet --- */
 /* @see https://www.faqforge.com/linux/distributions/how-to-customize-basic-cinnamon-elements/ */
 
 .menu {
 	margin: 0;
+	background-color: #F3F2F2; /* @menu_bg */
 }
 
 .menu .menu-favorites-box:ltr {
 	margin-right: 10px;
 	padding: 4px;
-	border: 1px solid #B0ADAA; /* @menu_border */
 	border-radius: 4px;
+	background-color: #B0ADAA; /* @menu_border */
 }
 
 .menu .menu-favorites-box:rtl {
 	margin-left: 10px;
 	padding: 4px;
-	border: 1px solid #B0ADAA; /* @menu_border */
 	border-radius: 4px;
+	background-color: #B0ADAA; /* @menu_border */
 }
 
 .menu .menu-search-box {
@@ -103,7 +109,7 @@
 }
 
 .menu .menu-selected-app-box {
-	margin: 5px 8px 0 0;
+	margin: 8px 8px 0 0;
 	padding: 5px 2px 2px;
 	text-align: right;
 	border-top: 1px solid #AFACA9; /* @content_separator_dark */
@@ -174,12 +180,12 @@
 .popup-menu-content {
 	padding: 2px;
 	border: 1px solid #B0ADAA; /* @menu_border */
-	background: #F3F2F2; /* @menu_bg */
+	background-color: #F3F2F2; /* @menu_bg */
 }
 
 .popup-menu-item {
 	padding: 2px 7px 2px 8px;
-	color: #000000; /* @theme_fg */
+	color: #000; /* @theme_fg */
 	border: 1px solid transparent;
 	border-radius: 2px;
 }
@@ -210,4 +216,44 @@
 .popup-menu-icon {
 	margin-right: 5px;
 	icon-size: 16px;
+}
+
+/* --- calendar applet --- */
+
+.calendar {
+	padding: 4px;
+	border: 1px solid #BAB7B4; /* @frame_border */
+	background-color: #FFF; /* @theme_base */
+	spacing-rows: 0;
+	spacing-columns: 0;
+}
+
+.calendar-day-base {
+	color: #1A1A1A; /* @theme_text */
+}
+
+.calendar-nonwork-day {
+
+}
+
+.calendar-other-month-day {
+	color: #CFCFCF; /* @todo */
+	/* opacity: 0.2; not working */
+}
+
+.calendar-day-heading,
+.calendar-week-number {
+	padding: 0 3px;
+	min-width: 23px;
+	color: #42453E; /* @theme_selected_fg */
+	background-color: #B9C0A9; /* @theme_selected_bg */
+}
+
+.calendar-today,
+.calendar-today:active,
+.calendar-today:focus,
+.calendar-today:hover {
+	font-weight: bold;
+	color: #42453E; /* @theme_selected_fg */
+	background-color: #B9C0A9; /* @theme_selected_bg */
 }

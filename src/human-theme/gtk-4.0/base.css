@@ -47,7 +47,7 @@ XfdesktopIconView.rubberband {
 
 .background {
 	color: @theme_fg;
-	background: @theme_bg;
+	background-color: @theme_bg;
 }
 
 link,
@@ -76,13 +76,38 @@ paper {
 	background: white;
 }
 
-box.dialog-vbox {
-	margin: 2px 2px 0;
-}
-
 /* --- window (title & border) -- (solid-csd without compositor, csd with compositor, ssd with muffin/mutter) --- */
 /* window or dialog / with or without compositor / .titlebutton.icon .titlebutton.appmenu */
 /* solid-csd + ssd + csd because headerbar can also be used with window decorator */
+
+.background.dialog {
+	padding: 12px 12px 13px;
+}
+
+.background.dialog.csd,
+.background.dialog.solid-csd,
+.background.dialog.ssd {
+	padding: 3px;
+}
+
+.background.dialog.csd .dialog-vbox,
+.background.dialog.solid-csd .dialog-vbox,
+.background.dialog.ssd .dialog-vbox {
+	padding: 10px 12px 13px;
+}
+
+.background.dialog .dialog-action-area {
+	padding-top: 13px;
+}
+
+.background.dialog .dialog-action-area button {
+	margin: 0 1px 0 7px;
+	padding: 4px 8px 3px 8px;
+}
+
+.background.dialog .dialog-action-area:dir(rtl) button {
+	margin: 0 7px 0 1px;
+}
 
 .background.csd,
 .background.csd headerbar,
@@ -121,6 +146,7 @@ box.dialog-vbox {
 .background.solid-csd headerbar {
 	margin: -3px -4px 0;
 	padding: 0;
+	min-height: 22px;
 	/* border-radius: 8px 8px 0 0; */
 	color: @theme_selected_fg;
 	/* <draw_ops name="bevel"> titlebar outline */
@@ -138,6 +164,12 @@ box.dialog-vbox {
 .background.solid-csd headerbar image {
 	/* -gtk-icon-transform: scale(0.75); */
 	-gtk-icon-style: symbolic;
+}
+
+.background.csd headerbar entry,
+.background.ssd headerbar entry,
+.background.solid-csd headerbar entry {
+	box-shadow:none; border:0; margin:4px 0; padding:1px 3px 2px;  font-size:85%; /* @todo */
 }
 
 .background.csd headerbar label.title,
@@ -636,7 +668,7 @@ button, switch {
 	box-shadow:
 		-1px -1px alpha(@button_border, 0.13),
 		 1px  1px alpha(@button_border, 0.13),
-		inset 1px 1px alpha(@button_border, 0.148); /* E8E0DA @todo */
+		inset 1px 1px alpha(@button_border, 0.148); /* @todo E8E0DA */
 }
 
 button:disabled, switch:disabled {
@@ -868,7 +900,7 @@ checkbutton:focus label {
 }
 
 checkbutton:hover:focus label {
-	/* border-color: @checkbutton_focus_hover_border; @todo */
+	/* @todo border-color: @checkbutton_focus_hover_border; */
 	background: @checkbutton_focus_hover_bg;
 }
 
@@ -1222,16 +1254,11 @@ box.primary-toolbar:dir(rtl) {
 	padding: 1px 4px 1px 2px;
 }
 
-box.toolbar separator,
-box.primary-toolbar separator {
+box.toolbar > separator,
+box.primary-toolbar > separator {
 	margin: 7px 5px 8px;
 	border-left: 1px solid @toolbar_separator_dark;
 	border-right: 1px solid @toolbar_separator_lite;
-}
-
-box.toolbar button,
-box.primary-toolbar button {
-	/* @todo 4.12? padding-bottom: 3px; */
 }
 
 /* --- menu bar --- */
@@ -1254,10 +1281,9 @@ menubar item {
 menubar:focus-within item:selected {
 	/* it's a feature: the :hover state also apply :focus and :selected states */
 	/* the :focus-within to apply item design only after click on it */
-	padding: 2px 7px 3px;
 	color: @menuitem_hover;
 	border-color: @menuitem_hover_border;
-	border-bottom: 0; /* it's a problem */
+	border-bottom-color: @menuitem_hover_border_bottom;
 	background:
 		radial-gradient(ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
@@ -1279,6 +1305,11 @@ menubar:focus-within item:selected:focus:hover {
 
 /* --- popover --- */
 
+popover.background.menu {
+	font-size: initial;
+	font-family: initial;
+}
+
 popover.menu scrolledwindow,
 popover.menu viewport {
 	border: 0;
@@ -1295,11 +1326,12 @@ popover popover contents {
 }
 
 popover modelbutton {
-	padding: 2px 0;
+	padding: 1px 0 2px;
 	border: 1px solid transparent;
 }
 
 popover modelbutton:hover {
+	/* this is the menuitem hover */
 	color: @menuitem_hover;
 	border: 1px solid @menuitem_hover_border;
 	border-radius: 2px;
@@ -1315,7 +1347,7 @@ popover modelbutton:hover {
 }
 
 popover modelbutton > box {
-	min-width: 24px;
+	min-width: 26px;
 }
 
 popover modelbutton > label {
@@ -1330,7 +1362,15 @@ popover modelbutton > label:dir(rtl) {
 
 popover modelbutton accelerator {
 	margin: 1px 7px 0;
-	color: alpha(@theme_fg, 0.601); /* #696764 instead of #696664 @todo */
+	color: alpha(@theme_fg, 0.601); /* @todo #696764 instead of #696664 */
+}
+
+popover modelbutton image:dir(ltr) {
+	margin-left: -25px;
+}
+
+popover modelbutton image:dir(rtl) {
+	margin-right: -27px;
 }
 
 popover modelbutton:hover > accelerator {
@@ -1346,7 +1386,6 @@ popover arrow {
 }
 
 popover stack separator {
-	/* margin: 4px 4px 6px; */
 	margin: 4px 4px 3px;
 	border-top: 1px solid @menu_separator_dark;
 	border-bottom: 1px solid @menu_separator_lite;
@@ -1356,7 +1395,7 @@ popover stack separator {
 
 popover check,
 popover radio {
-	margin: 1px 5px 0;
+	margin: 2px 5px 0;
 }
 
 popover check,
@@ -1438,8 +1477,8 @@ scrollbar.horizontal range {
 }
 
 scrollbar slider {
-	border: 0; /* 1px solid @scroll_slider_border; */
-	border-radius: 6px; /* 3px */
+	border: 0; /* @todo 1px solid @scroll_slider_border; */
+	border-radius: 6px; /* @todo 3px */
 }
 
 scrollbar.vertical slider {
@@ -2196,8 +2235,7 @@ progressbar.horizontal trough progress.right {
 }
 
 progressbar.vertical text {
-	/* to avoid extra width at 100% */
-	margin: 0 -1px;
+	margin: 0 -1px; /* to avoid extra width at 100% */
 }
 
 progressbar.horizontal text {
@@ -2246,8 +2284,7 @@ progressbar.classic.horizontal trough progress {
 }
 
 progressbar.classic.vertical.full text {
-	/* to avoid extra width at 100% */
-	margin: 0 -1px;
+	margin: 0 -1px; /* to avoid extra width at 100% */
 }
 
 progressbar.classic.horizontal text {
@@ -2674,7 +2711,7 @@ treeview.view.odd:not(.trough):not(.progressbar) {
 	/* lol */
 	background: linear-gradient(to bottom, @theme_base, @theme_base);
 	border-right: 1px solid transparent;
-	border-image-source: repeating-linear-gradient(to bottom, @theme_base 0px, @theme_base 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-source: repeating-linear-gradient(to bottom, @theme_base 0, @theme_base 3px, #9f9f9f 3px, #9f9f9f 4px);
 	border-image-slice: 1;
 	border-image-repeat: repeat;
 }
@@ -2684,7 +2721,7 @@ treeview.view.even:not(.trough):not(.progressbar) {
 	/* lol */
 	background: linear-gradient(to bottom, #EEE, #EEE);
 	border-right: 1px solid transparent;
-	border-image-source: repeating-linear-gradient(to bottom, #EEE 0px, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-source: repeating-linear-gradient(to bottom, #EEE 0, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
 	border-image-slice: 1;
 	border-image-repeat: repeat;
 }
@@ -2693,14 +2730,14 @@ treeview.view.odd.sorted:not(.trough):not(.progressbar) {
 	background-color: #EEE; /* @todo */
 	/* lol */
 	background: linear-gradient(to bottom, #EEE, #EEE);
-	border-image-source: repeating-linear-gradient(to bottom, #EEE 0px, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-source: repeating-linear-gradient(to bottom, #EEE 0, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
 }
 
 treeview.view.even.sorted:not(.trough):not(.progressbar) {
 	background-color: #DDD; /* @todo */
 	/* lol */
 	background: linear-gradient(to bottom, #DDD, #DDD);
-	border-image-source: repeating-linear-gradient(to bottom, #DDD 0px, #DDD 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-source: repeating-linear-gradient(to bottom, #DDD 0, #DDD 3px, #9f9f9f 3px, #9f9f9f 4px);
 }
 
 treeview.view.odd.last:not(.trough):not(.progressbar),
@@ -2724,6 +2761,11 @@ treeview.view.odd.sorted:not(.trough):not(.progressbar):selected,
 treeview.view.even:not(.trough):not(.progressbar):selected,
 treeview.view.even.sorted:not(.trough):not(.progressbar):selected {
 	color: @theme_selected_fg;
+	border-image-source: repeating-linear-gradient(to bottom,
+		@theme_selected_bg 0,
+		@theme_selected_bg 3px,
+		#9f9f9f 3px,
+		#9f9f9f 4px);
 	background:
 		radial-gradient(ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
@@ -2733,11 +2775,6 @@ treeview.view.even.sorted:not(.trough):not(.progressbar):selected {
 			@menuitem_hover_glaze_mida 50%,
 			@menuitem_hover_glaze_midb 50%,
 			@menuitem_hover_glaze_bot);
-	border-image-source: repeating-linear-gradient(to bottom,
-		@theme_selected_bg 0px,
-		@theme_selected_bg 3px,
-		#9f9f9f 3px,
-		#9f9f9f 4px);
 }
 
 /* treeview.view:not(.trough):not(.progressbar):selected:not(:focus),
@@ -2909,7 +2946,7 @@ list row image + label {
 listview row:nth-child(2n+1) cell:not(:last-child) {
 	/* lol - odd */
 	border-right: 1px solid transparent;
-	border-image-source: repeating-linear-gradient(to bottom, @theme_base 0px, @theme_base 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-source: repeating-linear-gradient(to bottom, @theme_base 0, @theme_base 3px, #9f9f9f 3px, #9f9f9f 4px);
 	border-image-slice: 1;
 	border-image-repeat: repeat;
 }
@@ -2917,7 +2954,7 @@ listview row:nth-child(2n+1) cell:not(:last-child) {
 listview row:nth-child(2n) cell:not(:last-child) {
 	/* lol - even */
 	border-right: 1px solid transparent;
-	border-image-source: repeating-linear-gradient(to bottom, #EEE 0px, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
+	border-image-source: repeating-linear-gradient(to bottom, #EEE 0, #EEE 3px, #9f9f9f 3px, #9f9f9f 4px);
 	border-image-slice: 1;
 	border-image-repeat: repeat;
 }
@@ -2925,7 +2962,7 @@ listview row:nth-child(2n) cell:not(:last-child) {
 listview row:selected cell:not(:last-child) {
 	/* lol */
 	border-image-source: repeating-linear-gradient(to bottom,
-		@theme_selected_bg 0px,
+		@theme_selected_bg 0,
 		@theme_selected_bg 3px,
 		#9f9f9f 3px,
 		#9f9f9f 4px);
@@ -2934,7 +2971,7 @@ listview row:selected cell:not(:last-child) {
 listview row:selected:not(:focus):not(:last-child) cell {
 	/* lol */
 	border-image-source: repeating-linear-gradient(to bottom,
-		shade(@theme_selected_bg, 1.2) 0px,
+		shade(@theme_selected_bg, 1.2) 0,
 		shade(@theme_selected_bg, 1.2) 3px,
 		#9f9f9f 3px,
 		#9f9f9f 4px);
@@ -2950,43 +2987,77 @@ treeview.view.image:disabled {
 
 /* --- open/save/print dialog --- */
 
-.background.dialog.print,
-filechooser {
-	padding: 10px 10px 3px;
+.background.dialog.filechooser .dialog-action-area {
+	margin: -6px;
 }
 
-filechooser placessidebar + separator {
-	padding: 0 1px;
+.background.dialog.filechooser .dialog-action-area {
+	padding-top: 14px;
 }
 
-filechooser box.view {
-	background: @theme_bg;
+.background.dialog.filechooser.csd .dialog-vbox,
+.background.dialog.filechooser.solid-csd .dialog-vbox,
+.background.dialog.filechooser.ssd .dialog-vbox {
+	padding: 12px 12px 13px;
 }
 
-filechooser ~ .dialog-action-box {
-	margin-top: 4px;
-	padding: 0 6px 5px;
-}
-
-.background.dialog.print tab label {
-	margin-bottom: -1px; /* @todo */
+.background.dialog.print.csd .dialog-vbox,
+.background.dialog.print.solid-csd .dialog-vbox,
+.background.dialog.print.ssd .dialog-vbox {
+	padding: 12px 12px 12px;
 }
 
 .background.dialog.print grid + scrolledwindow,
 .background.dialog.print grid + scrolledwindow viewport,
 .background.dialog.print grid + scrolledwindow + scrolledwindow,
 .background.dialog.print grid + scrolledwindow + scrolledwindow viewport,
-filechooser scrolledwindow viewport,
-filechooser pathbar scrolledwindow {
+.background.dialog.filechooser scrolledwindow viewport,
+.background.dialog.filechooser pathbar scrolledwindow {
 	border: 0; /* avoid dual border */
 }
 
-filechooser pathbar button.toggle image + label:dir(ltr) {
+.background.dialog.filechooser pathbar button.toggle box {
+	margin-bottom: -1px;
+}
+
+.background.dialog.filechooser pathbar button.toggle image + label:dir(ltr) {
 	padding-left: 4px;
 }
 
-filechooser pathbar button.toggle image + label:dir(rtl) {
+.background.dialog.filechooser pathbar button.toggle image + label:dir(rtl) {
 	padding-right: 4px;
+}
+
+.background.dialog.filechooser placessidebar separator {
+	margin: 4px 0;
+}
+
+.background.dialog.filechooser placessidebar + separator {
+	padding: 0 1px;
+}
+
+.background.dialog.filechooser box.view {
+	background: @theme_bg;
+}
+
+.background.dialog.filechooser box.search-bar {
+	padding: 10px;
+}
+
+.background.dialog.filechooser #pathbarbox scrolledwindow {
+	background-color: transparent;
+}
+
+.background.dialog.print columnview button {
+	margin-bottom: -1px;
+}
+
+.background.dialog.print columnview button label {
+	margin-top: -1px;
+}
+
+.background.dialog.print tab label {
+	margin-bottom: -1px; /* @todo */
 }
 
 /* --- calendar --- */

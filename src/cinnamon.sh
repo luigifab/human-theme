@@ -22,13 +22,15 @@
 # GNU General Public License (GPL) for more details.
 
 shopt -s nullglob
+shopt -s extglob
 
 cd "$(dirname "$0")"
 for f in */cinnamon/cinnamon.css; do
 
 	echo "Updating colors of $f..."
 
-	# search colors
+	# search and sort used colors from cinnamon.css
+	echo " extracting used colors..."
 	colors=()
 	while IFS= read -r match; do
 		colors+=("$match")
@@ -36,13 +38,34 @@ for f in */cinnamon/cinnamon.css; do
 
 	mapfile -t unique_colors < <(printf "%s\n" "${colors[@]}" | sort -u)
 
-	# find colors
+	# search simple colors from gtk.css
+	echo " searching simple colors..."
+	IFS=$'\n'
+	simpleColors=$(grep 'define-color theme_' "${f%/cinnamon/cinnamon.css}/gtk-3.0/gtk.css" | grep -v \()
+	declare -A simpleCache
+	for color in $simpleColors; do
+
+		# the color string (define-color keyword #XXX)
+		color=${color/;/}              # | tr -d ";"
+		color=${color/@define-color /} # | cut -c15-
+
+		# $color = keyword #FFF
+		if [[ "$color" != *"@"* ]]; then
+			keyword="@${color%% *}"
+			color="${color#* }"
+			simpleCache["$keyword"]="$color"
+		fi
+	done
+
+	# find all colors
 	echo " computing colors..."
 	theme=$(basename "$(dirname "$(dirname "$f")")")
 	sedcmds=()
 	for keyword in "${unique_colors[@]}"; do
 
-		if [[ "$keyword" == *"@see"* ]]; then
+		if [[ -v simpleCache[$keyword] ]]; then
+			color="${simpleCache[$keyword]}"
+		elif [[ "$keyword" == *"@see"* ]]; then
 			continue
 		elif [[ "$keyword" == *"@todo"* ]]; then
 			continue
@@ -64,8 +87,9 @@ for f in */cinnamon/cinnamon.css; do
 		sedcmds+=( -e "s/"$keyword" \*\/ "$keyword"/"$keyword" \*\/ "$color"/g")
 	done
 
-	# search and replace
+	# search and replace colors in cinnamon.css
 	echo " updating file..."
 	sed -r -i "${sedcmds[@]}" $f
 	echo " done"
+	unset IFS
 done

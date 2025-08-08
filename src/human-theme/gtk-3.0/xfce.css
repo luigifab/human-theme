@@ -85,26 +85,48 @@ XfdesktopIconView.label:active {
 	/* @todo not working */
 	/* @see https://github.com/xfce-mirror/xfce4-panel/blob/3a86f3242cbad66b3090e4da9dbf0a90ae2df386/panel/panel-base-window.c#L718 */
 	border: 0;
+	background: @theme_bg;
 }
+
+.xfce4-panel #applicationmenu-button:checked,
+.xfce4-panel #whiskermenu-button:checked,
+.xfce4-panel #clock-button:checked,
+window.whiskermenu button:checked,
+window.whiskermenu button:hover,
+window.whiskermenu treeview.view.launchers:hover:selected {
+	/* this is the menuitem hover */
+	color: @menuitem_hover;
+	border-color: @menuitem_hover_border;
+	background:
+		radial-gradient(ellipse 110% 50%,
+			@menuitem_hover_glaze_glow_center,
+			@menuitem_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@menuitem_hover_glaze_top,
+			@menuitem_hover_glaze_mida 50%,
+			@menuitem_hover_glaze_midb 50%,
+			@menuitem_hover_glaze_bot);
+}
+
+/* --- main menu applet --- */
 
 .xfce4-panel #applicationmenu-button {
 	margin: 0;
-	/* padding: 0 5px; */
-	border-bottom: 0;
+	border: 1px solid transparent;
 	border-radius: 0;
-}
-
-.xfce4-panel #applicationmenu-button image {
-	margin: 0 6px 0 12px;
-}
-
-.xfce4-panel #applicationmenu-button label {
-	margin-right: 4px;
 }
 
 .xfce4-panel #applicationmenu-button:hover:not(:checked) {
 	border-color: transparent;
 	background: transparent;
+}
+
+.xfce4-panel #applicationmenu-button image {
+	margin: 0 4px 0 11px;
+}
+
+.xfce4-panel #applicationmenu-button label {
+	margin-right: 4px;
 }
 
 /* --- virtual desktop selector applet --- */
@@ -118,6 +140,57 @@ XfdesktopIconView.label:active {
 .xfce4-panel wnck-pager:selected,
 .xfce4-panel wnck-applet wnck-pager:selected {
 	background-color: shade(@theme_selected_bg, 0.7);
+}
+
+/* --- clock applet --- */
+
+.xfce4-panel #clock-button {
+	border-radius: 0;
+}
+
+/* --- whisker menu applet --- */
+
+.xfce4-panel #whiskermenu-button {
+	margin: 0;
+	border: 1px solid transparent;
+	border-radius: 0;
+}
+
+.xfce4-panel #whiskermenu-button:hover:not(:checked) {
+	border-color: transparent;
+	background: transparent;
+}
+
+.xfce4-panel #whiskermenu-button image {
+	margin: 0 4px 0 11px;
+}
+
+.xfce4-panel #whiskermenu-button label {
+	margin-right: 4px;
+}
+
+window.whiskermenu {
+	background-color: @menu_bg;
+}
+
+window.whiskermenu scrolledwindow,
+window.whiskermenu scrolledwindow viewport {
+	border: 0;
+}
+
+window.whiskermenu button {
+	border-radius: 4px;
+}
+
+window.whiskermenu treeview.view.launchers {
+	border-radius: 4px;
+	background-color: @menu_bg;
+}
+
+window.whiskermenu scrolledwindow.launchers-pane scrollbar.vertical {
+	margin: -29px 0;
+	border: 0;
+	background: inherit;
 }
 
 /* --- thunar --- */

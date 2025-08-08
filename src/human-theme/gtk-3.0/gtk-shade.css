@@ -151,6 +151,7 @@
               @define-color menuitem_hover_glaze_mida shade(@menuitem_hover_glaze, 0.96);
               @define-color menuitem_hover_glaze_midb shade(@menuitem_hover_glaze, 0.96);
               @define-color menuitem_hover_glaze_top shade(@menuitem_hover_glaze, 1.042);
+              @define-color menuitem_hover_border_bottom @menuitem_hover_glaze_bot;
 
               @define-color scale_glaze_bot shade(@theme_bg, 0.92);
               @define-color scale_glaze_glow shade(@theme_bg, 1.15);

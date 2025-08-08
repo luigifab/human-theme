@@ -3,7 +3,7 @@
 
 
 cd "$(dirname "$0")"
-version="2.5.0"
+version="2.6.0"
 
 
 mkdir builder
@@ -75,17 +75,18 @@ for serie in experimental questing plucky oracular noble jammy focal bionic xeni
 			sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 12)/g' debian/control
 		elif [ $serie = "bionic" ]; then
 			mv debian/control.ubuntu debian/control
-
+			sed -i 's/execute_before_dh_install:/override_dh_update_autotools_config:/g' debian/rules
 			sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 9)/g' debian/control
 		elif [ $serie = "xenial" ]; then
 			mv debian/control.ubuntu debian/control
-
+			sed -i 's/execute_before_dh_install:/override_dh_update_autotools_config:/g' debian/rules
 			sed -i 's/debhelper-compat (= 13)/debhelper (>= 9)/g' debian/control
 			sed -i ':a;N;$!ba;s/Rules-Requires-Root: no\n//g' debian/control
 			echo 9 > debian/compat
 		elif [ $serie = "trusty" ]; then
 			mv debian/control.ubuntu debian/control
 			sed -i 's/dh $@/dh $@ --with autotools_dev/g' debian/rules
+			sed -i 's/execute_before_dh_install:/override_dh_autotools-dev_updateconfig:/g' debian/rules
 			sed -i 's/debhelper-compat (= 13)/debhelper (>= 9), autotools-dev/g' debian/control
 			sed -i ':a;N;$!ba;s/Rules-Requires-Root: no\n//g' debian/control
 			echo 9 > debian/compat

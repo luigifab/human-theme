@@ -187,7 +187,7 @@ For **MATE** desktop:
 * Go to: *System / Preferences / Notifications*, or run: `mate-notification-properties`\
   Then select the *Coco* or *Default* theme.
 * Go to: *panel preferences*\
-  Then set panel height to 23px.
+  Then set panel height to 25px/23px (top/bottom).
 
 For **Xfce** desktop:
 * Go to: *Applications / Settings / Appearance*, or run: `xfce4-appearance-settings`\
@@ -199,12 +199,12 @@ For **Xfce** desktop:
 * Go to: *Applications / Settings / Mouse and Touchpad*, or run: `xfce4-mouse-settings`\
   Then select the *DMZ White* theme from last tab.
 * Go to: *panel preferences*\
-  Then set panel height to 22px, panel icons sizes to 16px or automatic.
+  Then set panel height to 24px/22px (top/bottom), panel icons sizes to 16px or automatic.
 
 For **Cinnamon** desktop:
 * Go to: *Menu / Preferences / Themes*, or run: `cinnamon-settings themes`\
-  Click on *Advanced settings*\
-  Then select the *Human* theme for applications and desktop.\
+  Click on *Advanced settings*,\
+  Then select the *Human* theme for applications and desktop,\
   And select the *DMZ White* theme for mouse.
 * Go to: *Menu / Preferences / Fonts*, or run: `cinnamon-settings fonts`\
   Then update fonts.
@@ -223,13 +223,14 @@ Icons:
 Cursors:
 * *DMZ white*, 24
 
-Desktop panels:
-* 23px for panel height, 16px or automatic for icons size
-
 Extra configuration for cursors:
 * Run `sudo update-alternatives --config x-cursor-theme` and select again *DMZ white*
 
 ## Known issues
+
+#### MATE
+
+If some characters are wider than others (for example clock applet versus classic main menu applet), this may be due to the **DPI** value in _mate-appearance-properties_ (go to the _Fonts_ tab, then _Details_). If you're using automatic detection, disable it. To solve the problem, press the _minus_ button then the _plus_ button above, see [bug 1475](https://github.com/mate-desktop/mate-panel/issues/1475#issuecomment-3037154225).
 
 #### Firefox/Thunderbird/Chromium
 
@@ -241,6 +242,10 @@ sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-full.conf
 ```
 
 For classic menu bar and menu items on [Firefox 46+](https://www.mozilla.org/firefox) and [Thunderbird 46+](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
+
+#### LibreOffice
+
+For design of menu bar, see [bug 157708](https://bugs.documentfoundation.org/show_bug.cgi?id=157708).
 
 #### GTK 4
 
@@ -256,9 +261,8 @@ gtk-xft-hinting=1
 
 #### Xfce panels
 
-Unfortunately, the border cannot be removed, see [forum](https://forum.xfce.org/viewtopic.php?id=15112).
-
-When a window is maximized, window bottom border color is wrong and there is an offset of 1px.
+Unfortunately, the border cannot be removed, see [forum](https://forum.xfce.org/viewtopic.php?id=15112).\
+When a window is maximized, the window bottom border color is wrong and there is an offset of 1px.
 
 #### Windows shadow
 
@@ -313,7 +317,7 @@ Run `svg.sh` and `cinnamon.sh` to update colors. See also [technical information
 
 ## Copyright
 
-- Current version: 2.5.0 (06/06/2025)
+- Current version: 2.6.0 (08/08/2025)
 - Compatibility: GTK 2.24 / 3.24 / 4.12..4.19
 - Links: [luigifab.fr](https://www.luigifab.fr/gtk/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 

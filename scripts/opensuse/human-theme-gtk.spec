@@ -1,5 +1,5 @@
 Name:          human-theme-gtk
-Version:       2.5.0
+Version:       2.6.0
 Release:       0
 Summary:       Human theme for GTK
 Summary(fr):   Thème Human pour GTK
@@ -57,6 +57,9 @@ install -Dpm 644 data/profile.sh %{buildroot}%{_sysconfdir}/profile.d/%{name}.sh
 
 
 %changelog
+* Fri Aug 08 2025 Fabrice Creuzot <code@luigifab.fr> - 2.6.0-1
+- New upstream release
+
 * Fri Jun 06 2025 Fabrice Creuzot <code@luigifab.fr> - 2.5.0-1
 - New upstream release
 

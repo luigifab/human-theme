@@ -80,30 +80,118 @@ frame.mate-tabwin > border {
 	border-radius: 0;
 }
 
-/* --- panel --- */
+/* --- panel & button applets --- */
+/* @see https://github.com/mate-desktop/mate-panel/pull/1474 */
+/* @see https://github.com/mate-desktop/mate-media/pull/223 (volume applet) */
+/* @see https://github.com/mate-desktop/mate-applets/pull/678 (character selector applet) */
 
 .mate-panel-menu-bar,
 .mate-panel-menu-bar menubar,
 .mate-panel-menu-bar button,
-.mate-panel-menu-bar .mate-panel-button,
-#PanelPlug,
-#PanelPlug button,
-#PanelApplet,
-#PanelApplet button,
-PanelApplet,
-PanelApplet button,
-PanelToplevel.background {
+.mate-panel-menu-bar PanelApplet,
+.mate-panel-menu-bar PanelApplet button,
+.mate-panel-menu-bar .mate-panel-button {
+	margin: 0;
+	padding: 0;
 	color: @theme_fg; /* mainly for mate keyboard layout indicator applet, but apply almost everywhere */
 	border: 0;
 	border-radius: 0;
 	background: @theme_bg;
 	box-shadow: none;
+	outline: 0;
 }
 
-.mate-panel-menu-bar menubar {
-	margin: 0;
-	padding: 0;
+.mate-panel-menu-bar button,
+.mate-panel-menu-bar PanelApplet,
+.mate-panel-menu-bar PanelApplet button,
+.mate-panel-menu-bar .mate-panel-button,
+.mate-panel-menu-bar #window-menu-applet-button wnck-selector > menuitem {
+	border: 1px solid transparent;
 }
+
+.mate-custom-panel-background button,
+.mate-custom-panel-background PanelApplet button,
+.mate-custom-panel-background .mate-panel-button {
+	background: transparent;
+}
+
+.mate-panel-menu-bar button:checked,
+.mate-panel-menu-bar PanelApplet:checked,
+.mate-panel-menu-bar PanelApplet button:checked,
+.mate-panel-menu-bar .mate-panel-button:checked,
+.mate-panel-menu-bar .mate-volume-applet .menu-button:checked,
+.mate-panel-menu-bar #clock-applet-button:checked,
+.mate-panel-menu-bar #window-menu-applet-button wnck-selector > menuitem:hover,
+.mate-panel-menu-bar #PanelApplet .mintmenu:selected,
+.mate-panel-menu-bar #PanelApplet:selected .mate-menu,
+#mintmenu viewport button:hover,
+#mintmenu viewport button:not(.flat),
+#mate-menu viewport button:hover,
+#mate-menu viewport button:not(.flat) {
+	/* this is the menuitem hover */
+	color: @menuitem_hover;
+	border: 1px solid @menuitem_hover_border;
+	background:
+		radial-gradient(ellipse 110% 50%,
+			@menuitem_hover_glaze_glow_center,
+			@menuitem_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@menuitem_hover_glaze_top,
+			@menuitem_hover_glaze_mida 50%,
+			@menuitem_hover_glaze_midb 50%,
+			@menuitem_hover_glaze_bot);
+	box-shadow: none;
+}
+
+.mate-panel-menu-bar.top button:checked,
+.mate-panel-menu-bar.top PanelApplet:checked,
+.mate-panel-menu-bar.top PanelApplet button:checked,
+.mate-panel-menu-bar.top .mate-panel-button:checked,
+.mate-panel-menu-bar.top .mate-volume-applet .menu-button:checked,
+.mate-panel-menu-bar.top #clock-applet-button:checked,
+.mate-panel-menu-bar.top #window-menu-applet-button wnck-selector > menuitem:hover,
+.mate-panel-menu-bar.top #PanelApplet .mintmenu:selected,
+.mate-panel-menu-bar.top #PanelApplet:selected .mate-menu {
+	border-bottom-color: @menuitem_hover_border_bottom;
+}
+
+.mate-panel-menu-bar.right button:checked,
+.mate-panel-menu-bar.right PanelApplet:checked,
+.mate-panel-menu-bar.right PanelApplet button:checked,
+.mate-panel-menu-bar.right .mate-panel-button:checked,
+.mate-panel-menu-bar.right .mate-volume-applet .menu-button:checked,
+.mate-panel-menu-bar.right #clock-applet-button:checked,
+.mate-panel-menu-bar.right #window-menu-applet-button wnck-selector > menuitem:hover,
+.mate-panel-menu-bar.right #PanelApplet .mintmenu:selected,
+.mate-panel-menu-bar.right #PanelApplet:selected .mate-menu {
+	border-left-color: @menuitem_hover_border_bottom;
+}
+
+.mate-panel-menu-bar.bottom button:checked,
+.mate-panel-menu-bar.bottom PanelApplet:checked,
+.mate-panel-menu-bar.bottom PanelApplet button:checked,
+.mate-panel-menu-bar.bottom .mate-panel-button:checked,
+.mate-panel-menu-bar.bottom .mate-volume-applet .menu-button:checked,
+.mate-panel-menu-bar.bottom #clock-applet-button:checked,
+.mate-panel-menu-bar.bottom #window-menu-applet-button wnck-selector > menuitem:hover,
+.mate-panel-menu-bar.bottom #PanelApplet .mintmenu:selected,
+.mate-panel-menu-bar.bottom #PanelApplet:selected .mate-menu {
+	border-top-color: @menuitem_hover_border_bottom;
+}
+
+.mate-panel-menu-bar.left button:checked,
+.mate-panel-menu-bar.left PanelApplet:checked,
+.mate-panel-menu-bar.left PanelApplet button:checked,
+.mate-panel-menu-bar.left .mate-panel-button:checked,
+.mate-panel-menu-bar.left .mate-volume-applet .menu-button:checked,
+.mate-panel-menu-bar.left #clock-applet-button:checked,
+.mate-panel-menu-bar.left #window-menu-applet-button wnck-selector > menuitem:hover,
+.mate-panel-menu-bar.left #PanelApplet .mintmenu:selected,
+.mate-panel-menu-bar.left #PanelApplet:selected .mate-menu {
+	border-right-color: @menuitem_hover_border_bottom;
+}
+
+/* --- main menu applet --- */
 
 .mate-panel-menu-bar menubar > menuitem > image {
 	margin: 0 1px;
@@ -111,12 +199,35 @@ PanelToplevel.background {
 
 .mate-panel-menu-bar menubar > menuitem {
 	margin: 0;
-	padding: 3px 5px 3px 9px;
+	padding: 0 5px 0 6px;
 	border-radius: 0;
 }
 
-.mate-panel-menu-bar menubar > menuitem:dir(rtl) {
-	padding: 3px 9px 3px 5px;
+.mate-panel-menu-bar menubar:dir(rtl) > menuitem {
+	padding: 0 6px 0 5px;
+}
+
+.mate-panel-menu-bar.vertical menubar > menuitem {
+	padding: 6px 0 5px 0;
+}
+
+.mate-panel-menu-bar.vertical menubar:dir(rtl) > menuitem {
+	padding: 5px 0 6px 0;
+}
+
+.mate-panel-menu-bar.right menubar > menuitem:hover {
+	border-bottom-color: @menuitem_hover_border; /* reset */
+	border-left-color: @menuitem_hover_border_bottom;
+}
+
+.mate-panel-menu-bar.bottom menubar > menuitem:hover {
+	border-bottom-color: @menuitem_hover_border; /* reset */
+	border-top-color: @menuitem_hover_border_bottom;
+}
+
+.mate-panel-menu-bar.left menubar > menuitem:hover {
+	border-bottom-color: @menuitem_hover_border; /* reset */
+	border-right-color: @menuitem_hover_border_bottom;
 }
 
 .mate-panel-menu-bar menuitem > box > menuitem {
@@ -129,39 +240,85 @@ PanelToplevel.background {
 	margin-left: -1px;
 }
 
-/* --- compact main menu applet & button applet v1.28.x --- */
+/* --- character selector applet v1.28.x --- */
+/* @see https://github.com/mate-desktop/mate-applets/pull/678 */
+
+.mate-panel-menu-bar #PanelApplet .mate-charpick-applet .menu-button:active:hover:not(:checked) {
+	background: transparent;
+}
+
+.mate-panel-menu-bar #PanelApplet .mate-charpick-applet .menu-button:checked {
+	/* border disabled by application */
+	box-shadow:
+		inset  0 1px @menuitem_hover_border, /* top */
+		inset -1px 0 @menuitem_hover_border, /* right */
+		inset 0 -1px @menuitem_hover_border_bottom, /* bottom */
+		inset  1px 0 @menuitem_hover_border; /* left */
+}
+
+.mate-panel-menu-bar.right #PanelApplet .mate-charpick-applet .menu-button:checked {
+	/* border disabled by application */
+	box-shadow:
+		inset  0 1px @menuitem_hover_border, /* top */
+		inset -1px 0 @menuitem_hover_border, /* right */
+		inset 0 -1px @menuitem_hover_border, /* bottom */
+		inset  1px 0 @menuitem_hover_border_bottom; /* left */
+}
+
+.mate-panel-menu-bar.bottom #PanelApplet .mate-charpick-applet .menu-button:checked {
+	/* border disabled by application */
+	box-shadow:
+		inset  0 1px @menuitem_hover_border_bottom, /* top */
+		inset -1px 0 @menuitem_hover_border, /* right */
+		inset 0 -1px @menuitem_hover_border, /* bottom */
+		inset  1px 0 @menuitem_hover_border; /* left */
+}
+
+.mate-panel-menu-bar.left #PanelApplet .mate-charpick-applet .menu-button:checked {
+	/* border disabled by application */
+	box-shadow:
+		inset  0 1px @menuitem_hover_border, /* top */
+		inset -1px 0 @menuitem_hover_border_bottom, /* right */
+		inset 0 -1px @menuitem_hover_border, /* bottom */
+		inset  1px 0 @menuitem_hover_border; /* left */
+}
+
+.mate-panel-menu-bar #PanelApplet .mate-charpick-applet .text-button {
+	min-width: 5px;
+	box-shadow: none;
+}
+
+.mate-panel-menu-bar #PanelApplet .mate-charpick-applet .text-button:active {
+	/* border disabled by application */
+	box-shadow:
+		inset 1px 1px @menuitem_hover_border,   /* top left */
+		inset -1px -1px @menuitem_hover_border; /* right bottom */
+}
+
+.mate-panel-menu-bar #PanelApplet .mate-charpick-applet .text-button:checked {
+	color: inherit;
+	background: transparent;
+}
+
+/* --- compact main menu applet v1.28.x --- */
 /* @see https://github.com/mate-desktop/mate-panel/pull/1474 */
 
 .mate-panel-menu-bar .mate-panel-compact-menu-button {
 	margin: -1px; /* to enable border with box-shadow:none */
-	padding: 0 2px; /* @todo not working */
-	border: 1px solid transparent;
 	outline: 0;
-}
-
-.mate-panel-menu-bar .mate-panel-compact-menu-button:checked,
-.mate-panel-menu-bar #clock-applet-button:checked,
-.mate-panel-menu-bar #window-menu-applet-button wnck-selector > menuitem:hover,
-.mate-panel-menu-bar #PanelApplet .mate-charpick-applet .menu-button:checked {
-	color: @menuitem_hover;
-	border-color: @menuitem_hover_border;
-	background:
-		radial-gradient(ellipse 110% 50%,
-			@menuitem_hover_glaze_glow_center,
-			@menuitem_hover_glaze_glow_edge),
-		linear-gradient(to bottom,
-			@menuitem_hover_glaze_top,
-			@menuitem_hover_glaze_mida 50%,
-			@menuitem_hover_glaze_midb 50%,
-			@menuitem_hover_glaze_bot);
 }
 
 /* --- clock button applet --- */
 
-.mate-panel-menu-bar #clock-applet-button {
-	margin: 0;
-	border: 1px solid transparent;
-	outline: 0;
+.mate-panel-menu-bar #clock-applet-button > box {
+	margin: 0 1px;
+}
+
+.mate-panel-menu-bar #clock-applet-button:focus:not(:checked),
+.mate-panel-menu-bar #clock-applet-button:active:hover:not(:checked) {
+	border: inherit;
+	color: inherit;
+	background: transparent;
 }
 
 .mate-panel-menu-bar #clock-applet-button:checked > box {
@@ -171,11 +328,6 @@ PanelToplevel.background {
 
 .mate-panel-menu-bar #clock-applet-button label {
 	margin-top: 1px;
-}
-
-.mate-panel-menu-bar #clock-applet-button box box {
-	margin-top: 1px;
-	margin-left: 2px;
 }
 
 #MatePanelPopupWindow frame border {
@@ -192,7 +344,6 @@ PanelToplevel.background {
 
 .mate-panel-menu-bar #window-menu-applet-button wnck-selector > menuitem {
 	margin: 0;
-	border: 1px solid transparent;
 	border-radius: 0;
 }
 
@@ -212,21 +363,6 @@ PanelToplevel.background {
 
 .mate-panel-menu-bar #window-menu-applet-button wnck-selector separator label {
 	margin: 4px 0 3px;
-}
-
-
-/* --- character selector applet v1.28.x --- */
-/* @see https://github.com/mate-desktop/mate-applets/pull/678 */
-
-.mate-panel-menu-bar #PanelApplet .mate-charpick-applet .text-button {
-	min-width: 5px;
-}
-
-.mate-panel-menu-bar #PanelApplet .mate-charpick-applet .text-button:active {
-	/* border disabled by application */
-	box-shadow:
-		inset 1px 1px @menuitem_hover_border,   /* top left */
-		inset -1px -1px @menuitem_hover_border; /* right bottom */
 }
 
 /* --- system monitor applet --- */
@@ -251,26 +387,11 @@ PanelToplevel.background {
 	border: 1px solid @frame_shadow_dark;
 }
 
-/* --- virtual desktop selector applet --- */
-
-.mate-panel-menu-bar .wnck-pager,
-.mate-panel-menu-bar .wnck-applet {
-	color: @theme_fg; /* the border color of windows */
-	background-color: @theme_bg; /* the left/right border color and background color : #E6DDD5 but #E6DDD4 » #AD9A89 but #A19B95 */
-}
-
-.mate-panel-menu-bar .wnck-pager:selected,
-.mate-panel-menu-bar .wnck-applet .wnck-pager:selected {
-	background-color: shade(@theme_selected_bg, 0.7); /* #5D453B */
-}
-
-/* --- display properties applet --- */
-
-.mate-panel-menu-bar .xrandr-applet {
-
-}
-
 /* --- window list applet --- */
+
+.mate-panel-menu-bar #tasklist-button {
+	border: 0;
+}
 
 .mate-panel-menu-bar #tasklist-button box {
 	margin: 1px;
@@ -279,9 +400,27 @@ PanelToplevel.background {
 	border-radius: 3px;
 }
 
+.mate-panel-menu-bar #tasklist-button:checked {
+	color: inherit;
+	background: inherit;
+}
+
 .mate-panel-menu-bar #tasklist-button:checked box {
 	padding: 0 2px;
 	border: 1px solid #988B7F; /* @todo */
+}
+
+/* --- virtual desktop selector applet --- */
+
+.mate-panel-menu-bar .wnck-pager,
+.mate-panel-menu-bar .wnck-applet {
+	color: @theme_fg; /* the border color of windows */
+	background-color: @theme_bg; /* the left/right border color and (shaded) background color / #E6DDD5 but #E6DDD4 » #AD9A89 but #A19B95 */
+}
+
+.mate-panel-menu-bar .wnck-pager:selected,
+.mate-panel-menu-bar .wnck-applet .wnck-pager:selected {
+	background-color: shade(@theme_selected_bg, 0.7); /* the background color of windows / #5D453B */
 }
 
 /* --- grip for notification area & window list applet --- */
@@ -291,6 +430,156 @@ PanelToplevel.background {
 	background-repeat: no-repeat;
 	background-position: 2px center;
 	background-size: 6px 10px;
+}
+
+/* --- mint menu applet v6.2.1 --- */
+/* @see https://github.com/linuxmint/mintmenu/pull/285 */
+
+.mate-panel-menu-bar #PanelApplet .mintmenu {
+	border: 1px solid transparent;
+}
+
+.mate-panel-menu-bar #PanelApplet .mintmenu image {
+	margin: 0 1px;
+}
+
+#mintmenu {
+	border: 1px solid @button_border;
+	background: @menu_bg;
+}
+
+#mintmenu viewport,
+#mintmenu notebook stack {
+	border: 0;
+}
+
+#mintmenu notebook,
+#mintmenu scrollbar {
+	background: transparent;
+}
+
+#mintmenu viewport button {
+	border-radius: 4px;
+}
+
+#mintmenu .mint-places {
+	margin-top: 7px;
+}
+
+#mintmenu:dir(ltr) .mint-places .mint-title,
+#mintmenu:dir(ltr) .mint-system-management .mint-title {
+	margin-left: 3px;
+}
+
+#mintmenu:dir(rtl) .mint-places .mint-title,
+#mintmenu:dir(rtl) .mint-system-management .mint-title {
+	margin-right: 3px;
+}
+
+#mintmenu .mint-applications .mint-title {
+	margin-bottom: 3px;
+}
+
+#mintmenu:dir(ltr) .mint-applications .mint-title > label {
+	margin-left: -4px;
+}
+
+#mintmenu:dir(rtl) .mint-applications .mint-title > label {
+	margin-right: -4px;
+}
+
+#mintmenu .mint-applications .mint-categories-list button label {
+	margin: -2px 0 2px;
+}
+
+#mintmenu .mint-applications .mint-applications-list {
+	margin-top: -6px;
+}
+
+#mintmenu:dir(ltr) .mint-search {
+	padding: 10px 30px 10px 3px;
+}
+
+#mintmenu:dir(rtl) .mint-search {
+	padding: 10px 3px 10px 30px;
+}
+
+/* --- mate menu applet v22.04.3 --- */
+/* @see https://github.com/ubuntu-mate/mate-menu/pull/89 */
+
+.mate-panel-menu-bar #PanelApplet .mate-menu {
+	border: 1px solid transparent;
+}
+
+.mate-panel-menu-bar #PanelApplet .mate-menu image {
+	margin: 0 1px;
+	min-width: 22px;
+}
+
+#mate-menu {
+	border: 1px solid @button_border;
+	background: @menu_bg;
+}
+
+#mate-menu widget {
+	background: transparent;
+}
+
+#mate-menu viewport,
+#mate-menu notebook stack {
+	border: 0;
+	background: transparent;
+}
+
+#mate-menu notebook,
+#mate-menu scrollbar {
+	background: transparent;
+}
+
+#mate-menu viewport button {
+	border-radius: 4px;
+}
+
+#mate-menu .mint-places {
+	margin-top: 7px;
+}
+
+#mate-menu:dir(ltr) .mint-places .mint-title,
+#mate-menu:dir(ltr) .mint-system-management .mint-title {
+	margin-left: 3px;
+}
+
+#mate-menu:dir(rtl) .mint-places .mint-title,
+#mate-menu:dir(rtl) .mint-system-management .mint-title {
+	margin-right: 3px;
+}
+
+#mate-menu .mint-applications .mint-title {
+	margin-bottom: 3px;
+}
+
+#mate-menu:dir(ltr) .mint-applications .mint-title > label {
+	margin-left: -4px;
+}
+
+#mate-menu:dir(rtl) .mint-applications .mint-title > label {
+	margin-right: -4px;
+}
+
+#mate-menu .mint-applications .mint-categories-list button label {
+	margin: -2px 0 2px;
+}
+
+#mate-menu .mint-applications .mint-applications-list {
+	margin-top: -6px;
+}
+
+#mate-menu:dir(ltr) .mint-search {
+	padding: 10px 30px 10px 3px;
+}
+
+#mate-menu:dir(rtl) .mint-search {
+	padding: 10px 3px 10px 30px;
 }
 
 /* --- lock screen --- */
@@ -441,6 +730,19 @@ window.eom-window.maximized statusbar box progressbar.horizontal {
 
 window.eom-window.maximized statusbar.classic box progressbar.horizontal {
 	margin: -1px 4px 1px;
+}
+
+/* --- pluma --- */
+
+window.pluma-window statusbar {
+	margin-top: -2px;
+}
+
+window.pluma-window statusbar #pluma-status-combo-button {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 /* --- mate-control-center --- */

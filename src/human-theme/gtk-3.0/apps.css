@@ -26,6 +26,22 @@
 
 #AwfMainWindow .awf-cheatcode-prbr2 { margin: 1px 0; }
 
+/* --- magnus --- */
+/* @see https://github.com/stuartlangridge/magnus/issues/33 (dead project?) hide scrollbars */
+
+#MagnusMainWindow scrolledwindow { margin: -2px; }
+#MagnusMainWindow scrolledwindow scrollbar { opacity: 0; }
+
+/* --- gimp 3 --- */
+
+GimpFileDialog filechooser treeview.view button {
+	padding: 0;
+}
+
+GimpFileDialog filechooser treeview.view:selected {
+	color: @theme_selected_fg;
+}
+
 /* --- audacity --- */
 
 window > box > widget > widget {
@@ -61,35 +77,36 @@ window.pluma-window notebook stack > box scrolledwindow {
 }
 
 #GeanyMainWindow statusbar {
-	margin-top: -8px;
+	margin: -8px -10px -4px;
 }
 
 #GeanyMainWindow statusbar.classic {
-	margin-top: -3px;
+	margin: -3px -10px 0;
 }
 
 #GeanyMainWindow statusbar progressbar.horizontal {
 	margin: 0 -1px 2px 0;
 }
 
-/* --- libre office --- */
+/* --- libre office v? --- */
+/* @see https://bugs.documentfoundation.org/show_bug.cgi?id=157708 */
 
-window.libreoffice-window > grid.horizontal > grid.horizontal > scrolledwindow > viewport.frame {
+#LibreOfficeMainWindow > grid.horizontal > grid.horizontal > scrolledwindow > viewport.frame {
 	border: 0;
 }
 
-window.libreoffice-window > grid.horizontal > grid.horizontal > scrolledwindow + button.flat.small-button {
+#LibreOfficeMainWindow > grid.horizontal > grid.horizontal > scrolledwindow + button.flat.small-button {
 	min-width: 24px;
 	min-height: 24px;
 	border-bottom: 1px solid @menubar_border_bot;
 	border-radius: 0;
 }
 
-window.libreoffice-window > grid.horizontal > grid.horizontal {
+#LibreOfficeMainWindow > grid.horizontal > grid.horizontal {
 	background: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
 }
 
-/* --- bleachbit v5.2 --- */
+/* --- bleachbit v5.? --- */
 /* @see https://github.com/bleachbit/bleachbit/pull/1195 */
 
 #BleachbitMainWindow > box > box > scrolledwindow:dir(ltr) scrollbar.vertical {
@@ -134,6 +151,39 @@ window.libreoffice-window > grid.horizontal > grid.horizontal {
 	padding-right: 3px;
 	border-right: 1px solid @menu_border;
 	background: @theme_bg;
+}
+
+/* --- gnome/cinnamon terminal --- */
+
+terminal-window box.vertical notebook {
+	margin: 0;
+}
+
+terminal-window box.vertical notebook stack {
+	border: 0;
+	border-radius: 0;
+}
+
+terminal-window box.vertical notebook header.top {
+	margin: 0 0 1px;
+}
+
+terminal-window:dir(ltr) box.vertical notebook header.top tabs + box {
+	margin: -3px 1px -3px 3px;
+}
+
+terminal-window:dir(rtl) box.vertical notebook header.top tabs + box {
+	margin: -3px 3px -3px 1px;
+}
+
+terminal-window box.vertical notebook header.top tabs + box button {
+	margin: 0;
+	padding: 3px 5px;
+}
+
+terminal-window:not(.maximized) box.vertical notebook header.top ~ stack {
+	border: 1px solid @nb_border;
+	border-top: 0;
 }
 
 /* --- css fix/hack for some maximized windows --- */
