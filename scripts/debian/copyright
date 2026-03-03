@@ -7,10 +7,10 @@ Copyright:
  2011-2014 Jean-Philippe Fleury
  2013-2014 Andrew Shadura
  2020      Mike Kazantsev (mk-fg) <mk.fraggod@gmail.com>
- 2020-2025 Fabrice Creuzot (luigifab) <code@luigifab.fr>
+ 2020-2026 Fabrice Creuzot (luigifab) <code@luigifab.fr>
 License: GPL-3+
 
-Files: */metacity-1/metacity-theme-1.xml
+Files: src/clearlooksre/metacity-1/metacity-theme-1.xml
 Copyright:
  2005-2007 Daniel Borgmann <daniel.borgmann@gmail.com>
  2005-2007 Andrea Cimitan <andrea.cimitan@gmail.com>
@@ -303,7 +303,7 @@ License: CC-BY-SA-3.0+
      if supplied; (iii) to the extent reasonably practicable, the URI, if
      any, that Licensor specifies to be associated with the Work, unless
      such URI does not refer to the copyright notice or licensing
-     information for the Work; and (iv) , consistent with Ssection 3(b),
+     information for the Work; and (iv), consistent with Ssection 3(b),
      in the case of an Adaptation, a credit identifying the use of the
      Work in the Adaptation (e.g., "French translation of the Work by
      Original Author," or "Screenplay based on original Work by Original

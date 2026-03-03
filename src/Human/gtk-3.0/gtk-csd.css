@@ -1,0 +1,414 @@
+/**
+ * Copyright 2020-2026 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ */
+
+/* --- window (title & border) --- (solid-csd without compositor, csd with compositor, ssd with muffin/mutter) --- */
+/* window or dialog / with or without compositor / .titlebutton.icon .titlebutton.appmenu */
+/* with gtk3-classic, without GTK_CSD with GtkInspector = marco + .background headerbar */
+/* with gtk3-classic, with GTK_CSD=0/1 with GtkInspector = csd + .background.solid-csd/.csd headerbar */
+/* with stupid muffin/mutter, :backdrop for the last element only */
+/* solid-csd + ssd + csd because headerbar can also be used with window decorator */
+
+dialog.background.csd .dialog-vbox.vertical,
+dialog.background.ssd .dialog-vbox.vertical,
+dialog.background.solid-csd .dialog-vbox.vertical {
+	margin-bottom: 9px;
+}
+
+dialog.background.csd .dialog-vbox.vertical .dialog-action-area,
+dialog.background.ssd .dialog-vbox.vertical .dialog-action-area,
+dialog.background.solid-csd .dialog-vbox.vertical .dialog-action-area {
+	margin-bottom: -9px;
+}
+
+.background.csd decoration,
+.background.csd headerbar,
+.background.ssd decoration,
+.background.ssd headerbar {
+	border-radius: 7px 7px 0 0;
+}
+
+.background.csd decoration,
+.background.ssd decoration,
+.background.solid-csd decoration {
+	padding: 3px;
+	border: 1px solid #6F6358; /* @todo metacity */
+	border-top: 0;
+	/* border-radius: 8px 8px 0 0; */
+	background-color: @theme_bg;
+	background: @theme_bg; /* for muffin/mutter */
+	/* BEVEL FOCUSED / 3d beveled frame */
+	box-shadow:
+		inset 1px 0 shade(@theme_bg, 1.2),   /* left */
+		inset -1px 0 shade(@theme_bg, 0.88), /* right */
+		inset 0 -1px shade(@theme_bg, 0.88); /* bottom */
+}
+
+.background.csd.popup decoration,
+.background.ssd.popup decoration {
+	/* menu */
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+}
+
+.background.csd headerbar,
+.background.ssd headerbar,
+.background.solid-csd headerbar {
+	margin: -3px -4px 0;
+	padding: 0 3px;
+	min-height: 22px;
+	/* border-radius: 8px 8px 0 0; */
+	color: @theme_selected_fg;
+	/* <draw_ops name="bevel"> titlebar outline */
+	border: 1px solid shade(@theme_selected_bg, 0.7);
+	/* <draw_ops name="bevel"> fancy gradient */
+	background: linear-gradient(to bottom,
+		shade(@theme_selected_bg, 1.08),
+		shade(@theme_selected_bg, 1.02) 50%,
+		shade(@theme_selected_bg, 1.0) 50%,
+		shade(@theme_selected_bg, 0.94));
+}
+
+.background.ssd headerbar {
+	margin: -3px 0 0;
+	padding: 0 2px;
+}
+
+.background.csd headerbar menu,
+.background.ssd headerbar menu,
+.background.solid-csd headerbar menu {
+	font-weight: normal;
+}
+
+.background.csd headerbar image,
+.background.ssd headerbar image,
+.background.solid-csd headerbar image {
+	/* -gtk-icon-transform: scale(0.75); */
+	-gtk-icon-style: symbolic;
+}
+
+.background.csd headerbar entry,
+.background.ssd headerbar entry,
+.background.solid-csd headerbar entry {
+	box-shadow:none; border:0; margin:4px 0; font-size:85%; /* @todo */
+}
+
+.background.csd headerbar label.title,
+.background.ssd headerbar label.title,
+.background.solid-csd headerbar label.title {
+	padding-top: 2px;
+	font-weight: bold;
+}
+
+.background.csd headerbar label.subtitle,
+.background.ssd headerbar label.subtitle,
+.background.solid-csd headerbar label.subtitle {
+	font-size: 85%;
+}
+
+.background.csd headerbar button:not(.titlebutton),
+.background.csd headerbar button:not(.titlebutton):hover,
+.background.csd headerbar button:not(.titlebutton):active,
+.background.csd headerbar button:not(.titlebutton):focus,
+.background.csd headerbar button:not(.titlebutton):hover:active,
+.background.csd headerbar button:not(.titlebutton):hover:focus,
+.background.csd headerbar button:not(.titlebutton):active:focus,
+.background.csd headerbar button:not(.titlebutton):hover:active:focus,
+.background.ssd headerbar button:not(.titlebutton),
+.background.ssd headerbar button:not(.titlebutton):hover,
+.background.ssd headerbar button:not(.titlebutton):active,
+.background.ssd headerbar button:not(.titlebutton):focus,
+.background.ssd headerbar button:not(.titlebutton):hover:active,
+.background.ssd headerbar button:not(.titlebutton):hover:focus,
+.background.ssd headerbar button:not(.titlebutton):active:focus,
+.background.ssd headerbar button:not(.titlebutton):hover:active:focus,
+.background.solid-csd headerbar button:not(.titlebutton),
+.background.solid-csd headerbar button:not(.titlebutton):hover,
+.background.solid-csd headerbar button:not(.titlebutton):active,
+.background.solid-csd headerbar button:not(.titlebutton):focus,
+.background.solid-csd headerbar button:not(.titlebutton):hover:active,
+.background.solid-csd headerbar button:not(.titlebutton):hover:focus,
+.background.solid-csd headerbar button:not(.titlebutton):active:focus,
+.background.solid-csd headerbar button:not(.titlebutton):hover:active:focus {
+	/* ChatGPT made the list */
+	color: @theme_selected_fg;
+	border: 1px solid transparent;
+	background: transparent;
+	box-shadow: none;
+	outline: 0;
+}
+
+.background.csd headerbar button:not(.titlebutton):checked,
+.background.csd headerbar button:not(.titlebutton):hover:checked,
+.background.csd headerbar button:not(.titlebutton):active:checked,
+.background.csd headerbar button:not(.titlebutton):focus:checked,
+.background.csd headerbar button:not(.titlebutton):hover:active:checked,
+.background.csd headerbar button:not(.titlebutton):hover:focus:checked,
+.background.csd headerbar button:not(.titlebutton):active:focus:checked,
+.background.csd headerbar button:not(.titlebutton):hover:active:focus:checked,
+.background.ssd headerbar button:not(.titlebutton):checked,
+.background.ssd headerbar button:not(.titlebutton):hover:checked,
+.background.ssd headerbar button:not(.titlebutton):active:checked,
+.background.ssd headerbar button:not(.titlebutton):focus:checked,
+.background.ssd headerbar button:not(.titlebutton):hover:active:checked,
+.background.ssd headerbar button:not(.titlebutton):hover:focus:checked,
+.background.ssd headerbar button:not(.titlebutton):active:focus:checked,
+.background.ssd headerbar button:not(.titlebutton):hover:active:focus:checked,
+.background.solid-csd headerbar button:not(.titlebutton):checked,
+.background.solid-csd headerbar button:not(.titlebutton):hover:checked,
+.background.solid-csd headerbar button:not(.titlebutton):active:checked,
+.background.solid-csd headerbar button:not(.titlebutton):focus:checked,
+.background.solid-csd headerbar button:not(.titlebutton):hover:active:checked,
+.background.solid-csd headerbar button:not(.titlebutton):hover:focus:checked,
+.background.solid-csd headerbar button:not(.titlebutton):active:focus:checked,
+.background.solid-csd headerbar button:not(.titlebutton):hover:active:focus:checked {
+	/* ChatGPT made the list */
+	color: @theme_selected_fg;
+	border-color: @slider_border;
+	background: darker(@theme_selected_bg);
+	box-shadow: none;
+	outline: 0;
+}
+
+.background.csd headerbar button,
+.background.csd headerbar button.toggle,
+.background.ssd headerbar button,
+.background.ssd headerbar button.toggle,
+.background.solid-csd headerbar button,
+.background.solid-csd headerbar button.toggle {
+	margin: 1px 0;
+	padding: 0 3px;
+	border-radius: 3px;
+}
+
+.background.csd headerbar button label,
+.background.ssd headerbar button label,
+.background.solid-csd headerbar button label {
+	margin: 1px 0 -1px;
+	padding: 0;
+}
+
+.background.csd headerbar box.left,
+.background.ssd headerbar box.left,
+.background.solid-csd headerbar box.left {
+	/* headerbar windowcontrols with gtk4 */
+	margin: 0 -3px 0 3px;
+}
+
+.background.csd headerbar box.right,
+.background.ssd headerbar box.right,
+.background.solid-csd headerbar box.right {
+	/* headerbar windowcontrols with gtk4 */
+	margin: 0 3px 0 -3px;
+}
+
+.background.csd headerbar image.app-icon,
+.background.ssd headerbar image.app-icon,
+.background.solid-csd headerbar image.app-icon {
+	margin: 0 3px; /* with gtk3-classic (appearance__appicon_headerbar.patch) */
+}
+
+.background.csd headerbar separator.titlebutton,
+.background.ssd headerbar separator.titlebutton,
+.background.solid-csd headerbar separator.titlebutton {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.background.csd headerbar button.titlebutton,
+.background.ssd headerbar button.titlebutton,
+.background.solid-csd headerbar button.titlebutton {
+	margin: 2px -1px;
+	padding: 0;
+	color: shade(@theme_base, 0.95);
+	/* <draw_ops name="button_bg"> border outline */
+	border: 1px solid shade(@theme_selected_bg, 0.6);
+	/* <draw_ops name="button_bg"> fill gradient */
+	background: linear-gradient(to bottom,
+		shade(@theme_selected_bg, 1.1),
+		shade(@theme_selected_bg, 1.02) 50%,
+		shade(@theme_selected_bg, 1.0) 50%,
+		shade(@theme_selected_bg, 0.92));
+	/* <draw_ops name="button_bg" inside highlight, inside shadow, bottom border smooth effect */
+	box-shadow:
+		inset 0 1px shade(@theme_selected_bg, 1.18),  /* top */
+		inset 1px 0 shade(@theme_selected_bg, 1.1),   /* left */
+		inset -1px 0 shade(@theme_selected_bg, 1),    /* right */
+		inset 0 -1px shade(@theme_selected_bg, 0.92), /* bottom (0.84+0.92) */
+		1px 0 shade(@theme_selected_bg, 1.005),       /* right gradient (0.96>1.05) */
+		-1px 0 shade(@theme_selected_bg, 1.005),      /* left gradient (0.96>1.05) */
+		0 1px shade(@theme_selected_bg, 1.06);        /* bottom */
+}
+
+.background.ssd headerbar button.titlebutton {
+	margin: 1px -1px 0;
+}
+
+.background.csd headerbar button.titlebutton:hover,
+.background.ssd headerbar button.titlebutton:hover,
+.background.solid-csd headerbar button.titlebutton:hover {
+	/* <draw_ops name="button_bg_prelight"> */
+	border: 1px solid shade(@theme_selected_bg, 0.6);
+	background: shade(@theme_selected_bg, 1.15);
+}
+
+.background.csd headerbar button.titlebutton:active,
+.background.ssd headerbar button.titlebutton:active,
+.background.solid-csd headerbar button.titlebutton:active {
+	/* <draw_ops name="button_bg_pressed"> border outline */
+	border: 1px solid shade(@theme_selected_bg, 0.7);
+	/* <draw_ops name="button_bg_pressed"> fill gradient */
+	background: linear-gradient(to bottom,
+		shade(@theme_selected_bg, 0.95),
+		shade(@theme_selected_bg, 0.9));
+}
+
+/* --- window (title & border) backdrop --- */
+
+.background.csd:backdrop decoration,
+.background.ssd:backdrop decoration,
+.background.ssd decoration:backdrop,
+.background.solid-csd:backdrop decoration {
+	border-color: shade(@theme_bg, 0.55);
+	/* BEVEL UNFOCUSED / 3d beveled frame */
+	box-shadow:
+		inset 1px 0 shade(@theme_bg, 1.03),  /* left */
+		inset -1px 0 shade(@theme_bg, 0.88), /* right */
+		inset 0 -1px shade(@theme_bg, 0.88); /* bottom */
+}
+
+.background.csd:backdrop headerbar,
+.background.ssd:backdrop headerbar,
+.background.ssd headerbar:backdrop,
+.background.solid-csd:backdrop headerbar {
+	color: mix(@theme_fg, @theme_bg, 0.45);
+	/* <draw_ops name="bevel_unfocused"> rectangle */
+	border: 1px solid shade(@theme_bg, 0.55);
+	/* <draw_ops name="bevel_unfocused"> fancy gradient */
+	background: linear-gradient(to bottom,
+		shade(@theme_bg, 0.99),
+		shade(@theme_bg, 0.95) 50%,
+		shade(@theme_bg, 0.93) 50%,
+		shade(@theme_bg, 0.89));
+}
+
+.background.csd:backdrop headerbar button,
+.background.csd:backdrop headerbar button:hover,
+.background.ssd:backdrop headerbar button,
+.background.ssd:backdrop headerbar button:hover,
+.background.ssd headerbar button:backdrop,
+.background.ssd headerbar button:backdrop:hover,
+.background.solid-csd:backdrop headerbar button,
+.background.solid-csd:backdrop headerbar button:hover {
+	color: mix(@theme_fg, @theme_bg, 0.45);
+}
+
+.background.csd:backdrop headerbar button:not(.titlebutton):checked,
+.background.ssd:backdrop headerbar button:not(.titlebutton):checked,
+.background.ssd headerbar button:backdrop:not(.titlebutton):checked,
+.background.solid-csd:backdrop headerbar button:not(.titlebutton):checked {
+	/* same as close button */
+	color: mix(@theme_fg, @theme_bg, 0.45);
+	border-color: shade(@theme_bg, 0.6);
+	background: linear-gradient(to bottom,
+		shade(@theme_bg, 1.15),
+		shade(@theme_bg, 1.07) 50%,
+		shade(@theme_bg, 1.05) 50%,
+		shade(@theme_bg, 0.97));
+}
+
+.background.csd:backdrop headerbar button.titlebutton,
+.background.ssd:backdrop headerbar button.titlebutton,
+.background.ssd headerbar button.titlebutton:backdrop,
+.background.solid-csd:backdrop headerbar button.titlebutton {
+	color: mix(@theme_fg, @theme_bg, 0.45);
+	border: 1px solid shade(@theme_bg, 0.6);
+	/* <draw_ops name="button_bg_unfocused"> fill gradient */
+	background: linear-gradient(to bottom,
+		shade(@theme_bg, 1.15),
+		shade(@theme_bg, 1.07) 50%,
+		shade(@theme_bg, 1.05) 50%,
+		shade(@theme_bg, 0.97));
+	/* <draw_ops name="button_bg" inside highlight, inside shadow, bottom border smooth effect */
+	box-shadow:
+		inset 0 1px shade(@theme_bg, 1.2),   /* top */
+		inset 1px 0 shade(@theme_bg, 1.1),   /* left */
+		inset -1px 0 shade(@theme_bg, 1.05), /* right */
+		inset 0 -1px shade(@theme_bg, 0.89), /* bottom (0.89+0.97) */
+		1px 0 shade(@theme_bg, 0.94),        /* right gradient (0.92>0.96) */
+		-1px 0 shade(@theme_bg, 0.94),       /* left gradient (0.92>0.96) */
+		0 1px shade(@theme_bg, 0.96);        /* bottom */
+}
+
+.background.csd:backdrop headerbar button.titlebutton:hover,
+.background.ssd:backdrop headerbar button.titlebutton:hover,
+.background.ssd headerbar button.titlebutton:backdrop:hover,
+.background.solid-csd:backdrop headerbar button.titlebutton:hover {
+	/* @todo */
+}
+
+/* --- window (title & border) maximized --- */
+
+.background.csd.maximized,
+.background.solid-csd.maximized {
+	border-bottom: 1px solid #463731; /* @todo metacity */
+}
+
+.background.csd.maximized:backdrop,
+.background.ssd.maximized:backdrop,
+.background.solid-csd.maximized:backdrop {
+	border-bottom-color: shade(@theme_bg, 0.55);
+}
+
+.background.csd.maximized decoration,
+.background.ssd.maximized decoration,
+.background.solid-csd.maximized decoration {
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.background.ssd.maximized decoration {
+	border-bottom: 1px solid #463731; /* @todo metacity */
+}
+
+.background.csd.maximized headerbar,
+.background.ssd.maximized headerbar,
+.background.solid-csd.maximized headerbar {
+	margin: 0 -3px;
+	border-radius: 0;
+}
+
+.background.ssd.maximized headerbar {
+	padding: 2px 3px 1px;
+}
+
+.background.csd.maximized statusbar,
+.background.solid-csd.maximized statusbar {
+	border-bottom: 1px solid transparent;
+}

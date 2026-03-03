@@ -1,0 +1,205 @@
+/**
+ * Copyright 2020-2026 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ */
+
+/* --- treeview --- */
+
+treeview, list {
+	color: @theme_text;
+	background-color: @theme_base;
+}
+
+treeview:focus button {
+	margin: 0;
+	padding: 0;
+}
+
+treeview.view {
+	padding: 0 1px;
+}
+
+treeview.view:disabled {
+	color: @insensitive_fg;
+}
+
+/* --- treeview headers --- */
+
+treeview header button,
+treeview header button:hover,
+treeview header button:focus {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-bottom: 1px solid @toolbar_border_bot;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+treeview header button > box {
+	margin: 4px 0 3px;
+	padding: 0 2px 0 3px;
+	border-left: 1px solid @toolbar_separator_lite;
+	border-right: 1px solid @toolbar_separator_dark;
+}
+
+treeview header button:first-child > box {
+	border-left: 0;
+}
+
+treeview header button:last-child > box {
+	border-right: 0;
+}
+
+/* --- treeview alternating colours - with gtk3-classic (treeview__alternating_row_colours.patch) --- */
+/* @see https://github.com/lah7/gtk3-classic/issues/120 - anyway it's not only gtk-classic */
+
+treeview.view.odd:not(.trough):not(.progressbar) {
+	background-color: @theme_base;
+	/* lol */
+	background: linear-gradient(to bottom, @theme_base, @theme_base);
+	border-right: 1px solid transparent;
+	border-image-source: repeating-linear-gradient(to bottom, @theme_base 0, @theme_base 3px, @theme_treeview_border 3px, @theme_treeview_border 4px);
+	border-image-slice: 1;
+	border-image-repeat: repeat;
+}
+
+treeview.view.even:not(.trough):not(.progressbar) {
+	background-color: #EEE; /* @todo */
+	/* lol */
+	background: linear-gradient(to bottom, #EEE, #EEE);
+	border-right: 1px solid transparent;
+	border-image-source: repeating-linear-gradient(to bottom, #EEE 0, #EEE 3px, @theme_treeview_border 3px, @theme_treeview_border 4px);
+	border-image-slice: 1;
+	border-image-repeat: repeat;
+}
+
+treeview.view.odd.sorted:not(.trough):not(.progressbar) {
+	background-color: #EEE; /* @todo */
+	/* lol */
+	background: linear-gradient(to bottom, #EEE, #EEE);
+	border-image-source: repeating-linear-gradient(to bottom, #EEE 0, #EEE 3px, @theme_treeview_border 3px, @theme_treeview_border 4px);
+}
+
+treeview.view.even.sorted:not(.trough):not(.progressbar) {
+	background-color: #DDD; /* @todo */
+	/* lol */
+	background: linear-gradient(to bottom, #DDD, #DDD);
+	border-image-source: repeating-linear-gradient(to bottom, #DDD 0, #DDD 3px, @theme_treeview_border 3px, @theme_treeview_border 4px);
+}
+
+treeview.view.odd.last:not(.trough):not(.progressbar),
+treeview.view.odd.sorted.last:not(.trough):not(.progressbar),
+treeview.view.even.last:not(.trough):not(.progressbar),
+treeview.view.even.sorted.last:not(.trough):not(.progressbar) {
+	border-right: 0;
+}
+
+/* treeview.view.odd:not(.last):not(.trough):not(.progressbar),
+treeview.view.even:not(.last):not(.trough):not(.progressbar) {
+	* multiple background doesn't work -> border-image *
+	background-image: url("img/treeview-separator.svg");
+	background-repeat: repeat-y;
+	background-position: right bottom;
+} */
+
+list row:selected, /* without gtk3-classic */
+treeview.view:not(.trough):not(.progressbar):selected, /* without gtk3-classic */
+treeview.view.odd:not(.trough):not(.progressbar):selected,
+treeview.view.odd.sorted:not(.trough):not(.progressbar):selected,
+treeview.view.even:not(.trough):not(.progressbar):selected,
+treeview.view.even.sorted:not(.trough):not(.progressbar):selected {
+	color: @theme_selected_fg;
+	border-image-source: repeating-linear-gradient(to bottom,
+		@theme_selected_bg 0,
+		@theme_selected_bg 3px,
+		@theme_treeview_border 3px,
+		@theme_treeview_border 4px);
+	background:
+		radial-gradient(ellipse 110% 50%,
+			@menuitem_hover_glaze_glow_center,
+			@menuitem_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@menuitem_hover_glaze_top,
+			@menuitem_hover_glaze_mida 50%,
+			@menuitem_hover_glaze_midb 50%,
+			@menuitem_hover_glaze_bot);
+}
+
+/* treeview.view:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.odd:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.odd.sorted:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.even:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.even.sorted:not(.trough):not(.progressbar):selected:not(:focus) {
+	see gtk.css
+} */
+
+treeview.view.odd:not(.trough):not(.progressbar):selected:disabled,
+treeview.view.odd.sorted:not(.trough):not(.progressbar):selected:disabled,
+treeview.view.even:not(.trough):not(.progressbar):selected:disabled,
+treeview.view.even.sorted:not(.trough):not(.progressbar):selected:disabled {
+	color: @insensitive_fg;
+}
+
+/* --- treeview progressbars --- */
+
+treeview.view.trough,
+treeview.view.trough.odd,
+treeview.view.trough.even,
+treeview.view.trough.sorted,
+treeview.view.trough.sorted.odd,
+treeview.view.trough.sorted.even {
+	padding: 0;
+	color: @theme_text; /* = progressbar.classic text.trough */
+	border: 1px solid @slider_border_treeview;
+	background-color: @theme_bg;
+}
+
+treeview.view.trough:disabled,
+treeview.view.trough.odd:disabled,
+treeview.view.trough.even:disabled {
+	color: @insensitive_fg; /* = progressbar.classic:disabled text.trough */
+	background-color: @theme_bg;
+}
+
+treeview.view.progressbar {
+	color: @theme_selected_fg; /* = progressbar.classic text.progress */
+	text-shadow: none;
+	box-shadow:
+		inset -1px -1px @slider_border,
+		inset  1px  1px @slider_border;
+}
+
+treeview.view.progressbar:disabled {
+	color: @insensitive_selected; /* = progressbar.classic:disabled text.progress */
+}
+
+/* --- treeview elements --- */
+
+treeview.view check,
+treeview.view radio {
+	background: transparent;
+}
+
+treeview.view.image:disabled {
+	-gtk-icon-effect: dim;
+}

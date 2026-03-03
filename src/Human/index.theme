@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Encoding=UTF-8
+Name=Human
+
+[X-GNOME-Metatheme]
+ButtonLayout=:minimize,maximize,close
+CursorSize=16
+CursorTheme=DMZ-White
+GtkTheme=Human
+IconTheme=gnome
+MetacityTheme=ClearlooksRe
+Encoding=UTF-8
+Name=Human

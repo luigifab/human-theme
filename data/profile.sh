@@ -1,8 +1,9 @@
 # set classic mode for font rendering (default in 2.6)
 export FREETYPE_PROPERTIES="truetype:interpreter-version=35"
 
-# set gtk2 theme for qt5 apps
-export QT_QPA_PLATFORMTHEME=gtk2
+# set gtk theme for qt apps
+#export QT_STYLE_OVERRIDE=GlobalQSS
+#export QT_QPA_PLATFORMTHEME=gtk3
 
 ##################################################
 # with original gtk3-classic

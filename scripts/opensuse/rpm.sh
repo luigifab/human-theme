@@ -3,7 +3,7 @@
 
 
 cd "$(dirname "$0")"
-version="2.6.0"
+version="3.0.0"
 
 
 mkdir -p builder ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}

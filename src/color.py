@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Copyright 2020-2025 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+# Copyright 2020-2026 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
 # https://github.com/luigifab/human-theme
 #
 # Forked from

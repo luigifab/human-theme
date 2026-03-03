@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Encoding=UTF-8
+Name=Human Orange
+Name[fr]=Human Orange
+
+[X-GNOME-Metatheme]
+ButtonLayout=:minimize,maximize,close
+CursorSize=16
+CursorTheme=DMZ-White
+GtkTheme=Human-orange
+IconTheme=gnome
+MetacityTheme=ClearlooksRe
+Encoding=UTF-8
+Name=Human Orange
+Name[fr]=Human Orange

@@ -1,0 +1,593 @@
+/**
+ * Copyright 2020-2026 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ */
+
+/* --- scale --- */
+
+scale:disabled {
+	opacity: 0.6;
+}
+
+scale.vertical {
+	margin: 0 1px;
+}
+
+scale.horizontal {
+	margin: 1px 0;
+}
+
+scale contents {
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+scale:focus contents {
+	border-color: @theme_outline;
+	background: @checkbutton_focus_bg;
+}
+
+scale.vertical contents {
+	padding: 18px 6px;
+}
+
+scale.horizontal contents {
+	padding: 6px 12px;
+}
+
+scale trough {
+	border-radius: 2.75px;
+	background: @scale_trough_bg;
+	box-shadow:
+		-1px -1px alpha(@slider_trough_bg, 0.35),
+		 1px  1px alpha(lighter(@theme_bg), 0.418),
+		inset -1px -1px @slider_trough_border,
+		inset  1px 1px @slider_trough_border;
+}
+
+scale trough highlight {
+	border-radius: 2.75px;
+	box-shadow:
+		inset -1px -1px @slider_border,
+		inset  1px  1px @slider_border;
+}
+
+scale.vertical trough {
+	margin: -16px 0;
+	padding: 11px 0;
+}
+
+scale.horizontal trough {
+	margin: 0 -10px;
+	padding: 0 11px;
+}
+
+scale.vertical trough highlight {
+	min-width: 5px;
+	background:
+		radial-gradient(
+			ellipse 50% 90%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge),
+		linear-gradient(to right,
+			@slider_glaze_top,
+			@slider_glaze_mida 49%,
+			@slider_glaze_midb 49%,
+			@slider_glaze_bot),
+		repeating-linear-gradient(135deg,
+			@slider_pattern_shade,
+			@slider_pattern_shade 12px,
+			@slider_pattern 12px,
+			@slider_pattern 24px);
+}
+
+scale.vertical trough highlight.top {
+	margin-top: -11px;
+}
+
+scale.vertical trough highlight.bottom {
+	margin-bottom: -11px;
+}
+
+scale.vertical trough highlight.top:dir(rtl),
+scale.vertical.top trough highlight.bottom:dir(rtl) /* awf-extended */ {
+	margin-top: -11px;
+	margin-bottom: 1px;
+}
+
+scale.vertical trough highlight.bottom:dir(rtl) {
+	margin-top: 1px;
+	margin-bottom: -11px;
+}
+
+scale.horizontal trough highlight {
+	min-height: 5px;
+	background:
+		radial-gradient(
+			ellipse 90% 50%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@slider_glaze_top,
+			@slider_glaze_mida 49%,
+			@slider_glaze_midb 49%,
+			@slider_glaze_bot),
+		repeating-linear-gradient(135deg,
+			@slider_pattern_shade,
+			@slider_pattern_shade 12px,
+			@slider_pattern 12px,
+			@slider_pattern 24px);
+}
+
+scale.horizontal trough highlight.top {
+	margin-left: -11px;
+}
+
+scale.horizontal trough highlight.bottom {
+	margin-right: -11px;
+}
+
+scale.vertical trough slider {
+	margin: 0 -6px;
+	min-width: 11px;
+	min-height: 18px;
+	border: 1px solid @slider_trough_border;
+	border-radius: 2.75px;
+	background:
+		radial-gradient(circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge),
+		linear-gradient(to right,
+			@scale_glaze_top,
+			@scale_glaze_mida 49%,
+			@scale_glaze_midb 49%,
+			@scale_glaze_bot);
+}
+
+scale.horizontal trough slider {
+	margin: -6px 0;
+	min-width: 18px;
+	min-height: 11px;
+	border: 1px solid @slider_trough_border;
+	border-radius: 2.75px;
+	background:
+		radial-gradient(circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@scale_glaze_top,
+			@scale_glaze_mida 49%,
+			@scale_glaze_midb 49%,
+			@scale_glaze_bot);
+}
+
+scale.vertical trough slider:hover {
+	background:
+		radial-gradient(circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge),
+		linear-gradient(to right,
+			@scale_hover_glaze_top,
+			@scale_hover_glaze_mida 49%,
+			@scale_hover_glaze_midb 49%,
+			@scale_hover_glaze_bot);
+}
+
+scale.horizontal trough slider:hover {
+	background:
+		radial-gradient(circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@scale_hover_glaze_top,
+			@scale_hover_glaze_mida 49%,
+			@scale_hover_glaze_midb 49%,
+			@scale_hover_glaze_bot);
+}
+
+scale.vertical value {
+	margin: -1px -2px 2px;
+}
+
+scale.horizontal value {
+	margin: 0 0 2px;
+}
+
+/* --- scale mark --- */
+
+scale.vertical.marks-before indicator,
+scale.vertical.marks-after indicator {
+	min-width: 5px;
+	border-top: 1px solid @content_separator_dark;
+	border-bottom: 1px solid @content_separator_lite;
+}
+
+scale.horizontal.marks-before indicator,
+scale.horizontal.marks-after indicator {
+	min-height: 6px;
+	border-left: 1px solid @content_separator_dark;
+	border-right: 1px solid @content_separator_lite;
+}
+
+scale.vertical.marks-before marks.top indicator {
+	margin: 1px 1px 0 2px;
+}
+
+scale.vertical.marks-before marks.top label {
+	margin: 0 1px 0 -1px;
+}
+
+scale.vertical.marks-after marks.bottom indicator {
+	margin: 1px 2px 0 1px;
+}
+
+scale.vertical.marks-after marks.bottom label {
+	margin: 0 -1px 0 1px;
+}
+
+scale.horizontal.marks-before marks.top indicator {
+	margin: 1px 0 1px 1px;
+}
+
+scale.horizontal.marks-before marks.top label {
+	margin: -1px 0 1px 2px;
+}
+
+scale.horizontal.marks-after marks.bottom indicator {
+	margin: 1px 0 1px 1px;
+}
+
+scale.horizontal.marks-after marks.bottom label {
+	margin: 1px 0 -1px 2px;
+}
+
+/* --- level bar --- */
+
+levelbar:disabled {
+	opacity: 0.6;
+}
+
+levelbar trough {
+	border-radius: 2.75px;
+	background:
+		linear-gradient(to right,
+			alpha(@slider_trough_shadow_edge, 0.3),
+			alpha(@slider_trough_shadow, 0.3) 3px,
+			alpha(@slider_trough_shadow, 0) 5px),
+		linear-gradient(to bottom,
+			alpha(@slider_trough_shadow_edge, 0.3),
+			alpha(@slider_trough_shadow, 0.3) 3px,
+			alpha(@slider_trough_shadow, 0) 5px)
+		@slider_trough_bg;
+	box-shadow:
+		inset -1px -1px @slider_trough_border,
+		inset  1px 1px @slider_trough_border;
+}
+
+levelbar.vertical trough {
+	min-width: 10px;
+}
+
+levelbar.horizontal trough {
+	min-height: 10px;
+}
+
+levelbar block.filled {
+	border-radius: 2.75px;
+	box-shadow:
+		inset -1px -1px @slider_border,
+		inset  1px  1px @slider_border;
+}
+
+levelbar.vertical block.filled {
+	background:
+		radial-gradient(
+			ellipse 90% 50%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge),
+		linear-gradient(to right,
+			@slider_glaze_top,
+			@slider_glaze_mida 49%,
+			@slider_glaze_midb 49%,
+			@slider_glaze_bot),
+		repeating-linear-gradient(135deg,
+			@slider_pattern_shade,
+			@slider_pattern_shade 12px,
+			@slider_pattern 12px,
+			@slider_pattern 24px);
+}
+
+levelbar.horizontal block.filled {
+	background:
+		radial-gradient(
+			ellipse 90% 50%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@slider_glaze_top,
+			@slider_glaze_mida 49%,
+			@slider_glaze_midb 49%,
+			@slider_glaze_bot),
+		repeating-linear-gradient(135deg,
+			@slider_pattern_shade,
+			@slider_pattern_shade 12px,
+			@slider_pattern 12px,
+			@slider_pattern 24px);
+}
+
+levelbar.vertical.continuous block.filled:last-child {
+	background:
+		radial-gradient(
+			ellipse 90% 50%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge),
+		linear-gradient(to right,
+			@slider_glaze_top,
+			@slider_glaze_mida 49%,
+			@slider_glaze_midb 49%,
+			@slider_glaze_bot),
+		repeating-linear-gradient(45deg,
+			@slider_pattern_shade,
+			@slider_pattern_shade 12px,
+			@slider_pattern 12px,
+			@slider_pattern 24px);
+}
+
+levelbar.horizontal.continuous block.filled:last-child {
+	background:
+		radial-gradient(
+			ellipse 90% 50%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@slider_glaze_top,
+			@slider_glaze_mida 49%,
+			@slider_glaze_midb 49%,
+			@slider_glaze_bot),
+		repeating-linear-gradient(225deg,
+			@slider_pattern_shade,
+			@slider_pattern_shade 12px,
+			@slider_pattern 12px,
+			@slider_pattern 24px);
+}
+
+levelbar.vertical.discrete block {
+	margin: 1px 0;
+}
+
+levelbar.vertical.discrete block:first-child {
+	margin: 0 0 1px 0;
+}
+
+levelbar.vertical.discrete block:last-child {
+	margin: 1px 0 0 0;
+}
+
+levelbar.horizontal.discrete block {
+	margin: 0 1px;
+}
+
+levelbar.horizontal.discrete block:first-child {
+	margin: 0 1px 0 0;
+}
+
+levelbar.horizontal.discrete block:last-child {
+	margin: 0 -3px 0 1px;
+}
+
+/* --- progress bar - @todo:pulse --- */
+
+progressbar:disabled {
+	opacity: 0.6;
+}
+
+progressbar:disabled text {
+	text-shadow: none;
+}
+
+progressbar trough {
+	border-radius: 2.75px;
+	background: @slider_trough_bg;
+	box-shadow:
+		inset -1px -1px @slider_trough_border,
+		inset  3px 3px alpha(shade(@theme_bg, 0.82), 0.26),
+		inset  2px 2px alpha(shade(@theme_bg, 0.82), 0.26),
+		inset  1px 1px @slider_trough_border;
+}
+
+progressbar trough progress {
+	border-radius: 2.75px;
+	box-shadow:
+		inset -1px -1px @slider_border,
+		inset  1px  1px @slider_border;
+}
+
+progressbar.vertical trough,
+progressbar.vertical trough progress {
+	min-width: 23px;
+}
+
+progressbar.vertical text + trough,
+progressbar.vertical text + trough progress {
+	min-width: 40px;
+}
+
+progressbar.horizontal trough,
+progressbar.horizontal trough progress {
+	min-height: 23px;
+}
+
+progressbar.vertical trough progress {
+	background:
+		radial-gradient(
+			ellipse 50% 90%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge),
+		linear-gradient(to right,
+			@slider_glaze_top,
+			@slider_glaze_mida 49%,
+			@slider_glaze_midb 49%,
+			@slider_glaze_bot),
+		repeating-linear-gradient(135deg,
+			@slider_pattern_shade,
+			@slider_pattern_shade 15px,
+			@slider_pattern 15px,
+			@slider_pattern 30px);
+}
+
+progressbar.vertical trough progress.bottom {
+	background:
+		radial-gradient(
+			ellipse 50% 90%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge),
+		linear-gradient(to right,
+			@slider_glaze_top,
+			@slider_glaze_mida 49%,
+			@slider_glaze_midb 49%,
+			@slider_glaze_bot),
+		repeating-linear-gradient(45deg,
+			@slider_pattern_shade,
+			@slider_pattern_shade 15px,
+			@slider_pattern 15px,
+			@slider_pattern 30px);
+}
+
+treeview.view.progressbar,
+progressbar.horizontal trough progress {
+	background:
+		radial-gradient(
+			ellipse 90% 50%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@slider_glaze_top,
+			@slider_glaze_mida 49%,
+			@slider_glaze_midb 49%,
+			@slider_glaze_bot),
+		repeating-linear-gradient(135deg,
+			@slider_pattern_shade,
+			@slider_pattern_shade 15px,
+			@slider_pattern 15px,
+			@slider_pattern 30px);
+}
+
+progressbar.horizontal trough progress.right {
+	background:
+		radial-gradient(
+			ellipse 90% 50%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@slider_glaze_top,
+			@slider_glaze_mida 49%,
+			@slider_glaze_midb 49%,
+			@slider_glaze_bot),
+		repeating-linear-gradient(225deg,
+			@slider_pattern_shade,
+			@slider_pattern_shade 15px,
+			@slider_pattern 15px,
+			@slider_pattern 30px);
+}
+
+progressbar.vertical text {
+	margin-left: -39px;
+	padding-left: 2px;
+}
+
+progressbar.horizontal text {
+	margin-bottom: -23px;
+	padding-top: 3px;
+}
+
+/* --- progress bar in status bar --- */
+
+statusbar progressbar.horizontal {
+	margin: 4px 2px 0 0;
+	font-size: 85%;
+}
+
+statusbar progressbar.horizontal text {
+	padding: 0;
+}
+
+statusbar.classic progressbar.horizontal {
+	margin: 3px 2px 0 0;
+	font-size: 80%;
+}
+
+statusbar.classic progressbar.horizontal text {
+	padding: 1px 0 0;
+}
+
+statusbar progressbar.horizontal trough,
+statusbar progressbar.horizontal trough progress {
+	min-height: 14px;
+}
+
+.maximized statusbar progressbar.horizontal {
+	margin-top: 2px;
+}
+
+.maximized statusbar.classic progressbar.horizontal {
+	margin-top: 2px;
+}
+
+/* --- progress bar - with gtk3-classic (appearance__progress_text.patch) when GTK_PROGRESS_TEXT_INSIDE=1 --- */
+
+progressbar.classic.vertical text,
+progressbar.classic.vertical trough,
+progressbar.classic.vertical trough progress {
+	margin: 0;
+	padding: 0;
+	min-width: 40px; /* to avoid small width at <10% */
+	min-height: 0;
+}
+
+progressbar.classic.horizontal text,
+progressbar.classic.horizontal trough,
+progressbar.classic.horizontal trough progress {
+	margin: 0;
+	padding: 0;
+	min-width: 0;
+	min-height: 0;
+}
+
+progressbar.classic.vertical.full text {
+	margin: 0 -1px; /* to avoid extra width at 100% */
+}
+
+progressbar.classic.horizontal text {
+	padding: 3px 0;
+}
+
+progressbar.classic text {
+	color: transparent;
+}
+
+progressbar.classic text.trough {
+	color: @theme_text;
+}
+
+progressbar.classic text.progress {
+	color: @theme_selected_fg;
+}

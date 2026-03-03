@@ -1,12 +1,14 @@
 # Human theme
 
-This theme works with **GTK 2.24** *(with murrine)* & **GTK 3.24** & **GTK 4.12..4.19**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic.
+This theme works with **GTK 2.24** *(with murrine)* & **GTK 3.24** & **GTK 4.12..4.21**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It works also with **Qt 5.15** & **Qt 6.0..6.10**.
 
 It is mainly intended for **MATE** desktop environment, it's not too bad with **Xfce**, it's experimental with **Cinnamon**.
 
+🆕 New Qt version! It requires [GlobalQSS](https://github.com/luigifab/globalqss).
+
 ## Screenshots
 
-GTK 2.24 (Pango 1.56)\
+GTK 2.24 (Pango 1.57)\
 [<img alt="Preview with GTK 2 - Main window" src="images/thumbs/gtk2.png?raw=true" width="200" />](images/gtk2.png?raw=true)
 [<img alt="Preview with GTK 2 - Orange variation - Main window" src="images/thumbs/gtk2-orange.png?raw=true" width="200" />](images/gtk2-orange.png?raw=true)
 [<img alt="Preview with GTK 2 - Blue variation - Main window" src="images/thumbs/gtk2-blue.png?raw=true" width="200" />](images/gtk2-blue.png?raw=true)
@@ -16,7 +18,7 @@ GTK 2.24 (Pango 1.56)\
 [<img alt="Preview with GTK 2 - Blue variation - Main window with menu" src="images/thumbs/gtk2-blue-menu.png?raw=true" width="200" />](images/gtk2-blue-menu.png?raw=true)
 [<img alt="Preview with GTK 2 - Green variation - Main window with menu" src="images/thumbs/gtk2-green-menu.png?raw=true" width="200" />](images/gtk2-green-menu.png?raw=true)
 
-GTK 2.24 RTL (Pango 1.56)\
+GTK 2.24 RTL (Pango 1.57)\
 [<img alt="Preview with GTK 2 - RTL - Main window" src="images/thumbs/gtk2-rtl.png?raw=true" width="200" />](images/gtk2-rtl.png?raw=true)
 [<img alt="Preview with GTK 2 - RTL - Orange variation - Main window" src="images/thumbs/gtk2-rtl-orange.png?raw=true" width="200" />](images/gtk2-rtl-orange.png?raw=true)
 [<img alt="Preview with GTK 2 - RTL - Blue variation - Main window" src="images/thumbs/gtk2-rtl-blue.png?raw=true" width="200" />](images/gtk2-rtl-blue.png?raw=true)
@@ -26,7 +28,7 @@ GTK 2.24 RTL (Pango 1.56)\
 [<img alt="Preview with GTK 2 - RTL - Blue variation - Main window with menu" src="images/thumbs/gtk2-rtl-blue-menu.png?raw=true" width="200" />](images/gtk2-rtl-blue-menu.png?raw=true)
 [<img alt="Preview with GTK 2 - RTL - Green variation - Main window with menu" src="images/thumbs/gtk2-rtl-green-menu.png?raw=true" width="200" />](images/gtk2-rtl-green-menu.png?raw=true)
 
-GTK 3.24-classic (Pango 1.56)\
+GTK 3.24-classic (Pango 1.57)\
 [<img alt="Preview with GTK 3 - Main window" src="images/thumbs/gtk3.png?raw=true" width="200" />](images/gtk3.png?raw=true)
 [<img alt="Preview with GTK 3 - Orange variation - Main window" src="images/thumbs/gtk3-orange.png?raw=true" width="200" />](images/gtk3-orange.png?raw=true)
 [<img alt="Preview with GTK 3 - Blue variation - Main window" src="images/thumbs/gtk3-blue.png?raw=true" width="200" />](images/gtk3-blue.png?raw=true)
@@ -44,7 +46,7 @@ GTK 3.24-classic (Pango 1.56)\
 [<img alt="Preview with GTK 3 - Blue variation - CSD main window" src="images/thumbs/gtk3-blue-csd.png?raw=true" width="200" />](images/gtk3-blue-csd.png?raw=true)
 [<img alt="Preview with GTK 3 - Green variation - CSD main window" src="images/thumbs/gtk3-green-csd.png?raw=true" width="200" />](images/gtk3-green-csd.png?raw=true)
 
-GTK 3.24-classic RTL (Pango 1.56)\
+GTK 3.24-classic RTL (Pango 1.57)\
 [<img alt="Preview with GTK 3 - RTL - Main window" src="images/thumbs/gtk3-rtl.png?raw=true" width="200" />](images/gtk3-rtl.png?raw=true)
 [<img alt="Preview with GTK 3 - RTL - Orange variation - Main window" src="images/thumbs/gtk3-rtl-orange.png?raw=true" width="200" />](images/gtk3-rtl-orange.png?raw=true)
 [<img alt="Preview with GTK 3 - RTL - Blue variation - Main window" src="images/thumbs/gtk3-rtl-blue.png?raw=true" width="200" />](images/gtk3-rtl-blue.png?raw=true)
@@ -54,7 +56,7 @@ GTK 3.24-classic RTL (Pango 1.56)\
 [<img alt="Preview with GTK 3 - RTL - Blue variation - Main window with menu" src="images/thumbs/gtk3-rtl-blue-menu.png?raw=true" width="200" />](images/gtk3-rtl-blue-menu.png?raw=true)
 [<img alt="Preview with GTK 3 - RTL - Green variation - Main window with menu" src="images/thumbs/gtk3-rtl-green-menu.png?raw=true" width="200" />](images/gtk3-rtl-green-menu.png?raw=true)
 
-GTK 4.12..4.18-classic (Pango 1.56)\
+GTK 4.12..4.21-classic (Pango 1.57)\
 [<img alt="Preview with GTK 4 - Main window" src="images/thumbs/gtk4.png?raw=true" width="200" />](images/gtk4.png?raw=true)
 [<img alt="Preview with GTK 4 - Orange variation - Main window" src="images/thumbs/gtk4-orange.png?raw=true" width="200" />](images/gtk4-orange.png?raw=true)
 [<img alt="Preview with GTK 4 - Blue variation - Main window" src="images/thumbs/gtk4-blue.png?raw=true" width="200" />](images/gtk4-blue.png?raw=true)
@@ -64,7 +66,7 @@ GTK 4.12..4.18-classic (Pango 1.56)\
 [<img alt="Preview with GTK 4 - Blue variation - Main window with menu" src="images/thumbs/gtk4-blue-menu.png?raw=true" width="200" />](images/gtk4-blue-menu.png?raw=true)
 [<img alt="Preview with GTK 4 - Green variation - Main window with menu" src="images/thumbs/gtk4-green-menu.png?raw=true" width="200" />](images/gtk4-green-menu.png?raw=true)
 
-GTK 4.12..4.18-classic RTL (Pango 1.56)\
+GTK 4.12..4.21-classic RTL (Pango 1.57)\
 [<img alt="Preview with GTK 4 - RTL - Main window" src="images/thumbs/gtk4-rtl.png?raw=true" width="200" />](images/gtk4-rtl.png?raw=true)
 [<img alt="Preview with GTK 4 - RTL - Orange variation - Main window" src="images/thumbs/gtk4-rtl-orange.png?raw=true" width="200" />](images/gtk4-rtl-orange.png?raw=true)
 [<img alt="Preview with GTK 4 - RTL - Blue variation - Main window" src="images/thumbs/gtk4-rtl-blue.png?raw=true" width="200" />](images/gtk4-rtl-blue.png?raw=true)
@@ -74,8 +76,28 @@ GTK 4.12..4.18-classic RTL (Pango 1.56)\
 [<img alt="Preview with GTK 4 - RTL - Blue variation - Main window with menu" src="images/thumbs/gtk4-rtl-blue-menu.png?raw=true" width="200" />](images/gtk4-rtl-blue-menu.png?raw=true)
 [<img alt="Preview with GTK 4 - RTL - Green variation - Main window with menu" src="images/thumbs/gtk4-rtl-green-menu.png?raw=true" width="200" />](images/gtk4-rtl-green-menu.png?raw=true)
 
-GTK 5.0 (Pango 1.56)\
+GTK 5.0 (Pango 1.57)\
 _GtkWindow will likely be deprecated... lol_
+
+Qt 5.15\
+[<img alt="Preview with Qt 5 - Main window" src="images/thumbs/qt5.png?raw=true" width="200" />](images/qt5.png?raw=true)
+[<img alt="Preview with Qt 5 - Orange variation - Main window" src="images/thumbs/qt5-orange.png?raw=true" width="200" />](images/qt5-orange.png?raw=true)
+[<img alt="Preview with Qt 5 - Blue variation - Main window" src="images/thumbs/qt5-blue.png?raw=true" width="200" />](images/qt5-blue.png?raw=true)
+[<img alt="Preview with Qt 5 - Green variation - Main window" src="images/thumbs/qt5-green.png?raw=true" width="200" />](images/qt5-green.png?raw=true)\
+[<img alt="Preview with Qt 5 - Main window with menu" src="images/thumbs/qt5-menu.png?raw=true" width="200" />](images/qt5-menu.png?raw=true)
+[<img alt="Preview with Qt 5 - Orange variation - Main window with menu" src="images/thumbs/qt5-orange-menu.png?raw=true" width="200" />](images/qt5-orange-menu.png?raw=true)
+[<img alt="Preview with Qt 5 - Blue variation - Main window with menu" src="images/thumbs/qt5-blue-menu.png?raw=true" width="200" />](images/qt5-blue-menu.png?raw=true)
+[<img alt="Preview with Qt 5 - Green variation - Main window with menu" src="images/thumbs/qt5-green-menu.png?raw=true" width="200" />](images/qt5-green-menu.png?raw=true)
+
+Qt 6.9\
+[<img alt="Preview with Qt 6 - Main window" src="images/thumbs/qt6.png?raw=true" width="200" />](images/qt6.png?raw=true)
+[<img alt="Preview with Qt 6 - Orange variation - Main window" src="images/thumbs/qt6-orange.png?raw=true" width="200" />](images/qt6-orange.png?raw=true)
+[<img alt="Preview with Qt 6 - Blue variation - Main window" src="images/thumbs/qt6-blue.png?raw=true" width="200" />](images/qt6-blue.png?raw=true)
+[<img alt="Preview with Qt 6 - Green variation - Main window" src="images/thumbs/qt6-green.png?raw=true" width="200" />](images/qt6-green.png?raw=true)\
+[<img alt="Preview with Qt 6 - Main window with menu" src="images/thumbs/qt6-menu.png?raw=true" width="200" />](images/qt6-menu.png?raw=true)
+[<img alt="Preview with Qt 6 - Orange variation - Main window with menu" src="images/thumbs/qt6-orange-menu.png?raw=true" width="200" />](images/qt6-orange-menu.png?raw=true)
+[<img alt="Preview with Qt 6 - Blue variation - Main window with menu" src="images/thumbs/qt6-blue-menu.png?raw=true" width="200" />](images/qt6-blue-menu.png?raw=true)
+[<img alt="Preview with Qt 6 - Green variation - Main window with menu" src="images/thumbs/qt6-green-menu.png?raw=true" width="200" />](images/qt6-green-menu.png?raw=true)
 
 Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended).
 
@@ -90,7 +112,7 @@ To meet the truth (not required, if you can't/won't, no worries, but the truth w
 - install gtk3-classic & gtk4-classic
 - use Pango 1.42- or 1.51+
 
-For **Debian Testing**, I provide a repository for [gtk3-classic](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) and for [gtk4-classic](https://build.opensuse.org/package/show/home:luigifab/gtk4-classic), it also includes [mate-settings-daemon 1.26](https://build.opensuse.org/package/show/home:luigifab/mate-notification) with a patch to customize notifications from theme.
+For **Debian Testing**, I provide a repository for [gtk3-classic](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) and for [gtk4-classic](https://build.opensuse.org/package/show/home:luigifab/gtk4-classic), it also includes [mate-notification 1.26](https://build.opensuse.org/package/show/home:luigifab/mate-notification) with a patch to customize notifications from theme.
 
 For **Ubuntu**, I also provide a repository for [gtk3-classic & gtk4-classic](https://launchpad.net/~luigifab/+archive/ubuntu/gtk-classic).
 
@@ -99,7 +121,7 @@ For **Ubuntu**, I also provide a repository for [gtk3-classic & gtk4-classic](ht
 * Run: `sudo apt install human-theme-gtk`
 * Restart your session
 
-#### Installation for Fedora, OpenMandriva
+#### Installation for Fedora
 
 * Run: `sudo dnf install human-theme-gtk`
 * Restart your session
@@ -119,13 +141,16 @@ For **Ubuntu**, I also provide a repository for [gtk3-classic & gtk4-classic](ht
 * Run:
 ```bash
 # PPA: https://launchpad.net/~luigifab/+archive/ubuntu/packages
-# with Debian 12+/Bookworm+ you can use mantic+ instead of focal (https://unix.stackexchange.com/a/669008/364800)
-# for Debian you can use focal for buster, jammy for bullseye, oracular or noble for bookworm, questing or plucky for trixie
-# for Devuan you can use focal for beowulf, jammy for chimaera, oracular or noble for daedalus, questing or plucky for excalibur and ceres
-# for Trisquel you can use focal for nabia, jammy for aramo
-# for Linux Mint you can use focal for 20.x and 4/debbie, jammy for 21.x and 5/elsie, noble for 22.x and 6/faye, questing or plucky for 7/gigi
-# for MX Linux you can use focal for 19.x, jammy for 21.x, oracular or noble for 23.x
-# for Kali Linux you can use questing or plucky
+# from Debian 12 you can use noble/questing (unix.stackexchange.com/a/669008/364800)
+#     Debian: focal for 10/buster, jammy for 11/bullseye, noble for 12/bookworm,
+#              plucky for 13/trixie, questing for 14/forky and 15/duke
+#     Devuan: focal for 3/beowulf, jammy for 4/chimaera, noble for 5/daedalus,
+#              plucky for 6/excalibur, questing for 7/freia and 8/gryphon and ceres
+# Linux Mint: focal for 20.x and 4/debbie, jammy for 21.x and 5/elsie,
+#              noble for 22.x and 6/faye, plucky for 7/gigi
+#   MX Linux: focal for 19.x, jammy for 21.x, noble for 23.x, questing for 25.x
+#   Trisquel: focal for nabia, jammy for aramo
+# Kali Linux: questing
 
 sudo add-apt-repository ppa:luigifab/packages
 sudo apt update
@@ -146,6 +171,9 @@ echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu focal main" | sudo t
 sudo apt update
 sudo apt install human-theme-gtk
 
+# ... and for full installation
+sudo apt install gnome-icon-theme dmz-cursor-theme gtk2-engines-murrine qt5-gtk-platformtheme qt5-style-globalqss qt6-gtk-platformtheme qt6-style-globalqss qt6-svg-plugins
+
 # sha256sum /etc/apt/trusted.gpg.d/luigifab.gpg
 578c89a677048e38007462d543686b53587efba9f93814601169253c45ff9213
 # apt-key list
@@ -158,10 +186,9 @@ pub   rsa4096 2020-10-31 [SC]
 #### Manual installation
 
 * Download the archive and extract its subdirectories into `~/.themes/`
-* Configure font rendering, GTK and Qt settings, by adding the following to `/etc/environment` ([details](data/profile.sh)):
+* Configure font rendering and GTK, by adding the following to `/etc/environment` ([details](data/profile.sh)):
 ```
 FREETYPE_PROPERTIES="truetype:interpreter-version=35"
-QT_QPA_PLATFORMTHEME=gtk2
 GTK_OVERLAY_SCROLLING=0
 GTK_BACKDROP=1
 GTKM_INSERT_EMOJI=1
@@ -171,10 +198,10 @@ GTK_PROGRESS_TEXT_INSIDE=1
 GTK_TREEVIEW_LINES=0
 GTK_ENLARGE_SCROLLBAR=1
 ```
-* Install the icons and cursors themes: `gnome-icon-theme` or `mate-icon-theme` + `dmz-cursor-theme`
-* Install package for GTK 2 apps: `gtk2-engines-murrine` or `gtk2-engine-murrine` or `gtk2-murrine-engine` or `gtk-engine-murrine` or `gtk-murrine-engine` or `murrine` or similar
-* Install package for Qt 5 apps: `qt5-gtk2-platformtheme` + `qt5-gtk-platformtheme` or similar
-* Install package for Qt 6 apps: `qt6-gtk-platformtheme` or similar
+* For icons and cursors themes install: `gnome-icon-theme` or `mate-icon-theme` **+** `dmz-cursor-theme`
+* For GTK 2 programs install: `gtk2-engines-murrine` or `gtk2-engine-murrine` or `gtk2-murrine-engine` or `gtk-murrine-engine` or `gtk-engine-murrine` or `murrine` or similar
+* For Qt 5 programs install: `qt5-gtk-platformtheme` or `qt5-qtbase-gui` or similar **+** `qt5-style-globalqss` or `qt5-globalqss` **+** `qt5-svg-plugins` or `qt5-qtsvg` or similar
+* For Qt 6 programs install: `qt6-gtk-platformtheme` or `qt6-qtbase-gui` or similar **+** `qt6-style-globalqss` or `qt6-globalqss` **+** `qt6-svg-plugins` or `qt6-qtsvg` or similar
 * Restart your session
 
 ## Configuration
@@ -247,7 +274,13 @@ For classic menu bar and menu items on [Firefox 46+](https://www.mozilla.org/fir
 
 For design of menu bar, see [bug 157708](https://bugs.documentfoundation.org/show_bug.cgi?id=157708).
 
+#### GTK 3
+
+For better results, use gtk3-classic.
+
 #### GTK 4
+
+For better results, use gtk4-classic.
 
 If font rendering is bad, try to add in `~/.config/gtk-4.0/settings.ini`:
 ```
@@ -258,6 +291,18 @@ gtk-xft-hintstyle=hintfull
 gtk-xft-antialias=0
 gtk-xft-hinting=1
 ```
+
+#### GTK 5
+
+From [migrating guide](https://docs.gtk.org/gtk4/migrating-4to5.html#non-standard-css-extensions-are-going-away): _non-standard CSS extensions are going away [...] @define-color should be replaced [...] the color functions can all be replaced by combinations of calc() and color-mix()_.
+
+Honestly, that will never happen here. I think it would be better to create a patch to fix this GTK regression.
+
+#### Qt 5 & 6
+
+For Qt, install GTK platform theme and [GlobalQSS](https://github.com/luigifab/globalqss) style plugin.
+
+But sadly, `box-shadow` and multiple `background` gradients are not supported, `border-radius` are not fully supported...
 
 #### Xfce panels
 
@@ -270,7 +315,9 @@ With window compositor, the window/dialog/menu shadow can't be removed or config
 
 ## Customize
 
-Use `~/.config/gtk-3.0/gtk.css` and `~/.config/gtk-4.0/gtk.css` files.
+For GTK, use `~/.config/gtk-3.0/gtk.css` and `~/.config/gtk-4.0/gtk.css` files.
+
+For Qt, with [GlobalQSS](https://github.com/luigifab/globalqss), use `~/.config/qt5/qt.qss` and `~/.config/qt6/qt.qss` files.
 
 ## Dev
 
@@ -297,11 +344,11 @@ awf-gtk3 -s ~/3.png
 awf-gtk4 -s ~/4.png
 ```
 
-Run [Entr](https://github.com/eradman/entr) to send `SIGHUP` signal when files change to reload theme:
+Run [Entr](https://github.com/eradman/entr) to send the `SIGHUP` signal when files change to reload theme:
 ```bash
-ls ~/.themes/human-theme*/gtk-2*/gtkrc | entr killall -s SIGHUP awf-gtk2
-ls ~/.themes/human-theme*/gtk-3*/*.css | entr killall -s SIGHUP awf-gtk3
-ls ~/.themes/human-theme*/gtk-4*/*.css | entr killall -s SIGHUP awf-gtk4
+ls ~/.themes/Human*/gtk-2*/gtkrc | entr killall -s SIGHUP awf-gtk2
+ls ~/.themes/Human*/gtk-3*/*.css | entr killall -s SIGHUP awf-gtk3
+ls ~/.themes/Human*/gtk-4*/*.css | entr killall -s SIGHUP awf-gtk4
 ```
 
 Run [ImageTragick](https://imagemagick.org/) to create the diff image:
@@ -313,13 +360,13 @@ composite dif.png 2.png dif.png
 eom dif.png &
 ```
 
-Run `svg.sh` and `cinnamon.sh` to update colors. See also [technical informations](https://github.com/mk-fg/clearlooks-phenix-humanity). For any issue and pull request, please add before/after screenshots.
+Run `colors-*.sh` to update colors. See also [technical informations](https://github.com/mk-fg/clearlooks-phenix-humanity). For any issue and pull request, please add before/after screenshots.
 
 ## Copyright
 
-- Current version: 2.6.0 (08/08/2025)
-- Compatibility: GTK 2.24 / 3.24 / 4.12..4.19
-- Links: [luigifab.fr](https://www.luigifab.fr/gtk/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
+- Current version: 3.0.0 (03/03/2026)
+- Compatibility: GTK 2.24 / 3.24 / 4.12..4.21, Qt 5.15 / 6.0..6.10
+- Links: [luigifab.fr](https://www.luigifab.fr/gtkqt/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\
 If you like, take some of your time to improve some translations, go to https://bit.ly/2HyCCEc.

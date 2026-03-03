@@ -1,0 +1,110 @@
+/**
+ * Copyright 2020-2026 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ */
+
+@define-color theme_bg #E6DDD5;
+@define-color theme_fg #101010;
+@define-color theme_base #FFF;
+@define-color theme_text #1A1A1A;
+@define-color theme_selected_bg #8F5F4A;
+@define-color theme_selected_fg #FFF;
+@define-color insensitive_fg shade(@theme_bg, 0.65);
+@define-color insensitive_selected alpha(@theme_selected_fg, 0.8);
+@define-color insensitive_text_shadow alpha(@theme_base, 0.5);
+
+@define-color theme_tooltip_bg #F5F5B5;
+@define-color theme_tooltip_fg #000;
+@define-color theme_tooltip_border shade(@theme_tooltip_bg, 0.63); /* #C2C250 instead of #C2C24E */
+@define-color theme_notification_countdown mix(@theme_selected_bg, yellow, 0.35);
+@define-color theme_outline shade(@theme_selected_bg, 1.499);
+@define-color theme_link #00E;
+@define-color theme_visited_link shade(@theme_link, 0.2);
+@define-color theme_checkradio1 shade(@theme_bg, 0.839);
+@define-color theme_checkradio2 @slider_border;
+@define-color theme_checkradio3 shade(@theme_selected_bg, 1.556);
+@define-color theme_treeview_border #9F9F9F;
+
+/* https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html */
+@define-color theme_bg_color @theme_bg;
+@define-color theme_fg_color @theme_fg;
+@define-color theme_base_color @theme_base;
+@define-color theme_text_color @theme_text;
+@define-color theme_selected_bg_color @theme_selected_bg;
+@define-color theme_selected_fg_color @theme_selected_fg;
+@define-color insensitive_fg_color @insensitive_fg;
+
+@import url("gtk-shade.css");
+@import url("gtk-base.css");
+@import url("gtk-csd.css");
+@import url("gtk-checkradio.css");
+@import url("gtk-notebook.css");
+@import url("gtk-progress.css");
+@import url("gtk-treeview.css");
+@import url("mate.css");
+@import url("xfce.css");
+@import url("cinnamon.css");
+@import url("apps.css");
+
+/* terminal colors */
+vte-terminal {
+	color: white;
+	background-color: black;
+}
+
+/* special */
+@define-color slider_pattern_shade shade(@slider_pattern, 1.8);
+
+treeview.view:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.odd:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.odd.sorted:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.even:not(.trough):not(.progressbar):selected:not(:focus),
+treeview.view.even.sorted:not(.trough):not(.progressbar):selected:not(:focus) {
+	background:
+		radial-gradient(ellipse 110% 50%,
+			shade(@menuitem_hover_glaze_glow_center, 1.2),
+			shade(@menuitem_hover_glaze_glow_edge, 1.2)),
+		linear-gradient(to bottom,
+			shade(@menuitem_hover_glaze_top, 1.2),
+			shade(@menuitem_hover_glaze_mida, 1.2) 50%,
+			shade(@menuitem_hover_glaze_midb, 1.2) 50%,
+			shade(@menuitem_hover_glaze_bot, 1.2));
+	/* url("img/treeview-separator.svg") */
+	border-image-source: repeating-linear-gradient(to bottom,
+		shade(@theme_selected_bg, 1.2) 0,
+		shade(@theme_selected_bg, 1.2) 3px,
+		@theme_treeview_border 3px,
+		@theme_treeview_border 4px);
+}
+
+listview row:nth-child(2n+1):selected:not(:focus),
+listview row:nth-child(2n):selected:not(:focus) {
+	background:
+		radial-gradient(ellipse 110% 50%,
+			shade(@menuitem_hover_glaze_glow_center, 1.2),
+			shade(@menuitem_hover_glaze_glow_edge, 1.2)),
+		linear-gradient(to bottom,
+			shade(@menuitem_hover_glaze_top, 1.2),
+			shade(@menuitem_hover_glaze_mida, 1.2) 50%,
+			shade(@menuitem_hover_glaze_midb, 1.2) 50%,
+			shade(@menuitem_hover_glaze_bot, 1.2));
+}

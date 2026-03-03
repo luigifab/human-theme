@@ -1,0 +1,1527 @@
+/**
+ * Copyright 2020-2026 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ */
+
+* {
+	background-clip: padding-box;
+	-gtk-icon-style: regular;
+}
+
+view,
+.view,
+view text,
+.view text,
+iconview text,
+textview text {
+	color: @theme_text;
+	background-color: @theme_base;
+}
+
+rubberband,
+.rubberband,
+.rubberband.background,
+XfdesktopIconView.rubberband {
+	border-color: alpha(@theme_selected_bg, 0.8);
+	background-color: alpha(@theme_selected_bg, 0.4);
+}
+
+.background {
+	color: @theme_fg;
+	background-color: @theme_bg;
+}
+
+link,
+.link,
+.link > label,
+label > link {
+	text-decoration: underline;
+	color: @theme_link;
+}
+
+:selected, /* required for marco/metacity theme */
+selection,
+/* iconview:selected,
+image:selected, */
+switch:checked {
+	color: @theme_selected_fg;
+	background-color: @theme_selected_bg;
+}
+
+menuitem:hover > image,
+button:hover image {
+	-gtk-icon-effect: highlight;
+}
+
+paper {
+	border: 1px solid black;
+	background-color: white;
+}
+
+/* --- text/image disabled --- */
+
+*:disabled,
+.link > label:disabled {
+	color: @insensitive_fg;
+	text-shadow: 0.5px 1px @insensitive_text_shadow;
+}
+
+image:disabled,
+button:disabled image,
+menuitem:disabled image,
+spinbutton button:disabled {
+	-gtk-icon-effect: dim;
+}
+
+button.flat:disabled image,
+headerbar button:disabled image {
+	-gtk-icon-effect: none;
+}
+
+/* --- tooltip --- */
+
+tooltip,
+tooltip.background,
+.tooltip,
+.tooltip.background {
+	color: @theme_tooltip_fg;
+	border: 1px solid @theme_tooltip_border;
+	background-color: @theme_tooltip_bg;
+}
+
+tooltip.csd,
+tooltip.csd.background,
+.tooltip.csd,
+.tooltip.csd.background {
+	background-color: alpha(@theme_tooltip_bg, 0.92);
+}
+
+tooltip decoration,
+.tooltip decoration,
+tooltip.csd decoration,
+.tooltip.csd decoration,
+tooltip.ssd decoration,
+.tooltip.ssd decoration,
+tooltip.solid-csd decoration,
+.tooltip.solid-csd decoration,
+tooltip.background.csd decoration,
+.tooltip.background.csd decoration,
+tooltip.background.ssd decoration,
+.tooltip.background.ssd decoration,
+tooltip.background.solid-csd decoration,
+.tooltip.background.solid-csd decoration {
+	/* mate-themes made the list */
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+/* --- spinner --- */
+
+@keyframes spinner {
+	to { -gtk-icon-transform: rotate(1turn); }
+}
+
+spinner {
+	color: @theme_fg;
+}
+
+spinner:checked {
+	animation: spinner 1s infinite steps(12);
+	opacity: 1;
+}
+
+menubar spinner {
+	animation: none;
+	opacity: 0;
+}
+
+/* --- arrow --- */
+
+arrow.top {
+	-gtk-icon-source: -gtk-recolor(url("img/go-up-symbolic.svg"));
+}
+
+arrow.right {
+	-gtk-icon-source: -gtk-recolor(url("img/go-right-symbolic.svg"));
+}
+
+combobox button arrow,
+arrow.bottom {
+	-gtk-icon-source: -gtk-recolor(url("img/go-down-symbolic.svg"));
+}
+
+arrow.left {
+	-gtk-icon-source: -gtk-recolor(url("img/go-left-symbolic.svg"));
+}
+
+/* --- separator --- */
+
+separator.vertical {
+	margin-bottom: 1px;
+	border-left: 1px solid @content_separator_dark;
+	border-right: 1px solid @content_separator_lite;
+}
+
+separator.horizontal {
+	border-top: 1px solid @content_separator_dark;
+	border-bottom: 1px solid @content_separator_lite;
+}
+
+paned.vertical > separator {
+	min-height: 5px;
+	background: url("img/pane-separator-grip-vert.svg") no-repeat center;
+}
+
+paned.horizontal > separator {
+	min-width: 6px;
+	background: url("img/pane-separator-grip-horz.svg") no-repeat center;
+}
+
+/* -- frame -- */
+
+frame > border {
+	border: 1px solid @frame_border;
+	border-radius: 2.5px;
+	box-shadow:
+		inset -1px -1px alpha(@entry_bg, 0.27),
+		inset 1px 1px alpha(@frame_border, 0.17);
+}
+
+frame > border.flat {
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+frame > label {
+	padding: 0 5px;
+}
+
+frame.border-outset > border {
+	box-shadow:
+		inset -1px -1px alpha(@frame_border, 0.17),
+		inset 1px 1px alpha(@entry_bg, 0.27);
+}
+
+frame.border-groove {
+	padding: 0 1px 1px 0;
+}
+
+frame.border-groove > border {
+	border-color: @frame_border_bis;
+	box-shadow:
+		inset 1px 1px alpha(@entry_bg, 0.27),
+		1px 1px alpha(@entry_bg, 0.27);
+}
+
+frame.border-ridge {
+	padding: 1px 0 0 1px;
+}
+
+frame.border-ridge > border {
+	margin-top: 1px;
+	padding-top: 1px;
+	border-color: @frame_border_bis;
+	box-shadow:
+		inset -1px -1px alpha(@entry_bg, 0.27),
+		-1px -1px alpha(@entry_bg, 0.27);
+}
+
+frame.border-ridge > label {
+	margin-top: -1px;
+	padding-left: 4px;
+}
+
+/* --- status bar --- */
+
+statusbar {
+	margin: 0 -10px;
+	border: 0;
+	border-top: 1px solid @toolbar_border_bot;
+	background-color: @theme_bg;
+}
+
+box + statusbar {
+	margin: -7px -10px -4px; /* WARNING! -7px -10px -5px for Pango 1.44..1.49 else -7px -10px -4px */
+}
+
+statusbar.classic {
+	margin: -2px -10px 0; /* with gtk3-classic (appearance__smaller-statusbar.patch) */
+}
+
+grid statusbar {
+	margin: -1px -10px 2px;
+}
+
+grid statusbar.classic {
+	margin: 0 -10px 1px; /* with gtk3-classic (appearance__smaller-statusbar.patch) */
+}
+
+statusbar frame,
+statusbar border,
+statusbar box,
+statusbar label {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+statusbar frame {
+	border-top: 1px solid @toolbar_border_top;
+}
+
+statusbar frame + box {
+	border-top: 1px solid @toolbar_border_top;
+}
+
+statusbar frame > box {
+	margin: -4px -2px;
+}
+
+statusbar.classic frame > box {
+	margin: -4px -2px -3px; /* with gtk3-classic (appearance__smaller-statusbar.patch) */
+}
+
+/* --- switch --- */
+
+switch {
+	margin: 1px;
+	min-width: 76px;
+	min-height: 25px;
+	transition: background 0.5s;
+}
+
+switch slider {
+	margin: -1px;
+	padding: 2px 1px 1px;
+	border: 1px solid @slider_trough_border;
+	border-radius: 2.75px;
+	background:
+		url("img/pane-separator-grip-vert.svg") no-repeat center,
+		radial-gradient(circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@scale_glaze_top,
+			@scale_glaze_mida 49%,
+			@scale_glaze_midb 49%,
+			@scale_glaze_bot);
+}
+
+switch slider:hover,
+switch slider:active,
+switch slider:focus {
+	background:
+		url("img/pane-separator-grip-vert.svg") no-repeat center,
+		radial-gradient(circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@scale_hover_glaze_top,
+			@scale_hover_glaze_mida 49%,
+			@scale_hover_glaze_midb 49%,
+			@scale_hover_glaze_bot);
+}
+
+switch slider:active,
+switch slider:focus {
+	outline: 1px solid @theme_outline;
+	outline-offset: -4px;
+}
+
+switch:disabled {
+	opacity: 0.6;
+}
+
+switch slider:disabled {
+	border-color: @button_border_disabled;
+}
+
+/* --- button --- */
+
+button {
+	margin: 1px;
+	padding: 4px;
+	min-height: 16px;
+	color: @theme_fg;
+}
+
+button, switch {
+	border: 1px solid @button_border;
+	border-radius: 3px;
+	box-shadow:
+		-1px -1px alpha(@button_border, 0.13),
+		 1px  1px alpha(@button_border, 0.13),
+		inset 1px 1px alpha(@button_border, 0.148); /* @todo E8E0DA */
+}
+
+button:disabled, switch:disabled {
+	border-color: @button_border_disabled;
+	box-shadow:
+		-1px -1px alpha(@button_border_disabled, 0.31),
+		 1px  1px alpha(lighter(@theme_bg), 0.418),
+		inset  1px  1px alpha(@button_border_disabled, 0.08),
+		inset -1px -1px alpha(@button_border_disabled, 0.08);
+}
+
+button.flat,
+headerbar button {
+	border-color: transparent;
+	background: transparent;
+	box-shadow: none;
+}
+
+button.flat:disabled,
+headerbar button:disabled {
+	border-color: transparent;
+	background: transparent;
+	opacity: 0.3;
+}
+
+button.link:disabled {
+	opacity: 1;
+}
+
+button.toggle:active,
+button.toggle:checked,
+toolbar button:active,
+box.primary-toolbar button:active {
+	padding: 5px 3px 3px 5px;
+	box-shadow:
+		-1px -1px alpha(@button_border_disabled, 0.31),
+		 1px  1px alpha(lighter(@theme_bg), 0.418),
+		inset  1px  1px alpha(@button_border_disabled, 0.08),
+		inset -1px -1px alpha(@button_border_disabled, 0.08);
+}
+
+/* --- spinbutton --- */
+
+spinbutton {
+	margin: 1px;
+	color: @theme_text;
+}
+
+spinbutton button {
+	margin: 0 0 0 -1px;
+	padding: 3px 4px;
+	border-radius: 0;
+}
+
+spinbutton button:dir(rtl) {
+	margin: 0 -1px 0 0;
+}
+
+spinbutton.vertical entry {
+	margin: 0;
+	border-radius: 0;
+}
+
+spinbutton.vertical button.up {
+	margin: 0;
+	border-bottom: 0;
+}
+
+spinbutton.vertical button.down {
+	margin: 0;
+	border-top: 0;
+}
+
+spinbutton.horizontal entry:dir(ltr) {
+	margin: 0;
+	padding-right: 5px;
+	border-radius: 2.4px 0 0 2.3px;
+}
+
+spinbutton.horizontal entry:dir(rtl) {
+	margin: 0;
+	padding-left: 5px;
+	border-radius: 0 2.4px 2.3px 0;
+}
+
+/* --- colorbutton --- */
+
+button.color {
+	padding: 5px;
+}
+
+button.color colorswatch {
+	border: 1px solid @frame_border;
+}
+
+/* --- entry --- */
+
+entry {
+	margin: 1px;
+	padding: 3px; /* WARNING! 3px 3px 2px for Pango 1.44..1.49 else 3px */
+	color: @theme_text;
+	border: 1px solid @entry_border;
+	border-radius: 2.4px;
+	background-color: @entry_bg;
+	box-shadow:
+		-1px -1px alpha(@entry_border, 0.09),
+		 1px  1px alpha(lighter(@theme_bg), 0.418),
+		inset 1px 1px alpha(@entry_border, 0.162); /* @todo */
+}
+
+entry image.left {
+	margin-right: 4px;
+}
+
+entry image.right {
+	margin-left: 4px;
+}
+
+entry scrolledwindow {
+	/* suggestions/autocomplete list */
+	border: 0;
+}
+
+entry:focus {
+	border-color: @theme_outline;
+}
+
+entry:disabled {
+	text-shadow: none;
+	border-color: @entry_border_disabled;
+	background-color: @entry_bg_disabled;
+	box-shadow:
+		-1px -1px alpha(@entry_border, 0.09),
+		 1px  1px alpha(lighter(@theme_bg), 0.418),
+		inset 1px 1px alpha(@entry_border_disabled, 0.07);
+}
+
+/* --- combo box --- */
+
+combobox entry {
+	padding: 4px 3px; /* WARNING! 4px 3px 2px for Pango 1.44..1.49 else 4px 3px */
+}
+
+combobox button {
+	padding: 4px;
+}
+
+combobox entry + button {
+	padding: 4px 4px 4px 5px;
+}
+
+combobox button:dir(rtl):not(:only-child) {
+	padding: 4px 5px 4px 4px;
+}
+
+combobox button arrow {
+	min-width: 16px;
+	min-height: 16px;
+	-gtk-icon-transform: scale(0.6);
+}
+
+combobox button cellview {
+	margin: -1px;
+}
+
+combobox button cellview + arrow {
+	margin-left: 3px;
+}
+
+/* --- button background --- */
+
+button,
+spinbutton button:focus,
+#tasklist-button box {
+	background:
+		@theme_bg
+		radial-gradient(
+			ellipse 90% 50%,
+			@button_glaze_glow_center,
+			@button_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@button_glaze_top,
+			@button_glaze_mida 49%,
+			@button_glaze_midb 49%,
+			@button_glaze_bot);
+}
+
+button:hover,
+spinbutton button:focus:hover,
+#tasklist-button box:hover {
+	border-color: @button_border;
+	background:
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mida 49%,
+			@button_hover_glaze_midb 49%,
+			@button_hover_glaze_bot);
+}
+
+button:focus {
+	border-color: @button_border;
+	background:
+		@theme_bg
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
+		radial-gradient(
+			ellipse 90% 50%,
+			@button_glaze_glow_center,
+			@button_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@button_glaze_top,
+			@button_glaze_mida 49%,
+			@button_glaze_midb 49%,
+			@button_glaze_bot);
+	outline: 1px solid @theme_outline;
+	outline-offset: -4px;
+}
+
+button.flat:focus,
+headerbar button:focus {
+	border-color: transparent;
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill);
+}
+
+button:focus:hover {
+	border-color: @button_border;
+	background:
+		@theme_bg
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mida 49%,
+			@button_hover_glaze_midb 49%,
+			@button_hover_glaze_bot);
+}
+
+button:disabled {
+	background:
+		radial-gradient(
+			ellipse 90% 50%,
+			@button_disabled_glaze_glow_center,
+			@button_disabled_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@button_disabled_glaze_top,
+			@button_disabled_glaze_mida 49%,
+			@button_disabled_glaze_midb 49%,
+			@button_disabled_glaze_bot);
+}
+
+button:active,
+button:active:hover,
+button:checked:focus,
+button:checked:active:focus:hover {
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
+			linear-gradient(to bottom, @button_focus_fill_active, @button_focus_fill_active),
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_active_glaze_glow_center,
+			@button_active_glaze_glow_edge),
+		linear-gradient(to right,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 2px,
+			alpha(@button_active_glaze_shadow, 0) 4px,
+			@null 4px, @null),
+		linear-gradient(to bottom,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 2px,
+			alpha(@button_active_glaze_shadow, 0) 4px,
+			@null 4px, @null),
+		linear-gradient(to bottom,
+			@button_active_glaze_top,
+			@button_active_glaze_mida 49%,
+			@button_active_glaze_midb 49%,
+			@button_active_glaze_bot);
+}
+
+button:checked:hover {
+	background:
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge),
+		linear-gradient(to right,
+			alpha(@button_active_glaze_shadow_edge, 0.3),
+			alpha(@button_active_glaze_shadow, 0.3) 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null),
+		linear-gradient(to bottom,
+			alpha(@button_active_glaze_shadow_edge, 0.3),
+			alpha(@button_active_glaze_shadow, 0.3) 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null),
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mida 49%,
+			@button_hover_glaze_midb 49%,
+			@button_hover_glaze_bot);
+}
+
+button:checked:hover:focus {
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
+			linear-gradient(to bottom, @button_focus_fill_active, @button_focus_fill_active),
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge),
+		linear-gradient(to right,
+			alpha(@button_active_glaze_shadow_edge, 0.3),
+			alpha(@button_active_glaze_shadow, 0.3) 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null),
+		linear-gradient(to bottom,
+			alpha(@button_active_glaze_shadow_edge, 0.3),
+			alpha(@button_active_glaze_shadow, 0.3) 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null),
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mida 49%,
+			@button_hover_glaze_midb 49%,
+			@button_hover_glaze_bot);
+}
+
+button:checked,
+button.flat:active,
+button.flat:active:hover,
+button.toggle:checked:focus,
+button.toggle:checked:disabled,
+headerbar button:active,
+headerbar button:active:hover,
+headerbar button:checked:focus,
+#tasklist-button:checked box {
+	border-color: @button_border;
+	background:
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_active_glaze_glow_center,
+			@button_active_glaze_glow_edge),
+		linear-gradient(to right,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 2px,
+			alpha(@button_active_glaze_shadow, 0) 4px,
+			@null 4px, @null),
+		linear-gradient(to bottom,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 2px,
+			alpha(@button_active_glaze_shadow, 0) 4px,
+			@null 4px, @null),
+		linear-gradient(to bottom,
+			@button_active_glaze_top,
+			@button_active_glaze_mida 49%,
+			@button_active_glaze_midb 49%,
+			@button_active_glaze_bot);
+}
+
+button.flat:focus:hover,
+headerbar button:focus:hover {
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
+		radial-gradient(
+			circle farthest-side,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mida 49%,
+			@button_hover_glaze_midb 49%,
+			@button_hover_glaze_bot);
+}
+
+button.flat:focus:active,
+button.flat:focus:active:hover,
+headerbar button:focus:active,
+headerbar button:focus:active:hover {
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
+		radial-gradient(
+			circle farthest-side,
+			@button_active_glaze_glow_center,
+			@button_active_glaze_glow_edge),
+		linear-gradient(to right,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 2px,
+			alpha(@button_active_glaze_shadow, 0) 4px,
+			@null 4px, @null),
+		linear-gradient(to bottom,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 2px,
+			alpha(@button_active_glaze_shadow, 0) 4px,
+			@null 4px, @null),
+		linear-gradient(to bottom,
+			@button_active_glaze_top,
+			@button_active_glaze_mida 49%,
+			@button_active_glaze_midb 49%,
+			@button_active_glaze_bot);
+}
+
+toolbar,
+box.primary-toolbar,
+toolbar.prefs-list-widget-toolbar /* @todo meld */ {
+	padding: 1px 2px;
+	border-width: 1px 0 1px 0;
+	border-style: solid;
+	border-top-color: @toolbar_border_top;
+	border-bottom-color: @toolbar_border_bot;
+	background: linear-gradient(to bottom, @toolbar_grad_top, @toolbar_grad_bot);
+}
+
+toolbar:dir(rtl),
+box.primary-toolbar:dir(rtl),
+toolbar.prefs-list-widget-toolbar:dir(rtl) /* @todo meld */ {
+	padding: 1px 4px 1px 2px;
+}
+
+headerbar {
+	/* headerbar without CSD window, so displayed like a toolbar */
+	padding: 5px 2px 4px;
+	border-width: 1px 0 1px 0;
+	border-style: solid;
+	border-top-color: @toolbar_border_top;
+	border-bottom-color: @toolbar_border_bot;
+	background: linear-gradient(to bottom, @toolbar_grad_top, @toolbar_grad_bot);
+}
+
+toolbar > separator,
+box.primary-toolbar > separator {
+	margin: 7px 5px 8px;
+	border-left: 1px solid @toolbar_separator_dark;
+	border-right: 1px solid @toolbar_separator_lite;
+}
+
+toolbar:dir(ltr) button.popup,
+box.primary-toolbar:dir(ltr) button.popup {
+	margin: 1px 1px 1px 0;
+}
+
+toolbar:dir(rtl) button.popup,
+box.primary-toolbar:dir(rtl) button.popup {
+	margin: 1px 0 1px 1px;
+}
+
+/* --- menu bar --- */
+
+menubar {
+	margin: 1px 0 0;
+	padding: 0 1px;
+	border-bottom: 1px solid @menubar_border_bot;
+	background: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
+}
+
+menubar menuitem {
+	padding: 2px 7px 2px 8px;
+	text-shadow: none; /* libreoffice 6.4.1 */
+	color: @theme_fg; /* libreoffice 6.4.1 */
+	border: 1px solid transparent;
+	border-radius: 2px 2px 0 0;
+}
+
+menubar menuitem:dir(rtl) {
+	padding: 2px 8px 2px 7px;
+}
+
+menubar menuitem:hover {
+	/* this is the menuitem hover */
+	/* :hover is like :selected */
+	color: @menuitem_hover;
+	border-color: @menuitem_hover_border;
+	border-bottom-color: @menuitem_hover_border_bottom;
+	background:
+		radial-gradient(ellipse 110% 50%,
+			@menuitem_hover_glaze_glow_center,
+			@menuitem_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@menuitem_hover_glaze_top,
+			@menuitem_hover_glaze_mida 50%,
+			@menuitem_hover_glaze_midb 50%,
+			@menuitem_hover_glaze_bot);
+}
+
+/* --- menu item --- */
+
+popover > stack > box,
+popover > box {
+	margin: -8px;
+}
+
+popover,
+popover.background.menu,
+menu {
+	border: 1px solid @menu_border;
+	background-color: @menu_bg;
+}
+
+menu {
+	padding: 3px 1px;
+}
+
+popover modelbutton {
+	padding: 2px 27px 2px 4px;
+	border: 1px solid transparent;
+	border-radius: 2px;
+}
+
+menu menuitem {
+	margin: 0 2px;
+	padding: 2px 4px;
+	border: 1px solid transparent;
+	border-radius: 2px;
+}
+
+popover modelbutton:hover,
+menu menuitem:hover {
+	/* this is the menuitem hover */
+	color: @menuitem_hover;
+	border-color: @menuitem_hover_border;
+	background:
+		radial-gradient(ellipse 110% 50%,
+			@menuitem_hover_glaze_glow_center,
+			@menuitem_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@menuitem_hover_glaze_top,
+			@menuitem_hover_glaze_mida 50%,
+			@menuitem_hover_glaze_midb 50%,
+			@menuitem_hover_glaze_bot);
+}
+
+menu menuitem label:dir(rtl) {
+	margin: 0 -1px 0 -3px;
+	padding-left: 4px;
+}
+
+/* --- menu item elements --- */
+
+menu.context-menu {
+	font-size: initial;
+	font-family: initial;
+}
+
+menuitem.tearoff:dir(ltr),
+menuitem.tearoff:dir(rtl) { /* awf-extended */
+	padding: 3px 0;
+	color: @menu_tearoff_border;
+}
+
+menuitem:dir(ltr) image {
+	margin: 0 -2px 0 4px;
+}
+
+menuitem:dir(rtl) image {
+	margin: 0 0 0 -2px;
+}
+
+menuitem box:dir(ltr) image {
+	margin: 0 0 0 1px;
+}
+
+menuitem box:dir(rtl) image {
+	margin: 0 1px 0 0;
+}
+
+menuitem label:dir(ltr) {
+	margin: 0 0 0 -1px;
+}
+
+menuitem label:dir(rtl) {
+	margin: 0 -1px 0 0;
+}
+
+menuitem accelerator {
+	color: alpha(@theme_fg, 0.601); /* @todo #696764 instead of #696664 */
+}
+
+popover separator {
+	margin: 0 -6px;
+}
+
+box.horizontal menu > separator, /* when menu tearoffed */
+popover stack separator,
+textview menu separator,
+menu separator,
+menuitem separator {
+	margin: 4px 6px 3px;
+	border-top: 1px solid @menu_separator_dark;
+	border-bottom: 1px solid @menu_separator_lite;
+}
+
+menuitem:disabled accelerator {
+	color: alpha(@insensitive_fg, 0.601);
+}
+
+menuitem:hover > box > label > accelerator, /* mate-calc 1.24 */
+menuitem:hover > label > accelerator,
+menuitem:hover > arrow {
+	color: @theme_selected_fg;
+}
+
+popover.emoji-picker > box {
+	margin: 2px;
+}
+
+popover.emoji-picker entry {
+	margin: 0;
+}
+
+popover.emoji-picker scrolledwindow {
+	margin: 2px 0;
+}
+
+/* --- menu item arrow elements --- */
+
+menuitem arrow {
+	min-width: 16px;
+	min-height: 16px;
+}
+
+menuitem arrow.top,
+menuitem arrow.bottom {
+	margin: 0 2px;
+	min-width: 14px;
+	min-height: 14px;
+	border: 1px solid @menu_border_arrow;
+	background-color: @menu_bg_arrow;
+	-gtk-icon-source: none; /* @todo ratio is lost */
+}
+
+menuitem arrow.bottom {
+	margin: 6px 2px -6px;
+}
+
+menuitem arrow.top:disabled,
+menuitem arrow.bottom:disabled {
+	background-color: @menu_bg_disabled_arrow;
+}
+
+menuitem:dir(rtl) arrow.left {
+	margin: 0 -7px 0 7px;
+}
+
+/* --- scroll bar --- */
+
+scrollbar contents {
+	padding: 1px;
+	border: 1px solid @scroll_border;
+	border-radius: 2px;
+	background-color: @scroll_bg;
+}
+
+scrollbar slider {
+	border: 0; /* 1px solid @scroll_slider_border; */
+	border-radius: 6px;
+}
+
+scrollbar.vertical slider {
+	margin: -1px -2px;
+	padding: 2px;
+	min-width: 12px;
+	min-height: 42px;
+	background:
+		/* border color */
+		linear-gradient(to right,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		linear-gradient(to left,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		linear-gradient(to top,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		linear-gradient(to bottom,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		/* bg color */
+		radial-gradient(
+			ellipse 50% 50%,
+			@scroll_glaze_glow_center,
+			@scroll_glaze_glow_edge),
+		linear-gradient(to right,
+			@scroll_glaze_top,
+			@scroll_glaze_mida 49%,
+			@scroll_glaze_midb 49%,
+			@scroll_glaze_bot);
+}
+
+scrollbar.vertical slider:hover {
+	background:
+		/* border color */
+		linear-gradient(to right,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		linear-gradient(to left,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		linear-gradient(to top,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		linear-gradient(to bottom,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		/* bg color */
+		radial-gradient(
+			ellipse 50% 50%,
+			@scroll_glaze_glow_center,
+			@scroll_glaze_glow_edge),
+		linear-gradient(to right,
+			@scroll_hover_glaze_top,
+			@scroll_hover_glaze_mida 49%,
+			@scroll_hover_glaze_midb 49%,
+			@scroll_hover_glaze_bot);
+}
+
+scrollbar.horizontal slider {
+	margin: -2px -1px;
+	padding: 2px;
+	min-width: 42px;
+	min-height: 12px;
+	background:
+		/* border color */
+		linear-gradient(to right,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		linear-gradient(to left,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		linear-gradient(to top,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		linear-gradient(to bottom,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		/* bg color */
+		radial-gradient(
+			ellipse 50% 50%,
+			@scroll_glaze_glow_center,
+			@scroll_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@scroll_glaze_top,
+			@scroll_glaze_mida 49%,
+			@scroll_glaze_midb 49%,
+			@scroll_glaze_bot);
+}
+
+scrollbar.horizontal slider:hover {
+	background:
+		/* border color */
+		linear-gradient(to right,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		linear-gradient(to left,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		linear-gradient(to top,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		linear-gradient(to bottom,
+			@scroll_bg 1px,
+			@scroll_slider_border 1px,
+			@scroll_slider_border 2px,
+			transparent 2px),
+		/* bg color */
+		radial-gradient(
+			ellipse 50% 50%,
+			@scroll_glaze_glow_center,
+			@scroll_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@scroll_hover_glaze_top,
+			@scroll_hover_glaze_mida 49%,
+			@scroll_hover_glaze_midb 49%,
+			@scroll_hover_glaze_bot);
+}
+
+scrollbar button,
+scrollbar button:hover,
+scrollbar button:disabled {
+	padding: 2px;
+	min-width: 6px;
+	min-height: 6px;
+	border-color: transparent;
+	background: transparent;
+	box-shadow: none;
+}
+
+scrollbar.vertical button {
+	-gtk-icon-transform: rotate(90deg);
+}
+
+/* --- scroll bar position --- */
+
+scrolledwindow.frame {
+	border: 1px solid @dialog_border;
+}
+
+scrolledwindow scrollbar.vertical {
+	margin: -1px -1px -1px -3px;
+	padding-left: 3px;
+}
+
+scrolledwindow scrollbar.horizontal {
+	margin: -3px -1px -1px;
+	padding: 3px 0 0 0;
+}
+
+scrolledwindow viewport {
+	border: 1px solid @menu_border;
+}
+
+scrolledwindow viewport ~ scrollbar.vertical {
+	margin: 0 0 -30px -3px;
+	padding: 0 0 30px 3px;
+	border-left: 0;
+}
+
+scrolledwindow viewport ~ scrollbar.horizontal {
+	margin: -3px 0 0 0;
+	padding: 3px 0 0 0;
+	border-top: 0;
+}
+
+scrolledwindow.frame viewport.view,
+scrolledwindow.frame viewport.frame {
+	border: 0; /* avoid dual border */
+}
+
+notebook scrolledwindow.frame {
+	border: 1px solid @menu_border;
+}
+
+notebook stack > scrolledwindow viewport.frame {
+	border: 0; /* avoid dual border */
+	background-color: @nb_bg;
+}
+
+notebook scrollbar.vertical {
+	margin: -1px -1px -30px -3px;
+	padding: 0 0 29px 3px;
+	border-left: 1px solid @menu_border;
+	background-color: @nb_bg;
+}
+
+notebook scrollbar.horizontal {
+	margin: -3px -1px -1px;
+	padding: 3px 0 0 0;
+	border-top: 1px solid @menu_border;
+	background-color: @nb_bg;
+}
+
+dialog scrolledwindow.frame scrollbar.vertical:dir(ltr) ,
+expander scrollbar.vertical:dir(ltr)  {
+	margin: -1px -1px -30px -3px;
+	padding: 0 0 29px 3px;
+	border-left: 1px solid @menu_border;
+	background-color: @theme_bg;
+}
+
+dialog scrolledwindow.frame scrollbar.vertical:dir(rtl),
+expander scrollbar.vertical:dir(rtl) {
+	margin: -1px -3px -30px -1px;
+	padding: 0 3px 29px 0;
+	border-right: 1px solid @menu_border;
+	background-color: @theme_bg;
+}
+
+dialog scrolledwindow.frame scrollbar.horizontal,
+expander scrollbar.horizontal {
+	margin: -3px -1px -1px;
+	padding: 3px 0 0 0;
+	border-top: 1px solid @menu_border;
+	background-color: @theme_bg;
+}
+
+dialog notebook scrolledwindow.frame scrollbar.vertical,
+dialog notebook scrolledwindow.frame scrollbar.horizontal {
+	background-color: @nb_bg;
+}
+
+treeview ~ scrollbar.horizontal {
+	border-top: 1px solid @menu_border;
+	background-color: @theme_bg;
+}
+
+treeview ~ scrollbar.horizontal ~ scrollbar.vertical:dir(ltr) {
+	margin: -30px -1px -30px -3px;
+	padding: 29px 0 29px 3px;
+	border-left: 1px solid @menu_border;
+	background-color: @theme_bg;
+}
+
+treeview ~ scrollbar.horizontal ~ scrollbar.vertical:dir(rtl) {
+	margin: -30px -3px -30px -1px;
+	padding: 29px 3px 29px 0;
+	border-right: 1px solid @menu_border;
+	background-color: @theme_bg;
+}
+
+notebook treeview ~ scrollbar.horizontal,
+notebook treeview ~ scrollbar.horizontal ~ scrollbar.vertical {
+	background-color: @nb_bg;
+}
+
+placessidebar scrollbar.vertical {
+	margin: -1px -1px -30px -3px;
+	padding: 0 0 29px 3px;
+	border-left: 1px solid @menu_border;
+	background-color: @theme_bg;
+}
+
+placessidebar scrollbar.horizontal {
+	margin: -3px -1px -1px;
+	padding: 3px 0 0 0;
+	border-top: 1px solid @menu_border;
+	background-color: @theme_bg;
+}
+
+/* --- expander --- */
+
+expander title {
+	padding: 2px 0;
+}
+
+expander title:hover {
+	background-color: @expander_hover;
+}
+
+expander arrow {
+	padding: 0 4px 0 1px;
+	min-width: 16px;
+	min-height: 16px;
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+expander arrow:dir(rtl) {
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+expander arrow:checked {
+	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+/* --- info bar --- */
+
+infobar revealer > box {
+	margin: -1px;
+}
+
+infobar revealer buttonbox {
+	margin: -1px;
+}
+
+infobar revealer buttonbox button {
+	padding: 2px 0 3px;
+}
+
+infobar revealer buttonbox button > label {
+	margin: 2px 0 1px;
+}
+
+infobar revealer buttonbox button image {
+	margin: 0 1px;
+	-gtk-icon-transform: scale(0.8);
+}
+
+infobar revealer button.close {
+	padding: 2px;
+}
+
+infobar.info {
+	color: @infobar_fg;
+	border: 1px solid @infobar_border;
+	background: linear-gradient(to bottom, @infobar_bg_top, @infobar_bg_bot);
+}
+
+infobar.question {
+	color: @questionbar_fg;
+	border: 1px solid @questionbar_border;
+	background: linear-gradient(to bottom, @questionbar_bg_top, @questionbar_bg_bot);
+}
+
+infobar.warning {
+	color: @warningbar_fg;
+	border: 1px solid @warningbar_border;
+	background: linear-gradient(to bottom, @warningbar_bg_top, @warningbar_bg_bot);
+}
+
+infobar.error {
+	color: @errorbar_fg;
+	border: 1px solid @errorbar_border;
+	background: linear-gradient(to bottom, @errorbar_bg_top, @errorbar_bg_bot);
+}
+
+/* --- grid --- */
+
+grid label.property-name-label,
+grid label.key-name,
+grid label.key-summary {
+	color: @theme_text;
+}
+
+grid row:selected label.property-name-label,
+grid row:selected label.key-name,
+grid row:selected label.key-summary {
+	color: @theme_selected_fg;
+}
+
+/* --- calendar --- */
+
+calendar {
+	/* margin: 1px 0; not working */
+	padding: 1px;
+	border: 1px solid @frame_border;
+}
+
+calendar.header {
+	background-color: @theme_bg;
+	box-shadow:
+		inset -1px -1px alpha(@nb_border, 0.125),
+		inset 1px 1px alpha(@entry_bg, 0.27);
+}
+
+calendar.highlight {
+	color: @menuitem_hover;
+	background: @theme_selected_bg;
+}
+
+calendar:selected {
+	font-weight: bold;
+}
+
+calendar:indeterminate {
+	color: alpha(@theme_fg, 0.2);
+}
+
+/* --- open/save/print dialog --- */
+
+filechooser {
+	padding: 12px 12px 4px;
+}
+
+filechooser placessidebar .sidebar-button {
+	margin-bottom: 0;
+}
+
+filechooser placessidebar + separator {
+	padding: 0 1px;
+}
+
+printdialog actionbar {
+	padding-top: 5px;
+}
+
+printdialog box.view {
+	padding: 11px 12px;
+}
+
+filechooser box.view,
+printdialog box.view {
+	background-color: @theme_bg;
+}
+
+filechooser ~ .dialog-action-box {
+	margin-top: 3px;
+	padding: 0 6px 6px;
+}
+
+printdialog stack grid.vertical {
+	color: @theme_text; /* to fix white color */
+}
+
+filechooser placessidebar,
+filechooser scrolledwindow {
+	border: 1px solid @dialog_border;
+}
+
+filechooser entry scrolledwindow {
+	/* suggestions/autocomplete list */
+	border: 0;
+}
+
+filechooser scrolledwindow viewport,
+printdialog scrolledwindow viewport {
+	border: 0; /* avoid dual border */
+}
+
+filechooser viewport.frame row {
+	padding: 3px 2px;
+}
+
+filechooser viewport.frame button.sidebar-button {
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+}
+
+filechooser viewport.frame row box > image {
+	padding: 0 8px 0 3px;
+}
+
+filechooser .path-bar button.toggle image + label:dir(ltr) {
+	padding-left: 4px;
+}
+
+filechooser .path-bar button.toggle label:dir(rtl) + image {
+	padding-left: 4px;
+}

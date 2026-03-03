@@ -1,0 +1,237 @@
+/**
+ * Copyright 2020-2026 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ */
+
+/* --- check button & radio button --- */
+
+checkbutton:dir(ltr), radiobutton:dir(ltr) {
+	margin: 0 0 1px 1px;
+}
+
+checkbutton:dir(rtl), radiobutton:dir(rtl) {
+	margin: 0 1px 1px 0;
+}
+
+checkbutton label, radiobutton label {
+	margin: 0 0 0 -2px;
+	padding: 1px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+checkbutton label:dir(rtl), radiobutton label:dir(rtl) {
+	margin: 0 -2px 0 0;
+}
+
+checkbutton check:dir(rtl), radiobutton radio:dir(rtl) {
+	margin: 1px 0 0 5px;
+}
+
+checkbutton:hover, radiobutton:hover {
+	background-color: @checkbutton_hover_bg;
+}
+
+checkbutton:focus label, radiobutton:focus label {
+	border-color: @theme_outline;
+	background-color: @checkbutton_focus_bg;
+}
+
+checkbutton:hover:focus label, radiobutton:hover:focus label {
+	/* @todo border-color: @checkbutton_focus_hover_border; */
+	background-color: @checkbutton_focus_hover_bg;
+}
+
+/* --- checkbox --- */
+
+check {
+	margin: 1px 5px 0 0;
+	-gtk-icon-source: url("img/checkbox-unchecked.svg");
+}
+
+check:disabled {
+	-gtk-icon-source: url("img/checkbox-unchecked-insensitive.svg");
+}
+
+check:checked {
+	-gtk-icon-source: url("img/checkbox-checked.svg");
+}
+
+check:checked:active,
+treeview.view check:selected:checked:not(:disabled) {
+	-gtk-icon-source: url("img/checkbox-checked-active.svg");
+}
+
+check:checked:disabled {
+	-gtk-icon-source: url("img/checkbox-checked-insensitive.svg");
+}
+
+check:indeterminate {
+	-gtk-icon-source: url("img/checkbox-mixed.svg");
+}
+
+check:indeterminate:active,
+treeview.view check:selected:indeterminate:not(:disabled) {
+	-gtk-icon-source: url("img/checkbox-mixed-active.svg");
+}
+
+check:indeterminate:disabled {
+	-gtk-icon-source: url("img/checkbox-mixed-insensitive.svg");
+}
+
+/* --- radio --- */
+
+radio {
+	margin: 1px 5px 0 0;
+	-gtk-icon-source: url("img/radio-unchecked.svg");
+}
+
+radio:disabled {
+	-gtk-icon-source: url("img/radio-unchecked-insensitive.svg");
+}
+
+radio:checked {
+	-gtk-icon-source: url("img/radio-checked.svg");
+}
+
+radio:checked:active,
+treeview.view radio:selected:checked:not(:disabled) {
+	-gtk-icon-source: url("img/radio-checked-active.svg");
+}
+
+radio:checked:disabled {
+	-gtk-icon-source: url("img/radio-checked-insensitive.svg");
+}
+
+radio:indeterminate {
+	-gtk-icon-source: url("img/radio-mixed.svg");
+}
+
+radio:indeterminate:active,
+treeview.view radio:selected:indeterminate:not(:disabled) {
+	-gtk-icon-source: url("img/radio-mixed-active.svg");
+}
+
+radio:indeterminate:disabled {
+	-gtk-icon-source: url("img/radio-mixed-insensitive.svg");
+}
+
+/* --- check & radio menu items --- */
+
+popover check,
+popover radio {
+	margin: 1px 0 0;
+}
+
+menuitem check,
+menuitem radio {
+	padding: 0 1px;
+	min-width: 16px;
+	min-height: 16px;
+}
+
+menuitem:dir(rtl) check,
+menuitem:dir(rtl) radio {
+	margin: 1px -5px 0 5px;
+}
+
+popover check,
+popover check:disabled,
+menuitem check,
+menuitem check:disabled {
+	-gtk-icon-source: none;
+}
+
+popover check:checked,
+popover check:checked:active,
+menuitem check:checked,
+menuitem check:checked:active {
+	-gtk-icon-source: url("img/menu-checkbox-checked.svg");
+}
+
+popover check:checked:hover,
+menuitem check:checked:hover {
+	-gtk-icon-source: url("img/menu-checkbox-checked-hover.svg");
+}
+
+popover check:checked:disabled,
+menuitem check:checked:disabled {
+	-gtk-icon-source: url("img/menu-checkbox-checked-insensitive.svg");
+}
+
+popover check:indeterminate,
+popover check:indeterminate:active,
+menuitem check:indeterminate,
+menuitem check:indeterminate:active {
+	-gtk-icon-source: url("img/menu-checkbox-mixed.svg");
+}
+
+popover check:indeterminate:hover,
+menuitem check:indeterminate:hover {
+	-gtk-icon-source: url("img/menu-checkbox-mixed-hover.svg");
+}
+
+popover check:indeterminate:disabled,
+menuitem check:indeterminate:disabled {
+	-gtk-icon-source: url("img/menu-checkbox-mixed-insensitive.svg");
+}
+
+popover radio,
+popover radio:disabled,
+menuitem radio,
+menuitem radio:disabled {
+	-gtk-icon-source: none;
+}
+
+popover radio:checked,
+popover radio:checked:active,
+menuitem radio:checked,
+menuitem radio:checked:active {
+	-gtk-icon-source: url("img/menu-radio-checked.svg");
+}
+
+popover radio:checked:hover,
+menuitem radio:checked:hover {
+	-gtk-icon-source: url("img/menu-radio-checked-hover.svg");
+}
+
+popover radio:checked:disabled,
+menuitem radio:checked:disabled {
+	-gtk-icon-source: url("img/menu-radio-checked-insensitive.svg");
+}
+
+popover radio:indeterminate,
+popover radio:indeterminate:active,
+menuitem radio:indeterminate,
+menuitem radio:indeterminate:active {
+	-gtk-icon-source: url("img/menu-radio-mixed.svg");
+}
+
+popover radio:indeterminate:hover,
+menuitem radio:indeterminate:hover {
+	-gtk-icon-source: url("img/menu-radio-mixed-hover.svg");
+}
+
+popover radio:indeterminate:disabled,
+menuitem radio:indeterminate:disabled {
+	-gtk-icon-source: url("img/menu-radio-mixed-insensitive.svg");
+}
