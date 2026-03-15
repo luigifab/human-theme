@@ -1,6 +1,8 @@
+-- NIGHTLY --
+
 # Human theme
 
-This theme works with **GTK 2.24** *(with murrine)* & **GTK 3.24** & **GTK 4.12..4.21**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It works also with **Qt 5.15** & **Qt 6.0..6.10**.
+This theme works with **GTK 2.24** *(with murrine)* & **GTK 3.24** & **GTK 4.12..4.22**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It works also with **Qt 5.15** & **Qt 6.0..6.10**.
 
 It is mainly intended for **MATE** desktop environment, it's not too bad with **Xfce**, it's experimental with **Cinnamon**.
 
@@ -56,7 +58,7 @@ GTK 3.24-classic RTL (Pango 1.57)\
 [<img alt="Preview with GTK 3 - RTL - Blue variation - Main window with menu" src="images/thumbs/gtk3-rtl-blue-menu.png?raw=true" width="200" />](images/gtk3-rtl-blue-menu.png?raw=true)
 [<img alt="Preview with GTK 3 - RTL - Green variation - Main window with menu" src="images/thumbs/gtk3-rtl-green-menu.png?raw=true" width="200" />](images/gtk3-rtl-green-menu.png?raw=true)
 
-GTK 4.12..4.21-classic (Pango 1.57)\
+GTK 4.12..4.22-classic (Pango 1.57)\
 [<img alt="Preview with GTK 4 - Main window" src="images/thumbs/gtk4.png?raw=true" width="200" />](images/gtk4.png?raw=true)
 [<img alt="Preview with GTK 4 - Orange variation - Main window" src="images/thumbs/gtk4-orange.png?raw=true" width="200" />](images/gtk4-orange.png?raw=true)
 [<img alt="Preview with GTK 4 - Blue variation - Main window" src="images/thumbs/gtk4-blue.png?raw=true" width="200" />](images/gtk4-blue.png?raw=true)
@@ -66,7 +68,7 @@ GTK 4.12..4.21-classic (Pango 1.57)\
 [<img alt="Preview with GTK 4 - Blue variation - Main window with menu" src="images/thumbs/gtk4-blue-menu.png?raw=true" width="200" />](images/gtk4-blue-menu.png?raw=true)
 [<img alt="Preview with GTK 4 - Green variation - Main window with menu" src="images/thumbs/gtk4-green-menu.png?raw=true" width="200" />](images/gtk4-green-menu.png?raw=true)
 
-GTK 4.12..4.21-classic RTL (Pango 1.57)\
+GTK 4.12..4.22-classic RTL (Pango 1.57)\
 [<img alt="Preview with GTK 4 - RTL - Main window" src="images/thumbs/gtk4-rtl.png?raw=true" width="200" />](images/gtk4-rtl.png?raw=true)
 [<img alt="Preview with GTK 4 - RTL - Orange variation - Main window" src="images/thumbs/gtk4-rtl-orange.png?raw=true" width="200" />](images/gtk4-rtl-orange.png?raw=true)
 [<img alt="Preview with GTK 4 - RTL - Blue variation - Main window" src="images/thumbs/gtk4-rtl-blue.png?raw=true" width="200" />](images/gtk4-rtl-blue.png?raw=true)
@@ -364,12 +366,12 @@ Run `colors-*.sh` to update colors. See also [technical informations](https://gi
 
 ## Copyright
 
-- Current version: 3.0.0 (03/03/2026)
-- Compatibility: GTK 2.24 / 3.24 / 4.12..4.21, Qt 5.15 / 6.0..6.10
+- Current version: 3.1.0~nightly20260315
+- Compatibility: GTK 2.24 / 3.24 / 4.12..4.22, Qt 5.15 / 6.0..6.10
 - Links: [luigifab.fr](https://www.luigifab.fr/gtkqt/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\
-If you like, take some of your time to improve some translations, go to https://bit.ly/2HyCCEc.
+If you like, take some of your time to improve the translations, go to https://bit.ly/2HyCCEc.
 
 ## Packages in official distros repositories
 

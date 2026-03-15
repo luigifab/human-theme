@@ -1444,9 +1444,6 @@ calendar .other-month {
 
 .background.dialog.filechooser .dialog-action-area {
 	margin: -6px;
-}
-
-.background.dialog.filechooser .dialog-action-area {
 	padding-top: 14px;
 }
 
@@ -1513,4 +1510,10 @@ calendar .other-month {
 
 .background.dialog.print tab label {
 	margin-bottom: -1px; /* @todo */
+}
+
+/* --- old open/save dialog --- */
+
+.background.dialog filechooser #pathbarbox {
+	background-color: @theme_bg;
 }

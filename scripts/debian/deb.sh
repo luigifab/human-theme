@@ -3,6 +3,7 @@
 
 
 cd "$(dirname "$0")"
+export DH_QUIET=1
 version="3.0.0"
 
 
@@ -10,7 +11,7 @@ mkdir builder
 rm -rf builder/*
 
 # copy to a tmp directory
-if [ true ]; then
+if [ ! true ]; then
 	cd builder
 	wget https://github.com/luigifab/human-theme/archive/v$version/human-theme-$version.tar.gz
 	tar xzf human-theme-$version.tar.gz
@@ -56,66 +57,65 @@ for serie in experimental resolute questing noble jammy focal bionic xenial trus
 
 
 
-	if [ $serie = "experimental" ]; then
+	# debhelper: experimental:13 focal/mx21:12 bionic:9 xenial:9 trusty:9
+	if [ $serie = "experimental" ] || [ $serie = "unstable" ]; then
 		mv debian/control.debian debian/control
-		mv debian/changelog.debian debian/changelog
-		rm -f debian/*.mx debian/*.debian debian/*.ubuntu
-		echo "=========================== buildpackage ($serie) =="
-		dpkg-buildpackage -us -uc
+	elif [ $serie = "mx21" ]; then
+		sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 12)/g' debian/control
+	elif [ $serie = "focal" ]; then
+		mv debian/control.ubuntu debian/control
+		sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 12)/g' debian/control
+	elif [ $serie = "bionic" ]; then
+		mv debian/control.ubuntu debian/control
+
+		sed -i 's/execute_before_dh_install:/override_dh_update_autotools_config:/g' debian/rules
+		sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 9)/g' debian/control
+	elif [ $serie = "xenial" ]; then
+		mv debian/control.ubuntu debian/control
+
+		sed -i 's/execute_before_dh_install:/override_dh_update_autotools_config:/g' debian/rules
+		sed -i 's/debhelper-compat (= 13)/debhelper (>= 9)/g' debian/control
+		sed -i ':a;N;$!ba;s/Rules-Requires-Root: no\n//g' debian/control
+		echo 9 > debian/compat
+	elif [ $serie = "trusty" ]; then
+		mv debian/control.ubuntu debian/control
+		sed -i 's/dh $@/dh $@ --with autotools_dev/g' debian/rules
+		sed -i 's/execute_before_dh_install:/override_dh_autotools-dev_updateconfig:/g' debian/rules
+		sed -i 's/debhelper-compat (= 13)/debhelper (>= 9), autotools-dev/g' debian/control
+		sed -i ':a;N;$!ba;s/Rules-Requires-Root: no\n//g' debian/control
+		echo 9 > debian/compat
 	else
-		# debhelper: experimental:13 focal/mx21:12 bionic:9 xenial:9 trusty:9
-		if [ $serie = "unstable" ]; then
-			mv debian/control.debian debian/control
-
-		elif [ $serie = "mx21" ]; then
-
-			sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 12)/g' debian/control
-		elif [ $serie = "focal" ]; then
-			mv debian/control.ubuntu debian/control
-			sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 12)/g' debian/control
-		elif [ $serie = "bionic" ]; then
-			mv debian/control.ubuntu debian/control
-
-			sed -i 's/execute_before_dh_install:/override_dh_update_autotools_config:/g' debian/rules
-			sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 9)/g' debian/control
-		elif [ $serie = "xenial" ]; then
-			mv debian/control.ubuntu debian/control
-
-			sed -i 's/execute_before_dh_install:/override_dh_update_autotools_config:/g' debian/rules
-			sed -i 's/debhelper-compat (= 13)/debhelper (>= 9)/g' debian/control
-			sed -i ':a;N;$!ba;s/Rules-Requires-Root: no\n//g' debian/control
-			echo 9 > debian/compat
-		elif [ $serie = "trusty" ]; then
-			mv debian/control.ubuntu debian/control
-			sed -i 's/dh $@/dh $@ --with autotools_dev/g' debian/rules
-			sed -i 's/execute_before_dh_install:/override_dh_autotools-dev_updateconfig:/g' debian/rules
-			sed -i 's/debhelper-compat (= 13)/debhelper (>= 9), autotools-dev/g' debian/control
-			sed -i ':a;N;$!ba;s/Rules-Requires-Root: no\n//g' debian/control
-			echo 9 > debian/compat
-		else
-			mv debian/control.ubuntu debian/control
-		fi
-		if [ $serie = "mx25" ] || [ $serie = "mx23" ] || [ $serie = "mx21" ]; then
-			mv debian/changelog.mx debian/changelog
-			sed -i 's/-1) /-1~'$serie'+1) /' debian/changelog
-		elif [ $serie = "unstable" ]; then
-			mv debian/changelog.debian debian/changelog
-		else
-			mv debian/changelog.ubuntu debian/changelog
-			sed -i 's/experimental/'$serie'/g' debian/changelog
-			sed -i 's/-1) /-1+'$serie') /' debian/changelog
-		fi
-		rm -f debian/*.mx debian/*.debian debian/*.ubuntu
-		echo "=========================== buildpackage ($serie) =="
-		dpkg-buildpackage -us -uc -ui -d -S
+		mv debian/control.ubuntu debian/control
 	fi
+
+	if [ $serie = "mx25" ] || [ $serie = "mx23" ] || [ $serie = "mx21" ]; then
+		mv debian/changelog.mx debian/changelog
+		sed -i 's/-1) /-1~'$serie'+1) /' debian/changelog
+		sed -i 's/ experimental; / mx; /' debian/changelog
+		sed -i 's/ unstable; / mx; /' debian/changelog
+	elif [ $serie = "experimental" ] || [ $serie = "unstable" ]; then
+		sed -i 's/ experimental; / '$serie'; /g' debian/changelog
+		mv debian/changelog.debian debian/changelog
+	else
+		mv debian/changelog.ubuntu debian/changelog
+		sed -i 's/ experimental; / '$serie'; /g' debian/changelog
+		sed -i 's/-1) /-1+'$serie') /' debian/changelog
+	fi
+	rm -f debian/*.mx debian/*.debian debian/*.ubuntu
+
+	if [ $serie = "experimental" ]; then
+		echo "===================== build package ($serie) =="
+		dpkg-buildpackage -us -uc
+		echo "=========================== lintian ($serie) =="
+		lintian -EviIL +pedantic ../human-theme-gtk_$version*.changes
+		rm ../*amd64.changes
+	fi
+
+	echo "============== build source package ($serie) =="
+	dpkg-buildpackage -us -uc -ui -d -S
 	cd ..
 
-	if [ $serie = "experimental" ]; then
-		echo "=========================== lintian ($serie) =="
-		lintian -EviIL +pedantic human-theme-gtk_$version*.changes
-		rm *amd64.changes
-	elif [ $serie = "unstable" ]; then
+	if [ $serie = "experimental" ] || [ $serie = "unstable" ]; then
 		echo "=========================== debsign ($serie) =="
 		debsign human-theme-gtk*$version-*_source.changes
 	else

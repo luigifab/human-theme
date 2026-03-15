@@ -933,7 +933,6 @@ QScrollBar::down-arrow:vertical {
 #AwfMainWindow QRadioButton { margin-right: 3px; }
 #AwfMainWindow .awf-cheatcode-colorbtn { min-height: 21px; }
 #AwfMainWindow .awf-cheatcode-folderbtn { min-height: 19px; }
-#AwfMainWindow .awf-cheatcode-prbr2 { margin: 1px 0; }
 #AwfMainWindow AwfTreeView { qproperty-columnWidths: "28,24,24,67,81,81,67,34,34,24,24"; }
 
 QTextEdit {

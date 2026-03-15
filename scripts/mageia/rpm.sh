@@ -3,7 +3,7 @@
 
 
 cd "$(dirname "$0")"
-version="3.0.0"
+version="3.1.0"
 
 
 mkdir -p builder ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
@@ -11,7 +11,7 @@ find builder/* ! -name "*$version*.rpm" ! -name "*$version*.gz" -exec rm -rf {} 
 rm -f ~/rpmbuild/SOURCES/human-theme-gtk-$version.tar.gz
 
 # copy to a tmp directory
-if [ true ]; then
+if [ ! true ]; then
 	rm human-theme-gtk.spec
 	wget https://raw.githubusercontent.com/luigifab/human-theme/refs/tags/v$version/scripts/mageia/human-theme-gtk.spec
 	chmod 644 human-theme-gtk.spec

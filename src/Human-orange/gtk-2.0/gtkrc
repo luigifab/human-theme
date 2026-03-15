@@ -13,38 +13,30 @@ gtk-icon-sizes = "panel-menu=24,24:gtk-button=16,16"
 
 style "murrine-default"
 {
-	########
-	# Style Properties
-	########
 	GtkButton      ::child-displacement-x = 1
 	GtkButton      ::child-displacement-y = 1
 	GtkButton      ::default-border       = { 0, 0, 0, 0 }
 	GtkCheckButton ::indicator-size       = 14
-
 	GtkPaned       ::handle-size          = 6
-
 	GtkRange       ::trough-border        = 2
 	GtkRange       ::slider-width         = 14
 	GtkRange       ::stepper-size         = 14
-
 	GtkScale       ::slider-length        = 20
 	GtkScale       ::trough-side-details  = 1
 	GtkScrollbar   ::min-slider-length    = 30
-
 	GtkMenuBar     ::internal-padding     = 0
 	GtkExpander    ::expander-size        = 16
 	GtkToolbar     ::internal-padding     = 1
 	GtkTreeView    ::expander-size        = 14
 	GtkTreeView    ::vertical-separator   = 0
-
 	GtkMenu        ::horizontal-padding   = 0
 	GtkMenu        ::vertical-padding     = 0
 
 	# Glow the tasklist by changing the color, instead of overlaying it with a rectangle
-	#WnckTasklist   ::fade-overlay-rect    = 0
+	#WnckTasklist  ::fade-overlay-rect    = 0
 
-	#GtkWidget      ::link-color           = @fg_color
-	#GtkWidget      ::visited-link-color   = shade (0.2, @fg_color)
+	#GtkWidget     ::link-color           = @fg_color
+	#GtkWidget     ::visited-link-color   = shade (0.2, @fg_color)
 
 	xthickness = 1
 	ythickness = 1
@@ -58,7 +50,7 @@ style "murrine-default"
 	bg[NORMAL]        = @bg_color
 	bg[PRELIGHT]      = shade (1.02, @bg_color)
 	bg[ACTIVE]        = shade (0.88, @bg_color)
-	bg[SELECTED]	  = @selected_bg_color
+	bg[SELECTED]      = @selected_bg_color
 	bg[INSENSITIVE]   = @bg_color
 
 	base[NORMAL]      = @base_color
@@ -93,15 +85,15 @@ style "murrine-default"
 		menuitemstyle       = 1     # 0 = flat, 1 = glassy, 2 = striped
 		menustyle           = 0     # 0 = no vertical menu stripe, 1 = display vertical menu stripe
 		progressbarstyle    = 1     # 0 = no stripes, 1 = diagonal stripes, 2 = vertical stripes
-		reliefstyle	    = 2     # 0 = flat, 1 = inset, 2 = shadow
-		rgba		    = FALSE # FALSE = disabled, TRUE = enabled
+		reliefstyle         = 2     # 0 = flat, 1 = inset, 2 = shadow
+		rgba                = FALSE # FALSE = disabled, TRUE = enabled
 		roundness           = 2     # 0 = squared, 1 = old default, more will increase roundness
 		scrollbarstyle      = 0     # 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
 		#scrollbar_color    = shade (0.9, @bg_color)
 		sliderstyle         = 0     # 0 = nothing added, 1 = handles
 		stepperstyle        = 1     # 0 = standard, 1 = integrated stepper handles, 2 = unknown
 		#profile            = NODOKA # engine profile options: CANDIDO, CLEARLOOKS, MIST, MURRINE, NODOKA
-		toolbarstyle	    = 2     # 0 = flat, 1 = glassy, 2 = gradient
+		toolbarstyle        = 2     # 0 = flat, 1 = glassy, 2 = gradient
 	}
 }
 
@@ -208,8 +200,7 @@ style "murrine-spinbutton"
 
 style "murrine-scale"
 {
-	GtkRange        ::slider-width = 13
-
+	GtkRange ::slider-width = 13
 	engine "murrine"
 	{
 		highlight_shade = 1.05
@@ -230,7 +221,7 @@ style "murrine-scrollbar"
 	{
 		highlight_shade = 1.05
 	}
-		bg[SELECTED] = shade (0.8, @bg_color)
+	bg[SELECTED] = shade (0.8, @bg_color)
 }
 
 style "murrine-hscrollbar"
@@ -254,7 +245,7 @@ style "murrine-radiocheck"
 {
 	text[NORMAL]   = @selected_fg_color
 	text[PRELIGHT] = @selected_fg_color
-	bg[SELECTED] = @selected_bg_color # HACK: override button selection colour
+	bg[SELECTED]   = @selected_bg_color # HACK: override button selection colour
 }
 
 style "murrine-panel"
@@ -266,80 +257,69 @@ style "murrine-panel"
 #########################################
 
 # Theme default style is applied to every widget
-class "GtkWidget"    					style "murrine-default"
+class "GtkWidget"     style "murrine-default"
 
 # Increase the x/ythickness in some widgets
-class "GtkToolbar"   					style "murrine-default"
-class "GtkRange"     					style "murrine-wide"
-class "GtkFrame"     					style "murrine-wide"
-class "GtkSeparator" 					style "murrine-wide"
-class "GtkEntry"     					style "murrine-wider"
+class "GtkToolbar"    style "murrine-default"
+class "GtkRange"      style "murrine-wide"
+class "GtkFrame"      style "murrine-wide"
+class "GtkSeparator"  style "murrine-wide"
+class "GtkEntry"      style "murrine-wider"
 
-class "GtkSpinButton"  					style "murrine-spinbutton"
-class "GtkScale"       					style "murrine-scale"
-class "GtkVScale"      					style "murrine-vscale"
-class "GtkHScale"      					style "murrine-hscale"
-class "GtkScrollbar"   					style "murrine-scrollbar"
-class "GtkVScrollbar"  					style "murrine-vscrollbar"
-class "GtkHScrollbar"  					style "murrine-hscrollbar"
+class "GtkSpinButton" style "murrine-spinbutton"
+class "GtkScale"      style "murrine-scale"
+class "GtkVScale"     style "murrine-vscale"
+class "GtkHScale"     style "murrine-hscale"
+class "GtkScrollbar"  style "murrine-scrollbar"
+class "GtkVScrollbar" style "murrine-vscrollbar"
+class "GtkHScrollbar" style "murrine-hscrollbar"
 
-#class "GtkRadio*"                        		style:highest "murrine-radiocheck" # HACK: override button selection colour
-#class "GtkCheck*"                           		style:highest "murrine-radiocheck" # HACK: override button selection colour
+#class "GtkRadio*"    style:highest "murrine-radiocheck" # HACK: override button selection colour
+#class "GtkCheck*"    style:highest "murrine-radiocheck" # HACK: override button selection colour
 
 # Use this to customize Metacity colours (causes issues with KDE/gtk-window-decorator)
-class "MetaFrames" 					style "metacity-frame"
-#class "GtkWindow"    			    		style "metacity-frame"
-
+class "MetaFrames"    style "metacity-frame"
+#class "GtkWindow"    style "metacity-frame"
 
 # General matching following, the order is choosen so that the right styles override each other
 # eg. progressbar needs to be more important then the menu match.
+# This is not perfect, it could be done better.
+# (That is modify *every* widget in the notebook, and change those back that we really don't want changed)
+widget_class "*<GtkNotebook>*<GtkEventBox>"       style "murrine-notebook"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"    style "murrine-notebook"
+widget_class "*<GtkNotebook>*<GtkLayout>"         style "murrine-notebook"
+widget_class "*<GtkNotebook>*<GtkViewport>"       style "murrine-notebook"
+widget_class "*<GtkNotebook>*<GtkScrolledWindow>" style "murrine-notebook"
 
-# This is not perfect, it could be done better
-# (That is modify *every* widget in the notebook, and change those back that
-# we really don't want changed)
-widget_class "*<GtkNotebook>*<GtkEventBox>"     	style "murrine-notebook"
-widget_class "*<GtkNotebook>*<GtkDrawingArea>"		style "murrine-notebook"
-widget_class "*<GtkNotebook>*<GtkLayout>"       	style "murrine-notebook"
-widget_class "*<GtkNotebook>*<GtkViewport>"		style "murrine-notebook"
-widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "murrine-notebook"
+widget_class "*<GtkButton>"                style "murrine-button"
+widget_class "*<GtkNotebook>"              style "murrine-notebook"
+widget_class "*<GtkStatusbar>*"            style "murrine-statusbar"
 
-widget_class "*<GtkButton>"      			style "murrine-button"
-widget_class "*<GtkNotebook>"    			style "murrine-notebook"
-widget_class "*<GtkStatusbar>*"  			style "murrine-statusbar"
+widget_class "*<GtkComboBoxEntry>*"        style "murrine-comboboxentry"
+widget_class "*<GtkCombo>*"                style "murrine-comboboxentry"
 
-widget_class "*<GtkComboBoxEntry>*"			style "murrine-comboboxentry"
-widget_class "*<GtkCombo>*"         			style "murrine-comboboxentry"
+widget_class "*<GtkMenuBar>*"              style "murrine-menubar"
+widget_class "*<GtkMenu>*"                 style "murrine-menu"
+widget_class "*<GtkMenuItem>*"             style "murrine-menu-item"
+widget_class "*<GtkSeparatorMenuItem>*"    style "murrine-separator-menu-item"
 
-widget_class "*<GtkMenuBar>*"           		style "murrine-menubar"
-widget_class "*<GtkMenu>*"              		style "murrine-menu"
-widget_class "*<GtkMenuItem>*"          		style "murrine-menu-item"
-widget_class "*<GtkSeparatorMenuItem>*" 		style "murrine-separator-menu-item"
+widget_class "*.<GtkFrame>.<GtkLabel>"     style "murrine-frame-title"
+widget_class "*.<GtkTreeView>*"            style "murrine-treeview"
 
-widget_class "*.<GtkFrame>.<GtkLabel>" 			style "murrine-frame-title"
-widget_class "*.<GtkTreeView>*"        			style "murrine-treeview"
+widget_class "*<GtkProgress>"              style "murrine-progressbar"
+widget_class "*<GtkProgressBar>"           style "murrine-progressbar"
 
-widget_class "*<GtkProgress>"				style "murrine-progressbar"
-widget_class "*<GtkProgressBar>"       			style "murrine-progressbar"
-
-# Treeview header
-widget_class "*.<GtkTreeView>.<GtkButton>" 		style "murrine-treeview-header"
-widget_class "*.<GtkCTree>.<GtkButton>"    		style "murrine-treeview-header"
-widget_class "*.<GtkList>.<GtkButton>"     		style "murrine-treeview-header"
-widget_class "*.<GtkCList>.<GtkButton>"    		style "murrine-treeview-header"
+widget_class "*.<GtkTreeView>.<GtkButton>" style "murrine-treeview-header"
+widget_class "*.<GtkCTree>.<GtkButton>"    style "murrine-treeview-header"
+widget_class "*.<GtkList>.<GtkButton>"     style "murrine-treeview-header"
+widget_class "*.<GtkCList>.<GtkButton>"    style "murrine-treeview-header"
 
 # Workarounds for Evolution
-widget_class "*.ETable.ECanvas"    			style "murrine-treeview-header"
-widget_class "*.ETree.ECanvas"    			style "murrine-treeview-header"
+widget_class "*.ETable.ECanvas"            style "murrine-treeview-header"
+widget_class "*.ETree.ECanvas"             style "murrine-treeview-header"
 
 # The window of the tooltip is called "gtk-tooltip"
-################################
-# FIXME:
-# This will not work if one embeds eg. a button into the tooltip.
-# As far as I can tell right now we will need to rework the theme
-# quite a bit to get this working correctly.
-# (It will involve setting different priorities, etc.)
-################################
-widget "gtk-tooltip*" 					style "murrine-tooltips"
+widget "gtk-tooltip*" style "murrine-tooltips"
 
 ###################################################
 # Special cases and work arounds
@@ -347,7 +327,7 @@ widget "gtk-tooltip*" 					style "murrine-tooltips"
 
 # Special case the nautilus-extra-view-widget
 # ToDo: A more generic approach for all applications that have a widget like this.
-widget "*.nautilus-extra-view-widget" 			style : highest "murrine-nautilus-location"
+widget "*.nautilus-extra-view-widget" style : highest "murrine-nautilus-location"
 
 # Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646
 # Note that the work around assumes that the combobox is _not_ in
@@ -363,7 +343,7 @@ style "murrine-combobox-text-color-workaround"
 	text[SELECTED]    = @selected_fg_color
 	text[INSENSITIVE] = shade (0.65, @bg_color)
 }
-widget_class "*.<GtkComboBox>.<GtkCellView>"		style "murrine-combobox-text-color-workaround"
+widget_class "*.<GtkComboBox>.<GtkCellView>" style "murrine-combobox-text-color-workaround"
 
 style "murrine-menuitem-text-is-fg-color-workaround"
 {
@@ -374,7 +354,7 @@ style "murrine-menuitem-text-is-fg-color-workaround"
 	text[INSENSITIVE]   = shade (0.65, @bg_color)
 }
 
-widget "*.gtk-combobox-popup-menu.*"   			style "murrine-menuitem-text-is-fg-color-workaround"
+widget "*.gtk-combobox-popup-menu.*" style "murrine-menuitem-text-is-fg-color-workaround"
 
 # Work around the usage of GtkLabel inside GtkListItems to display text.
 # This breaks because the label is shown on a background that is based on the
@@ -388,15 +368,14 @@ style "murrine-fg-is-text-color-workaround"
 	fg[INSENSITIVE] = shade (0.65, @bg_color)
 }
 
-widget_class "*<GtkListItem>*" 				style "murrine-fg-is-text-color-workaround"
+widget_class "*<GtkListItem>*" style "murrine-fg-is-text-color-workaround"
 
 # The same problem also exists for GtkCList and GtkCTree
 # Only match GtkCList and not the parent widgets, because that would also change the headers.
-widget_class "*<GtkCList>" 				style "murrine-fg-is-text-color-workaround"
+widget_class "*<GtkCList>" style "murrine-fg-is-text-color-workaround"
 
 style "murrine-evo-new-button-workaround"
 {
-
 	engine "murrine"
 	{
 		toolbarstyle = 0
@@ -405,12 +384,27 @@ style "murrine-evo-new-button-workaround"
 
 widget_class "EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem*" style "murrine-evo-new-button-workaround"
 
+# ProgressBar min height
+style "progressbar"
+{
+	GtkProgressBar::min-horizontal-bar-height = 23
+}
+
+widget_class "*<GtkProgressBar>" style "progressbar"
+
+style "progressbar-text"
+{
+	GtkProgressBar::yspacing = 0
+}
+
+widget_class "*<GtkProgressBar>" style "progressbar-text"
+
 # Theme panel elements
-widget "*PanelWidget*" 					style "murrine-panel"
-widget "*PanelApplet*" 					style "murrine-panel"
-widget "*fast-user-switch*"				style "murrine-panel" # workaround for Fast User Switch applet
-class "PanelApp*" 						style "murrine-panel"
-class "PanelToplevel*" 					style "murrine-panel"
-widget_class "*Mail*" 					style "murrine-panel"
-widget_class "*notif*" 					style "murrine-panel"
-widget_class "*Notif*" 					style "murrine-panel"
+widget "*PanelWidget*"      style "murrine-panel"
+widget "*PanelApplet*"      style "murrine-panel"
+widget "*fast-user-switch*" style "murrine-panel"
+class "PanelApp*"           style "murrine-panel"
+class "PanelToplevel*"      style "murrine-panel"
+widget_class "*Mail*"       style "murrine-panel"
+widget_class "*notif*"      style "murrine-panel"
+widget_class "*Notif*"      style "murrine-panel"

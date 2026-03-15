@@ -978,6 +978,12 @@ matekbd-keyboard-drawing {
 	background-color: shade(@theme_bg_color, 1.0);
 }
 
+/* --- mate-system-monitor --- */
+
+#mate-system-monitor notebook stack scrolledwindow scrollbar {
+	background-color: @nb_bg;
+}
+
 /* --- mate-notification-daemon v? --- */
 /* @see https://github.com/mate-desktop/mate-notification-daemon/pull/232 233 234 */
 /* coco-theme nodoka-theme slider-theme default-theme */

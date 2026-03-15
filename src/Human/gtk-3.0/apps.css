@@ -22,10 +22,6 @@
  * GNU General Public License (GPL) for more details.
  */
 
-/* --- awf-gtk3 --- */
-
-#AwfMainWindow .awf-cheatcode-prbr2 { margin: 1px 0; }
-
 /* --- magnus --- */
 /* @see https://github.com/stuartlangridge/magnus/issues/33 (dead project?) hide scrollbars */
 

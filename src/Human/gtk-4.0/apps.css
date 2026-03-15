@@ -26,8 +26,6 @@
 
 #AwfMainWindow button.awf-cheatcode-filebtn { min-height: 18px; }
 #AwfMainWindow button.awf-cheatcode-folderbtn { min-height: 20px; }
-#AwfMainWindow progressbar.awf-cheatcode-prbr2 { margin: 1px 0; }
-#AwfMainWindow progressbar.awf-cheatcode-prbr2 progress { margin: 1px 0; }
 
 #AwfMainWindow box.primary-toolbar:dir(ltr) button.image-button:nth-child(1),
 #AwfMainWindow box.primary-toolbar:dir(ltr) button.image-button:nth-child(2) { margin-right: 28px; }
