@@ -22,16 +22,26 @@
  * GNU General Public License (GPL) for more details.
  */
 
-/* --- awf-gtk4 --- */
+/* --- gimp v3.x --- */
+/* not working from desktop theme, but working from gimp theme */
 
-#AwfMainWindow button.awf-cheatcode-filebtn { min-height: 18px; }
-#AwfMainWindow button.awf-cheatcode-folderbtn { min-height: 20px; }
+@import url("/usr/share/gimp/3.0/themes/System/gimp.css");
 
-#AwfMainWindow box.primary-toolbar:dir(ltr) button.image-button:nth-child(1),
-#AwfMainWindow box.primary-toolbar:dir(ltr) button.image-button:nth-child(2) { margin-right: 28px; }
+GimpDock notebook header tabs image {
+	min-width: 24px;
+}
 
-#AwfMainWindow box.primary-toolbar:dir(rtl) button.image-button:nth-child(1),
-#AwfMainWindow box.primary-toolbar:dir(rtl) button.image-button:nth-child(2) { margin-left: 28px; }
+GimpDock treeview.view button,
+GimpFileDialog filechooser treeview.view button {
+	margin: 0;
+	padding: 0;
+}
 
-#AwfMainWindow scrollbar.horizontal range { padding-left:15px; padding-right:15px; }
-#AwfMainWindow scrollbar.vertical range { padding-top:15px; padding-bottom:15px; }
+GimpFileDialog filechooser treeview.view:selected {
+	color: @theme_selected_fg;
+}
+
+GimpDisplayShell statusbar progressbar trough,
+GimpDisplayShell statusbar progressbar progress {
+	min-height: 29px;
+}

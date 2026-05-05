@@ -56,6 +56,7 @@ scale:focus trough {
 }
 
 scale trough highlight {
+	transition: background 0.7s;
 	border-radius: 2.75px;
 	box-shadow:
 		inset -1px -1px @slider_border,
@@ -256,6 +257,7 @@ levelbar.horizontal trough {
 }
 
 levelbar block.filled {
+	transition: background 0.7s;
 	border-radius: 2.75px;
 	box-shadow:
 		inset -1px -1px @slider_border,
@@ -402,6 +404,7 @@ progressbar trough {
 }
 
 progressbar trough progress {
+	transition: background 0.7s;
 	border-radius: 2.75px;
 	box-shadow:
 		inset -1px -1px @slider_border,

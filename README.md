@@ -1,10 +1,8 @@
 # Human theme
 
-This theme works with **GTK 2.24** *(with murrine)* & **GTK 3.24** & **GTK 4.12..4.21**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It works also with **Qt 5.15** & **Qt 6.0..6.10**.
+This theme works with **GTK 2.24** *(with murrine)* & **GTK 3.24** & **GTK 4.12..4.23**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It works also with **Qt 5.15** & **Qt 6.0..6.11**.
 
 It is mainly intended for **MATE** desktop environment, it's not too bad with **Xfce**, it's experimental with **Cinnamon**.
-
-🆕 New Qt version! It requires [GlobalQSS](https://github.com/luigifab/globalqss).
 
 ## Screenshots
 
@@ -56,7 +54,7 @@ GTK 3.24-classic RTL (Pango 1.57)\
 [<img alt="Preview with GTK 3 - RTL - Blue variation - Main window with menu" src="images/thumbs/gtk3-rtl-blue-menu.png?raw=true" width="200" />](images/gtk3-rtl-blue-menu.png?raw=true)
 [<img alt="Preview with GTK 3 - RTL - Green variation - Main window with menu" src="images/thumbs/gtk3-rtl-green-menu.png?raw=true" width="200" />](images/gtk3-rtl-green-menu.png?raw=true)
 
-GTK 4.12..4.21-classic (Pango 1.57)\
+GTK 4.12..4.23-classic (Pango 1.57)\
 [<img alt="Preview with GTK 4 - Main window" src="images/thumbs/gtk4.png?raw=true" width="200" />](images/gtk4.png?raw=true)
 [<img alt="Preview with GTK 4 - Orange variation - Main window" src="images/thumbs/gtk4-orange.png?raw=true" width="200" />](images/gtk4-orange.png?raw=true)
 [<img alt="Preview with GTK 4 - Blue variation - Main window" src="images/thumbs/gtk4-blue.png?raw=true" width="200" />](images/gtk4-blue.png?raw=true)
@@ -66,7 +64,7 @@ GTK 4.12..4.21-classic (Pango 1.57)\
 [<img alt="Preview with GTK 4 - Blue variation - Main window with menu" src="images/thumbs/gtk4-blue-menu.png?raw=true" width="200" />](images/gtk4-blue-menu.png?raw=true)
 [<img alt="Preview with GTK 4 - Green variation - Main window with menu" src="images/thumbs/gtk4-green-menu.png?raw=true" width="200" />](images/gtk4-green-menu.png?raw=true)
 
-GTK 4.12..4.21-classic RTL (Pango 1.57)\
+GTK 4.12..4.23-classic RTL (Pango 1.57)\
 [<img alt="Preview with GTK 4 - RTL - Main window" src="images/thumbs/gtk4-rtl.png?raw=true" width="200" />](images/gtk4-rtl.png?raw=true)
 [<img alt="Preview with GTK 4 - RTL - Orange variation - Main window" src="images/thumbs/gtk4-rtl-orange.png?raw=true" width="200" />](images/gtk4-rtl-orange.png?raw=true)
 [<img alt="Preview with GTK 4 - RTL - Blue variation - Main window" src="images/thumbs/gtk4-rtl-blue.png?raw=true" width="200" />](images/gtk4-rtl-blue.png?raw=true)
@@ -89,7 +87,7 @@ Qt 5.15\
 [<img alt="Preview with Qt 5 - Blue variation - Main window with menu" src="images/thumbs/qt5-blue-menu.png?raw=true" width="200" />](images/qt5-blue-menu.png?raw=true)
 [<img alt="Preview with Qt 5 - Green variation - Main window with menu" src="images/thumbs/qt5-green-menu.png?raw=true" width="200" />](images/qt5-green-menu.png?raw=true)
 
-Qt 6.9\
+Qt 6.10\
 [<img alt="Preview with Qt 6 - Main window" src="images/thumbs/qt6.png?raw=true" width="200" />](images/qt6.png?raw=true)
 [<img alt="Preview with Qt 6 - Orange variation - Main window" src="images/thumbs/qt6-orange.png?raw=true" width="200" />](images/qt6-orange.png?raw=true)
 [<img alt="Preview with Qt 6 - Blue variation - Main window" src="images/thumbs/qt6-blue.png?raw=true" width="200" />](images/qt6-blue.png?raw=true)
@@ -274,6 +272,18 @@ For classic menu bar and menu items on [Firefox 46+](https://www.mozilla.org/fir
 
 For design of menu bar, see [bug 157708](https://bugs.documentfoundation.org/show_bug.cgi?id=157708).
 
+#### Gimp
+
+Add the *Human* theme to Gimp:
+
+```bash
+cd ~/.config/GIMP/3.*/themes/
+mkdir Human/ && cd Human/
+ln -s /usr/share/themes/Human/gtk-3.0/gimp.css .
+```
+
+Then set *Human* theme in Gimp/Edit/Preferences/Interface/Theme.
+
 #### GTK 3
 
 For better results, use gtk3-classic.
@@ -296,13 +306,15 @@ gtk-xft-hinting=1
 
 From [migrating guide](https://docs.gtk.org/gtk4/migrating-4to5.html#non-standard-css-extensions-are-going-away): _non-standard CSS extensions are going away [...] @define-color should be replaced [...] the color functions can all be replaced by combinations of calc() and color-mix()_.
 
-Honestly, that will never happen here. I think it would be better to create a patch to fix this GTK regression.
+I think it would be nice to create a patch to fix this GTK regression.
 
 #### Qt 5 & 6
 
 For Qt, install GTK platform theme and [GlobalQSS](https://github.com/luigifab/globalqss) style plugin.
 
 But sadly, `box-shadow` and multiple `background` gradients are not supported, `border-radius` are not fully supported...
+
+On Fedora with Qt 5, the GTK 3 platform theme _(qt5-qtbase-gui)_ works better than on Debian _(qt5-gtk-platformtheme)_, but the fonts remain blurry, see [bug 2459509](https://bugzilla.redhat.com/show_bug.cgi?id=2459509).
 
 #### Xfce panels
 
@@ -364,12 +376,12 @@ Run `colors-*.sh` to update colors. See also [technical informations](https://gi
 
 ## Copyright
 
-- Current version: 3.0.0 (03/03/2026)
-- Compatibility: GTK 2.24 / 3.24 / 4.12..4.21, Qt 5.15 / 6.0..6.10
+- Current version: 3.1.0 (05/05/2026)
+- Compatibility: GTK 2.24 / 3.24 / 4.12..4.23, Qt 5.15 / 6.0..6.11
 - Links: [luigifab.fr](https://www.luigifab.fr/gtkqt/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\
-If you like, take some of your time to improve some translations, go to https://bit.ly/2HyCCEc.
+If you like, take some of your time to improve the translations, go to https://bit.ly/2HyCCEc.
 
 ## Packages in official distros repositories
 

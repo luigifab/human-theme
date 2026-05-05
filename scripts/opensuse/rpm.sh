@@ -3,7 +3,7 @@
 
 
 cd "$(dirname "$0")"
-version="3.0.0"
+version="3.1.0"
 
 
 mkdir -p builder ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
@@ -34,18 +34,17 @@ else
 fi
 
 # create package (rpm sign https://access.redhat.com/articles/3359321)
-rpmbuild -ba human-theme-gtk.spec
+rpmbuild --quiet -ba human-theme-gtk.spec
+echo "=================================== rpm-sign =="
 rpm --addsign ~/rpmbuild/RPMS/*/human-theme-gtk*.rpm
 rpm --addsign ~/rpmbuild/SRPMS/human-theme-gtk*.rpm
 mv ~/rpmbuild/RPMS/*/human-theme-gtk*.rpm builder/
 mv ~/rpmbuild/SRPMS/human-theme-gtk*.rpm builder/
-echo "==========================="
 rpm --checksig builder/*.rpm
-echo "==========================="
-rpmlint human-theme-gtk.spec builder/*.rpm
-echo "==========================="
-ls -dlth "$PWD/"builder/*.rpm
-echo "==========================="
+echo "=================================== rpm-lint =="
+rpmlint human-theme-gtk.spec builder/*.rpm | grep -v files-duplicate | grep human-theme-gtk
+echo "==============================================="
+ls -dlth "$PWD"/builder/*.rpm
 
 # cleanup
 rm -rf builder/*/

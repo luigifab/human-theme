@@ -1,5 +1,5 @@
 pkgname=human-theme-gtk
-pkgver=3.0.0
+pkgver=3.1.0
 pkgrel=1
 pkgdesc="Human theme for GTK"
 arch=('any')
@@ -8,7 +8,7 @@ license=('GPL3' 'LGPL2' 'CCBYSA')
 depends=()
 optdepends=('gtk-engine-murrine: for gtk2' 'qt5-style-globalqss: for qt5' 'qt6-style-globalqss: for qt6')
 source=("https://github.com/luigifab/human-theme/archive/v${pkgver}/human-theme-${pkgver}.tar.gz")
-sha256sums=("...")
+sha256sums=("SKIP")
 
 prepare() {
   mv "human-theme-$pkgver" "$pkgname-$pkgver"

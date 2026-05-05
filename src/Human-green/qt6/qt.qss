@@ -53,6 +53,7 @@ QToolTip {
 }
 
 /* --- menu & menu items --- */
+/* QMenu QMenu { margin-left: 4px; } */
 
 QMenuBar {
 	spacing: 0;
@@ -259,7 +260,6 @@ QToolButton[hasMenu="true"]::menu-button:active {
 QStatusBar {
 	max-height: 20px; /* @todo */
 	border-top: 1px solid #C9C6C3; /* @toolbar_border_bot */
-	background-color: #EDECEB; /* @theme_bg */
 }
 
 /* --- checkbox --- */
@@ -442,8 +442,8 @@ QSlider::handle:horizontal {
 }
 
 QProgressBar::chunk:vertical,
-QSlider::sub-page:vertical,
-QSlider::add-page:vertical[isInverted="true"] {
+QSlider::add-page:vertical,
+QSlider::sub-page:vertical[isInverted="true"] {
 	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, /* horizontal */
 		stop:0       /* @slider_glaze_top */ rgba(192,199,177,0.80),
 		stop:0.49   /* @slider_glaze_mida */ rgba(183,190,167,0.80),
@@ -461,7 +461,8 @@ QSlider::add-page:horizontal[isInverted="true"] {
 		stop:1       /* @slider_glaze_bot */ rgba(155,164,137,0.80));
 }
 
-QSlider::sub-page[isInverted="true"] {
+QSlider::sub-page[isInverted="true"],
+QSlider::add-page:vertical[isInverted="true"] {
 	background: none;
 }
 
@@ -736,7 +737,8 @@ QTreeView::item:!only-one:last {
 	background: transparent;
 }
 
-QTreeView::item:selected {
+QTreeView::item:selected,
+QTreeView::item:!only-one:last:selected {
 	color: #42453E; /* @theme_selected_fg */
 	background-color: #B9C0A9; /* @theme_selected_bg */
 }
@@ -927,13 +929,100 @@ QScrollBar::down-arrow:vertical {
 	image: url('/usr/share/icons/Adwaita/symbolic/ui/pan-down-symbolic.svg');
 }
 
+/* --- spin box --- */
+
+QSpinBox::up-button,
+QDoubleSpinBox::up-button,
+QTimeEdit::up-button,
+QDateEdit::up-button,
+QDateTimeEdit::up-button {
+	margin: -2px 0 0 0;
+	border: 1px solid #A7A4A0; /* @button_border */
+	border-bottom: 0;
+	background-color: #EDECEB; /* @theme_bg */
+}
+
+QSpinBox::up-arrow,
+QDoubleSpinBox::up-arrow,
+QTimeEdit::up-arrow,
+QDateEdit::up-arrow,
+QDateTimeEdit::up-arrow {
+	width: 10px;
+	height: 10px;
+	image: url('/usr/share/icons/Adwaita/symbolic/ui/pan-up-symbolic.svg');
+}
+
+QSpinBox::down-button,
+QDoubleSpinBox::down-button,
+QTimeEdit::down-button,
+QDateEdit::down-button,
+QDateTimeEdit::down-button {
+	margin: 0 0 -2px 0;
+	border: 1px solid #A7A4A0; /* @button_border */
+	border-top: 0;
+	background-color: #EDECEB; /* @theme_bg */
+}
+
+QSpinBox::down-arrow,
+QDoubleSpinBox::down-arrow,
+QTimeEdit::down-arrow,
+QDateEdit::down-arrow,
+QDateTimeEdit::down-arrow {
+	width: 10px;
+	height: 10px;
+	image: url('/usr/share/icons/Adwaita/symbolic/ui/pan-down-symbolic.svg');
+}
+
+QSpinBox::up-button:hover,
+QDoubleSpinBox::up-button:hover,
+QTimeEdit::up-button:hover,
+QDateEdit::up-button:hover,
+QDateTimeEdit::up-button:hover,
+QSpinBox::down-button:hover,
+QDoubleSpinBox::down-button:hover,
+QTimeEdit::down-button:hover,
+QDateEdit::down-button:hover,
+QDateTimeEdit::down-button:hover {
+	background-color: rgba(248,248,247,0.80); /* @button_hover_glaze_mida */
+}
+
+/* --- layout separator --- */
+
+QFrame.separator.vertical {
+	min-width: 0;
+	max-width: 0;
+	margin-bottom: 1px;
+	background: transparent;
+	border-left: 1px solid rgba(185,182,179,0.50); /* @menu_separator_dark */
+	border-right: 1px solid rgba(255,255,255,0.50); /* @menu_separator_lite */
+}
+
+QFrame.separator.horizontal {
+	min-height: 0;
+	max-height: 0;
+	background: transparent;
+	border-top: 1px solid rgba(185,182,179,0.50); /* @menu_separator_dark */
+	border-bottom: 1px solid rgba(255,255,255,0.50); /* @menu_separator_lite */
+}
+
+QMainWindow::separator:horizontal,
+QSplitter::handle:vertical {
+	height: 6px;
+	background: url("img/pane-separator-grip-vert.svg") no-repeat center;
+}
+
+QMainWindow::separator:vertical,
+QSplitter::handle:horizontal {
+	width: 6px;
+	background: url("img/pane-separator-grip-horz.svg") no-repeat center;
+}
+
 /* --- todo --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
 
 #AwfMainWindow QCheckBox { margin-right: 3px; }
 #AwfMainWindow QRadioButton { margin-right: 4px; }
 #AwfMainWindow .awf-cheatcode-colorbtn { min-height: 20px; }
 #AwfMainWindow .awf-cheatcode-folderbtn { min-height: 18px; }
-#AwfMainWindow .awf-cheatcode-prbr2 { margin: 1px 0; }
 #AwfMainWindow AwfTreeView { qproperty-columnWidths: "28,24,24,67,81,81,67,34,34,24,24"; }
 
 QTextEdit {
@@ -942,7 +1031,11 @@ QTextEdit {
 }
 
 QLineEdit,
-QSpinBox {
+QSpinBox,
+QDoubleSpinBox,
+QTimeEdit,
+QDateEdit,
+QDateTimeEdit {
 	margin: 1px;
 	padding: 3px 1px;
 	color: #1A1A1A; /* @theme_text */
@@ -951,7 +1044,12 @@ QSpinBox {
 	background-color: #FFFFFF; /* @entry_bg */
 }
 
-QSpinBox {
+QSpinBox,
+QDoubleSpinBox,
+QTimeEdit,
+QDateEdit,
+QDateTimeEdit,
+QFontComboBox {
 	padding: 1px 1px 2px;
 }
 
@@ -1016,33 +1114,6 @@ QPushButton:disabled {
 	color: #9D9996; /* @insensitive_fg */
 	border-color: #BCAB9B; /* entry_border_disabled */
 	background-color: #E6DDD5 /* @theme_bg */
-}
-
-QFrame.separator.vertical {
-	min-width: 0;
-	max-width: 0;
-	margin-bottom: 1px;
-	background: transparent;
-	border-left:1px solid rgba(185,182,179,0.50); /* @menu_separator_dark */
-	border-right: 1px solid rgba(255,255,255,0.50); /* @menu_separator_lite */
-}
-
-QFrame.separator.horizontal {
-	min-height: 0;
-	max-height: 0;
-	background: transparent;
-	border-top: 1px solid rgba(185,182,179,0.50); /* @menu_separator_dark */
-	border-bottom: 1px solid rgba(255,255,255,0.50); /* @menu_separator_lite */
-}
-
-QSplitter::handle:vertical {
-	height: 6px;
-	background: url("img/pane-separator-grip-vert.svg") no-repeat center;
-}
-
-QSplitter::handle:horizontal {
-	width: 6px;
-	background: url("img/pane-separator-grip-horz.svg") no-repeat center;
 }
 
 QPushButton {

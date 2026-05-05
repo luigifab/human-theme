@@ -1,7 +1,0 @@
-version=4
-opts=\
-filenamemangle=s%.*/@ANY_VERSION@%@PACKAGE@-$1.tar.gz%,\
-downloadurlmangle=s%(api.github.com/repos/[^/]+/[^/]+)/git/refs/%$1/tarball/refs/%g,\
-searchmode=plain \
- https://api.github.com/repos/luigifab/human-theme/git/matching-refs/tags/v \
- https://api.github.com/repos/[^/]+/[^/]+/git/refs/tags/@ANY_VERSION@

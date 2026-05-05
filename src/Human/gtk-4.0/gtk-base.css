@@ -1444,9 +1444,6 @@ calendar .other-month {
 
 .background.dialog.filechooser .dialog-action-area {
 	margin: -6px;
-}
-
-.background.dialog.filechooser .dialog-action-area {
 	padding-top: 14px;
 }
 
@@ -1462,45 +1459,50 @@ calendar .other-month {
 	padding: 12px 12px 12px;
 }
 
+.background.dialog:not(.filechooser) filechooser placessidebar scrolledwindow,
+.background.dialog.filechooser scrolledwindow viewport,
+.background.dialog.filechooser pathbar scrolledwindow,
 .background.dialog.print grid + scrolledwindow,
 .background.dialog.print grid + scrolledwindow viewport,
 .background.dialog.print grid + scrolledwindow + scrolledwindow,
-.background.dialog.print grid + scrolledwindow + scrolledwindow viewport,
-.background.dialog.filechooser scrolledwindow viewport,
-.background.dialog.filechooser pathbar scrolledwindow {
+.background.dialog.print grid + scrolledwindow + scrolledwindow viewport {
 	border: 0; /* avoid dual border */
 }
 
+.background.dialog:not(.filechooser) filechooser pathbar button.toggle box,
 .background.dialog.filechooser pathbar button.toggle box {
 	margin-bottom: -1px;
 }
 
+.background.dialog:not(.filechooser) filechooser pathbar button.toggle image + label:dir(ltr),
 .background.dialog.filechooser pathbar button.toggle image + label:dir(ltr) {
 	padding-left: 4px;
 }
 
+.background.dialog:not(.filechooser) filechooser pathbar button.toggle image + label:dir(rtl),
 .background.dialog.filechooser pathbar button.toggle image + label:dir(rtl) {
 	padding-right: 4px;
 }
 
+.background.dialog:not(.filechooser) filechooser placessidebar separator,
 .background.dialog.filechooser placessidebar separator {
 	margin: 4px 0;
 }
 
+.background.dialog:not(.filechooser) filechooser placessidebar + separator,
 .background.dialog.filechooser placessidebar + separator {
 	padding: 0 1px;
 }
 
+.background.dialog:not(.filechooser) filechooser box.view,
+.background.dialog.filechooser #pathbarbox scrolledwindow,
 .background.dialog.filechooser box.view {
-	background-color: @theme_bg;
+	background-color: transparent;
 }
 
+.background.dialog:not(.filechooser) filechooser box.search-bar,
 .background.dialog.filechooser box.search-bar {
 	padding: 10px;
-}
-
-.background.dialog.filechooser #pathbarbox scrolledwindow {
-	background-color: transparent;
 }
 
 .background.dialog.print columnview button {
@@ -1513,4 +1515,8 @@ calendar .other-month {
 
 .background.dialog.print tab label {
 	margin-bottom: -1px; /* @todo */
+}
+
+.background.dialog:not(.filechooser) filechooser #pathbarbox {
+	background-color: @theme_bg;
 }
