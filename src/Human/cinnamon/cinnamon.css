@@ -28,7 +28,7 @@
 
 #panel {
 	color: #101010; /* @theme_fg */
-	border: 0;
+	border: 1px solid #A09D9A;
 	background-color: #E6DDD5; /* @theme_bg */
 }
 
@@ -256,4 +256,127 @@
 	font-weight: bold;
 	color: #FFF; /* @theme_selected_fg */
 	background-color: #8F5F4A; /* @theme_selected_bg */
+}
+
+
+/* --- window list applet --- */
+
+.window-list-item-box {
+	padding: 0 3px;
+	color: #101010; /* @theme_fg */
+	border: 1px solid #A39689; /* @button_border */
+	border-radius: 3px;
+	background-gradient-direction: vertical;
+	background-gradient-start: #EBE3DB; /* button_glaze_top area */
+	background-gradient-end: #DFD6CD; /* button_glaze_bot area */
+}
+
+.window-list-item-box:hover {
+	border: 1px solid #A39689; /* @button_border */
+	background-gradient-direction: vertical;
+	background-gradient-start: #EEE7DF; /* button_hover_glaze_top */
+	background-gradient-end: #DBD1C7; /* button_hover_glaze_bot */
+}
+
+.window-list-item-box:active,
+.window-list-item-box:checked,
+.window-list-item-box:focus {
+	padding: 0 3px;
+	border: 1px solid #A39689; /* @button_border */
+	background-gradient-direction: vertical;
+	background-gradient-start: #D0C6BB; /* button_active_glaze_top */
+	background-gradient-end: #D8CEC4; /* button_active_glaze_bot */
+}
+
+.window-list-item-box .window-list-item-label {
+	padding: 0 3px;
+}
+
+
+/* --- window switcher (alt-tab) --- */
+
+#altTabPopup {
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+}
+
+.switcher-list {
+	padding: 8px;
+	border: 1px solid #B4A291; /* @menu_border */
+	border-radius: 4px;
+	background-color: #E6DDD5; /* @theme_bg */
+}
+
+.switcher-list .item-box {
+	padding: 8px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.switcher-list .item-box:outlined {
+	padding: 8px;
+	border: 1px solid #684B3F; /* @menuitem_hover_border */
+	background:
+		#8F5F4A
+		linear-gradient(to bottom,
+			#97624C,
+			#885C48 50%,
+			#885C48 50%,
+			#885C48);
+	background-gradient-direction: vertical;
+	background-gradient-start: #97624C; /* @menuitem_hover_glaze_top */
+	background-gradient-end: #885C48; /* @menuitem_hover_glaze_bot */
+}
+
+.switcher-list .item-box:selected {
+	padding: 8px;
+	border: 1px solid #684B3F; /* @menuitem_hover_border */
+	background-color: #8F5F4A; /* @theme_selected_bg */
+}
+
+.popup-menu-content .popup-menu-item StLabel {
+	color: #101010; /* @theme_fg */
+}
+
+.popup-menu-content .popup-menu-item:hover StLabel {
+	color: #FFFFFF; /* @menuitem_hover */
+}
+
+.popup-menu-content .popup-menu-item .popup-menu-icon {
+	icon-size: 16px;
+	color: #101010; /* @theme_fg */
+}
+
+.popup-menu-content .popup-menu-item:hover .popup-menu-icon {
+	color: #FFFFFF; /* @menuitem_hover */
+}
+
+/* Brightness slider styling to match GTK theme */
+.popup-menu-content .popup-menu-item .slider {
+	height: 6px;
+	min-width: 150px;
+	border: 1px solid #A39689; /* @button_border */
+	border-radius: 3px;
+	background-gradient-direction: vertical;
+	background-gradient-start: #D0C6BB; /* trough top */
+	background-gradient-end: #D8CEC4; /* trough bottom */
+	-slider-height: 16px;
+	-slider-background-color: #E6DDD5; /* @theme_bg */
+	-slider-border-color: #A39689; /* @button_border */
+	-slider-active-background-color: #8F5F4A; /* @theme_selected_bg */
+	-slider-active-border-color: #684B3F; /* @menuitem_hover_border */
+}
+
+/* Slider handle */
+.popup-menu-content .popup-menu-item .slider:hover {
+	border-color: #A39689; /* @button_border */
+	background-gradient-direction: vertical;
+	background-gradient-start: #EEE7DF; /* button_hover_glaze_top */
+	background-gradient-end: #DBD1C7; /* button_hover_glaze_bot */
+}
+
+.popup-menu-content .popup-menu-item .slider:active {
+	background-gradient-start: #D0C6BB; /* button_active_glaze_top */
+	background-gradient-end: #D8CEC4; /* button_active_glaze_bot */
 }
