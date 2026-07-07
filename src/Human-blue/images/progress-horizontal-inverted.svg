@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 500 100">
+	<defs>
+		<linearGradient id="glaze" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0"   stop-color="#8FB2DE" class="slider_glaze_top"/>
+			<stop offset="0.5" stop-color="#83A9D7" class="slider_glaze_mida"/>
+			<stop offset="0.5" stop-color="#6D96C9" class="slider_glaze_midb"/>
+			<stop offset="1"   stop-color="#638DC1" class="slider_glaze_bot"/>
+		</linearGradient>
+		<!--radialGradient id="glow" gradientUnits="userSpaceOnUse" cx="250" cy="50" r="50" gradientTransform="translate(250 50) scale(9 1) translate(-250 -50)">
+			<stop offset="0%" stop-color="blue"/>
+			<stop offset="100%" stop-color="yellow"/>
+		</radialGradient-->
+	</defs>
+	<g transform="translate(500,0) scale(-1,1) rotate(45 45 0)">
+		<rect x="25"  y="-20"  width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="55"  y="-50"  width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="85"  y="-80"  width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="115" y="-110" width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="145" y="-140" width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="175" y="-170" width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="205" y="-200" width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="235" y="-230" width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="265" y="-260" width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="295" y="-290" width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="325" y="-320" width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="355" y="-350" width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="385" y="-380" width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="415" y="-410" width="15" height="200" fill="#B7D0EE" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="40"  y="-35"  width="15" height="200" fill="#4F79AE" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="70"  y="-65"  width="15" height="200" fill="#4F79AE" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="100" y="-95"  width="15" height="200" fill="#4F79AE" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="130" y="-125" width="15" height="200" fill="#4F79AE" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="160" y="-155" width="15" height="200" fill="#4F79AE" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="190" y="-185" width="15" height="200" fill="#4F79AE" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="220" y="-215" width="15" height="200" fill="#4F79AE" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="250" y="-245" width="15" height="200" fill="#4F79AE" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="280" y="-275" width="15" height="200" fill="#4F79AE" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="310" y="-305" width="15" height="200" fill="#4F79AE" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="340" y="-335" width="15" height="200" fill="#4F79AE" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="370" y="-365" width="15" height="200" fill="#4F79AE" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="400" y="-395" width="15" height="200" fill="#4F79AE" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+	</g>
+	<rect x="0" y="0" width="500" height="100" fill="url(#glaze)" fill-opacity="0.74"/>
+	<!--rect x="0" y="0" width="500" height="100" fill="url(#glow)"/-->
+</svg>

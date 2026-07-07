@@ -70,7 +70,7 @@ treeview header button:last-child > box {
 	border-right: 0;
 }
 
-/* --- treeview alternating colours - with gtk3-classic (treeview__alternating_row_colours.patch) --- */
+/* --- treeview alternating colours - with gtk3-classic (treeview_alternating_row_colours.patch) --- */
 /* @see https://github.com/lah7/gtk3-classic/issues/120 - anyway it's not only gtk-classic */
 
 treeview.view.odd:not(.trough):not(.progressbar) {
@@ -117,7 +117,7 @@ treeview.view.even.sorted.last:not(.trough):not(.progressbar) {
 /* treeview.view.odd:not(.last):not(.trough):not(.progressbar),
 treeview.view.even:not(.last):not(.trough):not(.progressbar) {
 	* multiple background doesn't work -> border-image *
-	background-image: url("img/treeview-separator.svg");
+	background-image: url("../images/treeview-separator.svg");
 	background-repeat: repeat-y;
 	background-position: right bottom;
 } */
@@ -170,7 +170,7 @@ treeview.view.trough.sorted.odd,
 treeview.view.trough.sorted.even {
 	padding: 0;
 	color: @theme_text; /* = progressbar.classic text.trough */
-	border: 1px solid @slider_border_treeview;
+	border: 1px solid @main_border;
 	background-color: @theme_bg;
 }
 

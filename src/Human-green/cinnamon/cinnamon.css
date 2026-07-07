@@ -20,22 +20,19 @@
  * but without any warranty, without even the implied warranty of
  * merchantability or fitness for a particular purpose. See the
  * GNU General Public License (GPL) for more details.
- *
- * run cinnamon.sh to update colors
  */
 
 /* --- panel --- */
 
 #panel {
-	color: #000; /* @theme_fg */
+	color: #000000; /* @theme_fg */
 	border: 0;
 	background-color: #EDECEB; /* @theme_bg */
 }
 
-
 #Tooltip {
 	padding: 4px 5px;
-	color: #000; /* @theme_tooltip_fg */
+	color: #000000; /* @theme_tooltip_fg */
 	border: 1px solid #ACC04C; /* @theme_tooltip_border */
 	background-color: #EAF5B5; /* @theme_tooltip_bg */
 }
@@ -185,7 +182,7 @@
 
 .popup-menu-item {
 	padding: 2px 7px 2px 8px;
-	color: #000; /* @theme_fg */
+	color: #000000; /* @theme_fg */
 	border: 1px solid transparent;
 	border-radius: 2px;
 }
@@ -223,7 +220,7 @@
 .calendar {
 	padding: 4px;
 	border: 1px solid #BAB7B4; /* @frame_border */
-	background-color: #FFF; /* @theme_base */
+	background-color: #FFFFFF; /* @theme_base */
 	spacing-rows: 0;
 	spacing-columns: 0;
 }

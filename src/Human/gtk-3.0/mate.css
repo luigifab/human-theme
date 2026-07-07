@@ -224,11 +224,11 @@ window.brisk-menu list.apps-list row:selected:focus button {
 }
 
 .mate-panel-menu-bar.vertical menubar > menuitem {
-	padding: 6px 0 5px 0;
+	padding: 6px 0 5px;
 }
 
 .mate-panel-menu-bar.vertical menubar:dir(rtl) > menuitem {
-	padding: 5px 0 6px 0;
+	padding: 5px 0 6px;
 }
 
 .mate-panel-menu-bar.right menubar > menuitem:hover {
@@ -247,7 +247,7 @@ window.brisk-menu list.apps-list row:selected:focus button {
 }
 
 .mate-panel-menu-bar menuitem > box > menuitem {
-	margin: 0 -5px 0 -5px;
+	margin: 0 -5px;
 	padding: 0 3px 0 10px;
 	border: 0;
 }
@@ -446,6 +446,14 @@ window.brisk-menu list.apps-list row:selected:focus button {
 	padding: 0 2px;
 }
 
+.mate-panel-menu-bar > PanelApplet > wnck-tasklist > button {
+	background: transparent;
+}
+
+.mate-panel-menu-bar > PanelApplet > wnck-tasklist > * {
+	background-color: @theme_bg; /* drag and drop */
+}
+
 /* --- virtual desktop selector applet --- */
 
 .mate-panel-menu-bar .wnck-pager,
@@ -462,7 +470,7 @@ window.brisk-menu list.apps-list row:selected:focus button {
 /* --- grip for notification area & window list applet --- */
 
 .mate-panel-menu-bar MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
-	background-image: url("img/pane-separator-grip-horz.svg");
+	background-image: url("../images/pane-separator-grip-horz.svg");
 	background-repeat: no-repeat;
 	background-position: 2px center;
 	background-size: 6px 10px;
@@ -805,7 +813,7 @@ window.brisk-menu:dir(rtl) scrolledwindow.frame list.apps-list image {
 }
 
 .lock-dialog textview {
-	padding: 2px;
+	padding: 3px;
 }
 
 /* --- caja --- */
@@ -819,12 +827,12 @@ window.caja-navigation-window:dir(rtl) notebook.caja-notebook tabs {
 }
 
 window.caja-navigation-window.maximized:not(.scrollfix):dir(ltr) notebook.caja-notebook tabs {
-	/* without gtk3-classic (scrollbar__extra_zone.patch) */
+	/* without gtk3-classic (scrollbar_extra_zone.patch) */
 	padding-right: 20px; /* scrollbar width - maximized css scroll fix */
 }
 
 window.caja-navigation-window.maximized:not(.scrollfix):dir(rtl) notebook.caja-notebook tabs {
-	/* without gtk3-classic (scrollbar__extra_zone.patch) */
+	/* without gtk3-classic (scrollbar_extra_zone.patch) */
 	padding-left: 20px; /* scrollbar width - maximized css scroll fix */
 }
 
@@ -872,11 +880,6 @@ window.mate-terminal box.vertical notebook stack {
 
 window.mate-terminal box.vertical notebook header.top {
 	margin: 0 0 1px;
-}
-
-window.mate-terminal:not(.maximized) box.vertical notebook header.top ~ stack {
-	border: 1px solid @nb_border;
-	border-top: 0;
 }
 
 /* --- eom --- */

@@ -30,10 +30,12 @@ scale:disabled {
 
 scale.vertical {
 	margin: 0 1px;
+	border-radius: 0;
 }
 
 scale.horizontal {
 	margin: 1px 0;
+	border-radius: 0;
 }
 
 scale contents {
@@ -85,8 +87,7 @@ scale.horizontal trough {
 scale.vertical trough highlight {
 	min-width: 5px;
 	background:
-		radial-gradient(
-			ellipse 50% 90%,
+		radial-gradient(ellipse 50% 90%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to right,
@@ -123,8 +124,7 @@ scale.vertical trough highlight.bottom:dir(rtl) {
 scale.horizontal trough highlight {
 	min-height: 5px;
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
@@ -207,10 +207,32 @@ scale.horizontal trough slider:hover {
 
 scale.vertical value {
 	margin: -1px -2px 2px;
+	border: 1px solid @slider_trough_border;
+	border-radius: 2.75px;
+	background:
+		radial-gradient(circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge),
+		linear-gradient(to right,
+			@scale_glaze_top,
+			@scale_glaze_mida 49%,
+			@scale_glaze_midb 49%,
+			@scale_glaze_bot);
 }
 
 scale.horizontal value {
 	margin: 0 0 2px;
+	border: 1px solid @slider_trough_border;
+	border-radius: 2.75px;
+	background:
+		radial-gradient(circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@scale_glaze_top,
+			@scale_glaze_mida 49%,
+			@scale_glaze_midb 49%,
+			@scale_glaze_bot);
 }
 
 /* --- scale mark --- */
@@ -302,8 +324,7 @@ levelbar block.filled {
 
 levelbar.vertical block.filled {
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to right,
@@ -320,8 +341,7 @@ levelbar.vertical block.filled {
 
 levelbar.horizontal block.filled {
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
@@ -338,8 +358,7 @@ levelbar.horizontal block.filled {
 
 levelbar.vertical.continuous block.filled:last-child {
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to right,
@@ -356,8 +375,7 @@ levelbar.vertical.continuous block.filled:last-child {
 
 levelbar.horizontal.continuous block.filled:last-child {
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
@@ -441,8 +459,7 @@ progressbar.horizontal trough progress {
 
 progressbar.vertical trough progress {
 	background:
-		radial-gradient(
-			ellipse 50% 90%,
+		radial-gradient(ellipse 50% 90%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to right,
@@ -459,8 +476,7 @@ progressbar.vertical trough progress {
 
 progressbar.vertical trough progress.bottom {
 	background:
-		radial-gradient(
-			ellipse 50% 90%,
+		radial-gradient(ellipse 50% 90%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to right,
@@ -478,8 +494,7 @@ progressbar.vertical trough progress.bottom {
 treeview.view.progressbar,
 progressbar.horizontal trough progress {
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
@@ -496,8 +511,7 @@ progressbar.horizontal trough progress {
 
 progressbar.horizontal trough progress.right {
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
@@ -555,7 +569,7 @@ statusbar progressbar.horizontal trough progress {
 	margin-top: 2px;
 }
 
-/* --- progress bar - with gtk3-classic (appearance__progress_text.patch) when GTK_PROGRESS_TEXT_INSIDE=1 --- */
+/* --- progress bar - with gtk3-classic (appearance_progress_text.patch) when GTK_PROGRESS_TEXT_INSIDE=1 --- */
 
 progressbar.classic.vertical text,
 progressbar.classic.vertical trough,

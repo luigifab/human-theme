@@ -53,11 +53,11 @@ window.nemo-window paned paned notebook:dir(rtl) tabs {
 }
 
 window.nemo-window.maximized:not(.scrollfix) paned paned notebook:dir(ltr) tabs {
-	/* without gtk3-classic (scrollbar__extra_zone.patch) */
+	/* without gtk3-classic (scrollbar_extra_zone.patch) */
 	padding-right: 20px; /* scrollbar width - maximized css scroll fix */
 }
 
 window.nemo-window.maximized:not(.scrollfix) paned paned notebook:dir(rtl) tabs {
-	/* without gtk3-classic (scrollbar__extra_zone.patch) */
+	/* without gtk3-classic (scrollbar_extra_zone.patch) */
 	padding-left: 20px; /* scrollbar width - maximized css scroll fix */
 }

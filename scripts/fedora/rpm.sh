@@ -2,8 +2,8 @@
 # Fedora: sudo dnf install rpmdevtools rpm-sign aspell-fr enchant2-aspell
 # Fedora: configure: error: C compiler cannot create executables? remove and reinstall glibc-devel gcc
 
-cd "$(dirname "$0")"
-version="3.1.0"
+cd "$(dirname "$0")" || exit 1
+version="3.2.0"
 
 
 mkdir -p builder ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}

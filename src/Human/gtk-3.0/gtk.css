@@ -88,7 +88,7 @@ treeview.view.even.sorted:not(.trough):not(.progressbar):selected:not(:focus) {
 			shade(@menuitem_hover_glaze_mida, 1.2) 50%,
 			shade(@menuitem_hover_glaze_midb, 1.2) 50%,
 			shade(@menuitem_hover_glaze_bot, 1.2));
-	/* url("img/treeview-separator.svg") */
+	/* url("../images/treeview-separator.svg") */
 	border-image-source: repeating-linear-gradient(to bottom,
 		shade(@theme_selected_bg, 1.2) 0,
 		shade(@theme_selected_bg, 1.2) 3px,

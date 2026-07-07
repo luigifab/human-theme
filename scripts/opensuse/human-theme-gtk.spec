@@ -1,5 +1,5 @@
 Name:          human-theme-gtk
-Version:       3.1.0
+Version:       3.2.0
 Release:       0
 Summary:       Human theme for GTK
 Summary(fr):   Thème Human pour GTK
@@ -12,6 +12,7 @@ BuildRequires: aspell-fr
 Recommends:    gnome-icon-theme
 Recommends:    dmz-icon-theme-cursors
 Recommends:    gtk2-engine-murrine
+#ecommends:    gtk2-engine-pixbuf = gtk2
 Recommends:    libqt5-qtbase-platformtheme-gtk3
 Recommends:    libqt5-qtsvg
 Recommends:    qt5-globalqss
@@ -61,6 +62,9 @@ install -Dpm 644 data/profile.sh %{buildroot}%{_sysconfdir}/profile.d/%{name}.sh
 
 
 %changelog
+* Tue Jul 07 2026 Fabrice Creuzot <code@luigifab.fr> - 3.2.0-1
+- New upstream release
+
 * Tue May 05 2026 Fabrice Creuzot <code@luigifab.fr> - 3.1.0-1
 - New upstream release
 

@@ -1,0 +1,671 @@
+/**
+ * Copyright 2020-2026 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ */
+
+/* document.documentElement.setAttribute("localedir", "rtl"); document.documentElement.style.direction = "rtl"; */
+/* #PanelUI-button { display: none !important; } /* burger menu */
+#tab-preview-panel { display: none !important; } /* tabs tooltips */
+#pageActionButton { display: none !important; } /* page actions in address bar */
+#context-navigation, #context-sep-navigation { display: none !important; } /* context menu prev/next/reload */
+#profiles-menu { display: none !important; } /* Profiles menu */
+menu.share-tab-url-item { display: none !important; } /* Share link menu in File menu */
+split-view-footer { display: none !important; } /* Split view bottom right menu */
+
+*,
+*:-moz-window-inactive {
+	--tab-min-height: 30px !important;
+	--urlbar-min-height: 31px !important;
+	--urlbar-height: 31px !important;
+	--urlbar-container-height: 39px !important;
+	--panel-padding: 2px !important;         /* internal margin of menupopup */
+	--panel-shadow-margin: 0 !important;     /* v151- */
+	--panel-box-shadow-margin: 0 !important; /* v152+ */
+	--panel-box-shadow: none !important;     /* v152? */
+	--panel-border-radius: 0 !important;
+	--panel-border-color: #B9ACA0 !important; /* @menu_border */
+	--panel-background: #F4F2EF !important; /* @menu_bg */
+	--inactive-window-transition: none !important;
+	--inactive-titlebar-opacity: 1 !important;
+}
+
+#navigator-toolbox {
+	border-bottom: 0 !important;
+}
+
+menupopup,
+panel {
+	animation: none !important;
+	transition: none !important;
+}
+
+/* --- menu bar --- */
+
+#toolbar-menubar:not([inactive]) {
+	margin: 1px 0 0 !important;
+	padding: 0 1px !important;
+	border-bottom: 1px solid #CFC5BB !important; /* @menubar_border_bot */
+	background: linear-gradient(to bottom,
+		/* @menubar_grad_top */ #EFEBE7,
+		/* @menubar_grad_bot */ #E6E0DA) !important;
+}
+
+#toolbar-menubar menubar > menu {
+	border-radius: 2.5px 2.5px 0 0 !important;
+}
+
+#toolbar-menubar menubar > menu[open] {
+	border-bottom-color: #FCB860 !important; /* @menuitem_hover_border_bottom */
+}
+
+#toolbar-menubar .titlebar-buttonbox-container {
+	display: none !important;
+}
+
+/* --- menu & menu items --- */
+/* panel for the toolbar menus */
+/*      menu : main menu like File */
+/* menupopup : conainter for menuitems of a menu */
+/*  menuitem : like Open or Print */
+/*      menu : like Zoom */
+
+panel popupnotification,
+panel panelview {
+	margin: 0 !important;
+}
+
+panel panelview .panel-subview-body {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+panel popupnotification,
+panel panelmultiview,            /* v152+ */
+panel panelmultiview panelview { /* v152+ */
+	padding: 1px !important;
+	background: #F4F2EF !important; /* @menu_bg */
+}
+
+menubar > menu,
+menupopup > menuitem,
+menupopup > menu,
+panel toolbarbutton {
+	margin: 0 !important;
+	padding: 2px 7px 2px !important;
+	color: #101010 !important; /* @theme_fg */
+	border: 1px solid transparent !important;
+	border-radius: 2.5px !important;
+}
+
+menupopup > menuitem .menu-accel,
+menupopup > menuitem .menu-accel::before {
+	color: #10101099 !important; /* @menu_accel */
+}
+
+menupopup > menuitem .menu-icon,
+menupopup > menu .menu-icon {
+	display: revert !important;
+	margin: 0 5px 0 -2px !important;
+	width: 16px !important;
+	height: 16px !important;
+}
+
+menupopup > menuseparator,
+panel toolbarseparator {
+	margin: 4px 4px 3px !important;
+	padding: 0 !important;
+	padding-block: 0 !important;
+	border-top: 1px solid #C0B5AA80 !important; /* @menu_separator_dark */
+	border-bottom: 1px solid #FFFFFF80 !important; /* @menu_separator_lite */
+}
+
+menupopup > menuseparator::before,
+panel toolbarseparator::before {
+	border: 0 !important;
+}
+
+/* --- hover of menu items --- */
+
+menubar > menu[open],
+menupopup > menuitem:hover:not([disabled]),
+menupopup > menu:hover:not([disabled]),
+menupopup > menuitem[_moz-menuactive]:not([disabled]),
+menupopup > menu[_moz-menuactive]:not([disabled]),
+panel toolbarbutton:hover:not([disabled]) {
+	color: #1A1A1A !important; /* @menuitem_hover */
+	border-color: #E49632 !important; /* @menuitem_hover_border */
+	background:
+		radial-gradient(ellipse 110% 50%,
+			/* @menuitem_hover_glaze_glow_center */ #FFDEB380,
+			/*   @menuitem_hover_glaze_glow_edge */ #FFDEB300),
+		linear-gradient(to bottom,
+			/*  @menuitem_hover_glaze_top */ #FFC57A,
+			/* @menuitem_hover_glaze_mida */ #FCB760 50%,
+			/* @menuitem_hover_glaze_midb */ #FCB760 50%,
+			/*  @menuitem_hover_glaze_bot */ #FCB860) !important;
+}
+
+menupopup > menuitem:hover:not([disabled]) .menu-accel::before,
+menupopup > menuitem[_moz-menuactive]:not([disabled]) .menu-accel::before,
+panel toolbarbutton:hover:not([disabled]):not(.subviewbutton-nav)::after {
+	color: #1A1A1A !important; /* @menuitem_hover */
+}
+
+/* --- arrow in menu items --- */
+
+menupopup > menu[disabled]::after,
+panel toolbarbutton[disabled].subviewbutton.subviewbutton-nav::after {
+	position: absolute !important;
+	right: 8px !important;
+	width: 16px !important;
+	height: 16px !important;
+	margin-inline: 0 !important;
+	background: url("file:///usr/share/themes/Human/images/go-right-symbolic.svg") no-repeat center !important;
+}
+
+menupopup > menu:not([disabled])::after,
+panel toolbarbutton:not([disabled]).subviewbutton.subviewbutton-nav::after {
+	position: absolute !important;
+	right: 8px !important;
+	width: 16px !important;
+	height: 16px !important;
+	margin-inline: 0 !important;
+	background: url("file:///usr/share/themes/Human/images/go-right-black.svg") no-repeat center !important;
+}
+
+menupopup > menu:hover:not([disabled])::after,
+menupopup > menu[_moz-menuactive]:not([disabled])::after,
+panel toolbarbutton:hover:not([disabled]).subviewbutton.subviewbutton-nav::after {
+	position: absolute !important;
+	right: 8px !important;
+	width: 16px !important;
+	height: 16px !important;
+	margin-inline: 0 !important;
+	background: url("file:///usr/share/themes/Human/images/go-right-white.svg") no-repeat center !important;
+}
+
+/* --- disabled menu items --- */
+
+menupopup > menuitem[disabled],
+menupopup > menu[disabled] {
+	color: #A6998B !important; /* @insensitive_fg */
+	text-shadow: 0.5px 1px #FFFFFF80 !important; /* @insensitive_text_shadow */
+}
+
+menupopup > menuitem[disabled] .menu-icon,
+menupopup > menu[disabled] .menu-icon {
+	filter: opacity(0.5) !important;
+}
+
+menupopup > menuitem[disabled] .menu-accel,
+menupopup > menuitem[disabled] .menu-accel::before {
+	color: #A6998B99 !important; /* @menu_accel_disabled */
+	text-shadow: 0.5px 1px #FFFFFF80 !important; /* @insensitive_text_shadow */
+}
+
+/* --- tabs bar --- */
+
+#TabsToolbar {
+	border-top: 1px solid #FAF9F7 !important; /* @toolbar_border_top */
+	background: linear-gradient(to bottom,
+		/* @toolbar_grad_top */ #EFEBE7,
+		/* @toolbar_grad_bot */ #E5DFD9) !important;
+}
+
+#TabsToolbar #firefox-view-button + #tabbrowser-tabs[orient="horizontal"]::before {
+	margin: 7px 5px 8px !important;
+	padding: 0 !important;
+	border-inline-start: none !important;
+	border-left: 1px solid #B8AC9F80 !important; /* @toolbar_separator_dark */
+	border-right: 1px solid #FFFFFF80 !important; /* @toolbar_separator_lite */
+}
+
+/* --- nav bar --- url bar & seach bar --- */
+
+#nav-bar {
+	border-top: 1px solid #CFC5BB !important; /* @toolbar_border_bot */
+	border-bottom: 1px solid #CFC5BB !important; /* @toolbar_border_bot */
+	background: #EFEBE7 !important; /* @theme_bg */
+}
+
+#TabsToolbar[collapsed] + #nav-bar {
+	border-top: 0 !important;
+}
+
+#tabbrowser-tabs tab-split-view-wrapper .tabbrowser-tab {
+	border-inline-start: none !important;
+}
+
+#urlbar-container #urlbar .urlbar-background,
+#urlbar-container #urlbar[open] .urlbar-background,
+#urlbar-container #urlbar[focused] .urlbar-background,
+#search-container #searchbar-new .urlbar-background,
+#search-container #searchbar-new[open] .urlbar-background,
+#search-container #searchbar-new[focused] .urlbar-background {
+	outline: 0 !important;
+	background: #FFFFFF !important; /* @entry_bg */
+	box-shadow: none !important;
+}
+
+#urlbar-container #urlbar .urlbar-input-container,
+#urlbar-container #urlbar[open] .urlbar-input-container,
+#urlbar-container #urlbar[focused] .urlbar-input-container,
+#search-container #searchbar-new .urlbar-input-container,
+#search-container #searchbar-new[open] .urlbar-input-container,
+#search-container #searchbar-new[focused] .urlbar-input-container {
+	color: #1A1A1A !important; /* @theme_text */
+	border: 1px solid #8F8173 !important; /* @entry_border */
+	border-radius: 3px !important;
+	background: #FFFFFF !important; /* @entry_bg */
+}
+
+#urlbar-container #urlbar urlbarView,
+#urlbar-container #urlbar[open] urlbarView,
+#urlbar-container #urlbar[focused] urlbarView,
+#search-container #searchbar-new urlbarView,
+#search-container #searchbar-new[open] urlbarView,
+#search-container #searchbar-new[focused] urlbarView {
+	background: gray !important;
+}
+
+#urlbar-container #urlbar[breakout][breakout-extend],
+#search-container #searchbar-new[breakout][breakout-extend] {
+	width: var(--urlbar-width) !important;
+	margin: 4px 0 0 !important;
+	position: relative !important;
+}
+
+#urlbar-container #urlbar[breakout][breakout-extend] > #urlbar-input-container,
+#urlbar-container #urlbar[breakout][breakout-extend] > .urlbar-input-container,
+#search-container #searchbar-new[breakout][breakout-extend] > #searchbar-new-input-container,
+#search-container #searchbar-new[breakout][breakout-extend] > .urlbar-input-container {
+	height: var(--urlbar-height) !important;
+	padding-block: 0 !important;
+	padding-inline: var(--urlbar-container-padding) !important;
+}
+
+/* --- find bar --- */
+
+findbar {
+	border-top: 1px solid #CFC5BB !important; /* @toolbar_border_bot */
+	background: #EFEBE7 !important; /* @theme_bg */
+}
+
+/* --- status bar --- */
+
+html:not([inFullscreen="true"]) #browser {
+	padding-bottom: 21px !important;
+	background: linear-gradient(to bottom,
+		/* @theme_bg */ #EFEBE7 calc(100% - 21px),
+		/* @toolbar_border_bot */ #CFC5BB calc(100% - 21px),
+		/* @toolbar_border_bot */ #CFC5BB calc(100% - 20px),
+		/* @toolbar_border_top */ #FAF9F7 calc(100% - 20px),
+		/* @toolbar_border_top */ #FAF9F7 calc(100% - 19px),
+		/* @theme_bg */ #EFEBE7 calc(100% - 19px)) !important;
+}
+
+html:not([inFullscreen="true"]) #statuspanel {
+	display: block !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	position: fixed !important;
+	bottom: -19px !important;
+	left: 0 !important;
+	right: 0 !important;
+	visibility: visible !important;
+	color: #1A1A1A !important; /* @theme_text */
+	background: transparent !important;
+	transition: none !important;
+	animation: none !important;
+	opacity: 1 !important;
+}
+
+html:not([inFullscreen="true"]) #statuspanel label {
+	margin: 0 !important;
+	padding: 0 2px !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	background: transparent !important;
+}
+
+html:not([inFullscreen="true"]) #statuspanel[inactive] label {
+	opacity: 0 !important;
+}
+
+/* --- check & radio icons --- */
+
+menupopup > menuitem[type="checkbox"] .menu-icon {
+	appearance: none !important;
+	visibility: visible !important;
+	border: 1px solid transparent !important;
+}
+
+menupopup > menuitem[type="checkbox"][checked] .menu-icon {
+	appearance: none !important;
+	visibility: visible !important;
+	border: 1px solid transparent !important;
+	background: url("file:///usr/share/themes/Human/images/menu-checkbox-checked.svg") no-repeat center transparent !important;
+}
+
+menupopup > menuitem[type="checkbox"][checked]:hover:not([disabled]) .menu-icon {
+	appearance: none !important;
+	visibility: visible !important;
+	border: 1px solid transparent !important;
+	background: url("file:///usr/share/themes/Human/images/menu-checkbox-checked-hover.svg") no-repeat center transparent !important;
+}
+
+menupopup > menuitem[type="radio"] .menu-icon {
+	appearance: none !important;
+	visibility: visible !important;
+	border: 1px solid transparent !important;
+}
+
+menupopup > menuitem[type="radio"][checked] .menu-icon {
+	appearance: none !important;
+	visibility: visible !important;
+	border: 1px solid transparent !important;
+	background: url("file:///usr/share/themes/Human/images/menu-radio-checked.svg") no-repeat center transparent !important;
+}
+
+menupopup > menuitem[type="radio"][checked]:hover:not([disabled]) .menu-icon {
+	appearance: none !important;
+	visibility: visible !important;
+	border: 1px solid transparent !important;
+	background: url("file:///usr/share/themes/Human/images/menu-radio-checked-hover.svg") no-repeat center transparent !important;
+}
+
+/* --- tabs & split tabs --- */
+
+#browser .browserSidebarContainer.split-view-panel {
+	margin: 0 !important;
+}
+
+#browser .browserSidebarContainer .browserContainer {
+	border-radius: 0 !important;
+	outline: 0 !important;
+}
+
+/* --- icons --- */
+
+#toolbar-menubar #viewFullZoomMenu menuseparator,
+#toolbar-menubar #menu_sendLink + menuseparator,
+menuitem.badge-new::after {
+	display: none !important;
+}
+
+@media (-moz-platform:linux) {
+
+	menuitem[data-l10n-id="menu-about"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-about.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-bookmark-tab"] .menu-icon,
+	menuitem[data-l10n-id="tab-context-bookmark-tab"] .menu-icon,
+	menuitem[data-l10n-id="toolbar-context-menu-bookmark-selected-tab"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/bookmark-new.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-edit-find-in-page"] .menu-icon,
+	menuitem[data-l10n-id="menu-bookmarks-search"] .menu-icon,
+	menuitem[data-l10n-id="menu-history-search"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-find.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-file-close-tab"] .menu-icon,
+	menuitem[data-l10n-id="places-file-close"] .menu-icon,
+	menuitem[data-l10n-id="tab-context-close-n-tabs"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-close.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="main-context-menu-audio-email"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-image-email"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-video-email"] .menu-icon,
+	menuitem[data-l10n-id="menu-file-email-link"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/mail-message-new.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="main-context-menu-image-view-new-tab"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-open-link-new-tab"] .menu-icon,
+	menuitem[data-l10n-id="menu-file-new-tab"] .menu-icon,
+	menuitem[data-l10n-id="sidebar-context-menu-open-in-tab"] .menu-icon,
+	menuitem[data-l10n-id="tab-context-new-tab-open"] .menu-icon,
+	menuitem[data-l10n-id="toolbar-context-menu-new-tab"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/stock_new-tab.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="main-context-menu-open-link-new-window"] .menu-icon,
+	menuitem[data-l10n-id="menu-file-new-window"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/stock_new-window.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-file-open-file"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-open.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-file-print"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-frame-print"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-print-selection"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-print-selection-2"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-print.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-file-save-page"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-audio-save-as"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-frame-save-as"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-image-save-as"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-video-save-as"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-page-save"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-save-link"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-save-as.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-get-help"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-help.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-history-clear-recent-history"] .menu-icon,
+	menuitem[data-l10n-id="sidebar-history-clear"] .menu-icon,
+	menuitem[data-l10n-id="clear-search-history"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-clear.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-profiles-new-profile"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-add.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-quit"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-quit.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-settings"] .menu-icon,
+	menuitem[data-l10n-id="menu-view-customize-toolbar2"] .menu-icon,
+	menuitem[data-l10n-id="toolbar-context-customize-sidebar"] .menu-icon,
+	menuitem[data-l10n-id="sidebar-context-menu-customize-sidebar"] .menu-icon,
+	menuitem[data-l10n-id="toolbar-context-menu-view-customize-toolbar"] .menu-icon,
+	menuitem[data-l10n-id="toolbar-context-menu-view-customize-toolbar-2"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/categories/gtk-preferences.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-tools-downloads"] .menu-icon {
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/emblems/emblem-downloads.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-view-full-screen"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-fullscreen.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="full-screen-exit"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-leave-fullscreen.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-view-full-zoom-actual-size"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-zoom-100.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-view-full-zoom-enlarge"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-zoom-in.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="menu-view-full-zoom-reduce"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-zoom-out.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="main-context-menu-frame-reload"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-image-reload"] .menu-icon,
+	menuitem[data-l10n-id="toolbar-context-menu-reload-selected-tab"] .menu-icon,
+	menuitem[data-l10n-id="reload-tab"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-refresh.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="text-action-copy"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-copy-email"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-copy-phone"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-copy-link-simple"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-image-copy-link"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-audio-copy-link"] .menu-icon,
+	menuitem[data-l10n-id="main-context-menu-video-copy-link"] .menu-icon,
+	menuitem[data-l10n-id="menu-share-copy-links"] .menu-icon,
+	menuitem[data-l10n-id="sidebar-context-menu-copy-link"] .menu-icon,
+	menuitem[data-l10n-id="text-action-copy-link-to-highlight"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-copy.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="text-action-cut"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-cut.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="text-action-delete"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-delete.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="text-action-paste"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-paste.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="text-action-redo"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-redo-ltr.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="text-action-select-all"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-select-all.png") no-repeat center transparent !important;
+	}
+
+	menuitem[data-l10n-id="text-action-undo"] .menu-icon {
+		--menuitem-icon: none !important;
+		visibility: visible !important;
+		border: 1px solid transparent !important;
+		background: url("file:///usr/share/icons/gnome/16x16/actions/gtk-undo-ltr.png") no-repeat center transparent !important;
+	}
+
+	/* data-l10n-id="main-context-menu-media-play"
+	data-l10n-id="main-context-menu-media-pause"
+	data-l10n-id="main-context-menu-media-mute"
+	data-l10n-id="main-context-menu-media-unmute"
+	data-l10n-id="main-context-menu-media-video-leave-fullscreen"
+	data-l10n-id="main-context-menu-media-video-fullscreen"
+	data-l10n-id="main-context-menu-video-view-new-tab" */
+}

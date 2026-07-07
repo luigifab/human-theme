@@ -20,8 +20,6 @@
  * but without any warranty, without even the implied warranty of
  * merchantability or fitness for a particular purpose. See the
  * GNU General Public License (GPL) for more details.
- *
- * run cinnamon.sh to update colors
  */
 
 /* --- panel --- */
@@ -32,10 +30,9 @@
 	background-color: #E6DDD5; /* @theme_bg */
 }
 
-
 #Tooltip {
 	padding: 4px 5px;
-	color: #000; /* @theme_tooltip_fg */
+	color: #000000; /* @theme_tooltip_fg */
 	border: 1px solid #C0C04C; /* @theme_tooltip_border */
 	background-color: #F5F5B5; /* @theme_tooltip_bg */
 }
@@ -223,7 +220,7 @@
 .calendar {
 	padding: 4px;
 	border: 1px solid #BCAB9B; /* @frame_border */
-	background-color: #FFF; /* @theme_base */
+	background-color: #FFFFFF; /* @theme_base */
 	spacing-rows: 0;
 	spacing-columns: 0;
 }
@@ -245,7 +242,7 @@
 .calendar-week-number {
 	padding: 0 3px;
 	min-width: 23px;
-	color: #FFF; /* @theme_selected_fg */
+	color: #FFFFFF; /* @theme_selected_fg */
 	background-color: #8F5F4A; /* @theme_selected_bg */
 }
 
@@ -254,6 +251,6 @@
 .calendar-today:focus,
 .calendar-today:hover {
 	font-weight: bold;
-	color: #FFF; /* @theme_selected_fg */
+	color: #FFFFFF; /* @theme_selected_fg */
 	background-color: #8F5F4A; /* @theme_selected_bg */
 }

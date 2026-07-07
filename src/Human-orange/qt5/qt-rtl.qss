@@ -1,0 +1,119 @@
+/**
+ * Copyright 2020-2026 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ */
+
+QToolButton[hasMenu="true"] {
+	padding-left: 29px;
+	padding-right: 0;
+}
+
+QMenu::indicator {
+	margin: 1px 5px 0 -1px;
+}
+
+QTreeView::indicator,
+QCheckBox::indicator {
+	margin: 1px 0 0 5px;
+}
+
+QTreeView QRadioButton {
+	/* think different */
+	margin: 0;
+	padding-right: 3px;
+}
+
+QRadioButton::indicator {
+	margin: 1px 0 0 5px;
+}
+
+QSlider[hasTicks="TicksAbove"] {
+	padding: 3px 8px 3px -1px;
+}
+
+QSlider[hasTicks="TicksBelow"] {
+	padding: 3px 0 3px 7px;
+}
+
+/* --- notebook tabs overlap --- */
+
+QTabBar::tab:top:!only-one {
+	margin: 1px 0 0 -1px;
+}
+
+QTabBar::tab:top:!only-one:selected {
+	margin: 0 0 0 -1px;
+}
+
+QTabBar::tab:bottom:!only-one {
+	margin: 0 0 1px -1px;
+}
+
+QTabBar::tab:bottom:!only-one:selected {
+	margin: 0 0 0 -1px;
+}
+
+QTabBar::tab:top:!only-one:last:selected,
+QTabBar::tab:bottom:!only-one:last:selected {
+	margin: 0;
+}
+
+/* --- scroll bar --- */
+
+QScrollBar:vertical {
+	padding: 0 0 0 1px;
+	border: 0;
+	background: none;
+}
+
+QScrollBar::sub-line:vertical {
+	border: 0;
+	background: none;
+}
+
+QScrollBar::add-line:vertical {
+	border: 0;
+	background: none;
+}
+
+QScrollBar::left-arrow:horizontal {
+	image: url("../images/go-right-black.svg");
+}
+
+QScrollBar::right-arrow:horizontal {
+	image: url("../images/go-left-black.svg");
+}
+
+/* --- mix --- */
+
+QComboBox:editable {
+	margin: 1px 1px 1px 30px;
+	padding: 3px 1px 3px -29px;
+}
+
+QComboBox::down-arrow {
+	margin: 0 1px 0 0;
+}
+
+#AwfMainWindow QCheckBox { margin: 0 1px 1px 2px; } /* margin: 0 0 1px 1px; */
+#AwfMainWindow QRadioButton { margin: 0 1px 1px 3px; } /* margin: 0 0 1px 1px; */
+#AwfMainWindow QTreeView QRadioButton { margin: 0; } /* margin: 0; */

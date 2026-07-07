@@ -113,7 +113,11 @@ dialog.background.solid-csd .dialog-vbox.vertical .dialog-action-area {
 .background.csd headerbar entry,
 .background.ssd headerbar entry,
 .background.solid-csd headerbar entry {
-	box-shadow:none; border:0; margin:4px 0; font-size:85%; /* @todo */
+	/* @todo */
+	margin: 4px 0;
+	font-size: 85%;
+	border: 0;
+	box-shadow: none;
 }
 
 .background.csd headerbar label.title,
@@ -228,7 +232,7 @@ dialog.background.solid-csd .dialog-vbox.vertical .dialog-action-area {
 .background.csd headerbar image.app-icon,
 .background.ssd headerbar image.app-icon,
 .background.solid-csd headerbar image.app-icon {
-	margin: 0 3px; /* with gtk3-classic (appearance__appicon_headerbar.patch) */
+	margin: 0 3px; /* with gtk3-classic (appearance_appicon_headerbar.patch) */
 }
 
 .background.csd headerbar separator.titlebutton,

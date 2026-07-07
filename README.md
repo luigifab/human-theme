@@ -1,140 +1,156 @@
 # Human theme
 
-This theme works with **GTK 2.24** *(with murrine)* & **GTK 3.24** & **GTK 4.12..4.23**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It works also with **Qt 5.15** & **Qt 6.0..6.11**.
+This theme works with **GTK 2.24** *(with murrine/pixbuf)* & **GTK 3.24** & **GTK 4.8..4.23**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It works also with **Qt 5.15** & **Qt 6.0..6.11** & **Firefox 152**.
 
 It is mainly intended for **MATE** desktop environment, it's not too bad with **Xfce**, it's experimental with **Cinnamon**.
 
 ## Screenshots
 
-GTK 2.24 (Pango 1.57)\
-[<img alt="Preview with GTK 2 - Main window" src="images/thumbs/gtk2.png?raw=true" width="200" />](images/gtk2.png?raw=true)
-[<img alt="Preview with GTK 2 - Orange variation - Main window" src="images/thumbs/gtk2-orange.png?raw=true" width="200" />](images/gtk2-orange.png?raw=true)
-[<img alt="Preview with GTK 2 - Blue variation - Main window" src="images/thumbs/gtk2-blue.png?raw=true" width="200" />](images/gtk2-blue.png?raw=true)
-[<img alt="Preview with GTK 2 - Green variation - Main window" src="images/thumbs/gtk2-green.png?raw=true" width="200" />](images/gtk2-green.png?raw=true)\
-[<img alt="Preview with GTK 2 - Main window with menu" src="images/thumbs/gtk2-menu.png?raw=true" width="200" />](images/gtk2-menu.png?raw=true)
-[<img alt="Preview with GTK 2 - Orange variation - Main window with menu" src="images/thumbs/gtk2-orange-menu.png?raw=true" width="200" />](images/gtk2-orange-menu.png?raw=true)
-[<img alt="Preview with GTK 2 - Blue variation - Main window with menu" src="images/thumbs/gtk2-blue-menu.png?raw=true" width="200" />](images/gtk2-blue-menu.png?raw=true)
-[<img alt="Preview with GTK 2 - Green variation - Main window with menu" src="images/thumbs/gtk2-green-menu.png?raw=true" width="200" />](images/gtk2-green-menu.png?raw=true)
+GTK 2.24 (Pango 1.58)\
+[<img alt="Preview with GTK 2 - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2.png)
+[<img alt="Preview with GTK 2 - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-orange.png)
+[<img alt="Preview with GTK 2 - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-blue.png)
+[<img alt="Preview with GTK 2 - Green variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-green.png)\
+[<img alt="Preview with GTK 2 - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-menu.png)
+[<img alt="Preview with GTK 2 - Orange variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-orange-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-orange-menu.png)
+[<img alt="Preview with GTK 2 - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-blue-menu.png)
+[<img alt="Preview with GTK 2 - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-green-menu.png)
 
-GTK 2.24 RTL (Pango 1.57)\
-[<img alt="Preview with GTK 2 - RTL - Main window" src="images/thumbs/gtk2-rtl.png?raw=true" width="200" />](images/gtk2-rtl.png?raw=true)
-[<img alt="Preview with GTK 2 - RTL - Orange variation - Main window" src="images/thumbs/gtk2-rtl-orange.png?raw=true" width="200" />](images/gtk2-rtl-orange.png?raw=true)
-[<img alt="Preview with GTK 2 - RTL - Blue variation - Main window" src="images/thumbs/gtk2-rtl-blue.png?raw=true" width="200" />](images/gtk2-rtl-blue.png?raw=true)
-[<img alt="Preview with GTK 2 - RTL - Green variation - Main window" src="images/thumbs/gtk2-rtl-green.png?raw=true" width="200" />](images/gtk2-rtl-green.png?raw=true)\
-[<img alt="Preview with GTK 2 - RTL - Main window with menu" src="images/thumbs/gtk2-rtl-menu.png?raw=true" width="200" />](images/gtk2-rtl-menu.png?raw=true)
-[<img alt="Preview with GTK 2 - RTL - Orange variation - Main window with menu" src="images/thumbs/gtk2-rtl-orange-menu.png?raw=true" width="200" />](images/gtk2-rtl-orange-menu.png?raw=true)
-[<img alt="Preview with GTK 2 - RTL - Blue variation - Main window with menu" src="images/thumbs/gtk2-rtl-blue-menu.png?raw=true" width="200" />](images/gtk2-rtl-blue-menu.png?raw=true)
-[<img alt="Preview with GTK 2 - RTL - Green variation - Main window with menu" src="images/thumbs/gtk2-rtl-green-menu.png?raw=true" width="200" />](images/gtk2-rtl-green-menu.png?raw=true)
+GTK 2.24 RTL (Pango 1.58)\
+[<img alt="Preview with GTK 2 - RTL - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-rtl.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-rtl.png)
+[<img alt="Preview with GTK 2 - RTL - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-rtl-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-rtl-orange.png)
+[<img alt="Preview with GTK 2 - RTL - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-rtl-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-rtl-blue.png)
+[<img alt="Preview with GTK 2 - RTL - Green variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-rtl-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-rtl-green.png)\
+[<img alt="Preview with GTK 2 - RTL - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-rtl-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-rtl-menu.png)
+[<img alt="Preview with GTK 2 - RTL - Orange variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-rtl-orange-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-rtl-orange-menu.png)
+[<img alt="Preview with GTK 2 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-rtl-blue-menu.png)
+[<img alt="Preview with GTK 2 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-rtl-green-menu.png)
 
-GTK 3.24-classic (Pango 1.57)\
-[<img alt="Preview with GTK 3 - Main window" src="images/thumbs/gtk3.png?raw=true" width="200" />](images/gtk3.png?raw=true)
-[<img alt="Preview with GTK 3 - Orange variation - Main window" src="images/thumbs/gtk3-orange.png?raw=true" width="200" />](images/gtk3-orange.png?raw=true)
-[<img alt="Preview with GTK 3 - Blue variation - Main window" src="images/thumbs/gtk3-blue.png?raw=true" width="200" />](images/gtk3-blue.png?raw=true)
-[<img alt="Preview with GTK 3 - Green variation - Main window" src="images/thumbs/gtk3-green.png?raw=true" width="200" />](images/gtk3-green.png?raw=true)\
-[<img alt="Preview with GTK 3 - Main window with menu" src="images/thumbs/gtk3-menu.png?raw=true" width="200" />](images/gtk3-menu.png?raw=true)
-[<img alt="Preview with GTK 3 - Orange variation - Main window with menu" src="images/thumbs/gtk3-orange-menu.png?raw=true" width="200" />](images/gtk3-orange-menu.png?raw=true)
-[<img alt="Preview with GTK 3 - Blue variation - Main window with menu" src="images/thumbs/gtk3-blue-menu.png?raw=true" width="200" />](images/gtk3-blue-menu.png?raw=true)
-[<img alt="Preview with GTK 3 - Green variation - Main window with menu" src="images/thumbs/gtk3-green-menu.png?raw=true" width="200" />](images/gtk3-green-menu.png?raw=true)\
-[<img alt="Preview with GTK 3 - Main window with plus button" src="images/thumbs/gtk3-plus.png?raw=true" width="200" />](images/gtk3-plus.png?raw=true)
-[<img alt="Preview with GTK 3 - Orange variation - Main window with plus button" src="images/thumbs/gtk3-orange-plus.png?raw=true" width="200" />](images/gtk3-orange-plus.png?raw=true)
-[<img alt="Preview with GTK 3 - Blue variation - Main window with plus button" src="images/thumbs/gtk3-blue-plus.png?raw=true" width="200" />](images/gtk3-blue-plus.png?raw=true)
-[<img alt="Preview with GTK 3 - Green variation - Main window with plus button" src="images/thumbs/gtk3-green-plus.png?raw=true" width="200" />](images/gtk3-green-plus.png?raw=true)\
-[<img alt="Preview with GTK 3 - CSD main window" src="images/thumbs/gtk3-csd.png?raw=true" width="200" />](images/gtk3-csd.png?raw=true)
-[<img alt="Preview with GTK 3 - Orange variation - CSD main window" src="images/thumbs/gtk3-orange-csd.png?raw=true" width="200" />](images/gtk3-orange-plus.png?raw=true)
-[<img alt="Preview with GTK 3 - Blue variation - CSD main window" src="images/thumbs/gtk3-blue-csd.png?raw=true" width="200" />](images/gtk3-blue-csd.png?raw=true)
-[<img alt="Preview with GTK 3 - Green variation - CSD main window" src="images/thumbs/gtk3-green-csd.png?raw=true" width="200" />](images/gtk3-green-csd.png?raw=true)
+**GTK 3.24-classic (Pango 1.58)**\
+[<img alt="Preview with GTK 3 - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3.png)
+[<img alt="Preview with GTK 3 - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-orange.png)
+[<img alt="Preview with GTK 3 - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-blue.png)
+[<img alt="Preview with GTK 3 - Green variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-green.png)\
+[<img alt="Preview with GTK 3 - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-menu.png)
+[<img alt="Preview with GTK 3 - Orange variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-orange-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-orange-menu.png)
+[<img alt="Preview with GTK 3 - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-blue-menu.png)
+[<img alt="Preview with GTK 3 - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-green-menu.png)\
+[<img alt="Preview with GTK 3 - Main window with plus button" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-plus.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-plus.png)
+[<img alt="Preview with GTK 3 - Orange variation - Main window with plus button" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-plus-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-plus-orange.png)
+[<img alt="Preview with GTK 3 - Blue variation - Main window with plus button" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-plus-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-plus-blue.png)
+[<img alt="Preview with GTK 3 - Green variation - Main window with plus button" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-plus-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-plus-green.png)\
+[<img alt="Preview with GTK 3 - CSD main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-csd.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-csd.png)
+[<img alt="Preview with GTK 3 - Orange variation - CSD main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-csd-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-csd-orange.png)
+[<img alt="Preview with GTK 3 - Blue variation - CSD main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-csd-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-csd-blue.png)
+[<img alt="Preview with GTK 3 - Green variation - CSD main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-csd-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-csd-green.png)
 
-GTK 3.24-classic RTL (Pango 1.57)\
-[<img alt="Preview with GTK 3 - RTL - Main window" src="images/thumbs/gtk3-rtl.png?raw=true" width="200" />](images/gtk3-rtl.png?raw=true)
-[<img alt="Preview with GTK 3 - RTL - Orange variation - Main window" src="images/thumbs/gtk3-rtl-orange.png?raw=true" width="200" />](images/gtk3-rtl-orange.png?raw=true)
-[<img alt="Preview with GTK 3 - RTL - Blue variation - Main window" src="images/thumbs/gtk3-rtl-blue.png?raw=true" width="200" />](images/gtk3-rtl-blue.png?raw=true)
-[<img alt="Preview with GTK 3 - RTL - Green variation - Main window" src="images/thumbs/gtk3-rtl-green.png?raw=true" width="200" />](images/gtk3-rtl-green.png?raw=true)\
-[<img alt="Preview with GTK 3 - RTL - Main window with menu" src="images/thumbs/gtk3-rtl-menu.png?raw=true" width="200" />](images/gtk3-rtl-menu.png?raw=true)
-[<img alt="Preview with GTK 3 - RTL - Orange variation - Main window with menu" src="images/thumbs/gtk3-rtl-orange-menu.png?raw=true" width="200" />](images/gtk3-rtl-orange-menu.png?raw=true)
-[<img alt="Preview with GTK 3 - RTL - Blue variation - Main window with menu" src="images/thumbs/gtk3-rtl-blue-menu.png?raw=true" width="200" />](images/gtk3-rtl-blue-menu.png?raw=true)
-[<img alt="Preview with GTK 3 - RTL - Green variation - Main window with menu" src="images/thumbs/gtk3-rtl-green-menu.png?raw=true" width="200" />](images/gtk3-rtl-green-menu.png?raw=true)
+GTK 3.24-classic RTL (Pango 1.58)\
+[<img alt="Preview with GTK 3 - RTL - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-rtl.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-rtl.png)
+[<img alt="Preview with GTK 3 - RTL - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-rtl-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-rtl-orange.png)
+[<img alt="Preview with GTK 3 - RTL - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-rtl-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-rtl-blue.png)
+[<img alt="Preview with GTK 3 - RTL - Green variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-rtl-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-rtl-green.png)\
+[<img alt="Preview with GTK 3 - RTL - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-rtl-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-rtl-menu.png)
+[<img alt="Preview with GTK 3 - RTL - Orange variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-rtl-orange-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-rtl-orange-menu.png)
+[<img alt="Preview with GTK 3 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-rtl-blue-menu.png)
+[<img alt="Preview with GTK 3 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-rtl-green-menu.png)
 
-GTK 4.12..4.23-classic (Pango 1.57)\
-[<img alt="Preview with GTK 4 - Main window" src="images/thumbs/gtk4.png?raw=true" width="200" />](images/gtk4.png?raw=true)
-[<img alt="Preview with GTK 4 - Orange variation - Main window" src="images/thumbs/gtk4-orange.png?raw=true" width="200" />](images/gtk4-orange.png?raw=true)
-[<img alt="Preview with GTK 4 - Blue variation - Main window" src="images/thumbs/gtk4-blue.png?raw=true" width="200" />](images/gtk4-blue.png?raw=true)
-[<img alt="Preview with GTK 4 - Green variation - Main window" src="images/thumbs/gtk4-green.png?raw=true" width="200" />](images/gtk4-green.png?raw=true)\
-[<img alt="Preview with GTK 4 - Main window with menu" src="images/thumbs/gtk4-menu.png?raw=true" width="200" />](images/gtk4-menu.png?raw=true)
-[<img alt="Preview with GTK 4 - Orange variation - Main window with menu" src="images/thumbs/gtk4-orange-menu.png?raw=true" width="200" />](images/gtk4-orange-menu.png?raw=true)
-[<img alt="Preview with GTK 4 - Blue variation - Main window with menu" src="images/thumbs/gtk4-blue-menu.png?raw=true" width="200" />](images/gtk4-blue-menu.png?raw=true)
-[<img alt="Preview with GTK 4 - Green variation - Main window with menu" src="images/thumbs/gtk4-green-menu.png?raw=true" width="200" />](images/gtk4-green-menu.png?raw=true)
+GTK 4.8..4.23-classic (Pango 1.58)\
+[<img alt="Preview with GTK 4 - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4.png)
+[<img alt="Preview with GTK 4 - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-orange.png)
+[<img alt="Preview with GTK 4 - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-blue.png)
+[<img alt="Preview with GTK 4 - Green variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-green.png)\
+[<img alt="Preview with GTK 4 - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-menu.png)
+[<img alt="Preview with GTK 4 - Orange variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-orange-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-orange-menu.png)
+[<img alt="Preview with GTK 4 - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-blue-menu.png)
+[<img alt="Preview with GTK 4 - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-green-menu.png)
 
-GTK 4.12..4.23-classic RTL (Pango 1.57)\
-[<img alt="Preview with GTK 4 - RTL - Main window" src="images/thumbs/gtk4-rtl.png?raw=true" width="200" />](images/gtk4-rtl.png?raw=true)
-[<img alt="Preview with GTK 4 - RTL - Orange variation - Main window" src="images/thumbs/gtk4-rtl-orange.png?raw=true" width="200" />](images/gtk4-rtl-orange.png?raw=true)
-[<img alt="Preview with GTK 4 - RTL - Blue variation - Main window" src="images/thumbs/gtk4-rtl-blue.png?raw=true" width="200" />](images/gtk4-rtl-blue.png?raw=true)
-[<img alt="Preview with GTK 4 - RTL - Green variation - Main window" src="images/thumbs/gtk4-rtl-green.png?raw=true" width="200" />](images/gtk4-rtl-green.png?raw=true)\
-[<img alt="Preview with GTK 4 - RTL - Main window with menu" src="images/thumbs/gtk4-rtl-menu.png?raw=true" width="200" />](images/gtk4-rtl-menu.png?raw=true)
-[<img alt="Preview with GTK 4 - RTL - Orange variation - Main window with menu" src="images/thumbs/gtk4-rtl-orange-menu.png?raw=true" width="200" />](images/gtk4-rtl-orange-menu.png?raw=true)
-[<img alt="Preview with GTK 4 - RTL - Blue variation - Main window with menu" src="images/thumbs/gtk4-rtl-blue-menu.png?raw=true" width="200" />](images/gtk4-rtl-blue-menu.png?raw=true)
-[<img alt="Preview with GTK 4 - RTL - Green variation - Main window with menu" src="images/thumbs/gtk4-rtl-green-menu.png?raw=true" width="200" />](images/gtk4-rtl-green-menu.png?raw=true)
+GTK 4.8..4.23-classic RTL (Pango 1.58)\
+[<img alt="Preview with GTK 4 - RTL - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl.png)
+[<img alt="Preview with GTK 4 - RTL - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-orange.png)
+[<img alt="Preview with GTK 4 - RTL - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-blue.png)
+[<img alt="Preview with GTK 4 - RTL - Green variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-green.png)\
+[<img alt="Preview with GTK 4 - RTL - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-menu.png)
+[<img alt="Preview with GTK 4 - RTL - Orange variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-orange-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-orange-menu.png)
+[<img alt="Preview with GTK 4 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-blue-menu.png)
+[<img alt="Preview with GTK 4 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-green-menu.png)
 
-GTK 5.0 (Pango 1.57)\
-_GtkWindow will likely be deprecated... lol_
+GTK 5.0\
+*GtkWindow will likely be deprecated... lol*
 
 Qt 5.15\
-[<img alt="Preview with Qt 5 - Main window" src="images/thumbs/qt5.png?raw=true" width="200" />](images/qt5.png?raw=true)
-[<img alt="Preview with Qt 5 - Orange variation - Main window" src="images/thumbs/qt5-orange.png?raw=true" width="200" />](images/qt5-orange.png?raw=true)
-[<img alt="Preview with Qt 5 - Blue variation - Main window" src="images/thumbs/qt5-blue.png?raw=true" width="200" />](images/qt5-blue.png?raw=true)
-[<img alt="Preview with Qt 5 - Green variation - Main window" src="images/thumbs/qt5-green.png?raw=true" width="200" />](images/qt5-green.png?raw=true)\
-[<img alt="Preview with Qt 5 - Main window with menu" src="images/thumbs/qt5-menu.png?raw=true" width="200" />](images/qt5-menu.png?raw=true)
-[<img alt="Preview with Qt 5 - Orange variation - Main window with menu" src="images/thumbs/qt5-orange-menu.png?raw=true" width="200" />](images/qt5-orange-menu.png?raw=true)
-[<img alt="Preview with Qt 5 - Blue variation - Main window with menu" src="images/thumbs/qt5-blue-menu.png?raw=true" width="200" />](images/qt5-blue-menu.png?raw=true)
-[<img alt="Preview with Qt 5 - Green variation - Main window with menu" src="images/thumbs/qt5-green-menu.png?raw=true" width="200" />](images/qt5-green-menu.png?raw=true)
+[<img alt="Preview with Qt 5 - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5.png)
+[<img alt="Preview with Qt 5 - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-orange.png)
+[<img alt="Preview with Qt 5 - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-blue.png)
+[<img alt="Preview with Qt 5 - Green variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-green.png)\
+[<img alt="Preview with Qt 5 - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-menu.png)
+[<img alt="Preview with Qt 5 - Orange variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-orange-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-orange-menu.png)
+[<img alt="Preview with Qt 5 - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-blue-menu.png)
+[<img alt="Preview with Qt 5 - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-green-menu.png)
+
+Qt 5.15 RTL\
+[<img alt="Preview with Qt 5 - RTL - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-rtl.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-rtl.png)
+[<img alt="Preview with Qt 5 - RTL - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-rtl-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-rtl-orange.png)
+[<img alt="Preview with Qt 5 - RTL - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-rtl-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-rtl-blue.png)
+[<img alt="Preview with Qt 5 - RTL - Green variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-rtl-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-rtl-green.png)\
+[<img alt="Preview with Qt 5 - RTL - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-rtl-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-rtl-menu.png)
+[<img alt="Preview with Qt 5 - RTL - Orange variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-rtl-orange-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-rtl-orange-menu.png)
+[<img alt="Preview with Qt 5 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-rtl-blue-menu.png)
+[<img alt="Preview with Qt 5 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-rtl-green-menu.png)
 
 Qt 6.10\
-[<img alt="Preview with Qt 6 - Main window" src="images/thumbs/qt6.png?raw=true" width="200" />](images/qt6.png?raw=true)
-[<img alt="Preview with Qt 6 - Orange variation - Main window" src="images/thumbs/qt6-orange.png?raw=true" width="200" />](images/qt6-orange.png?raw=true)
-[<img alt="Preview with Qt 6 - Blue variation - Main window" src="images/thumbs/qt6-blue.png?raw=true" width="200" />](images/qt6-blue.png?raw=true)
-[<img alt="Preview with Qt 6 - Green variation - Main window" src="images/thumbs/qt6-green.png?raw=true" width="200" />](images/qt6-green.png?raw=true)\
-[<img alt="Preview with Qt 6 - Main window with menu" src="images/thumbs/qt6-menu.png?raw=true" width="200" />](images/qt6-menu.png?raw=true)
-[<img alt="Preview with Qt 6 - Orange variation - Main window with menu" src="images/thumbs/qt6-orange-menu.png?raw=true" width="200" />](images/qt6-orange-menu.png?raw=true)
-[<img alt="Preview with Qt 6 - Blue variation - Main window with menu" src="images/thumbs/qt6-blue-menu.png?raw=true" width="200" />](images/qt6-blue-menu.png?raw=true)
-[<img alt="Preview with Qt 6 - Green variation - Main window with menu" src="images/thumbs/qt6-green-menu.png?raw=true" width="200" />](images/qt6-green-menu.png?raw=true)
+[<img alt="Preview with Qt 6 - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6.png)
+[<img alt="Preview with Qt 6 - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-orange.png)
+[<img alt="Preview with Qt 6 - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-blue.png)
+[<img alt="Preview with Qt 6 - Green variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-green.png)\
+[<img alt="Preview with Qt 6 - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-menu.png)
+[<img alt="Preview with Qt 6 - Orange variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-orange-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-orange-menu.png)
+[<img alt="Preview with Qt 6 - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-blue-menu.png)
+[<img alt="Preview with Qt 6 - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-green-menu.png)
 
-Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended).
+Qt 6.10 RTL\
+[<img alt="Preview with Qt 6 - RTL - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl.png)
+[<img alt="Preview with Qt 6 - RTL - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-orange.png)
+[<img alt="Preview with Qt 6 - RTL - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-blue.png)
+[<img alt="Preview with Qt 6 - RTL - Green variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-green.png)\
+[<img alt="Preview with Qt 6 - RTL - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-menu.png)
+[<img alt="Preview with Qt 6 - RTL - Orange variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-orange-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-orange-menu.png)
+[<img alt="Preview with Qt 6 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-blue-menu.png)
+[<img alt="Preview with Qt 6 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-green-menu.png)
+
+Firefox 152\
+[<img alt="Preview with Firefox - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox.png)
+[<img alt="Preview with Firefox - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-orange.png)
+[<img alt="Preview with Firefox - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-blue.png)
+[<img alt="Preview with Firefox - Green variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-green.png)\
+[<img alt="Preview with Firefox - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-menu.png)
+[<img alt="Preview with Firefox - Orange variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-orange-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-orange-menu.png)
+[<img alt="Preview with Firefox - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-blue-menu.png)
+[<img alt="Preview with Firefox - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-green-menu.png)
+
+Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended), to see that the classic desktop environment is still alive.
 
 ## Installation
 
-For MATE, the following packages no longer install the *metacity/marco* theme (ClearlooksRe), because it is provided by *marco* package.
-
-#### Before you begin
-
 To meet the truth (not required, if you can't/won't, no worries, but the truth will be far):
+
 - remove [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd)
 - install gtk3-classic & gtk4-classic
 - use Pango 1.42- or 1.51+
 
-For **Debian Testing**, I provide a repository for [gtk3-classic](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) and for [gtk4-classic](https://build.opensuse.org/package/show/home:luigifab/gtk4-classic), it also includes [mate-notification 1.26](https://build.opensuse.org/package/show/home:luigifab/mate-notification) with a patch to customize notifications from theme.
+For **Debian Testing**, I provide a repository for [gtk3-classic](https://build.opensuse.org/package/show/home:luigifab/gtk3-classic) and for [gtk4-classic](https://build.opensuse.org/package/show/home:luigifab/gtk4-classic), it also includes [mate-notification 1.26](https://build.opensuse.org/package/show/home:luigifab/mate-notification) with a patch to customize notifications from theme. For **Ubuntu**, I provide a repository for [gtk3-classic & gtk4-classic](https://launchpad.net/~luigifab/+archive/ubuntu/gtk-classic).
 
-For **Ubuntu**, I also provide a repository for [gtk3-classic & gtk4-classic](https://launchpad.net/~luigifab/+archive/ubuntu/gtk-classic).
+The following packages no longer install the *metacity/marco* theme (ClearlooksRe), because it is provided by *marco* package.
 
-#### Installation for Debian, Devuan, Ubuntu, Trisquel, Linux Mint, MX Linux
+> The road is long, but the way is free — we always have a choice.
+
+#### Install via package manager
 
 * Run: `sudo apt install human-theme-gtk`
 * Restart your session
 
-#### Installation for Fedora
+Replace `apt` with your package manager, or use a graphical interface.
 
-* Run: `sudo dnf install human-theme-gtk`
-* Restart your session
-
-#### Installation for openSUSE
-
-* Run: `sudo zypper install human-theme-gtk`
-* Restart your session
-
-#### Installation for Mageia
-
-* Run: `sudo urpmi human-theme-gtk`
-* Restart your session
-
-#### Alternative installation for Debian, Devuan, Ubuntu, Trisquel, Linux Mint, MX Linux
+#### Install via PPA
 
 * Run:
 ```bash
@@ -170,7 +186,7 @@ sudo apt update
 sudo apt install human-theme-gtk
 
 # ... and for full installation
-sudo apt install gnome-icon-theme dmz-cursor-theme gtk2-engines-murrine qt5-gtk-platformtheme qt5-style-globalqss qt6-gtk-platformtheme qt6-style-globalqss qt6-svg-plugins
+sudo apt install gnome-icon-theme dmz-cursor-theme gtk2-engines-murrine gtk2-engines-pixbuf qt5-gtk-platformtheme qt5-style-globalqss qt6-gtk-platformtheme qt6-style-globalqss qt6-svg-plugins
 
 # sha256sum /etc/apt/trusted.gpg.d/luigifab.gpg
 578c89a677048e38007462d543686b53587efba9f93814601169253c45ff9213
@@ -197,12 +213,12 @@ GTK_TREEVIEW_LINES=0
 GTK_ENLARGE_SCROLLBAR=1
 ```
 * For icons and cursors themes install: `gnome-icon-theme` or `mate-icon-theme` **+** `dmz-cursor-theme`
-* For GTK 2 programs install: `gtk2-engines-murrine` or `gtk2-engine-murrine` or `gtk2-murrine-engine` or `gtk-murrine-engine` or `gtk-engine-murrine` or `murrine` or similar
+* For GTK 2 programs install: `gtk2-engines-murrine` or `gtk2-engine-murrine` or `gtk2-murrine-engine` or `gtk-murrine-engine` or `gtk-engine-murrine` or `murrine` or similar **+** `gtk2-engines-pixbuf` or `gtk2-engine-pixbuf` or `gtk2-pixbuf-engine` or `gtk-pixbuf-engine` or similar
 * For Qt 5 programs install: `qt5-gtk-platformtheme` or `qt5-qtbase-gui` or similar **+** `qt5-style-globalqss` or `qt5-globalqss` **+** `qt5-svg-plugins` or `qt5-qtsvg` or similar
 * For Qt 6 programs install: `qt6-gtk-platformtheme` or `qt6-qtbase-gui` or similar **+** `qt6-style-globalqss` or `qt6-globalqss` **+** `qt6-svg-plugins` or `qt6-qtsvg` or similar
 * Restart your session
 
-## Configuration
+## Desktop configuration
 
 For **MATE** desktop:
 * Go to: *System / Preferences / Appearance*, or run: `mate-appearance-properties`\
@@ -251,11 +267,51 @@ Cursors:
 Extra configuration for cursors:
 * Run `sudo update-alternatives --config x-cursor-theme` and select again *DMZ white*
 
+## Software configuration
+
+If you installed the theme manually, replace `/usr/share/themes/` by `~/.themes/`.
+
+#### Firefox
+
+Configure the *Human* theme:
+
+```bash
+cd ~/.mozilla/firefox/[your.profile]/
+mkdir -p chrome && cd chrome/
+ln -s /usr/share/themes/Human/firefox/firefox.css userChrome.css
+ -- or --
+ ln -s /usr/share/themes/Human-blue/firefox/firefox.css userChrome.css
+ -- or --
+ ln -s /usr/share/themes/Human-green/firefox/firefox.css userChrome.css
+ -- or --
+ ln -s /usr/share/themes/Human-orange/firefox/firefox.css userChrome.css
+```
+
+* Open *about:config* and set *toolkit.legacyUserProfileCustomizations.stylesheets* to *true*
+* Open *about:config* and set *widget.gtk.overlay-scrollbars.enabled* to *false*
+* Open *about:config* and set *browser.theme.dark-private-windows* to *false*
+* Open *about:addons* and enable *System theme* in Themes
+* Restart Firefox and enjoy the truth lost from v46
+
+Extra: open *about:keyboard* and enjoy!
+
+#### Gimp
+
+Add the *Human* theme:
+
+```bash
+cd ~/.config/GIMP/3.*/themes/
+mkdir -p Human && cd Human/
+ln -s /usr/share/themes/Human/gimp/gimp.css .
+```
+
+Then set *Human* theme in Gimp/Edit/Preferences/Interface/Theme.
+
 ## Known issues
 
 #### MATE
 
-If some characters are wider than others (for example clock applet versus classic main menu applet), this may be due to the **DPI** value in _mate-appearance-properties_ (go to the _Fonts_ tab, then _Details_). If you're using automatic detection, disable it. To solve the problem, press the _minus_ button then the _plus_ button above, see [bug 1475](https://github.com/mate-desktop/mate-panel/issues/1475#issuecomment-3037154225).
+If some characters are wider than others (for example clock applet versus classic main menu applet), this may be due to the **DPI** value in *mate-appearance-properties* (go to the *Fonts* tab, then *Details*). If you're using automatic detection, disable it. To solve the problem, press the *minus* button then the *plus* button above, see [bug 1475](https://github.com/mate-desktop/mate-panel/issues/1475#issuecomment-3037154225).
 
 #### Firefox/Thunderbird/Chromium
 
@@ -266,23 +322,9 @@ sudo rm 10-hinting-slight.conf # /usr/share/fontconfig/conf.avail/10-hinting-sli
 sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-full.conf
 ```
 
-For classic menu bar and menu items on [Firefox 46+](https://www.mozilla.org/firefox) and [Thunderbird 46+](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
-
 #### LibreOffice
 
 For design of menu bar, see [bug 157708](https://bugs.documentfoundation.org/show_bug.cgi?id=157708).
-
-#### Gimp
-
-Add the *Human* theme to Gimp:
-
-```bash
-cd ~/.config/GIMP/3.*/themes/
-mkdir Human/ && cd Human/
-ln -s /usr/share/themes/Human/gtk-3.0/gimp.css .
-```
-
-Then set *Human* theme in Gimp/Edit/Preferences/Interface/Theme.
 
 #### GTK 3
 
@@ -304,17 +346,15 @@ gtk-xft-hinting=1
 
 #### GTK 5
 
-From [migrating guide](https://docs.gtk.org/gtk4/migrating-4to5.html#non-standard-css-extensions-are-going-away): _non-standard CSS extensions are going away [...] @define-color should be replaced [...] the color functions can all be replaced by combinations of calc() and color-mix()_.
+From [migrating guide](https://docs.gtk.org/gtk4/migrating-4to5.html#non-standard-css-extensions-are-going-away): *non-standard CSS extensions are going away [...] @define-color should be replaced [...] the color functions can all be replaced by combinations of calc() and color-mix()*.
 
 I think it would be nice to create a patch to fix this GTK regression.
 
 #### Qt 5 & 6
 
-For Qt, install GTK platform theme and [GlobalQSS](https://github.com/luigifab/globalqss) style plugin.
+For Qt, install GTK platform theme and [GlobalQSS](https://github.com/luigifab/globalqss) style plugin. But sadly, `box-shadow` and multiple `background` gradients are not supported, `border-radius` is not fully supported...
 
-But sadly, `box-shadow` and multiple `background` gradients are not supported, `border-radius` are not fully supported...
-
-On Fedora with Qt 5, the GTK 3 platform theme _(qt5-qtbase-gui)_ works better than on Debian _(qt5-gtk-platformtheme)_, but the fonts remain blurry, see [bug 2459509](https://bugzilla.redhat.com/show_bug.cgi?id=2459509).
+On Fedora with Qt 5, the GTK 3 platform theme *(qt5-qtbase-gui)* works better than on Debian *(qt5-gtk-platformtheme)*, but the fonts remain blurry, see [bug 2459509](https://bugzilla.redhat.com/show_bug.cgi?id=2459509).
 
 #### Xfce panels
 
@@ -354,6 +394,8 @@ Run [AWF](https://github.com/luigifab/awf-extended) with screenshot on theme rel
 awf-gtk2 -s ~/2.png
 awf-gtk3 -s ~/3.png
 awf-gtk4 -s ~/4.png
+awf-qt5 -s ~/5.png
+awf-qt6 -s ~/6.png
 ```
 
 Run [Entr](https://github.com/eradman/entr) to send the `SIGHUP` signal when files change to reload theme:
@@ -361,6 +403,8 @@ Run [Entr](https://github.com/eradman/entr) to send the `SIGHUP` signal when fil
 ls ~/.themes/Human*/gtk-2*/gtkrc | entr killall -s SIGHUP awf-gtk2
 ls ~/.themes/Human*/gtk-3*/*.css | entr killall -s SIGHUP awf-gtk3
 ls ~/.themes/Human*/gtk-4*/*.css | entr killall -s SIGHUP awf-gtk4
+ls ~/.themes/Human*/qt5/*.qss | entr killall -s SIGHUP awf-qt5
+ls ~/.themes/Human*/qt6/*.qss | entr killall -s SIGHUP awf-qt6
 ```
 
 Run [ImageTragick](https://imagemagick.org/) to create the diff image:
@@ -372,20 +416,16 @@ composite dif.png 2.png dif.png
 eom dif.png &
 ```
 
-Run `colors-*.sh` to update colors. See also [technical informations](https://github.com/mk-fg/clearlooks-phenix-humanity). For any issue and pull request, please add before/after screenshots.
+Run `colors.sh` to update colors. See also [technical information](https://github.com/mk-fg/clearlooks-phenix-humanity). For any issue and pull request, please add before/after screenshots.
 
 ## Copyright
 
-- Current version: 3.1.0 (05/05/2026)
-- Compatibility: GTK 2.24 / 3.24 / 4.12..4.23, Qt 5.15 / 6.0..6.11
+- Current version: 3.2.0 (07/07/2026)
+- Compatibility: GTK 2.24 / 3.24 / 4.8..4.23, Qt 5.15 / 6.0..6.11
 - Links: [luigifab.fr](https://www.luigifab.fr/gtkqt/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\
 If you like, take some of your time to improve the translations, go to https://bit.ly/2HyCCEc.
-
-## Packages in official distros repositories
-
-[![Packages status](https://repology.org/badge/vertical-allrepos/human-theme-gtk.svg?header=human-theme-gtk)](https://repology.org/project/human-theme-gtk/versions)
 
 ## Credits
 

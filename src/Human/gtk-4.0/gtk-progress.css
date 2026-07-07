@@ -29,15 +29,17 @@ scale:disabled {
 }
 
 scale.vertical {
-	padding: 2px 6px;
+	margin: 0 1px;
+	padding: 3px 6px;
 	min-width: 7px;
-	border: 1px solid transparent;
+	border-radius: 0;
 }
 
 scale.horizontal {
-	padding: 6px 2px;
+	margin: 1px 0;
+	padding: 6px 3px;
 	min-height: 7px;
-	border: 1px solid transparent;
+	border-radius: 0;
 }
 
 scale trough {
@@ -66,8 +68,7 @@ scale trough highlight {
 scale.vertical trough highlight {
 	min-width: 5px;
 	background:
-		radial-gradient(
-			ellipse 50% 90%,
+		radial-gradient(ellipse 50% 90%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to right,
@@ -85,8 +86,7 @@ scale.vertical trough highlight {
 scale.horizontal trough highlight {
 	min-height: 5px;
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
@@ -160,21 +160,50 @@ scale.horizontal trough slider:hover {
 }
 
 scale.vertical value {
-
+	border: 1px solid @slider_trough_border;
+	border-radius: 2.75px;
+	background:
+		radial-gradient(circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge),
+		linear-gradient(to right,
+			@scale_glaze_top,
+			@scale_glaze_mida 49%,
+			@scale_glaze_midb 49%,
+			@scale_glaze_bot);
 }
 
 scale.horizontal value {
-	margin: 0 0 2px;
+	margin: -8px 0 11px;
+	border: 1px solid @slider_trough_border;
+	border-radius: 2.75px;
+	background:
+		radial-gradient(circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@scale_glaze_top,
+			@scale_glaze_mida 49%,
+			@scale_glaze_midb 49%,
+			@scale_glaze_bot);
+}
+
+scale.horizontal value.top ~ trough {
+	margin-bottom: 1px;
 }
 
 /* --- scale mark --- */
 
+scale.horizontal.marks-before {
+	padding-bottom: 7px;
+}
+
 scale.vertical.marks-before {
-	padding: 2px 7px 2px 10px;
+	padding: 3px 7px 3px 10px;
 }
 
 scale.vertical.marks-after {
-	padding: 2px 10px 2px 7px;
+	padding: 3px 10px 3px 7px;
 }
 
 scale.vertical.marks-before indicator,
@@ -208,11 +237,11 @@ scale.vertical.marks-after marks.bottom label {
 }
 
 scale.horizontal.marks-before marks.top indicator {
-	margin: 1px 0 1px 1px;
+	margin: -5px 0 8px 1px;
 }
 
 scale.horizontal.marks-before marks.top label {
-	margin: -1px 0 1px 2px;
+	margin: -7px 0 7px 2px;
 }
 
 scale.horizontal.marks-after marks.bottom indicator {
@@ -221,6 +250,14 @@ scale.horizontal.marks-after marks.bottom indicator {
 
 scale.horizontal.marks-after marks.bottom label {
 	margin: 1px 0 -1px 2px;
+}
+
+scale.horizontal value.top ~ marks.top {
+	margin-top: -1px;
+}
+
+scale.horizontal marks.top ~ trough {
+	margin-bottom: 0;
 }
 
 /* --- level bar --- */
@@ -266,8 +303,7 @@ levelbar block.filled {
 
 levelbar.vertical block.filled {
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to right,
@@ -284,8 +320,7 @@ levelbar.vertical block.filled {
 
 levelbar.horizontal block.filled {
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
@@ -302,8 +337,7 @@ levelbar.horizontal block.filled {
 
 levelbar.vertical.continuous block.filled:last-child {
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to right,
@@ -320,8 +354,7 @@ levelbar.vertical.continuous block.filled:last-child {
 
 levelbar.horizontal.continuous block.filled:last-child {
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
@@ -432,8 +465,7 @@ progressbar.horizontal trough progress {
 
 progressbar.vertical trough progress {
 	background:
-		radial-gradient(
-			ellipse 50% 90%,
+		radial-gradient(ellipse 50% 90%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to right,
@@ -450,8 +482,7 @@ progressbar.vertical trough progress {
 
 progressbar.vertical trough progress.bottom {
 	background:
-		radial-gradient(
-			ellipse 50% 90%,
+		radial-gradient(ellipse 50% 90%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to right,
@@ -469,8 +500,7 @@ progressbar.vertical trough progress.bottom {
 treeview.view.progressbar,
 progressbar.horizontal trough progress {
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
@@ -487,8 +517,7 @@ progressbar.horizontal trough progress {
 
 progressbar.horizontal trough progress.right {
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
+		radial-gradient(ellipse 90% 50%,
 			@slider_glaze_glow_center,
 			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
@@ -532,7 +561,7 @@ statusbar progressbar.horizontal trough progress {
 	margin-top: 0;
 }
 
-/* --- progress bar - with gtk4-classic (appearance__progress_text.patch) when GTK_PROGRESS_TEXT_INSIDE=1 --- */
+/* --- progress bar - with gtk4-classic (appearance_progress_text.patch) when GTK_PROGRESS_TEXT_INSIDE=1 --- */
 
 progressbar.classic.vertical text,
 progressbar.classic.vertical trough,

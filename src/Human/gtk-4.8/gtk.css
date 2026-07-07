@@ -1,0 +1,4 @@
+@import url("../gtk-4.0/gtk.css");
+combobox button { padding: 3px 4px 5px; }
+.background.dialog.print > box > box.vertical { background-color: @theme_bg; }
+.background.dialog .dialog-action-area button { padding-top: 3px; padding-bottom: 4px; }

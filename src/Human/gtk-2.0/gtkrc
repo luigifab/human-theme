@@ -30,13 +30,9 @@ style "murrine-default"
 	GtkToolbar     ::internal-padding     = 1
 	GtkTreeView    ::expander-size        = 14
 	GtkTreeView    ::vertical-separator   = 0
+	GtkTreeView    ::horizontal-separator = 2
 	GtkMenu        ::horizontal-padding   = 0
 	GtkMenu        ::vertical-padding     = 0
-
-	# Glow the tasklist by changing the color, instead of overlaying it with a rectangle
-	#WnckTasklist  ::fade-overlay-rect    = 0
-	#GtkWidget     ::link-color           = @fg_color
-	#GtkWidget     ::visited-link-color   = shade (0.2, @fg_color)
 
 	xthickness = 1
 	ythickness = 1
@@ -125,10 +121,6 @@ style "murrine-notebook"
 	}
 }
 
-style "murrine-tasklist" = "murrine-wide"
-{
-}
-
 style "murrine-menu" = "murrine-wider"
 {
 	bg[NORMAL]   = shade (1.05, @bg_color)
@@ -151,22 +143,6 @@ style "murrine-menu-item" = "murrine-wider"
 	}
 }
 
-style "murrine-separator-menu-item"
-{
-}
-
-style "murrine-treeview"
-{
-}
-
-style "murrine-treeview-header" = "murrine-default"
-{
-}
-
-style "murrine-frame-title"
-{
-}
-
 style "murrine-tooltips" = "murrine-wider"
 {
 	bg[NORMAL] = @tooltip_bg_color
@@ -186,18 +162,6 @@ style "murrine-progressbar"
 	}
 }
 
-style "murrine-statusbar"
-{
-}
-
-style "murrine-comboboxentry"
-{
-}
-
-style "murrine-spinbutton"
-{
-}
-
 style "murrine-scale"
 {
 	GtkRange ::slider-width = 13
@@ -205,14 +169,6 @@ style "murrine-scale"
 	{
 		highlight_shade = 1.05
 	}
-}
-
-style "murrine-hscale"
-{
-}
-
-style "murrine-vscale"
-{
 }
 
 style "murrine-scrollbar"
@@ -224,32 +180,9 @@ style "murrine-scrollbar"
 	bg[SELECTED] = shade (0.8, @bg_color)
 }
 
-style "murrine-hscrollbar"
-{
-}
-
-style "murrine-vscrollbar"
-{
-}
-
 style "murrine-nautilus-location"
 {
 	bg[NORMAL] = @selected_bg_color
-}
-
-style "metacity-frame"
-{
-}
-
-style "murrine-radiocheck"
-{
-	text[NORMAL]   = @selected_fg_color
-	text[PRELIGHT] = @selected_fg_color
-	bg[SELECTED]   = @selected_bg_color # HACK: override button selection colour
-}
-
-style "murrine-panel"
-{
 }
 
 #########################################
@@ -260,25 +193,12 @@ style "murrine-panel"
 class "GtkWidget"     style "murrine-default"
 
 # Increase the x/ythickness in some widgets
-class "GtkToolbar"    style "murrine-default"
 class "GtkRange"      style "murrine-wide"
 class "GtkFrame"      style "murrine-wide"
 class "GtkSeparator"  style "murrine-wide"
 class "GtkEntry"      style "murrine-wider"
-class "GtkSpinButton" style "murrine-spinbutton"
 class "GtkScale"      style "murrine-scale"
-class "GtkVScale"     style "murrine-vscale"
-class "GtkHScale"     style "murrine-hscale"
 class "GtkScrollbar"  style "murrine-scrollbar"
-class "GtkVScrollbar" style "murrine-vscrollbar"
-class "GtkHScrollbar" style "murrine-hscrollbar"
-
-#class "GtkRadio*"    style:highest "murrine-radiocheck" # HACK: override button selection colour
-#class "GtkCheck*"    style:highest "murrine-radiocheck" # HACK: override button selection colour
-
-# Use this to customize Metacity colours (causes issues with KDE/gtk-window-decorator)
-class "MetaFrames"    style "metacity-frame"
-#class "GtkWindow"    style "metacity-frame"
 
 # General matching following, the order is choosen so that the right styles override each other
 # eg. progressbar needs to be more important then the menu match.
@@ -292,30 +212,20 @@ widget_class "*<GtkNotebook>*<GtkScrolledWindow>" style "murrine-notebook"
 
 widget_class "*<GtkButton>"                style "murrine-button"
 widget_class "*<GtkNotebook>"              style "murrine-notebook"
-widget_class "*<GtkStatusbar>*"            style "murrine-statusbar"
-
-widget_class "*<GtkComboBoxEntry>*"        style "murrine-comboboxentry"
-widget_class "*<GtkCombo>*"                style "murrine-comboboxentry"
-
 widget_class "*<GtkMenuBar>*"              style "murrine-menubar"
 widget_class "*<GtkMenu>*"                 style "murrine-menu"
 widget_class "*<GtkMenuItem>*"             style "murrine-menu-item"
-widget_class "*<GtkSeparatorMenuItem>*"    style "murrine-separator-menu-item"
-
-widget_class "*.<GtkFrame>.<GtkLabel>"     style "murrine-frame-title"
-widget_class "*.<GtkTreeView>*"            style "murrine-treeview"
-
 widget_class "*<GtkProgress>"              style "murrine-progressbar"
 widget_class "*<GtkProgressBar>"           style "murrine-progressbar"
 
-widget_class "*.<GtkTreeView>.<GtkButton>" style "murrine-treeview-header"
-widget_class "*.<GtkCTree>.<GtkButton>"    style "murrine-treeview-header"
-widget_class "*.<GtkList>.<GtkButton>"     style "murrine-treeview-header"
-widget_class "*.<GtkCList>.<GtkButton>"    style "murrine-treeview-header"
+widget_class "*.<GtkTreeView>.<GtkButton>" style "murrine-default"
+widget_class "*.<GtkCTree>.<GtkButton>"    style "murrine-default"
+widget_class "*.<GtkList>.<GtkButton>"     style "murrine-default"
+widget_class "*.<GtkCList>.<GtkButton>"    style "murrine-default"
 
 # Workarounds for Evolution
-widget_class "*.ETable.ECanvas"            style "murrine-treeview-header"
-widget_class "*.ETree.ECanvas"             style "murrine-treeview-header"
+widget_class "*.ETable.ECanvas"            style "murrine-default"
+widget_class "*.ETree.ECanvas"             style "murrine-default"
 
 # The window of the tooltip is called "gtk-tooltip"
 widget "gtk-tooltip*" style "murrine-tooltips"
@@ -380,10 +290,11 @@ style "murrine-evo-new-button-workaround"
 }
 widget_class "EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem*" style "murrine-evo-new-button-workaround"
 
-# ProgressBar min height
+# ProgressBar min width/height
 style "progressbar"
 {
 	GtkProgressBar::min-horizontal-bar-height = 23
+	GtkProgressBar::min-vertical-bar-width    = 23
 }
 widget_class "*<GtkProgressBar>" style "progressbar"
 
@@ -393,12 +304,31 @@ style "progressbar-text"
 }
 widget_class "*<GtkProgressBar>" style "progressbar-text"
 
-# Theme panel elements
-widget "*PanelWidget*"      style "murrine-panel"
-widget "*PanelApplet*"      style "murrine-panel"
-widget "*fast-user-switch*" style "murrine-panel"
-class "PanelApp*"           style "murrine-panel"
-class "PanelToplevel*"      style "murrine-panel"
-widget_class "*Mail*"       style "murrine-panel"
-widget_class "*notif*"      style "murrine-panel"
-widget_class "*Notif*"      style "murrine-panel"
+# Expander icon
+style "expander" {
+	engine "pixmap" {
+		image { function = EXPANDER  expander_style = COLLAPSED       direction = LTR  file = "../images/go-right-black.svg" }
+		image { function = EXPANDER  expander_style = COLLAPSED       direction = RTL  file = "../images/go-left-black.svg" }
+		image { function = EXPANDER  expander_style = SEMI_COLLAPSED  direction = LTR  file = "../images/go-right-black.svg" }
+		image { function = EXPANDER  expander_style = SEMI_COLLAPSED  direction = RTL  file = "../images/go-left-black.svg" }
+		image { function = EXPANDER  expander_style = SEMI_EXPANDED   file = "../images/go-down-black.svg" }
+		image { function = EXPANDER  expander_style = EXPANDED        file = "../images/go-down-black.svg" }
+	}
+}
+class "GtkExpander" style : highest "expander"
+
+# Treeview sort icon
+style "treeview-sort" {
+	GtkArrow::arrow-scaling = 1.0
+	engine "pixmap" {
+		image { function = ARROW  arrow_direction = DOWN  overlay_file = "../images/go-down-black.svg"  overlay_stretch = FALSE }
+		image { function = ARROW  arrow_direction = UP    overlay_file = "../images/go-up-black.svg"    overlay_stretch = FALSE }
+	}
+}
+widget_class "*<GtkTreeView>*<GtkArrow>" style : highest "treeview-sort"
+
+# Radio/Check width in awf-gtk2 treeview
+style "awf-treeview-indicator" {
+	GtkTreeView::awf-indicator-width = 24
+}
+class "GtkTreeView" style "awf-treeview-indicator"

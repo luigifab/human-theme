@@ -22,6 +22,10 @@
  * GNU General Public License (GPL) for more details.
  */
 
+/* --- awf-gtk3 --- */
+
+#AwfDialogWindow notebook stack box scale { border: 1px dashed black; }
+
 /* --- magnus --- */
 /* @see https://github.com/stuartlangridge/magnus/issues/33 (dead project?) hide scrollbars */
 
@@ -94,6 +98,10 @@ window.pluma-window notebook stack > box scrolledwindow {
 
 /* --- bleachbit v5.x --- */
 /* @see https://github.com/bleachbit/bleachbit/pull/1195 */
+
+#BleachBit treeview {
+	border-right: 0;
+}
 
 #BleachBit > box > box > scrolledwindow:dir(ltr) scrollbar.vertical {
 	padding-top: 33px;
@@ -173,7 +181,7 @@ terminal-window:not(.maximized) box.vertical notebook header.top ~ stack {
 }
 
 /* --- css fix/hack for some maximized windows --- */
-/* @see https://github.com/mate-desktop/mate-desktop/issues/291 = without gtk3-classic (scrollbar__extra_zone.patch) */
+/* @see https://github.com/mate-desktop/mate-desktop/issues/291 = without gtk3-classic (scrollbar_extra_zone.patch) */
 
 #GeanyMainWindow.maximized:not(.scrollfix):dir(ltr)
 	#notebook_info stack,
