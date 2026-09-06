@@ -1,5 +1,5 @@
 /**
- * Copyright 2020-2026 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2027 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  *
  * Forked from
@@ -89,7 +89,9 @@
 
 .background.csd headerbar,
 .background.ssd headerbar,
-.background.solid-csd headerbar {
+.background.solid-csd headerbar,
+.background.csd.message > box.titlebar,
+.background.solid-csd.message > box.titlebar {
 	margin: -3px -4px 0;
 	padding: 0;
 	min-height: 22px;
@@ -125,7 +127,9 @@
 
 .background.csd headerbar label.title,
 .background.ssd headerbar label.title,
-.background.solid-csd headerbar label.title {
+.background.solid-csd headerbar label.title,
+.background.csd.message > box.titlebar label.title,
+.background.solid-csd.message > box.titlebar label.title {
 	padding-top: 2px;
 	font-weight: bold;
 }

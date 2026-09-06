@@ -1,5 +1,5 @@
 /**
- * Copyright 2020-2026 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2027 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  *
  * Forked from
@@ -28,13 +28,17 @@ QWidget {
 	selection-background-color: #86ABD9; /* @theme_selected_bg */
 }
 
-QMainWindow, QWindow, QDialog {
+QMainWindow, QWindow, QDialog,
+YQWizard, YQDialog, YQPackageSelector { /* yast */
 	background-color: #EDECEB; /* @theme_bg */
 }
 
 QGroupBox {
 	color: #000000; /* @theme_fg */
 	padding: 18px 0 0;
+	border: 1px solid #BAB7B4; /* @frame_border */
+	border-radius: 2px;
+	background: transparent;
 }
 
 QGroupBox::title {

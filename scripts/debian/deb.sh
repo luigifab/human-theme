@@ -4,7 +4,7 @@
 
 cd "$(dirname "$0")" || exit 1
 export DH_QUIET=1
-version="3.2.0"
+version="3.3.0"
 
 
 mkdir -p builder
@@ -32,7 +32,7 @@ fi
 
 
 # create packages for Debian and Ubuntu and MX Linux
-for serie in experimental stonking resolute questing noble jammy focal bionic xenial trusty mx25 mx23 mx21; do
+for serie in experimental stonking resolute noble jammy focal bionic xenial trusty mx25 mx23; do
 
 	printf "\n\n#################################################################### $serie\n\n"
 	if [ $serie = "experimental" ]; then
@@ -57,38 +57,36 @@ for serie in experimental stonking resolute questing noble jammy focal bionic xe
 
 
 
-	# debhelper: experimental:13 focal/mx21:12 bionic:9 xenial:9 trusty:9
+	# debhelper: experimental:13 focal:12 bionic:9 xenial:9 trusty:9
 	if [ $serie = "experimental" ] || [ $serie = "unstable" ]; then
 		mv debian/control.debian debian/control
-	elif [ $serie = "mx21" ]; then
-		sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 12)/g' debian/control
 	elif [ $serie = "focal" ]; then
 		mv debian/control.ubuntu debian/control
-		sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 12)/g' debian/control
+		sed -i 's/debhelper-compat (= 14)/debhelper-compat (= 12)/g' debian/control
 	elif [ $serie = "bionic" ]; then
 		mv debian/control.ubuntu debian/control
 
 		sed -i 's/execute_before_dh_install:/override_dh_update_autotools_config:/g' debian/rules
-		sed -i 's/debhelper-compat (= 13)/debhelper-compat (= 9)/g' debian/control
+		sed -i 's/debhelper-compat (= 14)/debhelper-compat (= 9)/g' debian/control
 	elif [ $serie = "xenial" ]; then
 		mv debian/control.ubuntu debian/control
 
 		sed -i 's/execute_before_dh_install:/override_dh_update_autotools_config:/g' debian/rules
-		sed -i 's/debhelper-compat (= 13)/debhelper (>= 9)/g' debian/control
+		sed -i 's/debhelper-compat (= 14)/debhelper (>= 9)/g' debian/control
 		sed -i ':a;N;$!ba;s/Rules-Requires-Root: no\n//g' debian/control
 		echo 9 > debian/compat
 	elif [ $serie = "trusty" ]; then
 		mv debian/control.ubuntu debian/control
 		sed -i 's/dh $@/dh $@ --with autotools_dev/g' debian/rules
 		sed -i 's/execute_before_dh_install:/override_dh_autotools-dev_updateconfig:/g' debian/rules
-		sed -i 's/debhelper-compat (= 13)/debhelper (>= 9), autotools-dev/g' debian/control
+		sed -i 's/debhelper-compat (= 14)/debhelper (>= 9), autotools-dev/g' debian/control
 		sed -i ':a;N;$!ba;s/Rules-Requires-Root: no\n//g' debian/control
 		echo 9 > debian/compat
 	else
 		mv debian/control.ubuntu debian/control
 	fi
 
-	if [ $serie = "mx25" ] || [ $serie = "mx23" ] || [ $serie = "mx21" ]; then
+	if [ $serie = "mx25" ] || [ $serie = "mx23" ]; then
 		mv debian/changelog.mx debian/changelog
 		sed -i 's/-1) /-1~'$serie'+1) /' debian/changelog
 		sed -i 's/ experimental; / mx; /' debian/changelog

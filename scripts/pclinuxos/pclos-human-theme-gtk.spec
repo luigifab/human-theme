@@ -1,5 +1,5 @@
 Name:          human-theme-gtk
-Version:       3.2.0
+Version:       3.3.0
 Release:       %mkrel 1
 Summary:       Human theme for GTK
 Summary(fr):   Thème Human pour GTK
@@ -38,8 +38,9 @@ Après la désinstallation, veillez à supprimer le fichier de config :
 
 
 %prep
-%autosetup -n human-theme-%{version}
+%setup -n human-theme-%{version}
 sed -i 's/IconTheme=gnome/IconTheme=mate/g' src/*/index.theme
+sed -i 's/gnome/mate/g' src/*/firefox/firefox.css
 
 %install
 install -dm 755 %{buildroot}%{_datadir}/themes/
@@ -62,6 +63,9 @@ install -Dpm 644 data/profile.sh %{buildroot}%{_sysconfdir}/profile.d/%{name}.sh
 
 
 %changelog
+* Fri Jan 01 2027 Fabrice Creuzot <code@luigifab.fr> - 3.3.0-1pclos2027
+- New upstream release
+
 * Tue Jul 07 2026 Fabrice Creuzot <code@luigifab.fr> - 3.2.0-1pclos2026
 - New upstream release
 

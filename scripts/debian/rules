@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@
+	dh $@ --without=single-binary
 
 execute_before_dh_install:
 	cp data/profile.sh debian/human-theme-gtk.sh

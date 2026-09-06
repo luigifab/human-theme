@@ -1,3 +1,5 @@
+-- NIGHTLY --
+
 # Human theme
 
 This theme works with **GTK 2.24** *(with murrine/pixbuf)* & **GTK 3.24** & **GTK 4.8..4.23**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It works also with **Qt 5.15** & **Qt 6.0..6.11** & **Firefox 152**.
@@ -127,7 +129,7 @@ Firefox 152\
 [<img alt="Preview with Firefox - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-blue-menu.png)
 [<img alt="Preview with Firefox - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-green-menu.png)
 
-Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended), to see that the classic desktop environment is still alive.
+Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended).
 
 ## Installation
 
@@ -154,17 +156,7 @@ Replace `apt` with your package manager, or use a graphical interface.
 
 * Run:
 ```bash
-# PPA: https://launchpad.net/~luigifab/+archive/ubuntu/packages
-# from Debian 12 you can use noble/questing (unix.stackexchange.com/a/669008/364800)
-#     Debian: focal for 10/buster, jammy for 11/bullseye, noble for 12/bookworm,
-#              plucky for 13/trixie, questing for 14/forky and 15/duke
-#     Devuan: focal for 3/beowulf, jammy for 4/chimaera, noble for 5/daedalus,
-#              plucky for 6/excalibur, questing for 7/freia and 8/gryphon and ceres
-# Linux Mint: focal for 20.x and 4/debbie, jammy for 21.x and 5/elsie,
-#              noble for 22.x and 6/faye, plucky for 7/gigi
-#   MX Linux: focal for 19.x, jammy for 21.x, noble for 23.x, questing for 25.x
-#   Trisquel: focal for nabia, jammy for aramo
-# Kali Linux: questing
+# https://launchpad.net/~luigifab/+archive/ubuntu/packages
 
 sudo add-apt-repository ppa:luigifab/packages
 sudo apt update
@@ -214,8 +206,8 @@ GTK_ENLARGE_SCROLLBAR=1
 ```
 * For icons and cursors themes install: `gnome-icon-theme` or `mate-icon-theme` **+** `dmz-cursor-theme`
 * For GTK 2 programs install: `gtk2-engines-murrine` or `gtk2-engine-murrine` or `gtk2-murrine-engine` or `gtk-murrine-engine` or `gtk-engine-murrine` or `murrine` or similar **+** `gtk2-engines-pixbuf` or `gtk2-engine-pixbuf` or `gtk2-pixbuf-engine` or `gtk-pixbuf-engine` or similar
-* For Qt 5 programs install: `qt5-gtk-platformtheme` or `qt5-qtbase-gui` or similar **+** `qt5-style-globalqss` or `qt5-globalqss` **+** `qt5-svg-plugins` or `qt5-qtsvg` or similar
-* For Qt 6 programs install: `qt6-gtk-platformtheme` or `qt6-qtbase-gui` or similar **+** `qt6-style-globalqss` or `qt6-globalqss` **+** `qt6-svg-plugins` or `qt6-qtsvg` or similar
+* For Qt 5 programs install: `qt5-gtk-platformtheme` or `qt5-qtbase-gui` or similar **+** `qt5-style-globalqss` or `qt5-globalqss` **+** `qt5-svg-plugins` or `qt5-qtsvg` or `libQt5Svg5` or similar
+* For Qt 6 programs install: `qt6-gtk-platformtheme` or `qt6-qtbase-gui` or similar **+** `qt6-style-globalqss` or `qt6-globalqss` **+** `qt6-svg-plugins` or `qt6-qtsvg` or `libQt6Svg6` or similar
 * Restart your session
 
 ## Desktop configuration
@@ -352,9 +344,11 @@ I think it would be nice to create a patch to fix this GTK regression.
 
 #### Qt 5 & 6
 
-For Qt, install GTK platform theme and [GlobalQSS](https://github.com/luigifab/globalqss) style plugin. But sadly, `box-shadow` and multiple `background` gradients are not supported, `border-radius` is not fully supported...
+For Qt, install GTK platform theme and [GlobalQSS](https://github.com/luigifab/globalqss) style plugin.
 
-On Fedora with Qt 5, the GTK 3 platform theme *(qt5-qtbase-gui)* works better than on Debian *(qt5-gtk-platformtheme)*, but the fonts remain blurry, see [bug 2459509](https://bugzilla.redhat.com/show_bug.cgi?id=2459509).
+But sadly, `box-shadow` and multiple `background` gradients are not supported, `border-radius` is not fully supported... Moreover on Fedora with Qt 5, the GTK 3 platform theme *(qt5-qtbase-gui)* works better than on Debian *(qt5-gtk-platformtheme)*, but the fonts remain blurry, see [bug 2459509](https://bugzilla.redhat.com/show_bug.cgi?id=2459509) ; same on openSUSE.
+
+Without GlobalQSS, you can also run your program like this: `awf-qt5 -stylesheet /usr/share/themes/Human/qt5/qt.qss`
 
 #### Xfce panels
 
@@ -420,8 +414,8 @@ Run `colors.sh` to update colors. See also [technical information](https://githu
 
 ## Copyright
 
-- Current version: 3.2.0 (07/07/2026)
-- Compatibility: GTK 2.24 / 3.24 / 4.8..4.23, Qt 5.15 / 6.0..6.11
+- Current version: 3.3.0~nightly20260906
+- Compatibility: GTK 2.24 / 3.24 / 4.8..4.23, Qt 5.15 / 6.0..6.11, Firefox 152
 - Links: [luigifab.fr](https://www.luigifab.fr/gtkqt/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\

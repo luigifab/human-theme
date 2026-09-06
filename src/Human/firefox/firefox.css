@@ -1,5 +1,5 @@
 /**
- * Copyright 2020-2026 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2027 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  *
  * Forked from
@@ -339,6 +339,11 @@ html:not([inFullscreen="true"]) #statuspanel {
 	transition: none !important;
 	animation: none !important;
 	opacity: 1 !important;
+}
+
+html:not([inFullscreen="true"]) #statuspanel[type="defaultStatus"], /* v154+ */
+html:not([inFullscreen="true"]) #statuspanel[type="status"] {       /* v154+ */
+	bottom: -23px !important;
 }
 
 html:not([inFullscreen="true"]) #statuspanel label {

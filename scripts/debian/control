@@ -2,7 +2,7 @@ Source: human-theme-gtk
 Section: x11
 Priority: optional
 Maintainer: Fabrice Creuzot <code@luigifab.fr>
-Build-Depends: debhelper-compat (= 13)
+Build-Depends: debhelper-compat (= 14)
 Rules-Requires-Root: no
 Standards-Version: 4.7.4
 Homepage: https://github.com/luigifab/human-theme
