@@ -1200,6 +1200,20 @@ QSplitter::handle:horizontal {
 
 /* --- todo --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
 
+.qt-48 QMenu::item,
+.qt-50 QMenu::item,
+.qt-51 QMenu::item,
+.qt-52 QMenu::item,
+.qt-53 QMenu::item,
+.qt-54 QMenu::item,
+.qt-55 QMenu::item,
+.qt-56 QMenu::item,
+.qt-57 QMenu::item,
+.qt-58 QMenu::item,
+.qt-59 QMenu::item,
+.qt-510 QMenu::item,
+.qt-511 QMenu::item { padding-left: 26px; }
+
 #AwfMainWindow QCheckBox { margin: 0 2px 1px 1px; } /* margin: 0 0 1px 1px; */
 #AwfMainWindow QRadioButton { margin: 0 3px 1px 1px; } /* margin: 0 0 1px 1px; */
 #AwfMainWindow QTreeView QRadioButton { margin: -1px 0 0 4px; } /* margin: -1px 0 0 4px; */

@@ -39,8 +39,8 @@
               @define-color errorbar_bg_bot #E92F2F;
 /* #922B2B */ @define-color errorbar_border shade(@errorbar_bg_bot, 0.675);
 
-/* #CCBFB3 */ @define-color content_separator_dark alpha(shade(@theme_bg, 0.73), 0.5);
-/* #F2EEEA */ @define-color content_separator_lite alpha(shade(@theme_bg, 1.27), 0.5);
+/* #CCBFB3 */ @define-color content_separator_dark mix(@theme_bg, shade(@theme_bg, 0.662), 0.4);
+/* #F2EEEA */ @define-color content_separator_lite mix(@theme_bg, @theme_base, 0.49);
 /* #EAE2DB */ @define-color expander_hover alpha(shade(@theme_bg, 1.5), 0.15);
 /* #AD9A89 */ @define-color main_border shade(@theme_bg, 0.7);
 /* #BCAB9B */ @define-color frame_border shade(@theme_bg, 0.775);

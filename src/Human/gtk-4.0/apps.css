@@ -37,3 +37,25 @@
 #AwfMainWindow scrollbar.vertical range { padding-top: 15px; padding-bottom: 15px; }
 
 #AwfDialogWindow notebook stack box scale { border: 1px dashed black; }
+
+/* --- libre office v? --- */
+/* @see https://bugs.documentfoundation.org/show_bug.cgi?id=157708 */
+
+#LibreOfficeMainWindow > grid.horizontal > grid.horizontal > scrolledwindow > viewport.frame,
+window.background > grid.horizontal > grid.horizontal > scrolledwindow > viewport, /* gtk4 */
+window.background > grid.horizontal > grid.horizontal > scrolledwindow /* gtk4 */ {
+	border: 0;
+}
+
+#LibreOfficeMainWindow > grid.horizontal > grid.horizontal > scrolledwindow + button.flat.small-button,
+window.background > grid.horizontal > grid.horizontal > scrolledwindow + button.flat.small-button {
+	min-width: 24px;
+	min-height: 24px;
+	border-bottom: 1px solid @menubar_border_bot;
+	border-radius: 0;
+}
+
+#LibreOfficeMainWindow > grid.horizontal > grid.horizontal,
+window.background > grid.horizontal > grid.horizontal {
+	background: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
+}

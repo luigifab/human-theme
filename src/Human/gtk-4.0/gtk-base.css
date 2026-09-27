@@ -168,9 +168,12 @@ sort-indicator.ascending {
 /* --- separator --- */
 
 separator.vertical {
+	/* for cairo renderer, min-width + background */
+	min-width: 1px;
 	margin-bottom: 1px;
 	border-left: 1px solid @content_separator_dark;
-	border-right: 1px solid @content_separator_lite;
+	/* border-right: 1px solid @content_separator_lite; */
+	background: @content_separator_lite;
 }
 
 separator.horizontal {
@@ -841,9 +844,12 @@ box.primary-toolbar:dir(rtl) {
 
 box.toolbar > separator,
 box.primary-toolbar > separator {
+	/* for cairo renderer, min-width + background */
+	min-width: 1px;
 	margin: 7px 5px 8px;
 	border-left: 1px solid @toolbar_separator_dark;
-	border-right: 1px solid @toolbar_separator_lite;
+	/* border-right: 1px solid @toolbar_separator_lite; */
+	background: @toolbar_separator_lite;
 }
 
 /* --- menu bar --- */
@@ -1331,29 +1337,36 @@ expander-widget expander:dir(rtl):checked {
 
 /* --- info bar --- */
 
+banner revealer,
 infobar revealer {
 	padding: 4px 7px;
 	min-height: 23px;
 }
 
+banner,
+banner.info,
+infobar,
 infobar.info {
 	color: @infobar_fg;
 	border: 1px solid @infobar_border;
 	background: linear-gradient(to bottom, @infobar_bg_top, @infobar_bg_bot);
 }
 
+banner.question,
 infobar.question {
 	color: @questionbar_fg;
 	border: 1px solid @questionbar_border;
 	background: linear-gradient(to bottom, @questionbar_bg_top, @questionbar_bg_bot);
 }
 
+banner.warning,
 infobar.warning {
 	color: @warningbar_fg;
 	border: 1px solid @warningbar_border;
 	background: linear-gradient(to bottom, @warningbar_bg_top, @warningbar_bg_bot);
 }
 
+banner.error,
 infobar.error {
 	color: @errorbar_fg;
 	border: 1px solid @errorbar_border;
@@ -1508,4 +1521,58 @@ calendar .other-month {
 
 .background.dialog:not(.filechooser) filechooser #pathbarbox {
 	background-color: @theme_bg;
+}
+
+/* --- about dialog --- */
+
+.aboutdialog scrolledwindow viewport {
+	border: 0;
+}
+
+.aboutdialog scrolledwindow textview {
+	padding: 0 10px;
+}
+
+/* --- adwaita dialog --- */
+/* the main window (window dialog-host) */
+/*  window dialog-host (widget) (widget) toolbarview : all things of the window */
+/*  window dialog-host (widget) (widget) toolbarview revealer.top-bar    : headerbar and menubar and toolbars of the window */
+/*  window dialog-host (widget) (widget) toolbarview revealer.bottom-bar : statusbar of the window */
+/*  window dialog-host (widget) (widget) toolbarview something           : content of the window */
+/* the dialog window (window dialog-host dialog) */
+/*  window dialog-host  dialog  (widget) floating-sheet dimming */
+/*  window dialog-host  dialog  (widget) floating-sheet sheet navigation-view */
+/*  window dialog-host  dialog  (widget) floating-sheet sheet navigation-view toolbarview : all things of the dialog */
+
+scrolledwindow.scrolled-toolbar,
+scrolledwindow.scrolled-toolbar > viewport,
+scrolledwindow.scrolled-menubar,
+scrolledwindow.scrolled-menubar > viewport { border: 0; }
+
+window.background dialog-host floating-sheet dimming { opacity: 0.4; background: gray; }
+
+/* adwaita main window */
+window.background:not(.maximized) adaptive-preview,
+window.background:not(.maximized) dialog-host { margin: -3px -3px 0; }
+window.background:not(.maximized) dialog-host > * > * > toolbarview headerbar { margin: 0 -4px; }
+window.background:not(.maximized) dialog-host > * > * > toolbarview > * { padding-left: 3px; padding-right: 3px; }
+
+window.background dialog-host > * > * > toolbarview > scrolledwindow,
+window.background dialog-host > * > * > toolbarview > scrolledwindow > viewport { border: 0; }
+
+/* adwaita dialog */
+window.background dialog-host dialog floating-sheet sheet .body-scrolled-window { border: 0; }
+window.background dialog-host dialog floating-sheet sheet .body-scrolled-window .heading-bin { margin: 0; }
+window.background dialog-host dialog floating-sheet sheet .body-scrolled-window .heading-bin label { margin: 1px 0 -1px; font-weight: bold; }
+window.background dialog-host dialog floating-sheet sheet .response-area { padding: 5px 10px 10px; }
+/* adwaita alertdialog */
+window.background.maximized dialog-host dialog floating-sheet sheet revealer.top-bar headerbar { margin: -3px -4px 3px; }
+
+/* adwaita dialog content */
+window.background dialog floating-sheet scrolledwindow.main-page,
+window.background dialog floating-sheet scrolledwindow.main-page > viewport,
+window.background dialog floating-sheet scrolledwindow.subpage,
+window.background dialog floating-sheet scrolledwindow.subpage > viewport,
+window.background dialog floating-sheet scrolledwindow.body-scrolled-window > viewport {
+	border: 0;
 }

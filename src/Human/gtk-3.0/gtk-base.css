@@ -1548,3 +1548,10 @@ filechooser .path-bar button.toggle image + label:dir(ltr) {
 filechooser .path-bar button.toggle label:dir(rtl) + image {
 	padding-left: 4px;
 }
+
+/* --- about dialog --- */
+
+dialog image.icon-dropshadow + label + stack scrolledwindow textview {
+	padding: 5px 0;
+	background: @theme_base;
+}

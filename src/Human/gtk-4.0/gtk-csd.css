@@ -58,13 +58,17 @@
 .background.csd,
 .background.csd headerbar,
 .background.ssd,
-.background.ssd headerbar {
+.background.ssd headerbar,
+.background dialog-host dialog floating-sheet sheet              /* adwaita dialog */,
+.background dialog-host dialog floating-sheet sheet .heading-bin /* adwaita alertdialog */ {
 	border-radius: 7px 7px 0 0;
 }
 
 .background.csd,
 .background.ssd,
-.background.solid-csd {
+.background.solid-csd,
+.background dialog-host dialog floating-sheet sheet .response-area /* adwaita dialog */,
+.background dialog-host dialog floating-sheet sheet toolbarview    /* adwaita main window */ {
 	padding: 3px;
 	border: 1px solid #6F6358; /* @todo metacity */
 	border-top: 0;
@@ -75,6 +79,18 @@
 		inset 1px 0 shade(@theme_bg, 1.2),   /* left */
 		inset -1px 0 shade(@theme_bg, 0.88), /* right */
 		inset 0 -1px shade(@theme_bg, 0.88); /* bottom */
+}
+
+.background dialog-host dialog floating-sheet sheet .body-scrolled-window .body /* adwaita alertdialog */ {
+	padding: 10px 20px;
+	border-left: 1px solid #6F6358; /* @todo metacity */
+	border-right: 1px solid #6F6358; /* @todo metacity */
+	/* border-radius: 8px 8px 0 0; */
+	background-color: @theme_bg;
+	/* BEVEL FOCUSED / 3d beveled frame */
+	box-shadow:
+		inset 1px 0 shade(@theme_bg, 1.2),   /* left */
+		inset -1px 0 shade(@theme_bg, 0.88); /* bottom */
 }
 
 .background.csd.popup,
@@ -91,7 +107,8 @@
 .background.ssd headerbar,
 .background.solid-csd headerbar,
 .background.csd.message > box.titlebar,
-.background.solid-csd.message > box.titlebar {
+.background.solid-csd.message > box.titlebar,
+window dialog-host dialog floating-sheet sheet .heading-bin /* adwaita alertdialog */ {
 	margin: -3px -4px 0;
 	padding: 0;
 	min-height: 22px;
@@ -287,7 +304,8 @@
 
 .background.csd:backdrop headerbar,
 .background.ssd:backdrop headerbar,
-.background.solid-csd:backdrop headerbar {
+.background.solid-csd:backdrop headerbar,
+.background:backdrop dialog-host dialog floating-sheet sheet .heading-bin /* adwaita alertdialog */ {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 	/* <draw_ops name="bevel_unfocused"> rectangle */
 	border: 1px solid shade(@theme_bg, 0.55);

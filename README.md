@@ -2,7 +2,7 @@
 
 # Human theme
 
-This theme works with **GTK 2.24** *(with murrine/pixbuf)* & **GTK 3.24** & **GTK 4.8..4.23**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It works also with **Qt 5.15** & **Qt 6.0..6.11** & **Firefox 152**.
+This theme works with **GTK 2.24** *(with murrine/pixbuf)* & **GTK 3.24** & **GTK 4.8..4.24**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It also works with **Qt 5.15** & **Qt 6.0..6.11** & **Firefox 152..156** & **Adwaita 1.7..1.10**.
 
 It is mainly intended for **MATE** desktop environment, it's not too bad with **Xfce**, it's experimental with **Cinnamon**.
 
@@ -56,7 +56,7 @@ GTK 3.24-classic RTL (Pango 1.58)\
 [<img alt="Preview with GTK 3 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-rtl-blue-menu.png)
 [<img alt="Preview with GTK 3 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-rtl-green-menu.png)
 
-GTK 4.8..4.23-classic (Pango 1.58)\
+GTK 4.8..4.24-classic (with or without Adwaita 1.7..1.10, Pango 1.58)\
 [<img alt="Preview with GTK 4 - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4.png)
 [<img alt="Preview with GTK 4 - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-orange.png)
 [<img alt="Preview with GTK 4 - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-blue.png)
@@ -66,7 +66,7 @@ GTK 4.8..4.23-classic (Pango 1.58)\
 [<img alt="Preview with GTK 4 - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-blue-menu.png)
 [<img alt="Preview with GTK 4 - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-green-menu.png)
 
-GTK 4.8..4.23-classic RTL (Pango 1.58)\
+GTK 4.8..4.24-classic RTL (with or without Adwaita 1.7..1.10, Pango 1.58)\
 [<img alt="Preview with GTK 4 - RTL - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl.png)
 [<img alt="Preview with GTK 4 - RTL - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-orange.png)
 [<img alt="Preview with GTK 4 - RTL - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-blue.png)
@@ -75,9 +75,6 @@ GTK 4.8..4.23-classic RTL (Pango 1.58)\
 [<img alt="Preview with GTK 4 - RTL - Orange variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-orange-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-orange-menu.png)
 [<img alt="Preview with GTK 4 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-blue-menu.png)
 [<img alt="Preview with GTK 4 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-green-menu.png)
-
-GTK 5.0\
-*GtkWindow will likely be deprecated... lol*
 
 Qt 5.15\
 [<img alt="Preview with Qt 5 - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5.png)
@@ -119,7 +116,7 @@ Qt 6.10 RTL\
 [<img alt="Preview with Qt 6 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-blue-menu.png)
 [<img alt="Preview with Qt 6 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-green-menu.png)
 
-Firefox 152\
+Firefox 156\
 [<img alt="Preview with Firefox - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox.png)
 [<img alt="Preview with Firefox - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-orange.png)
 [<img alt="Preview with Firefox - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-blue.png)
@@ -129,7 +126,7 @@ Firefox 152\
 [<img alt="Preview with Firefox - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-blue-menu.png)
 [<img alt="Preview with Firefox - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-green-menu.png)
 
-Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended).
+The program used for the screenshots is available [here](https://github.com/luigifab/awf-extended).
 
 ## Installation
 
@@ -192,7 +189,7 @@ pub   rsa4096 2020-10-31 [SC]
 #### Manual installation
 
 * Download the archive and extract its subdirectories into `~/.themes/`
-* Configure font rendering and GTK, by adding the following to `/etc/environment` ([details](data/profile.sh)):
+* Configure font rendering and GTK by adding the following to `/etc/environment` ([details](data/profile.sh)):
 ```
 FREETYPE_PROPERTIES="truetype:interpreter-version=35"
 GTK_OVERLAY_SCROLLING=0
@@ -204,7 +201,7 @@ GTK_PROGRESS_TEXT_INSIDE=1
 GTK_TREEVIEW_LINES=0
 GTK_ENLARGE_SCROLLBAR=1
 ```
-* For icons and cursors themes install: `gnome-icon-theme` or `mate-icon-theme` **+** `dmz-cursor-theme`
+* For icon and cursor themes install: `gnome-icon-theme` or `mate-icon-theme` **+** `dmz-cursor-theme`
 * For GTK 2 programs install: `gtk2-engines-murrine` or `gtk2-engine-murrine` or `gtk2-murrine-engine` or `gtk-murrine-engine` or `gtk-engine-murrine` or `murrine` or similar **+** `gtk2-engines-pixbuf` or `gtk2-engine-pixbuf` or `gtk2-pixbuf-engine` or `gtk-pixbuf-engine` or similar
 * For Qt 5 programs install: `qt5-gtk-platformtheme` or `qt5-qtbase-gui` or similar **+** `qt5-style-globalqss` or `qt5-globalqss` **+** `qt5-svg-plugins` or `qt5-qtsvg` or `libQt5Svg5` or similar
 * For Qt 6 programs install: `qt6-gtk-platformtheme` or `qt6-qtbase-gui` or similar **+** `qt6-style-globalqss` or `qt6-globalqss` **+** `qt6-svg-plugins` or `qt6-qtsvg` or `libQt6Svg6` or similar
@@ -216,11 +213,11 @@ For **MATE** desktop:
 * Go to: *System / Preferences / Appearance*, or run: `mate-appearance-properties`\
   Then select the *Human* theme and update fonts.
 * Go to: *System / Preferences / Windows*, or run: `mate-window-properties`\
-  Then disable software compositing from last tab (or enable it, as you want).
+  Then disable software compositing from the last tab (or enable it, as you want).
 * Go to: *System / Preferences / Notifications*, or run: `mate-notification-properties`\
   Then select the *Coco* or *Default* theme.
 * Go to: *panel preferences*\
-  Then set panel height to 25px/23px (top/bottom).
+  Then set the panel height to 25px/23px (top/bottom).
 
 For **Xfce** desktop:
 * Go to: *Applications / Settings / Appearance*, or run: `xfce4-appearance-settings`\
@@ -228,11 +225,11 @@ For **Xfce** desktop:
 * Go to: *Applications / Settings / Window Manager*, or run: `xfwm4-settings`\
   Then select the *Human* theme and update fonts.
 * Go to: *Applications / Settings / Window Manager Tweaks*, or run: `xfwm4-tweaks-settings`\
-  Then disable software compositing from last tab (or enable it, as you want).
+  Then disable software compositing from the last tab (or enable it, as you want).
 * Go to: *Applications / Settings / Mouse and Touchpad*, or run: `xfce4-mouse-settings`\
-  Then select the *DMZ White* theme from last tab.
+  Then select the *DMZ White* theme from the last tab.
 * Go to: *panel preferences*\
-  Then set panel height to 24px/22px (top/bottom), panel icons sizes to 16px or automatic.
+  Then set the panel height to 24px/22px (top/bottom), panel icons sizes to 16px or automatic.
 
 For **Cinnamon** desktop:
 * Go to: *Menu / Preferences / Themes*, or run: `cinnamon-settings themes`\
@@ -242,7 +239,7 @@ For **Cinnamon** desktop:
 * Go to: *Menu / Preferences / Fonts*, or run: `cinnamon-settings fonts`\
   Then update fonts.
 * Go to: *main menu preferences* and *panel preferences*\
-  Then set panel height to 25px/23px, panel icons sizes to 16px, menu icons sizes to 22px 22px 32px.
+  Then set the panel height to 25px/23px, panel icons sizes to 16px, menu icons sizes to 22px 22px 32px.
 
 Fonts:
 * *DejaVu Sans Book*, 10
@@ -261,7 +258,7 @@ Extra configuration for cursors:
 
 ## Software configuration
 
-If you installed the theme manually, replace `/usr/share/themes/` by `~/.themes/`.
+If you installed the theme manually, replace `/usr/share/themes/` with `~/.themes/`.
 
 #### Firefox
 
@@ -297,13 +294,13 @@ mkdir -p Human && cd Human/
 ln -s /usr/share/themes/Human/gimp/gimp.css .
 ```
 
-Then set *Human* theme in Gimp/Edit/Preferences/Interface/Theme.
+Then set the *Human* theme in Gimp/Edit/Preferences/Interface/Theme.
 
 ## Known issues
 
 #### MATE
 
-If some characters are wider than others (for example clock applet versus classic main menu applet), this may be due to the **DPI** value in *mate-appearance-properties* (go to the *Fonts* tab, then *Details*). If you're using automatic detection, disable it. To solve the problem, press the *minus* button then the *plus* button above, see [bug 1475](https://github.com/mate-desktop/mate-panel/issues/1475#issuecomment-3037154225).
+If some characters are wider than others (for example the clock applet versus the classic main menu applet), this may be due to the **DPI** value in *mate-appearance-properties* (go to the *Fonts* tab, then *Details*). If you're using automatic detection, disable it. To solve the problem, press the *minus* button then the *plus* button above, see [bug 1475](https://github.com/mate-desktop/mate-panel/issues/1475#issuecomment-3037154225).
 
 #### Firefox/Thunderbird/Chromium
 
@@ -316,7 +313,7 @@ sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-full.conf
 
 #### LibreOffice
 
-For design of menu bar, see [bug 157708](https://bugs.documentfoundation.org/show_bug.cgi?id=157708).
+For the design of menu bar, see [bug 157708](https://bugs.documentfoundation.org/show_bug.cgi?id=157708).
 
 #### GTK 3
 
@@ -327,7 +324,7 @@ For better results, use gtk3-classic.
 For better results, use gtk4-classic.
 
 If font rendering is bad, try to add in `~/.config/gtk-4.0/settings.ini`:
-```
+```ini
 [Settings]
 gtk-font-rendering=manual
 gtk-hint-font-metrics=1
@@ -335,6 +332,8 @@ gtk-xft-hintstyle=hintfull
 gtk-xft-antialias=0
 gtk-xft-hinting=1
 ```
+
+With Adwaita, to bypass the stylesheet that _libadwaita_ normally applies, run your program like this: `GTK_THEME= program`
 
 #### GTK 5
 
@@ -346,7 +345,7 @@ I think it would be nice to create a patch to fix this GTK regression.
 
 For Qt, install GTK platform theme and [GlobalQSS](https://github.com/luigifab/globalqss) style plugin.
 
-But sadly, `box-shadow` and multiple `background` gradients are not supported, `border-radius` is not fully supported... Moreover on Fedora with Qt 5, the GTK 3 platform theme *(qt5-qtbase-gui)* works better than on Debian *(qt5-gtk-platformtheme)*, but the fonts remain blurry, see [bug 2459509](https://bugzilla.redhat.com/show_bug.cgi?id=2459509) ; same on openSUSE.
+But sadly, `box-shadow` and multiple `background` gradients are not supported, `border-radius` is not fully supported... Moreover on Fedora with Qt 5, the GTK 3 platform theme *(qt5-qtbase-gui)* works better than on Debian *(qt5-gtk-platformtheme)*, but the fonts remain blurry, see [bug 2459509](https://bugzilla.redhat.com/show_bug.cgi?id=2459509) ; the same applies to openSUSE.
 
 Without GlobalQSS, you can also run your program like this: `awf-qt5 -stylesheet /usr/share/themes/Human/qt5/qt.qss`
 
@@ -383,7 +382,7 @@ gsettings set org.gtk.Settings.Debug enable-inspector-keybinding true
 gsettings set org.gtk.gtk4.Settings.Debug enable-inspector-keybinding true
 ```
 
-Run [AWF](https://github.com/luigifab/awf-extended) with screenshot on theme reload:
+Run [AWF](https://github.com/luigifab/awf-extended) to take a screenshot on theme reload:
 ```bash
 awf-gtk2 -s ~/2.png
 awf-gtk3 -s ~/3.png
@@ -392,7 +391,7 @@ awf-qt5 -s ~/5.png
 awf-qt6 -s ~/6.png
 ```
 
-Run [Entr](https://github.com/eradman/entr) to send the `SIGHUP` signal when files change to reload theme:
+Run [Entr](https://github.com/eradman/entr) to send the `SIGHUP` signal when files change to reload the theme:
 ```bash
 ls ~/.themes/Human*/gtk-2*/gtkrc | entr killall -s SIGHUP awf-gtk2
 ls ~/.themes/Human*/gtk-3*/*.css | entr killall -s SIGHUP awf-gtk3
@@ -410,12 +409,12 @@ composite dif.png 2.png dif.png
 eom dif.png &
 ```
 
-Run `colors.sh` to update colors. See also [technical information](https://github.com/mk-fg/clearlooks-phenix-humanity). For any issue and pull request, please add before/after screenshots.
+Run `colors.sh` to update colors. See also [technical information](https://github.com/mk-fg/clearlooks-phenix-humanity). For any issue or pull request, please add before/after screenshots.
 
 ## Copyright
 
-- Current version: 3.3.0~nightly20260906
-- Compatibility: GTK 2.24 / 3.24 / 4.8..4.23, Qt 5.15 / 6.0..6.11, Firefox 152
+- Current version: 3.3.0~nightly20260927
+- Compatibility: GTK 2.24 / 3.24 / 4.8..4.24, Qt 5.15 / 6.0..6.11, Firefox 152..156, Adwaita 1.7..1.10
 - Links: [luigifab.fr](https://www.luigifab.fr/gtkqt/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\
