@@ -31,7 +31,7 @@ else
 fi
 
 
-# create packages for Debian and Ubuntu and MX Linux
+# build binary packages for Debian and source packages for Ubuntu and MX Linux
 for serie in experimental stonking resolute noble jammy focal bionic xenial trusty mx25 mx23; do
 
 	printf "\n\n#################################################################### $serie\n\n"

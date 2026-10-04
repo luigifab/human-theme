@@ -1525,12 +1525,35 @@ calendar .other-month {
 
 /* --- about dialog --- */
 
-.aboutdialog scrolledwindow viewport {
+window.aboutdialog > box {
+	padding: 2px 2px 11px;
+}
+
+window.aboutdialog label.link + label /* copyright names and dates */,
+window.aboutdialog scrolledwindow grid label /* credits */ {
+	line-height: 14px;
+	font-size: 13.333333px;
+}
+
+window.aboutdialog scrolledwindow viewport {
 	border: 0;
 }
 
-.aboutdialog scrolledwindow textview {
+window.aboutdialog scrolledwindow textview {
 	padding: 0 10px;
+}
+
+dialog.about.floating .main-page .icon-dropshadow {
+	margin-top: 10px;
+}
+
+dialog.about.floating .main-page .title-1 {
+	margin: 12px 0;
+	font-weight: bold;
+}
+
+dialog.about.floating .main-page .app-version {
+	margin: 8px 0 12px;
 }
 
 /* --- adwaita dialog --- */

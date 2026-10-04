@@ -226,6 +226,14 @@ window dialog-host dialog floating-sheet sheet .heading-bin /* adwaita alertdial
 	border-radius: 3px;
 }
 
+.background.csd dialog-host headerbar menubutton button,
+.background.csd dialog-host headerbar menubutton button.toggle,
+.background.solid-csd dialog-host headerbar menubutton button,
+.background.solid-csd dialog-host headerbar menubutton button.toggle {
+	margin: 0;
+	padding: 0;
+}
+
 .background.csd headerbar button label,
 .background.ssd headerbar button label,
 .background.solid-csd headerbar button label {

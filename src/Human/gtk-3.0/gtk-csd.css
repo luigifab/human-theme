@@ -24,10 +24,11 @@
 
 /* --- window (title & border) --- (solid-csd without compositor, csd with compositor, ssd with muffin/mutter) --- */
 /* window or dialog / with or without compositor / .titlebutton.icon .titlebutton.appmenu */
-/* with gtk3-classic, without GTK_CSD with GtkInspector = marco + .background headerbar */
+/* with gtk3-classic, without GTK_CSD  with GtkInspector = marco + .background headerbar */
 /* with gtk3-classic, with GTK_CSD=0/1 with GtkInspector = csd + .background.solid-csd/.csd headerbar */
 /* with stupid muffin/mutter, :backdrop for the last element only */
 /* solid-csd + ssd + csd because headerbar can also be used with window decorator */
+/* with handy = .background.unified */
 
 dialog.background.csd .dialog-vbox.vertical,
 dialog.background.ssd .dialog-vbox.vertical,
@@ -72,6 +73,41 @@ dialog.background.solid-csd .dialog-vbox.vertical .dialog-action-area {
 	border-radius: 0;
 	background: transparent;
 	box-shadow: none;
+}
+
+.background.unified decoration {
+	padding: 0;
+}
+
+.background.unified deck > box > * {
+	padding-left: 2px;
+	padding-right: 2px;
+	border-left: 1px solid shade(@theme_bg, 1.2);   /* box-shadow left */
+	border-right: 1px solid shade(@theme_bg, 0.88); /* box-shadow right */
+}
+
+.background.unified deck > box > headerbar {
+	margin: 0;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-left: 0;
+	border-right: 0;
+}
+
+.background.unified deck > box > menubar {
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.background.unified deck > box > toolbar {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.background.unified deck > box > statusbar {
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px;
 }
 
 .background.csd headerbar,

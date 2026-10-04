@@ -22,12 +22,12 @@
 # GNU General Public License (GPL) for more details.
 
 # made with help of Claude.ai (sudo apt install xdotool imagemagick x11-utils)
-set -euo pipefail
 cd "$(dirname "$0")" || exit 1
+set -euo pipefail
 
 OUTDIR="$(pwd)/images"
 THUMBDIR="$OUTDIR/thumbs"
-APPS=("awf-gtk2" "awf-gtk3" "awf-gtk4" "awf-qt5" "awf-qt6")
+APPS=("awf-gtk2" "awf-gtk3" "env GDK_DISABLE=gl,vulkan GSK_RENDERER=cairo awf-gtk4" "env GSK_RENDERER=cairo awf-adw" "awf-qt5" "awf-qt6")
 COLORS=("" "blue" "orange" "green")
 RTLFLAGS=(0 1)
 

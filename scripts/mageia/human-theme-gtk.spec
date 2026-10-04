@@ -1,8 +1,8 @@
 Name:          human-theme-gtk
 Version:       3.3.0
 Release:       %mkrel 1
-Summary:       Human theme for GTK
-Summary(fr):   Thème Human pour GTK
+Summary:       Human theme for GTK/Qt/Firefox
+Summary(fr):   Thème Human pour GTK/Qt/Firefox
 License:       GPLv3+ and LGPLv2+ and CC-BY-SA
 Group:         Graphical desktop/MATE
 URL:           https://github.com/luigifab/human-theme

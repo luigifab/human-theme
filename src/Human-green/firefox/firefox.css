@@ -34,6 +34,8 @@ split-view-footer { display: none !important; } /* Split view bottom right menu 
 *,
 *:-moz-window-inactive {
 	--tab-min-height: 30px !important;
+	--tab-margin-block: 4px !important;                 /* v157+ */
+	--tab-background-color-selected: white !important;  /* v157+ */
 	--urlbar-min-height: 31px !important;
 	--urlbar-height: 31px !important;
 	--urlbar-container-height: 39px !important;
@@ -241,6 +243,11 @@ menupopup > menuitem[disabled] .menu-accel::before {
 
 /* --- nav bar --- url bar & seach bar --- */
 
+#urlbar-container #urlbar .urlbar-input-container .urlbar-input,
+#search-container #searchbar-new .urlbar-input {
+	line-height: inherit !important; /* v157+ */
+}
+
 #nav-bar {
 	border-top: 1px solid #C9C6C3 !important; /* @toolbar_border_bot */
 	border-bottom: 1px solid #C9C6C3 !important; /* @toolbar_border_bot */
@@ -409,6 +416,7 @@ menupopup > menuitem[type="radio"][checked]:hover:not([disabled]) .menu-icon {
 #browser .browserSidebarContainer .browserContainer {
 	border-radius: 0 !important;
 	outline: 0 !important;
+	border-block-start: none !important; /* v157+ */
 }
 
 /* --- icons --- */

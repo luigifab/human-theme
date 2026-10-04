@@ -1,7 +1,7 @@
 pkgname=human-theme-gtk
 pkgver=3.3.0
 pkgrel=1
-pkgdesc='Human theme for GTK'
+pkgdesc='Human theme for GTK/Qt/Firefox'
 url='https://github.com/luigifab/human-theme'
 license=('GPL3' 'LGPL2' 'CCBYSA')
 arch=('any')

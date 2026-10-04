@@ -1058,7 +1058,7 @@ QPushButton:disabled,
 QComboBox::drop-down:editable:disabled {
 	color: #A28F7E; /* @insensitive_fg */
 	border-color: #BCAB9B; /* entry_border_disabled */
-	background-color: #E6DDD5 /* @theme_bg */
+	background-color: #E6DDD5; /* @theme_bg */
 }
 
 QPushButton {
@@ -1180,6 +1180,7 @@ QFrame.separator.vertical {
 	border-left: 1px solid rgba(187,170,154,0.50); /* @menu_separator_dark */
 	border-right: 1px solid rgba(255,255,255,0.50); /* @menu_separator_lite */
 	background: transparent;
+	color: transparent;
 }
 
 QFrame.separator.horizontal {

@@ -2,7 +2,7 @@
 
 # Human theme
 
-This theme works with **GTK 2.24** *(with murrine/pixbuf)* & **GTK 3.24** & **GTK 4.8..4.24**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It also works with **Qt 5.15** & **Qt 6.0..6.11** & **Firefox 152..156** & **Adwaita 1.7..1.10**.
+This theme works with **GTK 2.24** *(with murrine/pixbuf)* & **GTK 3.24** & **GTK 4.8..4.24**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It also works with **Qt 4.8** & **Qt 5.15** & **Qt 6.8..6.12** & **Adwaita 1.7..1.10** & **Handy 1.0..1.8** & **Firefox 157**.
 
 It is mainly intended for **MATE** desktop environment, it's not too bad with **Xfce**, it's experimental with **Cinnamon**.
 
@@ -28,7 +28,7 @@ GTK 2.24 RTL (Pango 1.58)\
 [<img alt="Preview with GTK 2 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-rtl-blue-menu.png)
 [<img alt="Preview with GTK 2 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk2-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk2-rtl-green-menu.png)
 
-**GTK 3.24-classic (Pango 1.58)**\
+**GTK 3.24-classic** (with or without Handy 1.0..1.8, Pango 1.58)\
 [<img alt="Preview with GTK 3 - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3.png)
 [<img alt="Preview with GTK 3 - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-orange.png)
 [<img alt="Preview with GTK 3 - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-blue.png)
@@ -46,7 +46,7 @@ GTK 2.24 RTL (Pango 1.58)\
 [<img alt="Preview with GTK 3 - Blue variation - CSD main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-csd-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-csd-blue.png)
 [<img alt="Preview with GTK 3 - Green variation - CSD main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-csd-green.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-csd-green.png)
 
-GTK 3.24-classic RTL (Pango 1.58)\
+GTK 3.24-classic RTL (with or without Handy 1.0..1.8, Pango 1.58)\
 [<img alt="Preview with GTK 3 - RTL - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-rtl.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-rtl.png)
 [<img alt="Preview with GTK 3 - RTL - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-rtl-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-rtl-orange.png)
 [<img alt="Preview with GTK 3 - RTL - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk3-rtl-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk3-rtl-blue.png)
@@ -75,6 +75,9 @@ GTK 4.8..4.24-classic RTL (with or without Adwaita 1.7..1.10, Pango 1.58)\
 [<img alt="Preview with GTK 4 - RTL - Orange variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-orange-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-orange-menu.png)
 [<img alt="Preview with GTK 4 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-blue-menu.png)
 [<img alt="Preview with GTK 4 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/gtk4-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/gtk4-rtl-green-menu.png)
+
+Qt 4.8\
+_Todo_
 
 Qt 5.15\
 [<img alt="Preview with Qt 5 - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5.png)
@@ -116,7 +119,7 @@ Qt 6.10 RTL\
 [<img alt="Preview with Qt 6 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-blue-menu.png)
 [<img alt="Preview with Qt 6 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-green-menu.png)
 
-Firefox 156\
+Firefox 157\
 [<img alt="Preview with Firefox - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox.png)
 [<img alt="Preview with Firefox - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-orange.png)
 [<img alt="Preview with Firefox - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-blue.png)
@@ -190,7 +193,7 @@ pub   rsa4096 2020-10-31 [SC]
 
 * Download the archive and extract its subdirectories into `~/.themes/`
 * Configure font rendering and GTK by adding the following to `/etc/environment` ([details](data/profile.sh)):
-```
+```ini
 FREETYPE_PROPERTIES="truetype:interpreter-version=35"
 GTK_OVERLAY_SCROLLING=0
 GTK_BACKDROP=1
@@ -333,7 +336,7 @@ gtk-xft-antialias=0
 gtk-xft-hinting=1
 ```
 
-With Adwaita, to bypass the stylesheet that _libadwaita_ normally applies, run your program like this: `GTK_THEME= program`
+With **Adwaita**, the idea is to get the same rendering as GTK 4 without Adwaita. To bypass the stylesheet that _libadwaita_ normally applies, run your program like this: `env GTK_THEME= program`
 
 #### GTK 5
 
@@ -384,18 +387,24 @@ gsettings set org.gtk.gtk4.Settings.Debug enable-inspector-keybinding true
 
 Run [AWF](https://github.com/luigifab/awf-extended) to take a screenshot on theme reload:
 ```bash
+awf-adw -s ~/a.png
+awf-hdy -s ~/h.png
 awf-gtk2 -s ~/2.png
 awf-gtk3 -s ~/3.png
 awf-gtk4 -s ~/4.png
+awf-qt4 -s ~/4.png
 awf-qt5 -s ~/5.png
 awf-qt6 -s ~/6.png
 ```
 
 Run [Entr](https://github.com/eradman/entr) to send the `SIGHUP` signal when files change to reload the theme:
 ```bash
+ls ~/.themes/Human*/gtk-4*/*.css | entr killall -s SIGHUP awf-adw
+ls ~/.themes/Human*/gtk-3*/*.css | entr killall -s SIGHUP awf-hdy
 ls ~/.themes/Human*/gtk-2*/gtkrc | entr killall -s SIGHUP awf-gtk2
 ls ~/.themes/Human*/gtk-3*/*.css | entr killall -s SIGHUP awf-gtk3
 ls ~/.themes/Human*/gtk-4*/*.css | entr killall -s SIGHUP awf-gtk4
+ls ~/.themes/Human*/qt4/*.qss | entr killall -s SIGHUP awf-qt4
 ls ~/.themes/Human*/qt5/*.qss | entr killall -s SIGHUP awf-qt5
 ls ~/.themes/Human*/qt6/*.qss | entr killall -s SIGHUP awf-qt6
 ```
@@ -413,8 +422,8 @@ Run `colors.sh` to update colors. See also [technical information](https://githu
 
 ## Copyright
 
-- Current version: 3.3.0~nightly20260927
-- Compatibility: GTK 2.24 / 3.24 / 4.8..4.24, Qt 5.15 / 6.0..6.11, Firefox 152..156, Adwaita 1.7..1.10
+- Current version: 3.3.0~nightly20261024
+- Compatibility: GTK 2.24 / 3.24 / 4.8..4.24, Qt 4.8 / 5.15 / 6.8..6.12, Adwaita 1.7..1.10, Handy 1.0..1.8, Firefox 152..157
 - Links: [luigifab.fr](https://www.luigifab.fr/gtkqt/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\

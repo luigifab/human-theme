@@ -298,8 +298,12 @@ if do_target qt; then
 					R=$((16#${color:1:2}))
 					G=$((16#${color:3:2}))
 					B=$((16#${color:5:2}))
-					n=$(( (16#${color:7:2} * 1000 / 255 + 5) / 10 ))
-					A=$(printf '%d.%02d' $((n/100)) $((n%100)))
+					if [[ "$f" = */qt4/* ]]; then
+						A=$((16#${color:7:2}))
+					else
+						n=$(( (16#${color:7:2} * 1000 / 255 + 5) / 10 ))
+						A=$(printf '%d.%02d' $((n/100)) $((n%100)))
+					fi
 					color="rgba($R,$G,$B,$A)"
 				fi
 
@@ -340,7 +344,7 @@ if do_target images; then
 		f="$theme/gtk-3.0/gtk.css"
 		[ -f "$f" ] || continue
 
-		echo "[svg] With colors of $f..."
+		echo "[images] With colors of $f..."
 
 		# copy missing svg files
 		if [[ "$f" != Human/* ]]; then
