@@ -316,7 +316,7 @@ window dialog-host dialog floating-sheet sheet .heading-bin /* adwaita alertdial
 .background:backdrop dialog-host dialog floating-sheet sheet .heading-bin /* adwaita alertdialog */ {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 	/* <draw_ops name="bevel_unfocused"> rectangle */
-	border: 1px solid shade(@theme_bg, 0.55);
+	border-color: shade(@theme_bg, 0.55);
 	/* <draw_ops name="bevel_unfocused"> fancy gradient */
 	background: linear-gradient(to bottom,
 		shade(@theme_bg, 0.99),

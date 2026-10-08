@@ -1205,6 +1205,9 @@ QSplitter::handle:horizontal {
 
 /* --- todo --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
 
+.qt-66 QSpinBox,
+.qt-66 QDoubleSpinBox { padding: 3px 1px; }
+
 #AwfMainWindow QCheckBox { margin: 0 3px 1px 1px; } /* margin: 0 0 1px 1px; */
 #AwfMainWindow QRadioButton { margin: 0 4px 1px 1px; } /* margin: 0 0 1px 1px; */
 #AwfMainWindow QTreeView QRadioButton { margin: -2px 0 0 4px; } /* margin: -2px 0 0 4px; */

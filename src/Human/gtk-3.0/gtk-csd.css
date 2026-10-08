@@ -75,39 +75,24 @@ dialog.background.solid-csd .dialog-vbox.vertical .dialog-action-area {
 	box-shadow: none;
 }
 
-.background.unified decoration {
+.background.csd.unified decoration,
+.background.solid-csd.unified decoration {
 	padding: 0;
 }
 
-.background.unified deck > box > * {
-	padding-left: 2px;
-	padding-right: 2px;
-	border-left: 1px solid shade(@theme_bg, 1.2);   /* box-shadow left */
-	border-right: 1px solid shade(@theme_bg, 0.88); /* box-shadow right */
-}
-
-.background.unified deck > box > headerbar {
+.background.csd.unified deck headerbar,
+.background.solid-csd.unified deck headerbar {
 	margin: 0;
-	padding-left: 3px;
-	padding-right: 3px;
-	border-left: 0;
-	border-right: 0;
 }
 
-.background.unified deck > box > menubar {
-	padding-left: 3px;
-	padding-right: 3px;
-}
-
-.background.unified deck > box > toolbar {
-	padding-left: 4px;
-	padding-right: 4px;
-}
-
-.background.unified deck > box > statusbar {
+.background.csd.unified deck headerbar + *,
+.background.solid-csd.unified deck headerbar + * {
 	padding-left: 2px;
 	padding-right: 2px;
-	padding-bottom: 3px;
+	padding-bottom: 2px;
+	border-left: 1px solid shade(@theme_bg, 1.2);    /* box-shadow left */
+	border-right: 1px solid shade(@theme_bg, 0.88);  /* box-shadow right */
+	border-bottom: 1px solid shade(@theme_bg, 0.88); /* box-shadow bottom */
 }
 
 .background.csd headerbar,
@@ -347,7 +332,7 @@ dialog.background.solid-csd .dialog-vbox.vertical .dialog-action-area {
 .background.solid-csd:backdrop headerbar {
 	color: mix(@theme_fg, @theme_bg, 0.45);
 	/* <draw_ops name="bevel_unfocused"> rectangle */
-	border: 1px solid shade(@theme_bg, 0.55);
+	border-color: shade(@theme_bg, 0.55);
 	/* <draw_ops name="bevel_unfocused"> fancy gradient */
 	background: linear-gradient(to bottom,
 		shade(@theme_bg, 0.99),
