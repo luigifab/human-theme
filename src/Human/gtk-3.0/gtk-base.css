@@ -1274,8 +1274,8 @@ notebook scrollbar.horizontal {
 	background-color: @nb_bg;
 }
 
-dialog scrolledwindow.frame scrollbar.vertical:dir(ltr) ,
-expander scrollbar.vertical:dir(ltr)  {
+dialog scrolledwindow.frame scrollbar.vertical:dir(ltr),
+expander scrollbar.vertical:dir(ltr) {
 	margin: -1px -1px -30px -3px;
 	padding: 0 0 29px 3px;
 	border-left: 1px solid @main_border;

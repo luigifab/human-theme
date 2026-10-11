@@ -63,7 +63,7 @@ cp -a src/Human/           $PKG/usr/share/themes/
 cp -a src/Human-blue/      $PKG/usr/share/themes/
 cp -a src/Human-green/     $PKG/usr/share/themes/
 cp -a src/Human-orange/    $PKG/usr/share/themes/
-install -Dpm 644 data/profile.sh $PKG/etc/profile.d/$PRGNAM.sh
+install -Dpm 755 data/profile.sh $PKG/etc/profile.d/$PRGNAM.sh
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \

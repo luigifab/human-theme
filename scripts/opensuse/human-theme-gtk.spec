@@ -9,7 +9,7 @@ Source0:       %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildArch:     noarch
 BuildRequires: aspell-fr
-Recommends:    gnome-icon-theme
+Recommends:    mate-icon-theme
 Recommends:    dmz-icon-theme-cursors
 Recommends:    gtk2-engine-murrine
 #ecommends:    gtk2-engine-pixbuf = gtk2

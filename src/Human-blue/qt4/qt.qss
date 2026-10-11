@@ -70,7 +70,6 @@ QMenuBar {
 QMenuBar::item {
 	padding: 2px 7px 2px;
 	border: 1px solid transparent;
-	/* border-radius: 2px 2px 0 0; @todo not working */
 }
 
 QMenuBar::item:pressed {
@@ -91,13 +90,13 @@ QMenu {
 }
 
 QMenu::item {
-	padding: 2px 4px 2px 6px;
+	padding: 2px 4px 2px 26px;
 	border: 1px solid transparent;
 	border-radius: 2px;
 }
 
-QMenu::tearoff:selected,
-QMenu::item:selected {
+QMenu::tearoff:selected:enabled,
+QMenu::item:selected:enabled {
 	color: #FFFFFF; /* @menuitem_hover */
 	border-color: #5681B7; /* @menuitem_hover_border */
 	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, /* vertical */
@@ -267,7 +266,7 @@ QStatusBar {
 
 QCheckBox, QRadioButton {
 	spacing: 0;
-	margin: 0 0 1px 1px;
+	margin: 1px;
 	padding: 1px 0 2px;
 }
 
@@ -509,7 +508,6 @@ QTabBar::tab:top {
 	margin: 1px 0 0 0;
 	padding: 2px 4px 4px;
 	border-bottom-color: #B0ADAA; /* @nb_border */
-	/* border-radius: 2.4px 2.4px 0 0; @todo not working */
 	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, /* vertical */
 		stop: 0       /* @nb_tab_glaze_top */ #EAE8E7,
 		stop: 0.5100 /* @nb_tab_glaze_mida */ #E9E7E6,
@@ -533,7 +531,6 @@ QTabBar::tab:bottom {
 	margin: 0 0 1px 0;
 	padding: 2px 4px 4px;
 	border-top-color: #B0ADAA; /* @nb_border */
-	/* border-radius: 0 0 2.4px 2.4px; @todo not working */
 	background: qlineargradient(x1:0, y1:1, x2:0, y2:0,
 		stop: 0       /* @nb_tab_glaze_top */ #EAE8E7,
 		stop: 0.5100 /* @nb_tab_glaze_mida */ #E9E7E6,
@@ -557,7 +554,6 @@ QTabBar::tab:left {
 	margin: 0 0 0 1px;
 	padding: 2px 4px 1px;
 	border-right-color: #B0ADAA; /* @nb_border */
-	/* border-radius: 2.4px 0 0 2.4px; @todo not working */
 	background: qlineargradient(x1:0, y1:0, x2:1, y2:0, /* horizontal */
 		stop: 0       /* @nb_tab_glaze_top */ #EAE8E7,
 		stop: 0.5000 /* @nb_tab_glaze_mida */ #E9E7E6,
@@ -581,7 +577,6 @@ QTabBar::tab:right {
 	margin: 0 1px 0 0;
 	padding: 2px 4px 1px;
 	border-left-color: #B0ADAA; /* @nb_border */
-	/* border-radius: 0 2.4px 2.4px 0; @todo not working */
 	background: qlineargradient(x1:1, y1:0, x2:0, y2:0,
 		stop: 0       /* @nb_tab_glaze_top */ #EAE8E7,
 		stop: 0.5000 /* @nb_tab_glaze_mida */ #E9E7E6,
@@ -607,22 +602,18 @@ QTabWidget::pane {
 
 QTabWidget::pane:top {
 	margin-top: -1px;
-	/* border-radius: 0 0 2.4px 2.4px; @todo not working */
 }
 
 QTabWidget::pane:bottom {
 	margin-bottom: -1px;
-	/* border-radius: 2.4px 2.4px 0 0; @todo not working */
 }
 
 QTabWidget::pane:left {
 	margin-left: -1px;
-	/* border-radius: 0 2.4px 2.4px 0; @todo not working */
 }
 
 QTabWidget::pane:right {
 	margin-right: -1px;
-	/* border-radius: 2.4px 0 0 2.4px; @todo not working */
 }
 
 QTabWidget > QStackedWidget > QWidget {
@@ -1201,10 +1192,8 @@ QSplitter::handle:horizontal {
 
 /* --- todo --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
 
-.qt-48 QMenu::item { padding-left: 26px; }
-
-#AwfMainWindow QCheckBox { margin: 0 2px 1px 1px; } /* margin: 0 0 1px 1px; */
-#AwfMainWindow QRadioButton { margin: 0 3px 1px 1px; } /* margin: 0 0 1px 1px; */
+#AwfMainWindow QCheckBox { margin: 1px 3px 1px 1px; } /* margin: 1px; */
+#AwfMainWindow QRadioButton { margin: 1px 4px 1px 1px; } /* margin: 1px; */
 #AwfMainWindow QTreeView QRadioButton { margin: -1px 0 0 4px; } /* margin: -1px 0 0 4px; */
 #AwfMainWindow .awf-cheatcode-colorbtn { min-height: 21px; }
 #AwfMainWindow .awf-cheatcode-folderbtn { min-height: 19px; }

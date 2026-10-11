@@ -34,7 +34,7 @@ box:dir(rtl) switch + label {
 /* @see https://forum.xfce.org/viewtopic.php?pid=73595#p73595 */
 
 XfdesktopIconView.view {
-	color: @theme_selected;
+	color: @theme_selected_fg;
 	border-radius: 4px;
 	background: transparent;
 	text-shadow: 0.5px 1px @theme_text;
@@ -46,7 +46,7 @@ XfdesktopIconView.view:active {
 }
 
 XfdesktopIconView.label:active {
-	color: @theme_selected;
+	color: @theme_selected_fg;
 }
 
 /* --- xfwm4 tabwin alttab alt-tab osd --- */

@@ -50,7 +50,7 @@ scale trough {
 		-1px -1px alpha(@slider_trough_bg, 0.35),
 		 1px  1px alpha(lighter(@theme_bg), 0.418),
 		inset -1px -1px @slider_trough_border,
-		inset  1px 1px @slider_trough_border;
+		inset  1px  1px @slider_trough_border;
 }
 
 scale:focus trough {
@@ -68,9 +68,6 @@ scale trough highlight {
 scale.vertical trough highlight {
 	min-width: 5px;
 	background:
-		radial-gradient(ellipse 50% 90%,
-			@slider_glaze_glow_center,
-			@slider_glaze_glow_edge),
 		linear-gradient(to right,
 			@slider_glaze_top,
 			@slider_glaze_mida 49%,
@@ -86,9 +83,6 @@ scale.vertical trough highlight {
 scale.horizontal trough highlight {
 	min-height: 5px;
 	background:
-		radial-gradient(ellipse 90% 50%,
-			@slider_glaze_glow_center,
-			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
 			@slider_glaze_top,
 			@slider_glaze_mida 49%,
@@ -281,7 +275,7 @@ levelbar trough {
 		@slider_trough_bg;
 	box-shadow:
 		inset -1px -1px @slider_trough_border,
-		inset  1px 1px @slider_trough_border;
+		inset  1px  1px @slider_trough_border;
 }
 
 levelbar.vertical trough {
@@ -303,9 +297,6 @@ levelbar block.filled {
 
 levelbar.vertical block.filled {
 	background:
-		radial-gradient(ellipse 90% 50%,
-			@slider_glaze_glow_center,
-			@slider_glaze_glow_edge),
 		linear-gradient(to right,
 			@slider_glaze_top,
 			@slider_glaze_mida 49%,
@@ -320,9 +311,6 @@ levelbar.vertical block.filled {
 
 levelbar.horizontal block.filled {
 	background:
-		radial-gradient(ellipse 90% 50%,
-			@slider_glaze_glow_center,
-			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
 			@slider_glaze_top,
 			@slider_glaze_mida 49%,
@@ -337,9 +325,6 @@ levelbar.horizontal block.filled {
 
 levelbar.vertical.continuous block.filled:last-child {
 	background:
-		radial-gradient(ellipse 90% 50%,
-			@slider_glaze_glow_center,
-			@slider_glaze_glow_edge),
 		linear-gradient(to right,
 			@slider_glaze_top,
 			@slider_glaze_mida 49%,
@@ -354,9 +339,6 @@ levelbar.vertical.continuous block.filled:last-child {
 
 levelbar.horizontal.continuous block.filled:last-child {
 	background:
-		radial-gradient(ellipse 90% 50%,
-			@slider_glaze_glow_center,
-			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
 			@slider_glaze_top,
 			@slider_glaze_mida 49%,
@@ -465,9 +447,6 @@ progressbar.horizontal trough progress {
 
 progressbar.vertical trough progress {
 	background:
-		radial-gradient(ellipse 50% 90%,
-			@slider_glaze_glow_center,
-			@slider_glaze_glow_edge),
 		linear-gradient(to right,
 			@slider_glaze_top,
 			@slider_glaze_mida 49%,
@@ -482,9 +461,6 @@ progressbar.vertical trough progress {
 
 progressbar.vertical trough progress.bottom {
 	background:
-		radial-gradient(ellipse 50% 90%,
-			@slider_glaze_glow_center,
-			@slider_glaze_glow_edge),
 		linear-gradient(to right,
 			@slider_glaze_top,
 			@slider_glaze_mida 49%,
@@ -500,9 +476,6 @@ progressbar.vertical trough progress.bottom {
 treeview.view.progressbar,
 progressbar.horizontal trough progress {
 	background:
-		radial-gradient(ellipse 90% 50%,
-			@slider_glaze_glow_center,
-			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
 			@slider_glaze_top,
 			@slider_glaze_mida 49%,
@@ -517,9 +490,6 @@ progressbar.horizontal trough progress {
 
 progressbar.horizontal trough progress.right {
 	background:
-		radial-gradient(ellipse 90% 50%,
-			@slider_glaze_glow_center,
-			@slider_glaze_glow_edge),
 		linear-gradient(to bottom,
 			@slider_glaze_top,
 			@slider_glaze_mida 49%,

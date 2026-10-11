@@ -1,2 +1,5 @@
 debian/human-theme-gtk.sh etc/profile.d
-src/*/                    usr/share/themes
+src/Human/                usr/share/themes
+src/Human-blue/           usr/share/themes
+src/Human-green/          usr/share/themes
+src/Human-orange/         usr/share/themes

@@ -21,7 +21,7 @@
 # merchantability or fitness for a particular purpose. See the
 # GNU General Public License (GPL) for more details.
 
-# made with help of Claude.ai (sudo apt install xdotool imagemagick x11-utils)
+# made principally by Claude.ai (sudo apt install xdotool imagemagick x11-utils)
 cd "$(dirname "$0")" || exit 1
 set -euo pipefail
 
@@ -75,9 +75,10 @@ capture_window_area() {
 # awf-gtk & awf-qt
 for app_entry in "${APPS[@]}"; do
 
-	cmd="$app_entry"
-	applabel="${cmd#awf-}"
-	echo "$cmd"
+	read -ra cmd <<< "$app_entry"
+	bin="${cmd[-1]}"
+	applabel="${bin#awf-}"
+	echo "$app_entry"
 
 	for color in "${COLORS[@]}"; do
 
@@ -96,7 +97,7 @@ for app_entry in "${APPS[@]}"; do
 
 			args=()
 			if [ "$rtl" = 1 ]; then
-				if [[ "$cmd" == awf-qt* ]]; then
+				if [[ "$bin" == awf-qt* ]]; then
 					args+=(--reverse)
 				else
 					args+=(--rtl)
@@ -111,15 +112,15 @@ for app_entry in "${APPS[@]}"; do
 				fileprefix="${fileprefix}-${color}"
 			fi
 
-			LC_ALL=C.UTF-8 "$cmd" "${args[@]}" &
+			LC_ALL=C.UTF-8 "${cmd[@]}" "${args[@]}" &
 			pid=$!
 			sleep "$DELAY_LAUNCH"
 
-			if [ "$cmd" = "awf-gtk4" ] && [ "$rtl" = 1 ]; then
+			if [ "$bin" = "awf-gtk4" ] && [ "$rtl" = 1 ]; then
 				sleep "6"
 			fi
 
-			wid=$(xdotool search --pid "$pid" --onlyvisible | head -1)
+			wid=$(xdotool search --pid "$pid" --onlyvisible | head -1) || true
 			if [ -z "$wid" ]; then
 				kill "$pid" 2>/dev/null || true
 				continue
@@ -135,18 +136,18 @@ for app_entry in "${APPS[@]}"; do
 			wait "$pid" 2>/dev/null || true
 		done
 
-		if [ "$cmd" = "awf-gtk3" ]; then
+		if [ "$bin" = "awf-gtk3" ]; then
 
 			fileprefix="gtk3-plus"
 			if [ -n "$color" ]; then
 				fileprefix="${fileprefix}-${color}"
 			fi
 
-			LC_ALL=C.UTF-8 "$cmd" &
+			LC_ALL=C.UTF-8 "${cmd[@]}" &
 			pid=$!
 			sleep "$DELAY_LAUNCH"
 
-			wid=$(xdotool search --pid "$pid" --onlyvisible | head -1)
+			wid=$(xdotool search --pid "$pid" --onlyvisible | head -1) || true
 			if [ -z "$wid" ]; then
 				kill "$pid" 2>/dev/null || true
 				continue
@@ -159,18 +160,18 @@ for app_entry in "${APPS[@]}"; do
 			wait "$pid" 2>/dev/null || true
 		fi
 
-		if [ "$cmd" = "awf-gtk3" ]; then
+		if [ "$bin" = "awf-gtk3" ]; then
 
 			fileprefix="gtk3-csd"
 			if [ -n "$color" ]; then
 				fileprefix="${fileprefix}-${color}"
 			fi
 
-			GTK_CSD=1 LC_ALL=C.UTF-8 "$cmd" &
+			GTK_CSD=1 LC_ALL=C.UTF-8 "${cmd[@]}" &
 			pid=$!
 			sleep "$DELAY_LAUNCH"
 
-			wid=$(xdotool search --pid "$pid" --onlyvisible | head -1)
+			wid=$(xdotool search --pid "$pid" --onlyvisible | head -1) || true
 			if [ -z "$wid" ]; then
 				kill "$pid" 2>/dev/null || true
 				continue
@@ -215,7 +216,7 @@ for color in "${COLORS[@]}"; do
 		pid=$!
 		sleep "$DELAY_FIREFOX"
 
-		wid=$(xdotool search --pid "$pid" --onlyvisible | head -1)
+		wid=$(xdotool search --pid "$pid" --onlyvisible | head -1) || true
 		if [ -z "$wid" ]; then
 			kill "$pid" 2>/dev/null || true
 			continue
@@ -227,7 +228,7 @@ for color in "${COLORS[@]}"; do
 		capture_window_area "$wid" "${OUTDIR}/${fileprefix}-menu.png"
 		xdotool key Escape
 
-		kill -TERM "$pid"
+		kill -TERM "$pid" 2>/dev/null || true
 		wait "$pid" 2>/dev/null || true
 	#done
 done

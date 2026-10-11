@@ -5,7 +5,7 @@ pkgdesc='Human theme for GTK/Qt/Firefox'
 url='https://github.com/luigifab/human-theme'
 license=('GPL3' 'LGPL2' 'CCBYSA')
 arch=('any')
-optdepends=('gtk-engine-murrine: for gtk2' 'qt5-style-globalqss: for qt5' 'qt6-style-globalqss: for qt6')
+optdepends=('gtk-engine-murrine: for gtk2' 'qt5-style-globalqss: for qt5' 'qt5-svg: for qt5' 'qt6-style-globalqss: for qt6' 'qt6-svg: for qt6')
 source=("https://github.com/luigifab/human-theme/archive/v${pkgver}/human-theme-${pkgver}.tar.gz")
 sha256sums=('SKIP')
 

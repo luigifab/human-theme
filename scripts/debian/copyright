@@ -10,12 +10,6 @@ Copyright:
  2020-2027 Fabrice Creuzot (luigifab) <code@luigifab.fr>
 License: GPL-3+
 
-Files: src/clearlooksre/metacity-1/metacity-theme-1.xml
-Copyright:
- 2005-2007 Daniel Borgmann <daniel.borgmann@gmail.com>
- 2005-2007 Andrea Cimitan <andrea.cimitan@gmail.com>
-License: LGPL-2.1+
-
 Files: */gtk-2.0/gtkrc
 Copyright:
  Kenneth Wimer <kwwii@ubuntu.com>
@@ -38,23 +32,6 @@ License: GPL-3+
  .
  On Debian systems, the complete text of the GNU General
  Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
-
-License: LGPL-2.1+
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU Lesser General Public License as published by
- the Free Software Foundation; either version 2.1 of the License, or
- (at your option) any later version.
- .
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU Lesser General Public License for more details.
- .
- You should have received a copy of the GNU Lesser General Public License
- along with this program; If not, see <https://www.gnu.org/licenses/>.
- .
- On Debian systems, the complete text of the GNU Lesser General
- Public License can be found in "/usr/share/common-licenses/LGPL-2.1".
 
 License: CC-BY-SA-3.0+
  Artwork is available under the Creative Commons Attribution Share-Alike

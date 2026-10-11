@@ -68,7 +68,7 @@ menuitem check { border:1px solid red; background:orange; } */
 		-11px -11px @theme_bg, /* top left */
 		 11px -11px @theme_bg, /* top right */
 		 11px  11px @theme_bg, /* bottom right */
-		-11px  11px @theme_bg;  /* bottom left */
+		-11px  11px @theme_bg; /* bottom left */
 }
 
 /* --- marco tabwin alttab alt-tab osd v? --- */
@@ -688,7 +688,7 @@ window.brisk-menu list.apps-list row:selected:focus button {
 }
 
 /* --- brisk menu applet --- */
-/* @see https://github.com/getsolus/brisk-menu (abandonned) */
+/* @see https://github.com/getsolus/brisk-menu (abandoned) */
 
 .mate-panel-menu-bar .brisk-button {
 	padding: 0;

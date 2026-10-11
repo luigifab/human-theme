@@ -99,7 +99,7 @@ Qt 5.15 RTL\
 [<img alt="Preview with Qt 5 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-rtl-blue-menu.png)
 [<img alt="Preview with Qt 5 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt5-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt5-rtl-green-menu.png)
 
-Qt 6.11\
+Qt 6.9..6.12\
 [<img alt="Preview with Qt 6 - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6.png)
 [<img alt="Preview with Qt 6 - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-orange.png)
 [<img alt="Preview with Qt 6 - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-blue.png)
@@ -109,7 +109,7 @@ Qt 6.11\
 [<img alt="Preview with Qt 6 - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-blue-menu.png)
 [<img alt="Preview with Qt 6 - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-green-menu.png)
 
-Qt 6.11 RTL\
+Qt 6.9..6.12 RTL\
 [<img alt="Preview with Qt 6 - RTL - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl.png)
 [<img alt="Preview with Qt 6 - RTL - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-orange.png)
 [<img alt="Preview with Qt 6 - RTL - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-blue.png)
@@ -178,7 +178,7 @@ sudo apt update
 sudo apt install human-theme-gtk
 
 # ... and for full installation
-sudo apt install gnome-icon-theme dmz-cursor-theme gtk2-engines-murrine gtk2-engines-pixbuf qt5-gtk-platformtheme qt5-style-globalqss qt6-gtk-platformtheme qt6-style-globalqss qt6-svg-plugins
+sudo apt install gnome-icon-theme dmz-cursor-theme gtk2-engines-murrine gtk2-engines-pixbuf qt5-gtk-platformtheme qt5-style-globalqss libqt5svg5 qt6-gtk-platformtheme qt6-style-globalqss qt6-svg-plugins
 
 # sha256sum /etc/apt/trusted.gpg.d/luigifab.gpg
 578c89a677048e38007462d543686b53587efba9f93814601169253c45ff9213
@@ -422,7 +422,7 @@ Run `colors.sh` to update colors. See also [technical information](https://githu
 
 ## Copyright
 
-- Current version: 3.3.0~nightly20261008
+- Current version: 3.3.0~nightly20261011
 - Compatibility: GTK 2.24 / 3.24 / 4.8..4.24, Qt 4.8 / 5.15 / 6.0..6.12, Adwaita 1.7..1.10, Handy 1.0..1.8, Firefox 152..157
 - Links: [luigifab.fr](https://www.luigifab.fr/gtkqt/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 

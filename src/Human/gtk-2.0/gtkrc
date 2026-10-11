@@ -8,7 +8,7 @@
 # Creative Commons Attribution Share-Alike 3.0+
 # https://packages.ubuntu.com/human-theme
 
-gtk_color_scheme = "base_color:#FFFFFF\nfg_color:#101010\ntooltip_fg_color:#000000\nselected_bg_color:#8F5F4A\nselected_fg_color:#FFFFFF\ntext_color:#1A1A1A\nbg_color:#E6DDD5\ntooltip_bg_color:#F5F5B5"
+gtk_color_scheme = "base_color:#FFFFFF\nfg_color:#101010\ntooltip_fg_color:#000000\nselected_bg_color:#8F5F4A\nselected_fg_color:#FFFFFF\ntext_color:#1A1A1A\nbg_color:#E6DDD5\ntooltip_bg_color:#F5F5B5\nlink_color:#0000EE\nvisited_link_color:#551A8B"
 
 gtk-icon-sizes = "panel-menu=24,24:gtk-button=16,16"
 
@@ -200,7 +200,7 @@ class "GtkEntry"      style "murrine-wider"
 class "GtkScale"      style "murrine-scale"
 class "GtkScrollbar"  style "murrine-scrollbar"
 
-# General matching following, the order is choosen so that the right styles override each other
+# General matching following, the order is chosen so that the right styles override each other
 # eg. progressbar needs to be more important then the menu match.
 # This is not perfect, it could be done better.
 # (That is modify *every* widget in the notebook, and change those back that we really don't want changed)

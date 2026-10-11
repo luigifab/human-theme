@@ -86,7 +86,7 @@ panel {
 /* --- menu & menu items --- */
 /* panel for the toolbar menus */
 /*      menu : main menu like File */
-/* menupopup : conainter for menuitems of a menu */
+/* menupopup : container for menuitems of a menu */
 /*  menuitem : like Open or Print */
 /*      menu : like Zoom */
 
@@ -241,7 +241,7 @@ menupopup > menuitem[disabled] .menu-accel::before {
 	border-right: 1px solid #FFFFFF80 !important; /* @toolbar_separator_lite */
 }
 
-/* --- nav bar --- url bar & seach bar --- */
+/* --- nav bar --- url bar & search bar --- */
 
 #urlbar-container #urlbar .urlbar-input-container .urlbar-input,
 #search-container #searchbar-new .urlbar-input {

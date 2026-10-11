@@ -46,7 +46,6 @@
 /* #BCAB9B */ @define-color frame_border shade(@theme_bg, 0.775);
 /* #C8B9AB */ @define-color frame_border_bis shade(@frame_border, 1.082);
               @define-color frame_shadow_dark shade(@theme_bg, 0.96);
-              @define-color frame_shadow_lite shade(@theme_bg, 1.04);
 
 /* #EEE8E2 */ @define-color nb_bg shade(@theme_bg, 1.047);
 /* #B4A191 */ @define-color nb_border shade(@theme_bg, 0.733);
@@ -168,9 +167,6 @@
               @define-color scale_hover_glaze_top shade(@theme_bg, 1.07);
 
               @define-color slider_glaze_bot alpha(shade(@slider_base, 0.80), 0.8);
-              @define-color slider_glaze_glow shade(@theme_bg, 1.1);
-              @define-color slider_glaze_glow_center alpha(@button_glaze_glow, 0.2);
-              @define-color slider_glaze_glow_edge alpha(@button_glaze_glow, 0);
               @define-color slider_glaze_mida alpha(shade(@slider_base, 0.95), 0.8);
               @define-color slider_glaze_midb alpha(shade(@slider_base, 0.85), 0.8);
               @define-color slider_glaze_top alpha(@slider_base, 0.8);
