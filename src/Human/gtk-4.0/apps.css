@@ -26,8 +26,6 @@
 
 #AwfMainWindow button.awf-cheatcode-filebtn { min-height: 18px; }
 #AwfMainWindow button.awf-cheatcode-folderbtn { min-height: 20px; }
-#AwfMainWindow progressbar.awf-cheatcode-prbr2 { margin: 1px 0; }
-#AwfMainWindow progressbar.awf-cheatcode-prbr2 progress { margin: 1px 0; }
 
 #AwfMainWindow box.primary-toolbar:dir(ltr) button.image-button:nth-child(1),
 #AwfMainWindow box.primary-toolbar:dir(ltr) button.image-button:nth-child(2) { margin-right: 28px; }
@@ -35,5 +33,7 @@
 #AwfMainWindow box.primary-toolbar:dir(rtl) button.image-button:nth-child(1),
 #AwfMainWindow box.primary-toolbar:dir(rtl) button.image-button:nth-child(2) { margin-left: 28px; }
 
-#AwfMainWindow scrollbar.horizontal range { padding-left:15px; padding-right:15px; }
-#AwfMainWindow scrollbar.vertical range { padding-top:15px; padding-bottom:15px; }
+#AwfMainWindow scrollbar.horizontal range { padding-left: 15px; padding-right: 15px; }
+#AwfMainWindow scrollbar.vertical range { padding-top: 15px; padding-bottom: 15px; }
+
+#AwfDialogWindow notebook stack box scale { border: 1px dashed black; }

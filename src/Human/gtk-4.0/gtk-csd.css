@@ -115,7 +115,12 @@
 .background.csd headerbar entry,
 .background.ssd headerbar entry,
 .background.solid-csd headerbar entry {
-	box-shadow:none; border:0; margin:4px 0; padding:1px 3px 2px;  font-size:85%; /* @todo */
+	/* @todo */
+	margin: 4px 0;
+	padding: 1px 3px 2px;
+	font-size: 85%;
+	border: 0;
+	box-shadow: none;
 }
 
 .background.csd headerbar label.title,
@@ -210,7 +215,7 @@
 .background.csd headerbar image.app-icon,
 .background.ssd headerbar image.app-icon,
 .background.solid-csd headerbar image.app-icon {
-	margin: 0 6px; /* with gtk4-classic (appearance__appicon_headerbar.patch) */
+	margin: 0 6px; /* with gtk4-classic (appearance_appicon_headerbar.patch) */
 }
 
 .background.csd headerbar windowcontrols,

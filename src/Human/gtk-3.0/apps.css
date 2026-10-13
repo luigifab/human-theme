@@ -24,23 +24,13 @@
 
 /* --- awf-gtk3 --- */
 
-#AwfMainWindow .awf-cheatcode-prbr2 { margin: 1px 0; }
+#AwfDialogWindow notebook stack box scale { border: 1px dashed black; }
 
 /* --- magnus --- */
 /* @see https://github.com/stuartlangridge/magnus/issues/33 (dead project?) hide scrollbars */
 
 #MagnusMainWindow scrolledwindow { margin: -2px; }
 #MagnusMainWindow scrolledwindow scrollbar { opacity: 0; }
-
-/* --- gimp 3 --- */
-
-GimpFileDialog filechooser treeview.view button {
-	padding: 0; /* @todo not working */
-}
-
-GimpFileDialog filechooser treeview.view:selected {
-	color: @theme_selected_fg; /* @todo not working */
-}
 
 /* --- audacity --- */
 
@@ -106,8 +96,12 @@ window.pluma-window notebook stack > box scrolledwindow {
 	background: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
 }
 
-/* --- bleachbit v5.0.2 --- */
+/* --- bleachbit v5.x --- */
 /* @see https://github.com/bleachbit/bleachbit/pull/1195 */
+
+#BleachBit treeview {
+	border-right: 0;
+}
 
 #BleachBit > box > box > scrolledwindow:dir(ltr) scrollbar.vertical {
 	padding-top: 33px;
@@ -187,7 +181,7 @@ terminal-window:not(.maximized) box.vertical notebook header.top ~ stack {
 }
 
 /* --- css fix/hack for some maximized windows --- */
-/* @see https://github.com/mate-desktop/mate-desktop/issues/291 = without gtk3-classic (scrollbar__extra_zone.patch) */
+/* @see https://github.com/mate-desktop/mate-desktop/issues/291 = without gtk3-classic (scrollbar_extra_zone.patch) */
 
 #GeanyMainWindow.maximized:not(.scrollfix):dir(ltr)
 	#notebook_info stack,

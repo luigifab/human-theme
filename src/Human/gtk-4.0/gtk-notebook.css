@@ -73,7 +73,7 @@ notebook header tabs arrow {
 }
 
 notebook header.top tab {
-	margin: 0 -1px -2px -1px;
+	margin: 0 -1px -2px;
 	border-bottom-color: @nb_border;
 	border-radius: 2.4px 2.4px 0 0;
 	background: linear-gradient(to bottom,
@@ -84,7 +84,7 @@ notebook header.top tab {
 }
 
 notebook header.top tab:checked {
-	margin: -1px -1px -2px -1px;
+	margin: -1px -1px -2px;
 	border-color: @nb_border;
 	border-bottom: 0;
 	background: linear-gradient(to bottom,
@@ -98,7 +98,7 @@ notebook header.top tab:checked {
 }
 
 notebook header.bottom tab {
-	margin: -2px -1px 0 -1px;
+	margin: -2px -1px 0;
 	border-top-color: @nb_border;
 	border-radius: 0 0 2.4px 2.4px;
 	background: linear-gradient(to top,
@@ -109,7 +109,7 @@ notebook header.bottom tab {
 }
 
 notebook header.bottom tab:checked {
-	margin: -2px -1px -1px -1px;
+	margin: -2px -1px -1px;
 	border-color: @nb_border;
 	border-top: 0;
 	background: linear-gradient(to top,
@@ -270,7 +270,7 @@ notebook:focus header tab:checked label {
 	background: @nb_tab_focus_bg;
 }
 
-/* --- notebook stack - left/right not inverted in rtl mode - with gtk4-classic (notebook__stack_class.patch) --- */
+/* --- notebook stack - left/right not inverted in rtl mode - with gtk4-classic (appearance_notebook_stack_class.patch) --- */
 
 notebook stack.top {
 	border-radius: 0 0 2.4px 2.4px;
@@ -350,4 +350,10 @@ notebook header.right tabs arrow.up:dir(ltr) {
 
 notebook header.right tabs arrow.up:dir(rtl) {
 	margin: 2px 0 0 1px;
+}
+
+/* --- fix? --- */
+
+window.dialog notebook.frame header.top tab {
+	padding-bottom: 1px;
 }

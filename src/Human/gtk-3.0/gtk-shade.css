@@ -42,7 +42,7 @@
 /* #CCBFB3 */ @define-color content_separator_dark alpha(shade(@theme_bg, 0.73), 0.5);
 /* #F2EEEA */ @define-color content_separator_lite alpha(shade(@theme_bg, 1.27), 0.5);
 /* #EAE2DB */ @define-color expander_hover alpha(shade(@theme_bg, 1.5), 0.15);
-/* #AD9A89 */ @define-color dialog_border shade(@theme_bg, 0.7);
+/* #AD9A89 */ @define-color main_border shade(@theme_bg, 0.7);
 /* #BCAB9B */ @define-color frame_border shade(@theme_bg, 0.775);
 /* #C8B9AB */ @define-color frame_border_bis shade(@frame_border, 1.082);
               @define-color frame_shadow_dark shade(@theme_bg, 0.96);
@@ -61,6 +61,9 @@
 /* #EEE8E2 */ @define-color nb_tab_checked_glaze_bot shade(@theme_bg, 1.047);
               @define-color nb_tab_focus_bg alpha(shade(@theme_selected_bg, 1.27), 0.175);
 
+
+              @define-color menu_accel alpha(@theme_fg, 0.601); /* @todo #696764 instead of #696664 */
+              @define-color menu_accel_disabled alpha(@insensitive_fg, 0.601);
 /* #EFE9E3 */ @define-color menu_bg mix(@theme_base, @theme_bg, 0.67);
 /* #B4A291 */ @define-color menu_border shade(@theme_bg, 0.734);
 /* #D4C8BD */ @define-color menu_tearoff_border shade(@theme_bg, 0.9); /* #D4C7BB @todo */
@@ -119,7 +122,6 @@
               @define-color button_focus_fill_active alpha(shade(@theme_selected_bg, 1.5), 0.2);
 
               @define-color slider_base shade(@theme_selected_bg, 1.04);
-/* #AD9A89 */ @define-color slider_border_treeview shade(@theme_bg, 0.7);
 /* #694C3F */ @define-color slider_border shade(@slider_base, 0.745);
 /* #D1C2B6 */ @define-color slider_trough_bg shade(@theme_bg, 0.881);
 /* #B4A292 */ @define-color slider_trough_border shade(shade(@theme_bg, 0.839), 0.876);

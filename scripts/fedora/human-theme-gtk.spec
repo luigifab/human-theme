@@ -1,5 +1,5 @@
 Name:          human-theme-gtk
-Version:       3.0.0
+Version:       3.2.0
 Release:       1%{?dist}
 Summary:       Human theme for GTK
 Summary(fr):   Thème Human pour GTK
@@ -12,6 +12,7 @@ BuildRequires: aspell-fr
 Recommends:    mate-icon-theme
 Recommends:    dmz-cursor-themes
 Recommends:    gtk-murrine-engine
+#ecommends:    gtk-pixbuf-engine = gtk2
 #ecommends:    qt5-gtk-platformtheme = qt5-qtbase-gui
 Recommends:    qt5-globalqss
 Recommends:    qt5-qtsvg
@@ -42,10 +43,10 @@ sed -i 's/IconTheme=gnome/IconTheme=mate/g' src/*/index.theme
 
 %install
 install -dm 755 %{buildroot}%{_datadir}/themes/
-cp -a src/Human/           %{buildroot}%{_datadir}/themes/
-cp -a src/Human-blue/      %{buildroot}%{_datadir}/themes/
-cp -a src/Human-green/     %{buildroot}%{_datadir}/themes/
-cp -a src/Human-orange/    %{buildroot}%{_datadir}/themes/
+cp -a src/Human/                 %{buildroot}%{_datadir}/themes/
+cp -a src/Human-blue/            %{buildroot}%{_datadir}/themes/
+cp -a src/Human-green/           %{buildroot}%{_datadir}/themes/
+cp -a src/Human-orange/          %{buildroot}%{_datadir}/themes/
 install -Dpm 644 data/profile.sh %{buildroot}%{_sysconfdir}/profile.d/%{name}.sh
 
 %files
@@ -61,6 +62,12 @@ install -Dpm 644 data/profile.sh %{buildroot}%{_sysconfdir}/profile.d/%{name}.sh
 
 
 %changelog
+* Tue Jul 07 2026 Fabrice Creuzot <code@luigifab.fr> - 3.2.0-1
+- New upstream release
+
+* Tue May 05 2026 Fabrice Creuzot <code@luigifab.fr> - 3.1.0-1
+- New upstream release
+
 * Tue Mar 03 2026 Fabrice Creuzot <code@luigifab.fr> - 3.0.0-1
 - New upstream release
 

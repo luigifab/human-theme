@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Fabrice Creuzot <code@luigifab.fr>
 Build-Depends: debhelper-compat (= 13)
 Rules-Requires-Root: no
-Standards-Version: 4.7.3
+Standards-Version: 4.7.4
 Homepage: https://github.com/luigifab/human-theme
 Vcs-Browser: https://github.com/luigifab/human-theme
 Vcs-Git: https://github.com/luigifab/human-theme.git
@@ -12,7 +12,7 @@ Vcs-Git: https://github.com/luigifab/human-theme.git
 Package: human-theme-gtk
 Architecture: all
 Depends: ${misc:Depends}
-Recommends: gnome-icon-theme, dmz-cursor-theme, gtk2-engines-murrine, qt5-gtk-platformtheme, qt5-style-globalqss, libqt5svg5, qt6-gtk-platformtheme, qt6-style-globalqss, qt6-svg-plugins
+Recommends: gnome-icon-theme, dmz-cursor-theme, gtk2-engines-murrine, gtk2-engines-pixbuf, qt5-gtk-platformtheme, qt5-style-globalqss, libqt5svg5, qt6-gtk-platformtheme, qt6-style-globalqss, qt6-svg-plugins
 Conflicts: human-theme
 Description: Human theme for GTK
  This theme is mainly intended for MATE and Xfce desktop environments.

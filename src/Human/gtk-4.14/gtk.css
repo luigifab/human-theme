@@ -1,0 +1,3 @@
+@import url("../gtk-4.0/gtk.css");
+scale.vertical.marks-before { padding-right: 2px; }
+scale.vertical.marks-after { padding-left: 2px; }

@@ -237,12 +237,12 @@ window.thunar paned paned notebook:dir(rtl) tabs {
 }
 
 window.thunar.maximized:not(.scrollfix) paned paned notebook:dir(ltr) tabs {
-	/* without gtk3-classic (scrollbar__extra_zone.patch) */
+	/* without gtk3-classic (scrollbar_extra_zone.patch) */
 	padding-right: 20px; /* scrollbar width - maximized css scroll fix */
 }
 
 window.thunar.maximized:not(.scrollfix) paned paned notebook:dir(rtl) tabs {
-	/* without gtk3-classic (scrollbar__extra_zone.patch) */
+	/* without gtk3-classic (scrollbar_extra_zone.patch) */
 	padding-left: 20px; /* scrollbar width - maximized css scroll fix */
 }
 
@@ -323,11 +323,6 @@ window.thunar statusbar frame {
 
 #xfce4-terminal-notebook header.top {
 	margin: 0 0 1px;
-}
-
-window:not(.maximized) #xfce4-terminal-notebook header.top ~ stack {
-	border: 1px solid @nb_border;
-	border-top: 0;
 }
 
 /* --- ristretto --- */
