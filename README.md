@@ -2,7 +2,7 @@
 
 # Human theme
 
-This theme works with **GTK 2.24** *(with murrine/pixbuf)* & **GTK 3.24** & **GTK 4.8..4.24**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It also works with **Qt 4.8** & **Qt 5.15** & **Qt 6.0..6.12** & **Adwaita 1.7..1.10** & **Handy 1.0..1.8** & **Firefox 157**.
+This theme works with **GTK 2.24** *(with murrine/pixbuf)* & **GTK 3.24** & **GTK 4.8..4.24**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It also works with **Qt 4.8** & **Qt 5.15** & **Qt 6.9..6.12** & **Adwaita** & **Handy** & **Firefox 158**.
 
 It is mainly intended for **MATE** desktop environment, it's not too bad with **Xfce**, it's experimental with **Cinnamon**.
 
@@ -119,7 +119,7 @@ Qt 6.9..6.12 RTL\
 [<img alt="Preview with Qt 6 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-blue-menu.png)
 [<img alt="Preview with Qt 6 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-green-menu.png)
 
-Firefox 157\
+Firefox 158\
 [<img alt="Preview with Firefox - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox.png)
 [<img alt="Preview with Firefox - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-orange.png)
 [<img alt="Preview with Firefox - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-blue.png)
@@ -129,7 +129,7 @@ Firefox 157\
 [<img alt="Preview with Firefox - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-blue-menu.png)
 [<img alt="Preview with Firefox - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-green-menu.png)
 
-The program used for the screenshots is available [here](https://github.com/luigifab/awf-extended).
+The program used for the screenshots (96 DPI) is available [here](https://github.com/luigifab/awf-extended).
 
 ## Installation
 
@@ -287,7 +287,7 @@ ln -s /usr/share/themes/Human/firefox/firefox.css userChrome.css
 
 Extra: open *about:keyboard* and enjoy!
 
-#### Gimp
+#### GIMP
 
 Add the *Human* theme:
 
@@ -297,7 +297,7 @@ mkdir -p Human && cd Human/
 ln -s /usr/share/themes/Human/gimp/gimp.css .
 ```
 
-Then set the *Human* theme in Gimp/Edit/Preferences/Interface/Theme.
+Then set the *Human* theme in GIMP/Edit/Preferences/Interface/Theme.
 
 ## Known issues
 
@@ -336,21 +336,23 @@ gtk-xft-antialias=0
 gtk-xft-hinting=1
 ```
 
-With **Adwaita**, the idea is to get the same rendering as GTK 4 without Adwaita. To bypass the stylesheet that _libadwaita_ normally applies, run your program like this: `env GTK_THEME= program`
-
 #### GTK 5
 
 From [migrating guide](https://docs.gtk.org/gtk4/migrating-4to5.html#non-standard-css-extensions-are-going-away): *non-standard CSS extensions are going away [...] @define-color should be replaced [...] the color functions can all be replaced by combinations of calc() and color-mix()*.
 
 I think it would be nice to create a patch to fix this GTK regression.
 
+#### Qt 4
+
+You can run your program like this: `awf-qt4 -stylesheet /usr/share/themes/Human/qt4/qt.qss -style gtk`
+
 #### Qt 5 & 6
 
-For Qt, install GTK platform theme and [GlobalQSS](https://github.com/luigifab/globalqss) style plugin. But sadly, `box-shadow` and multiple `background` gradients are not supported, `border-radius` is not fully supported.
+Install GTK platform theme and [GlobalQSS](https://github.com/luigifab/globalqss) style plugin. But sadly, `box-shadow` and multiple `background` gradients are not supported, `border-radius` is not fully supported.
 
 On Fedora with Qt 5, the GTK 3 platform theme *(qt5-qtbase-gui)* works better than on Debian *(qt5-gtk-platformtheme)*, but the fonts remain blurry, see [bug 2459509](https://bugzilla.redhat.com/show_bug.cgi?id=2459509) ; the same applies to openSUSE. To fix the problem, use a [fontconfig file](https://github.com/luigifab/awf-extended/blob/levelup/fonts.conf): `env FONTCONFIG_FILE=/.../fonts.conf awf-qt5`
 
-Without GlobalQSS, you can also run your program like this: `awf-qt5 -stylesheet /usr/share/themes/Human/qt5/qt.qss`
+Without GlobalQSS, you can run your program like this: `awf-qt5 -stylesheet /usr/share/themes/Human/qt5/qt.qss`
 
 #### Xfce panels
 
@@ -422,8 +424,8 @@ Run `colors.sh` to update colors. See also [technical information](https://githu
 
 ## Copyright
 
-- Current version: 3.3.0~nightly20261011
-- Compatibility: GTK 2.24 / 3.24 / 4.8..4.24, Qt 4.8 / 5.15 / 6.0..6.12, Adwaita 1.7..1.10, Handy 1.0..1.8, Firefox 152..157
+- Current version: 3.3.0~nightly20261018
+- Compatibility: GTK 2.24 / 3.24 / 4.8..4.24, Qt 4.8 / 5.15 / 6.9..6.12, Adwaita, Handy, Firefox 152..158
 - Links: [luigifab.fr](https://www.luigifab.fr/gtkqt/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\

@@ -95,8 +95,8 @@ QMenu::item {
 	border-radius: 2px;
 }
 
-QMenu::tearoff:selected,
-QMenu::item:selected {
+QMenu::tearoff:selected:enabled,
+QMenu::item:selected:enabled {
 	color: #1A1A1A; /* @menuitem_hover */
 	border-color: #E49632; /* @menuitem_hover_border */
 	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, /* vertical */
@@ -457,12 +457,12 @@ QSlider::sub-page:vertical[isInverted="true"] {
 		stop:0.49   /* @slider_glaze_mida */ rgba(251,188,106,0.80),
 		stop:0.4901 /* @slider_glaze_midb */ rgba(241,170,79,0.80),
 		stop:1       /* @slider_glaze_bot */ rgba(234,161,67,0.80));
-	background: url("../images/progress-vertical.svg") bottom center no-repeat; /* with stripes */
+	background: url("../images/progress-vertical.svg") bottom center repeat-y; /* with stripes */
 }
 
 QProgressBar::chunk:vertical[isInverted="true"],
 QSlider::sub-page:vertical[isInverted="true"] {
-	background: url("../images/progress-vertical-inverted.svg") top center no-repeat; /* with stripes */
+	background: url("../images/progress-vertical-inverted.svg") top center repeat-y; /* with stripes */
 }
 
 QProgressBar::chunk:horizontal,
@@ -473,12 +473,12 @@ QSlider::add-page:horizontal[isInverted="true"] {
 		stop:0.49   /* @slider_glaze_mida */ rgba(251,188,106,0.80),
 		stop:0.4901 /* @slider_glaze_midb */ rgba(241,170,79,0.80),
 		stop:1       /* @slider_glaze_bot */ rgba(234,161,67,0.80));
-	background: url("../images/progress-horizontal.svg") left center no-repeat; /* with stripes */
+	background: url("../images/progress-horizontal.svg") left center repeat-x; /* with stripes */
 }
 
 QProgressBar::chunk:horizontal[isInverted="true"],
 QSlider::add-page:horizontal[isInverted="true"] {
-	background: url("../images/progress-horizontal-inverted.svg") right center no-repeat; /* with stripes */
+	background: url("../images/progress-horizontal-inverted.svg") right center repeat-x; /* with stripes */
 }
 
 QSlider::sub-page[isInverted="true"],
