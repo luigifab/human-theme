@@ -116,10 +116,6 @@ for app_entry in "${APPS[@]}"; do
 			pid=$!
 			sleep "$DELAY_LAUNCH"
 
-			if [ "$bin" = "awf-gtk4" ] && [ "$rtl" = 1 ]; then
-				sleep "6"
-			fi
-
 			wid=$(xdotool search --pid "$pid" --onlyvisible | head -1) || true
 			if [ -z "$wid" ]; then
 				kill "$pid" 2>/dev/null || true

@@ -424,7 +424,7 @@ Run `colors.sh` to update colors. See also [technical information](https://githu
 
 ## Copyright
 
-- Current version: 3.3.0~nightly20261018
+- Current version: 3.3.0~nightly20261025
 - Compatibility: GTK 2.24 / 3.24 / 4.8..4.24, Qt 4.8 / 5.15 / 6.9..6.12, Adwaita, Handy, Firefox 152..158
 - Links: [luigifab.fr](https://www.luigifab.fr/gtkqt/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 

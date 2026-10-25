@@ -97,7 +97,8 @@ dialog.background.solid-csd .dialog-vbox.vertical .dialog-action-area {
 
 .background.csd headerbar,
 .background.ssd headerbar,
-.background.solid-csd headerbar {
+.background.solid-csd headerbar,
+.background > box.titlebar {
 	margin: -3px -4px 0;
 	padding: 0 3px;
 	min-height: 22px;
@@ -143,7 +144,8 @@ dialog.background.solid-csd .dialog-vbox.vertical .dialog-action-area {
 
 .background.csd headerbar label.title,
 .background.ssd headerbar label.title,
-.background.solid-csd headerbar label.title {
+.background.solid-csd headerbar label.title,
+.background > box.titlebar label.title {
 	padding-top: 2px;
 	font-weight: bold;
 }

@@ -18,7 +18,7 @@ if [ true ]; then
 	spectool -g -R human-theme-gtk.spec
 else
 	temp=human-theme-$version
-	mkdir /tmp/$temp
+	mkdir /tmp/$temp || exit 1
 	cp -r ../../* /tmp/$temp/
 	rm -rf /tmp/$temp/scripts/*/builder/
 

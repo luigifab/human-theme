@@ -28,6 +28,7 @@
 #pageActionButton { display: none !important; } /* page actions in address bar */
 #context-navigation, #context-sep-navigation { display: none !important; } /* context menu prev/next/reload */
 #profiles-menu { display: none !important; } /* Profiles menu */
+#alltabs-button { display: none !important; } /* All tabs button */
 menu.share-tab-url-item { display: none !important; } /* Share link menu in File menu */
 split-view-footer { display: none !important; } /* Split view bottom right menu */
 
@@ -36,6 +37,7 @@ split-view-footer { display: none !important; } /* Split view bottom right menu 
 	--tab-min-height: 30px !important;
 	--tab-margin-block: 4px !important;                 /* v157+ */
 	--tab-background-color-selected: white !important;  /* v157+ */
+	--tab-border-radius: 8px !important;                /* v157+ */
 	--urlbar-min-height: 31px !important;
 	--urlbar-height: 31px !important;
 	--urlbar-container-height: 39px !important;

@@ -199,11 +199,11 @@ QToolBar QToolButton {
 	border-radius: 3px;
 }
 
-QToolButton:open {
+QToolBar QToolButton:open {
 	padding: 4px 1px 1px 4px;
 }
 
-QToolButton:hover {
+QToolBar QToolButton:hover {
 	border-color: #A7A4A0; /* @button_border */
 	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, /* vertical */
 		stop:0       /* @button_hover_glaze_top */ rgba(255,255,255,204),
@@ -212,8 +212,8 @@ QToolButton:hover {
 		stop:1       /* @button_hover_glaze_bot */ rgba(221,219,218,204));
 }
 
-QToolButton:pressed,
-QToolButton:checked {
+QToolBar QToolButton:pressed,
+QToolBar QToolButton:checked {
 	border-color: #A7A4A0; /* @button_border */
 	background: qlineargradient(x1:0, y1:0, x2:0, y2:1, /* vertical */
 		stop:0       /* @button_active_glaze_top */ rgba(212,210,208,199),
@@ -222,36 +222,34 @@ QToolButton:checked {
 		stop:1       /* @button_active_glaze_bot */ rgba(192,189,186,201));
 }
 
-/* --- tool bar item with menu --- */
-
-QToolButton::menu-arrow {
+QToolBar QToolButton::menu-arrow {
 	width: 14px;
 	height: 14px;
 	margin: 0 1px 0 -1px;
 	image: url("../images/go-down-black.svg");
 }
 
-QToolButton::menu-arrow:open {
+QToolBar QToolButton::menu-arrow:open {
 	margin: 2px 0 -2px -1px;
 }
 
-QToolButton::menu-arrow:disabled {
+QToolBar QToolButton::menu-arrow:disabled {
 	image: url("../images/go-down-symbolic.svg");
 }
 
-QToolButton[hasMenu="true"] {
+QToolBar QToolButton[hasMenu="true"] {
 	width: 24px;
 	padding-right: 29px;
 }
 
-QToolButton[hasMenu="true"]::menu-button {
+QToolBar QToolButton[hasMenu="true"]::menu-button {
 	width: 24px;
 	border-left: 1px solid transparent;
 	background: transparent;
 }
 
-QToolButton[hasMenu="true"]::menu-button:hover,
-QToolButton[hasMenu="true"]::menu-button:active {
+QToolBar QToolButton[hasMenu="true"]::menu-button:hover,
+QToolBar QToolButton[hasMenu="true"]::menu-button:active {
 	border-left-color: #A7A4A0; /* @button_border */
 }
 
@@ -492,12 +490,17 @@ QTabBar {
 	/* background-color: #EDECEB; /* @theme_bg */
 }
 
+CloseButton,
+QTabBar::close-button,
 QTabBar QToolButton {
+	min-width: 16px;
 	max-width: 16px;
+	min-height: 16px;
 	max-height: 16px;
 	margin: 0;
 	border: 1px solid transparent;
 	border-radius: 3px;
+	image: url('/usr/share/icons/gnome/16x16/actions/window-close.png');
 }
 
 QTabBar::tab {
@@ -1067,7 +1070,10 @@ QPushButton:checked {
 	padding: 5px 3px 3px 5px;
 }
 
+QTabBar QToolButton:hover,
+QTabBar::close-button:hover,
 QPushButton:hover {
+	border: 1px solid #A7A4A0; /* @button_border */
 	background:
 		#E6DDD5 /* @theme_bg */
 		qlineargradient(x1:0, y1:0, x2:0, y2:1, /* vertical */
@@ -1195,6 +1201,10 @@ QSplitter::handle:horizontal {
 #AwfMainWindow QCheckBox { margin: 1px 3px 1px 1px; } /* margin: 1px; */
 #AwfMainWindow QRadioButton { margin: 1px 4px 1px 1px; } /* margin: 1px; */
 #AwfMainWindow QTreeView QRadioButton { margin: -1px 0 0 4px; } /* margin: -1px 0 0 4px; */
+#AwfMainWindow QGroupBox.border-inset { min-width: 138px; } /* same as awf-gtk3 */
+#AwfMainWindow QGroupBox.border-outset { min-width: 138px; } /* same as awf-gtk3 */
+#AwfMainWindow QGroupBox.border-groove { }
+#AwfMainWindow QGroupBox.border-ridge { }
 #AwfMainWindow .awf-cheatcode-colorbtn { min-height: 21px; }
 #AwfMainWindow .awf-cheatcode-folderbtn { min-height: 19px; }
 #AwfMainWindow AwfTreeView { qproperty-columnWidths: "28,24,24,67,81,81,67,34,34,24,24"; }

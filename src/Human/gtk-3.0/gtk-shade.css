@@ -124,6 +124,7 @@
 /* #694C3F */ @define-color slider_border shade(@slider_base, 0.745);
 /* #D1C2B6 */ @define-color slider_trough_bg shade(@theme_bg, 0.881);
 /* #B4A292 */ @define-color slider_trough_border shade(shade(@theme_bg, 0.839), 0.876);
+              @define-color slider_trough_borbis alpha(shade(@theme_bg, 0.82), 0.26);
               @define-color slider_pattern alpha(shade(@theme_selected_bg, 1.2), 0.8);
 /* #D0C2B5 */ @define-color scale_trough_bg shade(@theme_bg, 0.881);
 

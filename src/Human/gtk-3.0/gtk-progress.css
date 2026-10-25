@@ -285,19 +285,12 @@ levelbar:disabled {
 
 levelbar trough {
 	border-radius: 2.75px;
-	background:
-		linear-gradient(to right,
-			alpha(@slider_trough_shadow_edge, 0.3),
-			alpha(@slider_trough_shadow, 0.3) 3px,
-			alpha(@slider_trough_shadow, 0) 5px),
-		linear-gradient(to bottom,
-			alpha(@slider_trough_shadow_edge, 0.3),
-			alpha(@slider_trough_shadow, 0.3) 3px,
-			alpha(@slider_trough_shadow, 0) 5px)
-		@slider_trough_bg;
+	background: @slider_trough_bg;
 	box-shadow:
 		inset -1px -1px @slider_trough_border,
-		inset  1px  1px @slider_trough_border;
+		inset  3px 3px @slider_trough_borbis,
+		inset  2px 2px @slider_trough_borbis,
+		inset  1px 1px @slider_trough_border;
 }
 
 levelbar.vertical trough {
@@ -411,8 +404,8 @@ progressbar trough {
 	background: @slider_trough_bg;
 	box-shadow:
 		inset -1px -1px @slider_trough_border,
-		inset  3px 3px alpha(shade(@theme_bg, 0.82), 0.26),
-		inset  2px 2px alpha(shade(@theme_bg, 0.82), 0.26),
+		inset  3px 3px @slider_trough_borbis,
+		inset  2px 2px @slider_trough_borbis,
 		inset  1px 1px @slider_trough_border;
 }
 
