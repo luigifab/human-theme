@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 42">
+<!-- same as GTK - made by Claude Opus 5.5 -->
+	<defs>
+		<linearGradient id="glaze" gradientUnits="userSpaceOnUse" x1="39" y1="0" x2="62" y2="0">
+			<stop offset="0"    stop-color="#000000" class="slider_glaze_top"/>
+			<stop offset="0.49" stop-color="#000000" class="slider_glaze_mida"/>
+			<stop offset="0.49" stop-color="#000000" class="slider_glaze_midb"/>
+			<stop offset="1"    stop-color="#000000" class="slider_glaze_bot"/>
+		</linearGradient>
+	</defs>
+	<g transform="skewX(45)">
+		<rect x="-24.5" y="0" width="21" height="42" fill="#2ED331" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="17.5"  y="0" width="21" height="42" fill="#2ED331" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="59.5"  y="0" width="21" height="42" fill="#2ED331" class="slider_pattern" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="-45.5" y="0" width="21" height="42" fill="#95E996" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="-3.5"  y="0" width="21" height="42" fill="#95E996" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="38.5"  y="0" width="21" height="42" fill="#95E996" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+		<rect x="80.5"  y="0" width="21" height="42" fill="#95E996" class="slider_pattern_shade" fill-opacity="0.8" shape-rendering="crispEdges"/>
+	</g>
+	<rect x="0" y="0" width="100" height="42" fill="url(#glaze)" fill-opacity="0.8"/>
+</svg>

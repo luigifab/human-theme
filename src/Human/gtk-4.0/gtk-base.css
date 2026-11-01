@@ -934,7 +934,6 @@ popover popover contents {
 
 popover button.flat,
 popover button.flat:active,
-popover button.flat,
 popover modelbutton {
 	padding: 1px 0 2px;
 	border: 1px solid transparent;
@@ -1424,7 +1423,6 @@ calendar header button.image-button:active {
 calendar .day-number {
 	padding: 2px 0;
 	color: @theme_text;
-	border-left: 2px solid @theme_base;
 	border-left: 2px solid @theme_base;
 	background-color: @theme_base;
 }

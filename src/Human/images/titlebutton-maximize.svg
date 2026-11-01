@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
+<!-- same as marco (ClearlooksRe) - made by Claude Opus 5.5 -->
+<path d="M3 3h10v10h-10zM4 4v8h8v-8z" fill="#5D453B" class="titlebutton_icon_border"/>
+<path d="M5 6h6v5h-6zM6 7v3h4v-3z" fill="#5D453B" class="titlebutton_icon_border"/>
+<path d="M4 4h8v8h-8zM5 5v6h6v-6z" fill="#E3D7D2" class="titlebutton_icon"/>
+<rect x="5" y="5" width="7" height="1" fill="#E3D7D2" class="titlebutton_icon"/>
+</svg>

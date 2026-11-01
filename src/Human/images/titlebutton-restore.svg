@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
+<!-- same as marco (ClearlooksRe) - made by Claude Opus 5.5 -->
+<path d="M3 3h8v8h-8zM4 4v6h6v-6z" fill="#5D453B" class="titlebutton_icon_border"/>
+<path d="M5 6h4v3h-4zM6 7v1h2v-1z" fill="#5D453B" class="titlebutton_icon_border"/>
+<path d="M5 5h6v6h-6zM6 6v4h4v-4z" fill="#E3D7D2" class="titlebutton_icon"/>
+<rect x="6" y="6" width="4" height="1" fill="#E3D7D2" class="titlebutton_icon"/>
+<path d="M5 5h8v8h-8zM6 6v6h6v-6z" fill="#5D453B" class="titlebutton_icon_border"/>
+<path d="M7 8h4v3h-4zM8 9v1h2v-1z" fill="#5D453B" class="titlebutton_icon_border"/>
+<path d="M6 6h6v6h-6zM7 7v4h4v-4z" fill="#E3D7D2" class="titlebutton_icon"/>
+<rect x="7" y="7" width="4" height="1" fill="#E3D7D2" class="titlebutton_icon"/>
+</svg>

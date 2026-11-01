@@ -82,7 +82,9 @@ dialog.background.solid-csd .dialog-vbox.vertical .dialog-action-area {
 
 .background.csd.unified deck headerbar,
 .background.solid-csd.unified deck headerbar {
-	margin: 0;
+	margin: 0; /* @todo -1px not working */
+	border-left: 0;
+	border-right: 0;
 }
 
 .background.csd.unified deck headerbar + *,
@@ -314,6 +316,45 @@ dialog.background.solid-csd .dialog-vbox.vertical .dialog-action-area {
 		shade(@theme_selected_bg, 0.9));
 }
 
+.background.csd headerbar button.titlebutton.minimize image,
+.background.csd headerbar button.titlebutton.maximize image,
+.background.csd headerbar button.titlebutton.close image,
+.background.ssd headerbar button.titlebutton.minimize image,
+.background.ssd headerbar button.titlebutton.maximize image,
+.background.ssd headerbar button.titlebutton.close image,
+.background.solid-csd headerbar button.titlebutton.minimize image,
+.background.solid-csd headerbar button.titlebutton.maximize image,
+.background.solid-csd headerbar button.titlebutton.close image {
+	/* <draw_ops name="*_button_icon"> same icons as marco, icon from icon theme is hidden */
+	color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.background.csd headerbar button.titlebutton.minimize image,
+.background.ssd headerbar button.titlebutton.minimize image,
+.background.solid-csd headerbar button.titlebutton.minimize image {
+	background-image: url("../images/titlebutton-minimize.svg");
+}
+
+.background.csd headerbar button.titlebutton.maximize image,
+.background.ssd headerbar button.titlebutton.maximize image,
+.background.solid-csd headerbar button.titlebutton.maximize image {
+	background-image: url("../images/titlebutton-maximize.svg");
+}
+
+.background.csd headerbar button.titlebutton.close image,
+.background.ssd headerbar button.titlebutton.close image,
+.background.solid-csd headerbar button.titlebutton.close image {
+	background-image: url("../images/titlebutton-close.svg");
+}
+
+.background.csd.maximized headerbar button.titlebutton.maximize image,
+.background.ssd.maximized headerbar button.titlebutton.maximize image,
+.background.solid-csd.maximized headerbar button.titlebutton.maximize image {
+	background-image: url("../images/titlebutton-restore.svg");
+}
+
 /* --- window (title & border) backdrop --- */
 
 .background.csd:backdrop decoration,
@@ -396,6 +437,34 @@ dialog.background.solid-csd .dialog-vbox.vertical .dialog-action-area {
 .background.ssd headerbar button.titlebutton:backdrop:hover,
 .background.solid-csd:backdrop headerbar button.titlebutton:hover {
 	/* @todo */
+}
+
+.background.csd:backdrop headerbar button.titlebutton.minimize image,
+.background.ssd:backdrop headerbar button.titlebutton.minimize image,
+.background.ssd headerbar button.titlebutton.minimize:backdrop image,
+.background.solid-csd:backdrop headerbar button.titlebutton.minimize image {
+	background-image: url("../images/titlebutton-minimize-backdrop.svg");
+}
+
+.background.csd:backdrop headerbar button.titlebutton.maximize image,
+.background.ssd:backdrop headerbar button.titlebutton.maximize image,
+.background.ssd headerbar button.titlebutton.maximize:backdrop image,
+.background.solid-csd:backdrop headerbar button.titlebutton.maximize image {
+	background-image: url("../images/titlebutton-maximize-backdrop.svg");
+}
+
+.background.csd:backdrop headerbar button.titlebutton.close image,
+.background.ssd:backdrop headerbar button.titlebutton.close image,
+.background.ssd headerbar button.titlebutton.close:backdrop image,
+.background.solid-csd:backdrop headerbar button.titlebutton.close image {
+	background-image: url("../images/titlebutton-close-backdrop.svg");
+}
+
+.background.csd.maximized:backdrop headerbar button.titlebutton.maximize image,
+.background.ssd.maximized:backdrop headerbar button.titlebutton.maximize image,
+.background.ssd.maximized headerbar button.titlebutton.maximize:backdrop image,
+.background.solid-csd.maximized:backdrop headerbar button.titlebutton.maximize image {
+	background-image: url("../images/titlebutton-restore-backdrop.svg");
 }
 
 /* --- window (title & border) maximized --- */

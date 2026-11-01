@@ -297,6 +297,45 @@ window dialog-host dialog floating-sheet sheet .heading-bin /* adwaita alertdial
 		shade(@theme_selected_bg, 0.9));
 }
 
+.background.csd headerbar windowcontrols button.minimize image,
+.background.csd headerbar windowcontrols button.maximize image,
+.background.csd headerbar windowcontrols button.close image,
+.background.ssd headerbar windowcontrols button.minimize image,
+.background.ssd headerbar windowcontrols button.maximize image,
+.background.ssd headerbar windowcontrols button.close image,
+.background.solid-csd headerbar windowcontrols button.minimize image,
+.background.solid-csd headerbar windowcontrols button.maximize image,
+.background.solid-csd headerbar windowcontrols button.close image {
+	/* <draw_ops name="*_button_icon"> same icons as marco, icon from icon theme is hidden */
+	color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.background.csd headerbar windowcontrols button.minimize image,
+.background.ssd headerbar windowcontrols button.minimize image,
+.background.solid-csd headerbar windowcontrols button.minimize image {
+	background-image: url("../images/titlebutton-minimize.svg");
+}
+
+.background.csd headerbar windowcontrols button.maximize image,
+.background.ssd headerbar windowcontrols button.maximize image,
+.background.solid-csd headerbar windowcontrols button.maximize image {
+	background-image: url("../images/titlebutton-maximize.svg");
+}
+
+.background.csd headerbar windowcontrols button.close image,
+.background.ssd headerbar windowcontrols button.close image,
+.background.solid-csd headerbar windowcontrols button.close image {
+	background-image: url("../images/titlebutton-close.svg");
+}
+
+.background.csd.maximized headerbar windowcontrols button.maximize image,
+.background.ssd.maximized headerbar windowcontrols button.maximize image,
+.background.solid-csd.maximized headerbar windowcontrols button.maximize image {
+	background-image: url("../images/titlebutton-restore.svg");
+}
+
 /* --- window (title & border) backdrop --- */
 
 .background.csd:backdrop,
@@ -370,6 +409,30 @@ window dialog-host dialog floating-sheet sheet .heading-bin /* adwaita alertdial
 .background.ssd:backdrop headerbar windowcontrols button:hover,
 .background.solid-csd:backdrop headerbar windowcontrols button:hover {
 	/* @todo */
+}
+
+.background.csd:backdrop headerbar windowcontrols button.minimize image,
+.background.ssd:backdrop headerbar windowcontrols button.minimize image,
+.background.solid-csd:backdrop headerbar windowcontrols button.minimize image {
+	background-image: url("../images/titlebutton-minimize-backdrop.svg");
+}
+
+.background.csd:backdrop headerbar windowcontrols button.maximize image,
+.background.ssd:backdrop headerbar windowcontrols button.maximize image,
+.background.solid-csd:backdrop headerbar windowcontrols button.maximize image {
+	background-image: url("../images/titlebutton-maximize-backdrop.svg");
+}
+
+.background.csd:backdrop headerbar windowcontrols button.close image,
+.background.ssd:backdrop headerbar windowcontrols button.close image,
+.background.solid-csd:backdrop headerbar windowcontrols button.close image {
+	background-image: url("../images/titlebutton-close-backdrop.svg");
+}
+
+.background.csd.maximized:backdrop headerbar windowcontrols button.maximize image,
+.background.ssd.maximized:backdrop headerbar windowcontrols button.maximize image,
+.background.solid-csd.maximized:backdrop headerbar windowcontrols button.maximize image {
+	background-image: url("../images/titlebutton-restore-backdrop.svg");
 }
 
 /* --- window (title & border) maximized --- */

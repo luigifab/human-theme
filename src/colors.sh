@@ -21,14 +21,13 @@
 # merchantability or fitness for a particular purpose. See the
 # GNU General Public License (GPL) for more details.
 
+cd "$(dirname "$0")" || exit 1
 shopt -s nullglob
 shopt -s extglob
 
-cd "$(dirname "$0")" || exit 1
-
-# made with help of Claude.ai
+# made with help of Claude
 validTargets=(cinnamon firefox qt images)
-validThemes=(Human Human-blue Human-green Human-orange)
+validThemes=(Human Human-blue Human-green Human-orange Human-winxp)
 filterTargets=()
 filterTheme=""
 
@@ -40,7 +39,7 @@ show_help () {
 	echo ""
 }
 
-listContains () {
+list_contains () {
 	local needle="$1"; shift
 	local x
 	for x in "$@"; do
@@ -50,7 +49,7 @@ listContains () {
 }
 
 do_target () {
-	listContains "$1" "${filterTargets[@]}"
+	list_contains "$1" "${filterTargets[@]}"
 }
 
 if [ $# -eq 0 ]; then
@@ -59,9 +58,9 @@ if [ $# -eq 0 ]; then
 fi
 
 for arg in "$@"; do
-	if listContains "$arg" "${validTargets[@]}"; then
+	if list_contains "$arg" "${validTargets[@]}"; then
 		filterTargets+=("$arg")
-	elif listContains "$arg" "${validThemes[@]}"; then
+	elif list_contains "$arg" "${validThemes[@]}"; then
 		filterTheme="$arg"
 	else
 		echo "Warning: unknown argument: $arg"

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
+<!-- same as marco (ClearlooksRe) - made by Claude Opus 5.5 -->
+<path d="M6 6h6v6h-6zM7 7v4h4v-4z" fill="#706C69" class="titlebutton_icon_backdrop"/>
+<rect x="7" y="7" width="4" height="1" fill="#706C69" class="titlebutton_icon_backdrop"/>
+<rect x="4" y="4" width="5" height="1" fill="#706C69" class="titlebutton_icon_backdrop"/>
+<rect x="9" y="4" width="1" height="2" fill="#706C69" class="titlebutton_icon_backdrop"/>
+<rect x="4" y="4" width="1" height="5" fill="#706C69" class="titlebutton_icon_backdrop"/>
+<rect x="4" y="9" width="2" height="1" fill="#706C69" class="titlebutton_icon_backdrop"/>
+</svg>

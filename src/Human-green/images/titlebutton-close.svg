@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
+<!-- same as marco (ClearlooksRe) - made by Claude Opus 5.5 -->
+<path d="M3.086 5.914 10.086 12.914 12.914 10.086 5.914 3.086z" fill="#848C71" class="titlebutton_icon_border"/>
+<path d="M5.914 12.914 12.914 5.914 10.086 3.086 3.086 10.086z" fill="#848C71" class="titlebutton_icon_border"/>
+<rect x="4" y="3" width="2" height="1" fill="#848C71" class="titlebutton_icon_border"/>
+<rect x="3" y="4" width="1" height="2" fill="#848C71" class="titlebutton_icon_border"/>
+<rect x="10" y="3" width="2" height="1" fill="#848C71" class="titlebutton_icon_border"/>
+<rect x="12" y="4" width="1" height="2" fill="#848C71" class="titlebutton_icon_border"/>
+<rect x="4" y="12" width="2" height="1" fill="#848C71" class="titlebutton_icon_border"/>
+<rect x="3" y="10" width="1" height="2" fill="#848C71" class="titlebutton_icon_border"/>
+<rect x="10" y="12" width="2" height="1" fill="#848C71" class="titlebutton_icon_border"/>
+<rect x="12" y="10" width="1" height="2" fill="#848C71" class="titlebutton_icon_border"/>
+<path d="M3.793 5.207 10.793 12.207 12.207 10.793 5.207 3.793z" fill="#EEEFEA" class="titlebutton_icon"/>
+<path d="M4.146 4.854 12.146 12.854 12.854 12.146 4.854 4.146z" fill="#EEEFEA" class="titlebutton_icon"/>
+<path d="M5.207 12.207 12.207 5.207 10.793 3.793 3.793 10.793z" fill="#EEEFEA" class="titlebutton_icon"/>
+<path d="M4.854 11.854 12.854 3.854 12.146 3.146 4.146 11.146z" fill="#EEEFEA" class="titlebutton_icon"/>
+</svg>

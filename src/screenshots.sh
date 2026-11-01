@@ -21,19 +21,17 @@
 # merchantability or fitness for a particular purpose. See the
 # GNU General Public License (GPL) for more details.
 
-# made principally by Claude.ai (sudo apt install xdotool imagemagick x11-utils)
 cd "$(dirname "$0")" || exit 1
 set -euo pipefail
 
+# made by Claude (sudo apt install xdotool imagemagick x11-utils)
 OUTDIR="$(pwd)/images"
 THUMBDIR="$OUTDIR/thumbs"
 APPS=("awf-gtk2" "awf-gtk3" "env GDK_DISABLE=gl,vulkan GSK_RENDERER=cairo awf-gtk4" "awf-qt4" "awf-qt5" "awf-qt6")
 COLORS=("" "blue" "orange" "green")
 RTLFLAGS=(0 1)
-
 DELAY_LAUNCH=2
 DELAY_MENU=1
-
 DELAY_FIREFOX=8
 FIREFOX_PROFILE="test"
 FIREFOX_PROFILE_DIR="$HOME/.mozilla/firefox/90mc73q8.${FIREFOX_PROFILE}"
@@ -72,6 +70,25 @@ capture_window_area() {
 	echo "  $outfile"
 }
 
+start_app() {
+	local delay="$1"; shift
+	"$@" &
+	pid=$!
+	sleep "$delay"
+
+	wid=$(xdotool search --pid "$pid" --onlyvisible | head -1) || true
+	if [ -z "$wid" ]; then
+		kill "$pid" 2>/dev/null || true
+		return 1
+	fi
+	xdotool windowactivate "$wid"
+}
+
+stop_app() {
+	kill "$pid" 2>/dev/null || true
+	wait "$pid" 2>/dev/null || true
+}
+
 # awf-gtk & awf-qt
 for app_entry in "${APPS[@]}"; do
 
@@ -82,12 +99,7 @@ for app_entry in "${APPS[@]}"; do
 
 	for color in "${COLORS[@]}"; do
 
-		if [ -n "$color" ]; then
-			theme="Human-${color}"
-		else
-			theme="Human"
-		fi
-
+		theme="Human${color:+-$color}"
 		gsettings set org.mate.Marco.general theme "ClearlooksRe"
 		gsettings set org.mate.interface gtk-theme "$theme"
 		echo " $theme"
@@ -96,87 +108,36 @@ for app_entry in "${APPS[@]}"; do
 		for rtl in "${RTLFLAGS[@]}"; do
 
 			args=()
+			fileprefix="$applabel"
 			if [ "$rtl" = 1 ]; then
 				if [[ "$bin" == awf-qt* ]]; then
 					args+=(--reverse)
 				else
 					args+=(--rtl)
 				fi
-			fi
-
-			fileprefix="$applabel"
-			if [ "$rtl" = 1 ]; then
 				fileprefix="${fileprefix}-rtl"
 			fi
-			if [ -n "$color" ]; then
-				fileprefix="${fileprefix}-${color}"
-			fi
+			fileprefix="${fileprefix}${color:+-$color}"
 
-			LC_ALL=C.UTF-8 "${cmd[@]}" "${args[@]}" &
-			pid=$!
-			sleep "$DELAY_LAUNCH"
-
-			wid=$(xdotool search --pid "$pid" --onlyvisible | head -1) || true
-			if [ -z "$wid" ]; then
-				kill "$pid" 2>/dev/null || true
-				continue
-			fi
-			xdotool windowactivate "$wid"
+			LC_ALL=C.UTF-8 start_app "$DELAY_LAUNCH" "${cmd[@]}" "${args[@]}" || continue
 			capture_window_area "$wid" "${OUTDIR}/${fileprefix}.png"
 
 			xdotool key alt+o
 			capture_window_area "$wid" "${OUTDIR}/${fileprefix}-menu.png"
 			xdotool key Escape
-
-			kill "$pid" 2>/dev/null || true
-			wait "$pid" 2>/dev/null || true
+			stop_app
 		done
 
 		if [ "$bin" = "awf-gtk3" ]; then
 
-			fileprefix="gtk3-plus"
-			if [ -n "$color" ]; then
-				fileprefix="${fileprefix}-${color}"
-			fi
-
-			LC_ALL=C.UTF-8 "${cmd[@]}" &
-			pid=$!
-			sleep "$DELAY_LAUNCH"
-
-			wid=$(xdotool search --pid "$pid" --onlyvisible | head -1) || true
-			if [ -z "$wid" ]; then
-				kill "$pid" 2>/dev/null || true
-				continue
-			fi
-			xdotool windowactivate "$wid"
+			LC_ALL=C.UTF-8 start_app "$DELAY_LAUNCH" "${cmd[@]}" || continue
 			xdotool key Right Right Right Right Right Return
-			capture_window_area "$wid" "${OUTDIR}/${fileprefix}.png"
+			capture_window_area "$wid" "${OUTDIR}/gtk3-plus${color:+-$color}.png"
+			stop_app
 
-			kill "$pid" 2>/dev/null || true
-			wait "$pid" 2>/dev/null || true
-		fi
-
-		if [ "$bin" = "awf-gtk3" ]; then
-
-			fileprefix="gtk3-csd"
-			if [ -n "$color" ]; then
-				fileprefix="${fileprefix}-${color}"
-			fi
-
-			GTK_CSD=1 LC_ALL=C.UTF-8 "${cmd[@]}" &
-			pid=$!
-			sleep "$DELAY_LAUNCH"
-
-			wid=$(xdotool search --pid "$pid" --onlyvisible | head -1) || true
-			if [ -z "$wid" ]; then
-				kill "$pid" 2>/dev/null || true
-				continue
-			fi
-			xdotool windowactivate "$wid"
-			capture_window_area "$wid" "${OUTDIR}/${fileprefix}.png"
-
-			kill "$pid" 2>/dev/null || true
-			wait "$pid" 2>/dev/null || true
+			GTK_CSD=1 LC_ALL=C.UTF-8 start_app "$DELAY_LAUNCH" "${cmd[@]}" || continue
+			capture_window_area "$wid" "${OUTDIR}/gtk3-csd${color:+-$color}.png"
+			stop_app
 		fi
 	done
 done
@@ -184,12 +145,7 @@ done
 # firefox
 for color in "${COLORS[@]}"; do
 
-	if [ -n "$color" ]; then
-		theme="Human-${color}"
-	else
-		theme="Human"
-	fi
-
+	theme="Human${color:+-$color}"
 	gsettings set org.mate.Marco.general theme "ClearlooksRe"
 	gsettings set org.mate.interface gtk-theme "$theme"
 	echo " $theme"
@@ -197,36 +153,14 @@ for color in "${COLORS[@]}"; do
 
 	ln -sf "${FIREFOX_CSS_BASE}/${theme}/firefox/firefox.css" "${FIREFOX_CHROME_DIR}/userChrome.css"
 
-	#for rtl in "${RTLFLAGS[@]}"; do
-	rtl=0
+	fileprefix="firefox${color:+-$color}"
+	LC_ALL=C.UTF-8 start_app "$DELAY_FIREFOX" firefox -no-remote -P "$FIREFOX_PROFILE" || continue
+	capture_window_area "$wid" "${OUTDIR}/${fileprefix}.png"
 
-		fileprefix="firefox"
-		if [ "$rtl" = 1 ]; then
-			fileprefix="${fileprefix}-rtl"
-		fi
-		if [ -n "$color" ]; then
-			fileprefix="${fileprefix}-${color}"
-		fi
-
-		LC_ALL=C.UTF-8 firefox -no-remote -P "$FIREFOX_PROFILE" &
-		pid=$!
-		sleep "$DELAY_FIREFOX"
-
-		wid=$(xdotool search --pid "$pid" --onlyvisible | head -1) || true
-		if [ -z "$wid" ]; then
-			kill "$pid" 2>/dev/null || true
-			continue
-		fi
-		xdotool windowactivate "$wid"
-		capture_window_area "$wid" "${OUTDIR}/${fileprefix}.png"
-
-		xdotool key alt+f
-		capture_window_area "$wid" "${OUTDIR}/${fileprefix}-menu.png"
-		xdotool key Escape
-
-		kill -TERM "$pid" 2>/dev/null || true
-		wait "$pid" 2>/dev/null || true
-	#done
+	xdotool key alt+f
+	capture_window_area "$wid" "${OUTDIR}/${fileprefix}-menu.png"
+	xdotool key Escape
+	stop_app
 done
 
 # reset

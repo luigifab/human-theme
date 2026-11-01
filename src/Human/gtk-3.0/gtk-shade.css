@@ -128,6 +128,10 @@
               @define-color slider_pattern alpha(shade(@theme_selected_bg, 1.2), 0.8);
 /* #D0C2B5 */ @define-color scale_trough_bg shade(@theme_bg, 0.881);
 
+/* #5D453B */ @define-color titlebutton_icon_border shade(@theme_selected_bg, 0.7);
+/* #E3D7D2 */ @define-color titlebutton_icon mix(@theme_selected_bg, #FFF, 0.75);
+/* #706C69 */ @define-color titlebutton_icon_backdrop mix(@theme_fg, @theme_bg, 0.45);
+
 /* #EAE3DC */ @define-color scroll_bg shade(@theme_bg, 1.025);
 /* #C5B5A6 */ @define-color scroll_border shade(@theme_bg, 0.82);
 /* #9E8E80 */ @define-color scroll_slider_border shade(@theme_bg, 0.631); /* #9E8B79 @todo */
