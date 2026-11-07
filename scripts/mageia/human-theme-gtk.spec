@@ -116,3 +116,5 @@ install -Dpm 644 data/profile.sh %{buildroot}%{_sysconfdir}/profile.d/%{name}.sh
 
 
 
+
+

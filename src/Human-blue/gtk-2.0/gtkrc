@@ -201,7 +201,7 @@ class "GtkScale"      style "murrine-scale"
 class "GtkScrollbar"  style "murrine-scrollbar"
 
 # General matching following, the order is chosen so that the right styles override each other
-# eg. progressbar needs to be more important then the menu match.
+# e.g. progressbar needs to be more important than the menu match.
 # This is not perfect, it could be done better.
 # (That is modify *every* widget in the notebook, and change those back that we really don't want changed)
 widget_class "*<GtkNotebook>*<GtkEventBox>"       style "murrine-notebook"

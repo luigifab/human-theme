@@ -113,10 +113,8 @@ if do_target cinnamon; then
 		batchResults=()
 
 		for keyword in "${uniqueColors[@]}"; do
-			if [[ "$keyword" == *"@"* ]]; then
-				batchKeys+=("$keyword")
-				batchSpecs+=("${keyword#* }")
-			fi
+			batchKeys+=("$keyword")
+			batchSpecs+=("${keyword#* }")
 		done
 
 		if [[ ${#batchKeys[@]} -gt 0 ]]; then
@@ -194,10 +192,8 @@ if do_target firefox; then
 		batchResults=()
 
 		for keyword in "${uniqueColors[@]}"; do
-			if [[ "$keyword" == *"@"* ]]; then
-				batchKeys+=("$keyword")
-				batchSpecs+=("${keyword#* }")
-			fi
+			batchKeys+=("$keyword")
+			batchSpecs+=("${keyword#* }")
 		done
 
 		if [[ ${#batchKeys[@]} -gt 0 ]]; then
@@ -273,10 +269,8 @@ if do_target qt; then
 		batchResults=()
 
 		for keyword in "${uniqueColors[@]}"; do
-			if [[ "$keyword" == *"@"* ]]; then
-				batchKeys+=("$keyword")
-				batchSpecs+=("${keyword#* }")
-			fi
+			batchKeys+=("$keyword")
+			batchSpecs+=("${keyword#* }")
 		done
 
 		if [[ ${#batchKeys[@]} -gt 0 ]]; then
@@ -379,10 +373,8 @@ if do_target images; then
 		batchResults=()
 
 		for keyword in "${uniqueColors[@]}"; do
-			if [[ "$keyword" == *"@"* ]]; then
-				batchKeys+=("$keyword")
-				batchSpecs+=("${keyword#* }")
-			fi
+			batchKeys+=("$keyword")
+			batchSpecs+=("${keyword#* }")
 		done
 
 		if [[ ${#batchKeys[@]} -gt 0 ]]; then

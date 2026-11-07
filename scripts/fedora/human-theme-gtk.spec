@@ -8,7 +8,6 @@ URL:           https://github.com/luigifab/human-theme
 Source0:       %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildArch:     noarch
-BuildRequires: aspell-fr
 Recommends:    mate-icon-theme
 Recommends:    dmz-cursor-themes
 Recommends:    gtk-murrine-engine
@@ -65,6 +64,9 @@ install -Dpm 644 data/profile.sh %{buildroot}%{_sysconfdir}/profile.d/%{name}.sh
 %changelog
 * Fri Jan 01 2027 Fabrice Creuzot <code@luigifab.fr> - 3.3.0-1
 - New upstream release
+
+* Mon Nov 02 2026 Fabrice Creuzot <code@luigifab.fr> - 3.2.0-3
+- Remove aspell-fr
 
 * Tue Jul 07 2026 Fabrice Creuzot <code@luigifab.fr> - 3.2.0-1
 - New upstream release

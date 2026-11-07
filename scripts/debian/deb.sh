@@ -23,7 +23,9 @@ else
 	rm -rf /tmp/$temp/scripts/*/builder/
 
 	mv /tmp/$temp builder/
-	cp /usr/share/common-licenses/GPL*3 builder/$temp/LICENSE
+	if [ ! -f builder/$temp/LICENSE ]; then
+		cp /usr/share/common-licenses/GPL*3 builder/$temp/LICENSE
+	fi
 
 	cd builder/
 	tar czf $temp.tar.gz $temp
