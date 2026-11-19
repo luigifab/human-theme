@@ -332,7 +332,7 @@ html:not([inFullscreen="true"]) #browser {
 		/* @theme_bg */ #ECE9D8 calc(100% - 19px)) !important;
 }
 
-html:not([inFullscreen="true"]) #statuspanel {
+html:not([inFullscreen="true"]) #statuspanel { /* v160+ */
 	display: block !important;
 	width: 100% !important;
 	max-width: 100% !important;
@@ -340,6 +340,7 @@ html:not([inFullscreen="true"]) #statuspanel {
 	padding: 0 !important;
 	position: fixed !important;
 	bottom: -19px !important;
+	bottom: 2px !important; /* v160+ */
 	left: 0 !important;
 	right: 0 !important;
 	visibility: visible !important;

@@ -25,7 +25,7 @@ cd "$(dirname "$0")" || exit 1
 shopt -s nullglob
 shopt -s extglob
 
-# made with help of Claude
+# made with the help of Claude
 validTargets=(cinnamon firefox qt images)
 validThemes=(Human Human-blue Human-green Human-orange Human-winxp)
 filterTargets=()
@@ -37,6 +37,12 @@ show_help () {
 	echo "  target   one or more of: ${validTargets[*]}"
 	echo "  theme    optional theme filter: ${validThemes[*]}"
 	echo ""
+}
+
+show_step () {
+	if false; then
+		echo " $1"
+	fi
 }
 
 list_contains () {
@@ -90,46 +96,32 @@ if do_target cinnamon; then
 		echo "[cinnamon] Updating colors of $f..."
 
 		if [[ "$f" != Human/* ]]; then
-			echo " copy file from main theme..."
+			show_step "copy file from main theme..."
 			cp "Human/${f#*/}" "$f"
 		fi
 
 		# search and sort used colors from cinnamon.css
 		# uniqueColors=[@theme_selected_fg, @theme_text, ...]
-		echo " extracting used colors..."
-		colors=()
-		uniqueColors=()
-
-		while IFS= read -r match; do
-			colors+=("$match")
-		done < <(grep -ohP '@\w+' "$f")
-		mapfile -t uniqueColors < <(printf "%s\n" "${colors[@]}" | sort -u | grep -v '^$' | grep -v '@see' | grep -v '@todo' | grep -v '@media')
+		show_step "extracting used colors..."
+		mapfile -t uniqueColors < <(grep -ohP '@\w+' "$f" | sort -u | grep -v -e '@see' -e '@todo' -e '@media')
 
 		# find all colors
-		echo " computing colors..."
+		show_step "computing colors..."
 		sedCmds=()
-		batchKeys=()
-		batchSpecs=()
 		batchResults=()
 
-		for keyword in "${uniqueColors[@]}"; do
-			batchKeys+=("$keyword")
-			batchSpecs+=("${keyword#* }")
-		done
+		if [[ ${#uniqueColors[@]} -gt 0 ]]; then
 
-		if [[ ${#batchKeys[@]} -gt 0 ]]; then
+			mapfile -t batchResults < <(python3 colors.py "${uniqueColors[@]}" --theme "$theme")
 
-			mapfile -t batchResults < <(python3 colors.py "${batchSpecs[@]}" --theme "$theme")
+			for i in "${!uniqueColors[@]}"; do
 
-			for i in "${!batchKeys[@]}"; do
-
-				keyword="${batchKeys[i]}"
-				theAT="${keyword#* }"
+				keyword="${uniqueColors[i]}"
 				color="${batchResults[i]:-}"
 
 				if [ -z "$color" ]; then
 					color="#FFFF00" # yellow
-					echo -e " \e[90m- $theAT » yellow (ERROR)\e[0m"
+					echo -e " \e[90m- $keyword » yellow (ERROR)\e[0m"
 				fi
 
 				color=${color:0:7} # remove transparency #AABBCC[OO]
@@ -147,14 +139,13 @@ if do_target cinnamon; then
 
 		# search and replace colors in cinnamon.css
 		# avoid arguments overflow with chunk
-		echo " updating file..."
+		show_step "updating file..."
 		chunk=200
 		for ((i=0; i<${#sedCmds[@]}; i+=chunk)); do
 			sed -r -i "${sedCmds[@]:i:chunk}" $f  # sed -r -i "${sedCmds[@]}" $f
 		done
 
-		echo " done"
-		echo ""
+		show_step "done"
 	done
 fi
 
@@ -169,46 +160,32 @@ if do_target firefox; then
 		echo "[firefox] Updating colors of $f..."
 
 		if [[ "$f" != Human/* ]]; then
-			echo " copy file from main theme..."
+			show_step "copy file from main theme..."
 			cp "Human/${f#*/}" "$f"
 		fi
 
 		# search and sort used colors from firefox.css
 		# uniqueColors=[@theme_selected_fg, @theme_text, ...]
-		echo " extracting used colors..."
-		colors=()
-		uniqueColors=()
-
-		while IFS= read -r match; do
-			colors+=("$match")
-		done < <(grep -ohP '@\w+' "$f")
-		mapfile -t uniqueColors < <(printf "%s\n" "${colors[@]}" | sort -u | grep -v '^$' | grep -v '@see' | grep -v '@todo' | grep -v '@media')
+		show_step "extracting used colors..."
+		mapfile -t uniqueColors < <(grep -ohP '@\w+' "$f" | sort -u | grep -v -e '@see' -e '@todo' -e '@media')
 
 		# find all colors
-		echo " computing colors..."
+		show_step "computing colors..."
 		sedCmds=()
-		batchKeys=()
-		batchSpecs=()
 		batchResults=()
 
-		for keyword in "${uniqueColors[@]}"; do
-			batchKeys+=("$keyword")
-			batchSpecs+=("${keyword#* }")
-		done
+		if [[ ${#uniqueColors[@]} -gt 0 ]]; then
 
-		if [[ ${#batchKeys[@]} -gt 0 ]]; then
+			mapfile -t batchResults < <(python3 colors.py "${uniqueColors[@]}" --theme "$theme")
 
-			mapfile -t batchResults < <(python3 colors.py "${batchSpecs[@]}" --theme "$theme")
+			for i in "${!uniqueColors[@]}"; do
 
-			for i in "${!batchKeys[@]}"; do
-
-				keyword="${batchKeys[i]}"
-				theAT="${keyword#* }"
+				keyword="${uniqueColors[i]}"
 				color="${batchResults[i]:-}"
 
 				if [ -z "$color" ]; then
 					color="#FFFF00" # yellow
-					echo -e " \e[90m- $theAT » yellow (ERROR)\e[0m"
+					echo -e " \e[90m- $keyword » yellow (ERROR)\e[0m"
 				fi
 
 				# #XYZ; /* @example */
@@ -226,14 +203,13 @@ if do_target firefox; then
 
 		# search and replace colors in firefox.css
 		# avoid arguments overflow with chunk
-		echo " updating file..."
+		show_step "updating file..."
 		chunk=200
 		for ((i=0; i<${#sedCmds[@]}; i+=chunk)); do
 			sed -r -i "${sedCmds[@]:i:chunk}" $f  # sed -r -i "${sedCmds[@]}" $f
 		done
 
-		echo " done"
-		echo ""
+		show_step "done"
 	done
 fi
 
@@ -246,46 +222,32 @@ if do_target qt; then
 		echo "[qt] Updating colors of $f..."
 
 		if [[ "$f" != Human/* ]]; then
-			echo " copy file from main theme..."
+			show_step "copy file from main theme..."
 			cp "Human/${f#*/}" "$f"
 		fi
 
 		# search and sort used colors from *.qss files
 		# uniqueColors=[@theme_selected_fg, @theme_text, ...]
-		echo " extracting used colors..."
-		colors=()
-		uniqueColors=()
-
-		while IFS= read -r match; do
-			colors+=("$match")
-		done < <(grep -ohP '@\w+' "$f")
-		mapfile -t uniqueColors < <(printf "%s\n" "${colors[@]}" | sort -u | grep -v '^$' | grep -v '@see' | grep -v '@todo' | grep -v '@media')
+		show_step "extracting used colors..."
+		mapfile -t uniqueColors < <(grep -ohP '@\w+' "$f" | sort -u | grep -v -e '@see' -e '@todo' -e '@media')
 
 		# find all colors
-		echo " computing colors..."
+		show_step "computing colors..."
 		sedCmds=()
-		batchKeys=()
-		batchSpecs=()
 		batchResults=()
 
-		for keyword in "${uniqueColors[@]}"; do
-			batchKeys+=("$keyword")
-			batchSpecs+=("${keyword#* }")
-		done
+		if [[ ${#uniqueColors[@]} -gt 0 ]]; then
 
-		if [[ ${#batchKeys[@]} -gt 0 ]]; then
+			mapfile -t batchResults < <(python3 colors.py "${uniqueColors[@]}" --theme "$theme")
 
-			mapfile -t batchResults < <(python3 colors.py "${batchSpecs[@]}" --theme "$theme")
+			for i in "${!uniqueColors[@]}"; do
 
-			for i in "${!batchKeys[@]}"; do
-
-				keyword="${batchKeys[i]}"
-				theAT="${keyword#* }"
+				keyword="${uniqueColors[i]}"
 				color="${batchResults[i]:-}"
 
 				if [ -z "$color" ]; then
 					color="#FFFF00" # yellow
-					echo -e " \e[90m- $theAT » yellow (ERROR)\e[0m"
+					echo -e " \e[90m- $keyword » yellow (ERROR)\e[0m"
 				elif [[ ${#color} -eq 9 ]]; then
 					# replace #RRGGBBAA by rgba(r,g,b,a)
 					R=$((16#${color:1:2}))
@@ -317,14 +279,13 @@ if do_target qt; then
 
 		# search and replace colors in *.qss
 		# avoid arguments overflow with chunk
-		echo " updating file..."
+		show_step "updating file..."
 		chunk=200
 		for ((i=0; i<${#sedCmds[@]}; i+=chunk)); do
 			sed -r -i "${sedCmds[@]:i:chunk}" $f  # sed -r -i "${sedCmds[@]}" $f
 		done
 
-		echo " done"
-		echo ""
+		show_step "done"
 	done
 	done
 fi
@@ -341,7 +302,7 @@ if do_target images; then
 
 		# copy missing svg files
 		if [[ "$f" != Human/* ]]; then
-			echo " copying missing files..."
+			show_step "copying missing files..."
 			destDir="$(dirname "$f")/../images"
 			for src in Human/images/*.svg; do
 				base="$(basename "$src")"
@@ -356,40 +317,26 @@ if do_target images; then
 
 		# search and sort used colors from *.svg files
 		# uniqueColors=[@theme_selected_fg, @theme_text, ...]
-		echo " extracting used colors..."
-		colors=()
-		uniqueColors=()
-
-		while IFS= read -r match; do
-			colors+=("@$match")
-		done < <(grep -ohP '"[^"]*"\s+class="\K[^"]*' $svgs)
-		mapfile -t uniqueColors < <(printf "%s\n" "${colors[@]}" | sort -u | grep -v '^$' | grep -v '@see' | grep -v '@todo' | grep -v '@media')
+		show_step "extracting used colors..."
+		mapfile -t uniqueColors < <(grep -ohP '"[^"]*"\s+class="\K[^"]*' $svgs | sed 's/^/@/' | sort -u | grep -v -e '@see' -e '@todo' -e '@media')
 
 		# find all colors
-		echo " computing colors..."
+		show_step "computing colors..."
 		sedCmds=()
-		batchKeys=()
-		batchSpecs=()
 		batchResults=()
 
-		for keyword in "${uniqueColors[@]}"; do
-			batchKeys+=("$keyword")
-			batchSpecs+=("${keyword#* }")
-		done
+		if [[ ${#uniqueColors[@]} -gt 0 ]]; then
 
-		if [[ ${#batchKeys[@]} -gt 0 ]]; then
+			mapfile -t batchResults < <(python3 colors.py "${uniqueColors[@]}" --theme "$theme")
 
-			mapfile -t batchResults < <(python3 colors.py "${batchSpecs[@]}" --theme "$theme")
+			for i in "${!uniqueColors[@]}"; do
 
-			for i in "${!batchKeys[@]}"; do
-
-				keyword="${batchKeys[i]}"
-				theAT="${keyword#* }"
+				keyword="${uniqueColors[i]}"
 				color="${batchResults[i]:-}"
 
 				if [ -z "$color" ]; then
 					color="#FFFF00" # yellow
-					echo -e " \e[90m- $theAT » yellow (ERROR)\e[0m"
+					echo -e " \e[90m- $keyword » yellow (ERROR)\e[0m"
 				fi
 
 				color=${color:0:7} # remove transparency #AABBCC[OO]
@@ -401,7 +348,7 @@ if do_target images; then
 		fi
 
 		# refresh file then search and replace colors in *.svg
-		echo " updating files..."
+		show_step "updating files..."
 		cnts=0
 		for svg in $svgs; do
 
@@ -418,7 +365,6 @@ if do_target images; then
 			fi
 		done
 
-		echo " done ($cnts files updated)"
-		echo ""
+		show_step "done ($cnts files updated)"
 	done
 fi

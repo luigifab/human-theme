@@ -42,7 +42,10 @@ class TestApp(Gtk.Application):
 			provider.load_from_data(f'@define-color {name} {spec};'.encode())
 			Gtk.StyleContext.add_provider_for_screen(screen, provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 			color = context.lookup_color(name)
-			assert color[0], f'Color not found: {spec}'
+			#assert color[0], f'Color not found: {spec}'
+			if not color[0]:
+				print('') # yellow with colors.sh
+				continue
 			r, g, b, a = (round(c * 255) for c in color[1])
 			color_str = f'#{r:02x}{g:02x}{b:02x}'
 			if a != 255:

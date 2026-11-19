@@ -22,7 +22,7 @@
  * GNU General Public License (GPL) for more details.
  */
 
-/* --- window (title & border) -- (solid-csd without compositor, csd with compositor, ssd with muffin/mutter) --- */
+/* --- window (title & border) --- (solid-csd without compositor, csd with compositor, ssd with muffin/mutter) --- */
 /* window or dialog / with or without compositor / .titlebutton.icon .titlebutton.appmenu */
 /* solid-csd + ssd + csd because headerbar can also be used with window decorator */
 

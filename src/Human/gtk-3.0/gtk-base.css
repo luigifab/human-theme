@@ -979,7 +979,7 @@ popover separator {
 	margin: 0 -6px;
 }
 
-box.horizontal menu > separator, /* when menu tearoffed */
+box.horizontal menu > separator, /* when the menu is tearoff */
 popover stack separator,
 textview menu separator,
 menu separator,

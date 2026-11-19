@@ -2,7 +2,7 @@
 
 # Human theme
 
-This theme works with **GTK 2.24** *(with murrine/pixbuf)* & **GTK 3.24** & **GTK 4.8..4.24**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It also works with **Qt 4.8** & **Qt 5.15** & **Qt 6.9..6.12** & **Adwaita** & **Handy** & **Firefox 158**.
+This theme works with **GTK 2.24** *(with murrine/pixbuf)* & **GTK 3.24** & **GTK 4.8..4.24**, with or without compositor, with or without CSD windows, and with or without gtk3/4-classic. It also works with **Qt 4.8** & **Qt 5.15** & **Qt 6.9..6.12** & **Adwaita** & **Handy** & **Firefox 160**.
 
 It is mainly intended for **MATE** desktop environment, it's not too bad with **Xfce**, it's experimental with **Cinnamon**.
 
@@ -119,7 +119,7 @@ Qt 6.9..6.12 RTL\
 [<img alt="Preview with Qt 6 - RTL - Blue variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-blue-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-blue-menu.png)
 [<img alt="Preview with Qt 6 - RTL - Green variation - Main window with menu" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/qt6-rtl-green-menu.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/qt6-rtl-green-menu.png)
 
-Firefox 158\
+Firefox 160\
 [<img alt="Preview with Firefox - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox.png)
 [<img alt="Preview with Firefox - Orange variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-orange.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-orange.png)
 [<img alt="Preview with Firefox - Blue variation - Main window" src="https://raw.githubusercontent.com/luigifab/human-theme/master/images/thumbs/firefox-blue.png" width="200" />](https://raw.githubusercontent.com/luigifab/human-theme/master/images/firefox-blue.png)
@@ -238,7 +238,7 @@ For **Cinnamon** desktop:
 * Go to: *Menu / Preferences / Themes*, or run: `cinnamon-settings themes`\
   Click on *Advanced settings*,\
   Then select the *Human* theme for applications and desktop,\
-  And select the *DMZ White* theme for mouse.
+  And select the *DMZ White* theme for the mouse.
 * Go to: *Menu / Preferences / Fonts*, or run: `cinnamon-settings fonts`\
   Then update fonts.
 * Go to: *main menu preferences* and *panel preferences*\
@@ -350,7 +350,7 @@ You can run your program like this: `awf-qt4 -stylesheet /usr/share/themes/Human
 
 Install GTK platform theme and [GlobalQSS](https://github.com/luigifab/globalqss) style plugin. But sadly, `box-shadow` and multiple `background` gradients are not supported, `border-radius` is not fully supported.
 
-On Fedora with Qt 5, the GTK 3 platform theme *(qt5-qtbase-gui)* works better than on Debian *(qt5-gtk-platformtheme)*, but the fonts remain blurry, see [bug 2459509](https://bugzilla.redhat.com/show_bug.cgi?id=2459509) ; the same applies to openSUSE. To fix the problem, use a [fontconfig file](https://github.com/luigifab/awf-extended/blob/levelup/fonts.conf): `env FONTCONFIG_FILE=/.../fonts.conf awf-qt5`
+On Fedora with Qt 5, the GTK 3 platform theme *(qt5-qtbase-gui)* works better than on Debian *(qt5-gtk-platformtheme)*, but the fonts remain blurry, see [bug 2459509](https://bugzilla.redhat.com/show_bug.cgi?id=2459509). The same applies to openSUSE. To fix the problem, use a [fontconfig file](https://github.com/luigifab/awf-extended/blob/levelup/fonts.conf): `env FONTCONFIG_FILE=/.../fonts.conf awf-qt5`
 
 Without GlobalQSS, you can run your program like this: `awf-qt5 -stylesheet /usr/share/themes/Human/qt5/qt.qss`
 
@@ -424,8 +424,8 @@ Run `colors.sh` to update colors. See also [technical information](https://githu
 
 ## Copyright
 
-- Current version: 3.3.0~nightly20261107
-- Compatibility: GTK 2.24 / 3.24 / 4.8..4.24, Qt 4.8 / 5.15 / 6.9..6.12, Adwaita, Handy, Firefox 152..158
+- Current version: 3.3.0~nightly20261119
+- Compatibility: GTK 2.24 / 3.24 / 4.8..4.24, Qt 4.8 / 5.15 / 6.9..6.12, Adwaita, Handy, Firefox 152..160
 - Links: [luigifab.fr](https://www.luigifab.fr/gtkqt/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/) - [xfce-look.org](https://www.xfce-look.org/p/1376363/) - [ppa/dpa](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\

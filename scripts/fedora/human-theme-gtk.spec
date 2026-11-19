@@ -28,7 +28,7 @@ After uninstallation be sure to remove the config file:
  /etc/profile.d/human-theme-gtk.sh}
 
 %description -l fr %{expand:
-Ce thème est principalement destiné pour les environnements
+Ce thème est principalement destiné aux environnements
 de bureau MATE et Xfce.
 
 Après l'installation vous devez redémarrer votre session.
